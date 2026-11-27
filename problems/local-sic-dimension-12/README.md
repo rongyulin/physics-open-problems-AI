@@ -1,6 +1,35 @@
-# 十二维 SIC 测量的局域对称性 · Local symmetry of SIC measurements in dimension 12
+# Local symmetry of SIC measurements in dimension 12 · 十二维 SIC 测量的局域对称性
 
-[中文](#中文) · [English](#english) · [论文 / Paper (PDF)](./LocalSIC12.pdf) · [Lean](./Lean/LocalSIC12.lean)
+[English](#english) · [中文](#中文) · [Paper (PDF) / 论文](./LocalSIC12.pdf) · [Lean](./Lean/LocalSIC12.lean)
+
+## English
+
+**Exact symmetric informationally complete measurements (SICs) are known in dimension 12. Can one generate a SIC from a single pure state using only the standard displacements of two qubits and one qutrit, acting separately on the three subsystems? This project proves that the answer is no, for every pure state and every degree of entanglement.**
+
+A dimension-12 SIC has 144 outcomes. Each corresponds to a ray, every pair of distinct rays has squared overlap $1/13$, and the probabilities of the 144 outcomes determine an arbitrary quantum state. The usual Weyl–Heisenberg construction uses a cyclic shift and a phase operator on twelve levels. On a $2\times2\times3$ system one can instead take products of the shifts and phase operators on each factor. Both choices give 144 operations up to overall phase. Their multiplication rules differ. The local construction has a precedent. On three qubits, products of Pauli operators generate the eight-dimensional Hoggar SIC. What happens when the third qubit is replaced by a qutrit? [SICs and state reconstruction][renes] · [Exact dimension-12 construction][appleby] · [The eight-dimensional Hoggar SIC][hoggar]
+
+### Connection to SIC existence and Zauner’s conjecture
+
+The general SIC existence problem asks whether $\mathbb C^d$ contains $d^2$ equiangular lines for every $d\ge2$. In §3.4 of his 1999 thesis, Zauner also proposed a more specific construction: in each dimension a fiducial can be chosen in a prescribed eigenspace of an order-three symmetry so that its orbit under the standard $d$-level Weyl–Heisenberg displacements is a SIC. An exact dimension-12 SIC for the standard action with Zauner symmetry is known. [Zauner’s thesis, §3.4][zauner] · [Review of Zauner symmetry][hoggar] · [Dimension-12 construction][appleby]
+
+This project keeps $d=12$ and changes the displacement group. Up to overall phase, the standard group $\mathbb Z_{12}^{2}$ has elements of order 12. Every element of the local group $\mathbb Z_2^{4}\times\mathbb Z_3^{2}$ returns to the identity after six applications. A change of basis cannot identify the two groups. The local obstruction rules out one candidate symmetry in dimension 12 and is consistent with the exact SICs for the standard action.
+
+### Where did the question come from?
+
+**A search for SIC symmetries.** Appleby and collaborators recomputed a known exact solution for the ordinary dimension-12 action in a 2012 preprint. In 2017, Chien and Waldron reported a numerical search across candidate groups. Their Table 2 records a numerical SIC for the ordinary group and lists the local group, `SmallGroup(144,197)`, without a SIC hit. Khodaiemehr reported another unsuccessful search for the same local group in 2026. A numerical search can miss an exceptional starting state, leaving existence undecided. [Appleby et al.][appleby] · [Chien and Waldron, §5, Table 2][chien] · [Khodaiemehr, §III.B][khod]
+
+**A question from Higgs-decay physics.** In $H\to f\bar fV$, the fermion and antifermion each have two spin states, and the massive vector boson has three polarizations. Banacki and collaborators studied this $2\times2\times3$ spin system using the second-order stabilizer Rényi entropy $M_2$. For their choice of local displacements, a pure state attains the general bound $\log_2(13/2)$ exactly when its orbit is a SIC. In §5.1 they explicitly identified the existence of such a state as unknown to them. The theorem here answers that question for the entire state space. [Banacki et al., §5.1, Eqs. (111)–(113)][banacki]
+
+### Why is the orbit impossible?
+
+Just **15 of the overlap conditions** suffice. Take the displacements that act on the qubits alone and let $\rho$ be the two-qubit reduced state. Each nonidentity two-qubit Pauli operator $P$ would have to satisfy |tr(ρP)| = 1/√13. Orthogonality of the Pauli basis then fixes the purity at tr(ρ²) = (1 + 15/13)/4 = 7/13.
+
+Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank at most three, so $\rho$ has a zero eigenvalue. The 15 constraints give $\rho=(I+S/\sqrt{13})/4$ for a signed Pauli sum $S$ with integer characteristic polynomial. The zero eigenvalue puts $-\sqrt{13}$ in the spectrum of $S$, forcing its algebraic conjugate $+\sqrt{13}$ into the spectrum as well. Hence $\rho$ has an eigenvalue $1/2$. Its remaining eigenvalues are nonnegative and sum to $1/2$, giving purity at most $1/2$, in contradiction with $7/13$. [Full proof, §2](./LocalSIC12.pdf)
+
+### Why does it matter?
+
+- **SIC symmetry.** There are two candidate abelian projective unitary group types that can act transitively on the outcomes of a dimension-12 SIC. Ruling out the local type $\mathbb Z_2^4\times\mathbb Z_3^2$ leaves $\mathbb Z_{12}^2$, whose action is equivalent to the ordinary twelve-level displacements up to a basis change and relabelling. This determines the transitive abelian symmetry type. An individual SIC can still have additional noncommuting symmetries. [Paper, §3](./LocalSIC12.pdf)
+- **Non-stabilizerness.** The general reference bound on $M_2$ in the Higgs-decay analysis is about $2.70044$ bits. The paper gives a smaller upper bound, approximately $2.69890107$ bits, for every pure state with this displacement basis. The exact maximum of $M_2$ remains open. The paper also determines the least sum of squared deviations of the 15 Pauli expectation magnitudes from $1/\sqrt{13}$. The minimum is $(1-3/\sqrt{13})^2/3$, and an explicit state attains it. [Paper, §5](./LocalSIC12.pdf)
 
 ## 中文
 
@@ -33,42 +62,13 @@
 - **对称性分类。** 十二维 SIC 若有一个阿贝尔射影酉群能把任一测量结果变到任一其他结果，原本有两种候选群类型。排除局域类型 $\mathbb Z_2^4\times\mathbb Z_3^2$ 后，只剩 $\mathbb Z_{12}^2$，其作用在换基和重新编号后等价于通常的十二维位移。这确定了这一类传递对称群。单个 SIC 仍可能有额外的非交换对称性。[论文第 3 节](./LocalSIC12.pdf)
 - **量子态的非稳定子性。** 对 Banacki 等采用的 $M_2$，原先的参照上界约为 $2.70044$ 比特。论文证明所有纯态都服从一个更低的上界，其数值约为 $2.69890107$ 比特。精确最大熵仍待确定。论文还给出一个已经求出精确最优值的量：上述 15 个泡利期望值的模偏离目标 $1/\sqrt{13}$ 的平方和，最小为 $(1-3/\sqrt{13})^2/3$，并给出了达到该值的态。[论文第 5 节](./LocalSIC12.pdf)
 
-## English
+## Paper and formal verification · 论文与形式化证明
 
-**Exact symmetric informationally complete measurements (SICs) are known in dimension 12. Can one generate a SIC from a single pure state using only the standard displacements of two qubits and one qutrit, acting separately on the three subsystems? This project proves that the answer is no, for every pure state and every degree of entanglement.**
-
-A dimension-12 SIC has 144 outcomes. Each corresponds to a ray, every pair of distinct rays has squared overlap $1/13$, and the probabilities of the 144 outcomes determine an arbitrary quantum state. The usual Weyl–Heisenberg construction uses a cyclic shift and a phase operator on twelve levels. On a $2\times2\times3$ system one can instead take products of the shifts and phase operators on each factor. Both choices give 144 operations up to overall phase. Their multiplication rules differ. The local construction has a precedent. On three qubits, products of Pauli operators generate the eight-dimensional Hoggar SIC. What happens when the third qubit is replaced by a qutrit? [SICs and state reconstruction][renes] · [Exact dimension-12 construction][appleby] · [The eight-dimensional Hoggar SIC][hoggar]
-
-### Connection to SIC existence and Zauner’s conjecture
-
-The general SIC existence problem asks whether $\mathbb C^d$ contains $d^2$ equiangular lines for every $d\ge2$. In §3.4 of his 1999 thesis, Zauner also proposed a more specific construction: in each dimension a fiducial can be chosen in a prescribed eigenspace of an order-three symmetry so that its orbit under the standard $d$-level Weyl–Heisenberg displacements is a SIC. An exact dimension-12 SIC for the standard action with Zauner symmetry is known. [Zauner’s thesis, §3.4][zauner] · [Review of Zauner symmetry][hoggar] · [Dimension-12 construction][appleby]
-
-This project keeps $d=12$ and changes the displacement group. Up to overall phase, the standard group $\mathbb Z_{12}^{2}$ has elements of order 12. Every element of the local group $\mathbb Z_2^{4}\times\mathbb Z_3^{2}$ returns to the identity after six applications. A change of basis cannot identify the two groups. The local obstruction rules out one candidate symmetry in dimension 12 and is consistent with the exact SICs for the standard action.
-
-### Where did the question come from?
-
-**A search for SIC symmetries.** Appleby and collaborators recomputed a known exact solution for the ordinary dimension-12 action in a 2012 preprint. In 2017, Chien and Waldron reported a numerical search across candidate groups. Their Table 2 records a numerical SIC for the ordinary group and lists the local group, `SmallGroup(144,197)`, without a SIC hit. Khodaiemehr reported another unsuccessful search for the same local group in 2026. A numerical search can miss an exceptional starting state, leaving existence undecided. [Appleby et al.][appleby] · [Chien and Waldron, §5, Table 2][chien] · [Khodaiemehr, §III.B][khod]
-
-**A question from Higgs-decay physics.** In $H\to f\bar fV$, the fermion and antifermion each have two spin states, and the massive vector boson has three polarizations. Banacki and collaborators studied this $2\times2\times3$ spin system using the second-order stabilizer Rényi entropy $M_2$. For their choice of local displacements, a pure state attains the general bound $\log_2(13/2)$ exactly when its orbit is a SIC. In §5.1 they explicitly identified the existence of such a state as unknown to them. The theorem here answers that question for the entire state space. [Banacki et al., §5.1, Eqs. (111)–(113)][banacki]
-
-### Why is the orbit impossible?
-
-Just **15 of the overlap conditions** suffice. Take the displacements that act on the qubits alone and let $\rho$ be the two-qubit reduced state. Each nonidentity two-qubit Pauli operator $P$ would have to satisfy |tr(ρP)| = 1/√13. Orthogonality of the Pauli basis then fixes the purity at tr(ρ²) = (1 + 15/13)/4 = 7/13.
-
-Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank at most three, so $\rho$ has a zero eigenvalue. The 15 constraints give $\rho=(I+S/\sqrt{13})/4$ for a signed Pauli sum $S$ with integer characteristic polynomial. The zero eigenvalue puts $-\sqrt{13}$ in the spectrum of $S$, forcing its algebraic conjugate $+\sqrt{13}$ into the spectrum as well. Hence $\rho$ has an eigenvalue $1/2$. Its remaining eigenvalues are nonnegative and sum to $1/2$, giving purity at most $1/2$, in contradiction with $7/13$. [Full proof, §2](./LocalSIC12.pdf)
-
-### Why does it matter?
-
-- **SIC symmetry.** There are two candidate abelian projective unitary group types that can act transitively on the outcomes of a dimension-12 SIC. Ruling out the local type $\mathbb Z_2^4\times\mathbb Z_3^2$ leaves $\mathbb Z_{12}^2$, whose action is equivalent to the ordinary twelve-level displacements up to a basis change and relabelling. This determines the transitive abelian symmetry type. An individual SIC can still have additional noncommuting symmetries. [Paper, §3](./LocalSIC12.pdf)
-- **Non-stabilizerness.** The general reference bound on $M_2$ in the Higgs-decay analysis is about $2.70044$ bits. The paper gives a smaller upper bound, approximately $2.69890107$ bits, for every pure state with this displacement basis. The exact maximum of $M_2$ remains open. The paper also determines the least sum of squared deviations of the 15 Pauli expectation magnitudes from $1/\sqrt{13}$. The minimum is $(1-3/\sqrt{13})^2/3$, and an explicit state attains it. [Paper, §5](./LocalSIC12.pdf)
-
-## 论文与形式化证明 · Paper and formal verification
-
-[论文 PDF / Manuscript](./LocalSIC12.pdf) · [LaTeX 源码 / Source](./LocalSIC12.tex) · [Lean 主定理 / Main theorem](./Lean/LocalSIC12.lean) · [完整工程 / Full Lean project](./Lean/LocalSIC12_Lean.zip)
-
-单文件中的 `SicNoGo.no_local_hw_sic_dim12` 对归一化复振幅定义全部 144 个轨道标签，证明其中不存在 SIC。完整工程还验证了 15 项偏差的可达最小值和熵上界。传递阿贝尔对称群的分类由论文给出纸笔证明。稿件署名 **Chatgpt**，尚未经独立同行评审。
+[Manuscript / 论文 PDF](./LocalSIC12.pdf) · [LaTeX source / 源码](./LocalSIC12.tex) · [Main Lean theorem / 主定理](./Lean/LocalSIC12.lean) · [Full Lean project / 完整工程](./Lean/LocalSIC12_Lean.zip)
 
 The single-file theorem `SicNoGo.no_local_hw_sic_dim12` rules out the full 144-label SIC orbit for normalized complex amplitudes. The complete project also verifies the attained minimum deviation and the entropy bound. The classification of transitive abelian symmetries is proved in the manuscript. The manuscript is signed **Chatgpt** and has not undergone independent peer review.
+
+单文件中的 `SicNoGo.no_local_hw_sic_dim12` 对归一化复振幅定义全部 144 个轨道标签，证明其中不存在 SIC。完整工程还验证了 15 项偏差的可达最小值和熵上界。传递阿贝尔对称群的分类由论文给出纸笔证明。稿件署名 **Chatgpt**，尚未经独立同行评审。
 
 [zauner]: https://www.gerhardzauner.at/documents/gz-quantumdesigns.pdf
 [renes]: https://arxiv.org/abs/quant-ph/0310075
