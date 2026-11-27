@@ -33,6 +33,12 @@ Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank 
 - **SIC symmetry.** There are two candidate abelian projective unitary group types that can act transitively on the outcomes of a dimension-12 SIC. Ruling out the local type $\mathbb Z_2^4\times\mathbb Z_3^2$ leaves $\mathbb Z_{12}^2$, whose action is equivalent to the ordinary twelve-level displacements up to a basis change and relabelling. This determines the transitive abelian symmetry type. An individual SIC can still have additional noncommuting symmetries. [Paper, §3](./LocalSIC12.pdf)
 - **Non-stabilizerness.** The general reference bound on $M_2$ in the Higgs-decay analysis is about $2.70044$ bits. The paper gives a smaller upper bound, approximately $2.69890107$ bits, for every pure state with this displacement basis. The exact maximum of $M_2$ remains open. The paper also determines the least sum of squared deviations of the 15 Pauli expectation magnitudes from $1/\sqrt{13}$. The minimum is $(1-3/\sqrt{13})^2/3$, and an explicit state attains it. [Paper, §5](./LocalSIC12.pdf)
 
+### License and attribution
+
+The original paper (PDF and LaTeX) and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+
+Suggested paper citation — Chatgpt (2026), *Abelian covariance of symmetric informationally complete measurements in dimension twelve*, [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
+
 ## 中文
 
 **十二维的对称信息完备测量（SIC）已经有精确构造。如果把十二个能级分给两个量子比特和一个三能级系统，还能从一个初态出发，只用三个子系统各自的标准位移，生成这样的测量吗？本项目证明，答案是否定的。** 定理覆盖所有纯初态，包括三个子系统之间任意纠缠的态。
@@ -74,6 +80,12 @@ The single-file theorem `SicNoGo.no_local_hw_sic_dim12` rules out the full 144-l
 
 单文件中的 `SicNoGo.no_local_hw_sic_dim12` 对归一化复振幅定义全部 144 个轨道标签，证明其中不存在 SIC。完整工程还验证了 15 项偏差的可达最小值和熵上界。传递阿贝尔对称群的分类由论文给出纸笔证明。稿件署名 **Chatgpt**，尚未经独立同行评审。
 
+### 许可与署名
+
+本项目原创的论文 PDF、LaTeX 源稿和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+
+论文的推荐署名为 Chatgpt（2026），*Abelian covariance of symmetric informationally complete measurements in dimension twelve*，[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
+
 [zauner]: https://www.gerhardzauner.at/documents/gz-quantumdesigns.pdf
 [renes]: https://arxiv.org/abs/quant-ph/0310075
 [appleby]: https://arxiv.org/abs/1210.1055
@@ -82,3 +94,8 @@ The single-file theorem `SicNoGo.no_local_hw_sic_dim12` rules out the full 144-l
 [hoggar]: https://arxiv.org/abs/1703.07901
 [khod]: https://arxiv.org/abs/2611.01524
 [banacki]: https://arxiv.org/html/2607.26122v2#S5.SS1
+
+[doc-license]: https://creativecommons.org/licenses/by/4.0/
+[code-license]: ../../LICENSES/MIT.txt
+[lic-scope]: ../../LICENSE
+[project-source]: https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/local-sic-dimension-12

@@ -1,0 +1,68 @@
+physics-open-problems-AI — licensing and attribution
+====================================================
+
+The following licenses apply to the original materials in this repository, to
+the extent that the contributors hold rights they can license. The same
+division applies to files distributed in the downloadable project archives.
+
+1. Papers and documentation — CC BY 4.0
+
+   Manuscript PDFs and their LaTeX sources, research reports, README prose,
+   and original figures in these documents are licensed under Creative Commons
+   Attribution 4.0 International (CC BY 4.0), unless separately credited.
+   You may copy, redistribute, translate, and adapt this material, including
+   commercially. When sharing it, give appropriate credit, link to the license,
+   retain supplied notices, and indicate changes (including a translation).
+   If supplied, link to the source where reasonably practicable. An adapted
+   work must not imply endorsement by the original authors or publisher.
+
+   Full legal text: LICENSES/CC-BY-4.0.txt
+   Canonical URL: https://creativecommons.org/licenses/by/4.0/
+
+   Suggested credit: give the work's title, the byline as printed, the project
+   URL, and the license. For unsigned repository documentation, cite the
+   document title and rongyulin/physics-open-problems-AI as its source.
+   A translation or adaptation can add “Translated/adapted by [name]; [changes].”
+   For manuscripts signed “Chatgpt”, use that spelling in the credit.
+
+2. Proofs and software — MIT
+
+   Original Lean proof modules, example and test code, and Python, shell and
+   other build or verification scripts are licensed under the MIT License.
+   You may use, modify, merge, distribute, sublicense, and sell copies of
+   the software. Include the copyright and permission notices in all copies
+   or substantial portions of the software. Include LICENSES/MIT.txt when
+   you redistribute a standalone source file. Research citations are welcome.
+
+   Full text and copyright notice: LICENSES/MIT.txt
+   https://opensource.org/license/mit
+
+3. Scope
+
+   Third-party quotations, figures, software, and dependencies retain their
+   own notices and licenses. Being cited, imported or referenced in a dependency
+   manifest does not relicense an external work. These licenses apply to
+   protectable expression. Mathematical statements and methods can be used
+   independently; scholarly citation is encouraged when building on a result.
+   The licenses grant no permissions to push changes to the GitHub repository.
+
+中文说明
+========
+
+本仓库及其工程压缩包按材料类型授权，以贡献者有权许可的内容为限。
+
+1. 论文与文档采用 CC BY 4.0。范围包括原创论文 PDF、LaTeX 源稿、研究报告、
+   README 正文和文中另无署名说明的原创图表。允许转载、翻译、改编及商用。
+   公开分享时请适当署名，附许可链接，保留已提供的声明，在合理可行时
+   链接原作，并标明翻译或其他修改。建议注明题名、原稿所列署名、项目链接
+   和许可。对未单独署名的说明，可用文档题名和仓库名作为出处。
+   许可全文见 LICENSES/CC-BY-4.0.txt。
+
+2. 原创代码采用 MIT，包括 Lean 证明、示例和测试、Python 验证脚本及
+   Shell 等构建脚本。可以复用、修改、再发布、再许可及商用。分发代码副本
+   或其中实质部分时，请随附原版权和许可声明。单独转发源文件时可附上
+   LICENSES/MIT.txt，其中包含完整声明。欢迎在使用研究成果时引用原项目。
+
+3. 第三方引文、图片、代码和依赖保留其原有声明及许可。上述许可适用于
+   受保护的具体表达。独立使用数学命题或方法时，欢迎按学术惯例注明来源。
+   仓库写入权限由 GitHub 协作设置管理。

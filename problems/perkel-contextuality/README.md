@@ -28,6 +28,12 @@ The dimension bound concerns this particular test, with its full exclusivity gra
 
 The [single-file Lean proof](./Lean/PerkelLower37.lean) derives the pure-state and finite-mixture lower bounds from the projectors. In the [complete Lean project](./Lean/Perkel37_Lean.zip), `PerkelModel.minimum_dimension` proves the pure-state lower bound and `Perkel37.attained_by_complex_projectors` constructs the matching 37-dimensional model. The paper gives the spectral proof of the near-ideal threshold and a uniqueness theorem for a broader class of graph optimizations. [English manuscript](./Perkel37.pdf) · [LaTeX source](./Perkel37.tex)
 
+### License and attribution
+
+The original paper (PDF and LaTeX) and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+
+Suggested paper citation — Chatgpt (2026), *Thirty-seven dimensions are necessary for the Perkel contextuality experiment*, [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
+
 ## 中文
 
 **能否用 36 维系统复现原本在 37 维中实现的 Perkel 检验的理想结果？不能。** 对指定的 57 个事件，任何达到理想得分的复希尔伯特空间投影测量模型都至少需要 37 维，而且确有 37 维的模型达到这一得分。因此，最小维数恰为 37。即使允许任意秩的投影或使用混合态，这一下界也成立。
@@ -54,6 +60,17 @@ G_{vw}=\langle x_v,x_w\rangle,\qquad G=\frac{3I+A}{57}.
 
 [单文件 Lean 证明](./Lean/PerkelLower37.lean)从投影测量出发，给出纯态和有限纯态混合的维数下界。[完整 Lean 工程](./Lean/Perkel37_Lean.zip)中，`PerkelModel.minimum_dimension` 给出纯态下界，`Perkel37.attained_by_complex_projectors` 构造了达到下界的 37 维模型。接近满分时的定量阈值，以及适用于更广一类图优化问题的唯一性定理，由论文给出谱方法证明。[英文论文](./Perkel37.pdf) · [LaTeX 源码](./Perkel37.tex)
 
+### 许可与署名
+
+本项目原创的论文 PDF、LaTeX 源稿和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+
+论文的推荐署名为 Chatgpt（2026），*Thirty-seven dimensions are necessary for the Perkel contextuality experiment*，[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
+
 [liu]: https://pmc.ncbi.nlm.nih.gov/articles/PMC11789840/
 [liu-opt]: https://arxiv.org/html/2208.07794v3#A0.SS3.p3
 [archive]: https://archive.softwareheritage.org/browse/content/sha1_git:601b64d894427aee82f13277f681cd6753768448/
+
+[doc-license]: https://creativecommons.org/licenses/by/4.0/
+[code-license]: ../../LICENSES/MIT.txt
+[lic-scope]: ../../LICENSE
+[project-source]: https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/perkel-contextuality

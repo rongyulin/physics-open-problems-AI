@@ -26,6 +26,12 @@ The classification tells a Monte Carlo practitioner when a simulation started in
 
 **An English paper will be added to this directory.** The Chinese report contains the full argument and a second geometric proof. In Lean 4.28.0, `degree_six_mod_twelve_iff` proves the exact degree criterion for every height 3*M*. The final theorem, `wsk_classification_from_corollary_3_5`, takes the published equivalence between the degree obstruction and nonergodicity as an explicit hypothesis. The Python script independently reconstructs and checks the row certificate. [Chinese report](./PottsSix_report_zh.md) · [Lean proof](./Lean/PottsSix.lean) · [Python verification](./Lean/check_potts_rows.py)
 
+### License and attribution
+
+The original Chinese report and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+
+Suggested report citation — *宽六三角晶格上零温四态反铁磁 Potts 模型的 WSK 遍历性*, rongyulin/physics-open-problems-AI (2026), [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
+
 ## 中文
 
 在宽度为六、采用周期边界的三角晶格上，用零温 Wang–Swendsen–Kotecký（WSK）算法模拟四态反铁磁 Potts 模型，格子高 12 时，可以从任一基态走到其他所有基态；高 18 时，无论从哪个基态出发，总有一部分基态无法到达。本项目给出所有三的正倍数高度的精确判别，条件是晶格沿两个方向均直接周期拼接、没有错位。
@@ -49,3 +55,14 @@ The classification tells a Monte Carlo practitioner when a simulation started in
 ### 报告与验证
 
 **本目录后续会添加英文论文。** 现有中文报告给出了完整论证和另一种几何证明。Lean 4.28.0 定理 `degree_six_mod_twelve_iff` 对任意高度 3*M* 证明了上述映射度存在的充要条件。最终定理 `wsk_classification_from_corollary_3_5` 将文献中关于该映射度与 WSK 不遍历等价的推论作为显式前提。Python 脚本独立重建并核验了逐行计算所用的证书。[中文研究报告](./PottsSix_report_zh.md) · [Lean 证明](./Lean/PottsSix.lean) · [Python 复核脚本](./Lean/check_potts_rows.py)
+
+### 许可与署名
+
+本项目原创的中文研究报告和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+
+中文报告的推荐署名为《宽六三角晶格上零温四态反铁磁 Potts 模型的 WSK 遍历性》，rongyulin/physics-open-problems-AI（2026），[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
+
+[doc-license]: https://creativecommons.org/licenses/by/4.0/
+[code-license]: ../../LICENSES/MIT.txt
+[lic-scope]: ../../LICENSE
+[project-source]: https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/potts-wsk-ergodicity

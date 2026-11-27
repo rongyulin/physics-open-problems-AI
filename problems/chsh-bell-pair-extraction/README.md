@@ -28,6 +28,12 @@ McKague’s 2010 thesis proposed a family that would attain a straight-line boun
 
 The Lean 4.28.0 entry points `RankThreeCHSH.sharp` and `RankThreeCHSH.plateau` check the full boundary and the constant interval for normalized complex 3 × 3 amplitude matrices, binary measurement effects, and local isometries. The linked source imports modules in the complete project. The archive includes build and kernel-replay logs for 49 modules. [English paper (PDF)](./RankThreeCHSH.pdf) · [LaTeX source](./RankThreeCHSH.tex) · [Lean entry point](./Lean/RankThreeCHSH.lean) · [Complete Lean project](./Lean/RankThreeCHSH_Lean.zip)
 
+### License and attribution
+
+The original paper (PDF and LaTeX) and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+
+Suggested paper citation — Chatgpt (2026), *Sharp singlet extractability from CHSH scores for pure states of Schmidt rank at most three*, [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
+
 ## 中文
 
 一次 CHSH 实验得到 **2.5** 分。若已知源产生的是两个量子比特的纯态，则提取出的贝尔对的平方保真度至少为 **7/8**。若允许源多占据一个施密特模式，这个精确保证降至 **5/6**。本项目求出了在 CHSH 分数从 2 到 2√2 的整个区间内，**施密特秩至多为三的双体纯态**能够保证的最佳提取保真度。施密特秩表示把这个纯态写成乘积态之和至少需要多少项。
@@ -54,7 +60,18 @@ McKague 在 2010 年博士论文中给出了一个据称能取到直线下界的
 
 Lean 4.28.0 的 `RankThreeCHSH.sharp` 和 `RankThreeCHSH.plateau` 分别验证了完整的三段边界及其平台。定理直接涉及归一化的 3 × 3 复数振幅矩阵、二元测量效应和局域等距变换。入口文件依赖的模块均在完整工程内，压缩包附有 49 个模块的构建和内核重检日志。[英文论文 PDF](./RankThreeCHSH.pdf) · [LaTeX 源码](./RankThreeCHSH.tex) · [Lean 定理入口](./Lean/RankThreeCHSH.lean) · [完整 Lean 工程](./Lean/RankThreeCHSH_Lean.zip)
 
+### 许可与署名
+
+本项目原创的论文 PDF、LaTeX 源稿和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+
+论文的推荐署名为 Chatgpt（2026），*Sharp singlet extractability from CHSH scores for pure states of Schmidt rank at most three*，[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
+
 [bardyn]: https://arxiv.org/pdf/0907.2170#page=3
 [pollard]: https://github.com/cluesurf/vibe/blob/6f3d9c6e2e069f0296ab6f84a62fc857da19293f/test/experiment/quantum/tsirelson-closed-form.ts#L4-L17
 [mckague]: https://arxiv.org/pdf/1006.2352#page=131
 [kaniewski]: https://doi.org/10.1103/PhysRevLett.117.070402
+
+[doc-license]: https://creativecommons.org/licenses/by/4.0/
+[code-license]: ../../LICENSES/MIT.txt
+[lic-scope]: ../../LICENSE
+[project-source]: https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/chsh-bell-pair-extraction

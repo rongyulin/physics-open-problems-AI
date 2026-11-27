@@ -51,3 +51,7 @@ d_2=L,\qquad d_m=4\quad(m>2,\ L\ge4).
 截至 2026 年 11 月 27 日，已检索原文、相关后续论文、引用记录和公开 GitHub 代码、仓库及讨论。可定位的一条在先批评是 2026 年 10 月 Pith 的机器评阅，它质疑 2026 年预印本如何用行列式估计推导两个截断值。本文给出的八站点例子回答了不同的问题：即使允许任意大的截断值，该输入也无法得到所述保证。本次检索没有找到更早给出上述量子码反例的来源。现有证据支持将其作为有形式化证明的研究初稿，原创性和文献影响仍待独立同行审查。[公开评阅](https://pith.science/paper/2610.15893) · [提出猜想的作者主页](https://pllahat.github.io/) · [作者公开仓库](https://github.com/pllahat/pllahat.github.io)
 
 Lean 工程附带逐模块构建和核重放记录。独立的 Lean 单文件把五、七、八站点反例及其确切码距汇成一条定理。完整工程还检查无辅助站点的环面族在所有整数 $`m>2`$ 时的确切码距，以及任意域的支撑秩公式。带一个辅助站点的另一族中，Lean 检查给定指定矩阵块后的偶环论证；具体环面上总能选到所需生成树由论文给出纸笔证明。对有限环的通用计数公式及其与量子态空间的联系也在英文稿中证明。重放使用同一发行版的 Lean 内核。
+
+## 许可与署名
+
+本报告的原创正文采用知识共享署名 4.0 国际许可（CC BY 4.0）。转载时建议标注《把量子比特换成多能级系统后，码距会保留吗？》、英文原稿署名 Chatgpt（2026）、本项目链接和许可。发布译本或改编本时，请注明所作修改。配套原创证明代码及验证脚本采用 MIT 许可，第三方材料沿用其原有条款。[项目来源](https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/stabilizer-code-distance-collapse) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · [仓库授权范围](https://github.com/rongyulin/physics-open-problems-AI/blob/main/LICENSE)

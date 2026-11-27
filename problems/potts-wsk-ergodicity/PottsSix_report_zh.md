@@ -180,3 +180,7 @@ $$
 \{0\}\ \cup\ \{-3H+12k: k=0,1,\ldots,H/2\}.
 $$
 上界来自式 (4) 的 $|H-2S|\le H$、$|\det(U,u_C)|\le6$，以及已经证明的模十二余类。实现性有显式构造：仍取水平交替的 $(6,0,0)$ 行，任挑 $S=2k$ 条带使用平移式，其余使用直接式。由式 (2) 每层合法。因 $H,S$ 均偶，式 (3) 确保闭合。固定 $A=(1,0)$、$C=(1,1)\in(\mathbb Z/2)^2$ 的上述取向有 $\det(U,u_C)=-6$，逐一得到 $-3H+12k$。三色着色另实现零。
+
+## 许可与署名
+
+本报告的原创正文采用知识共享署名 4.0 国际许可（CC BY 4.0）。转载时建议标注《宽六三角晶格上零温四态反铁磁 Potts 模型的 WSK 遍历性》、项目 rongyulin/physics-open-problems-AI（2026）、本项目链接和许可。发布译本或改编本时，请注明所作修改。配套原创证明代码及验证脚本采用 MIT 许可，第三方材料沿用其原有条款。[项目来源](https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/potts-wsk-ergodicity) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · [仓库授权范围](https://github.com/rongyulin/physics-open-problems-AI/blob/main/LICENSE)

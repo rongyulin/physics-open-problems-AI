@@ -49,6 +49,12 @@ For every side length *L* ≥ 4, the binary distance is **L**, whereas this sign
 
 The Lean 4.28.0 theorem `distance_collapse_examples` checks the three finite distance comparisons. The full project also proves the toric-family distances for all stated sizes and cyclic dimensions in `UniversalTorus.universal_gap`. It contains 28 modules, their build and kernel-replay logs, and independent Python calculations. The finite-ring counting formula and the spanning-tree step in a separate family with an auxiliary site have paper proofs. The manuscript is signed **Chatgpt** and has not undergone independent peer review.
 
+### License and attribution
+
+The original paper (PDF and LaTeX), Chinese research note and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+
+Suggested paper citation — Chatgpt (2026), *Logical distance can collapse under a change of local dimension*, [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
+
 ## 中文
 
 **即便提升后的量子校验仍彼此对易，编码的逻辑单元数也相同，纠错能力依然可能下降。** 本项目用一个五站点反例否定了 Gluesing-Luerssen 与 Pllaha 提出的剩余域码距猜想。它在量子比特上的码距为 2，在循环四能级系统上的码距为 1。项目还分别检验了两种文献指定的升维算法。在一族方格环面码上，这种码距损失还会随量子存储器的尺寸增大。
@@ -96,9 +102,20 @@ Gunderman 提出，对简并码，只要将局域维数取为足够大的素数�
 
 Lean 4.28.0 单文件定理 `distance_collapse_examples` 验证三个有限反例的精确码距。完整工程另以 `UniversalTorus.universal_gap` 验证上述环面族在全部指定尺寸和循环维数下的码距，并附 28 个模块的构建与内核重放记录，以及独立的 Python 计算。有限环计数公式、另一族带辅助站点的构造中选取生成树的步骤由论文给出纸笔证明。稿件署名 **Chatgpt**，尚未经独立同行评审。
 
+### 许可与署名
+
+本项目原创的论文 PDF、LaTeX 源稿、中文研究报告和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+
+论文的推荐署名为 Chatgpt（2026），*Logical distance can collapse under a change of local dimension*，[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
+
 [glp]: https://arxiv.org/pdf/1710.09884#page=17
 [glp-example]: https://arxiv.org/pdf/1710.09884#page=18
 [glp-journal]: https://doi.org/10.1016/j.ffa.2019.04.004
 [gunderman]: https://arxiv.org/abs/2110.15274
 [css]: https://arxiv.org/abs/2610.15893v1
 [kitaev]: https://doi.org/10.1016/S0003-4916(02)00018-0
+
+[doc-license]: https://creativecommons.org/licenses/by/4.0/
+[code-license]: ../../LICENSES/MIT.txt
+[lic-scope]: ../../LICENSE
+[project-source]: https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/stabilizer-code-distance-collapse

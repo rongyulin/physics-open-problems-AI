@@ -15,6 +15,12 @@ Research notes on open problems in physics explored with ChatGPT, with manuscrip
 | [The dimension of the Perkel contextuality test](./problems/perkel-contextuality/README.md) | Liu et al. constructed the 57-event test in 37 dimensions. That gave an upper bound on the minimum dimension. A rank limit makes the search nonconvex. Subsequent numerical work supported rank 37 for real data, leaving the complex case open. | Exact exclusivity and the ideal score fix the Gram matrix of the projected state vectors. Its rank is **37**, proving that the known construction uses the fewest possible dimensions even with arbitrary-rank projectors and mixed preparations. |
 | [WSK ergodicity on triangular Potts lattices](./problems/potts-wsk-ergodicity/README.md) | At width six, Mohar and Salas proved nonergodicity at heights 6, 18, 30, … and verified ergodicity at height 9 by enumeration. Checking any finite list of sizes leaves infinitely many heights undecided. | A relation between adjacent rows applies at every height. For the zero-temperature four-state antiferromagnet on the unshifted torus of width 6 and height 3*M*, the WSK chain is nonergodic exactly when *M* ≡ 2 (mod 4). |
 
+### Reuse and attribution
+
+You may share, translate, and adapt the papers (PDF and LaTeX), research reports, and README text under **CC BY 4.0**, including commercially. Credit the work, link to the original and the license, and identify any changes. Original Lean proofs and verification scripts use **MIT**. When redistributing all or a substantial part of the code, include the copyright and permission notices. Third-party materials keep their own terms. [Licensing by file type](./LICENSE) · [CC BY 4.0](./LICENSES/CC-BY-4.0.txt) · [MIT](./LICENSES/MIT.txt)
+
+For example, a translation can say “Chatgpt, [*Logical distance can collapse under a change of local dimension*](https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/stabilizer-code-distance-collapse), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Translated by [name].” For an unsigned research note, use the document title and repository name as the source.
+
 ## 中文
 
 本仓库收录用 ChatGPT 探索物理学公开问题的研究稿、Lean 形式化证明和复核材料。各项目页给出原始文献，并说明哪些结论已有 Lean 验证。
@@ -27,3 +33,9 @@ Research notes on open problems in physics explored with ChatGPT, with manuscrip
 | [三能级粒子对的 I3322 噪声阈值](./problems/i3322-qutrit-conjecture/README.md) | 对混入白噪声的最大纠缠三能级粒子对，Ito、Imai 与 Avis 已求出 CHSH 的严格阈值。I3322 的数值搜索也逼近这一阈值，但仍需证明，无论双方怎样选取六项二元测量，都无法在更低可见度检出违反。 | 求出每个可见度下的 I3322 最高分，证明只有可见度严格超过 **4/(1 + 3√2)** 才能违反不等式，从而证明原论文的猜想 1。在 **19/25** 处，每方四项设置还能检出所有三设置二元实验都无法检出的非局域性。 |
 | [Perkel 情境性检验的最小维数](./problems/perkel-contextuality/README.md) | Liu 等用 37 维实现了 57 个事件的理想检验，这给出的是所需最小维数的上界。一旦限制矩阵的秩，搜索就变成非凸优化。后续数值研究在实数域支持秩为 37，复数情形仍未定。 | 由严格互斥关系和理想得分唯一确定投影后态向量的 Gram 矩阵，证明其秩为 **37**。即使允许任意秩投影和混合态，也不能用更低维的系统复现理想得分。 |
 | [三角晶格 Potts 模型的 WSK 遍历性](./problems/potts-wsk-ergodicity/README.md) | 对宽六环面，Mohar 与 Salas 已证明高 6、18、30……时不遍历，并通过枚举证明高 9 时遍历。逐个尺寸枚举无法判定其余无穷多个高度。 | 找到相邻两行着色满足的关系，一次覆盖任意高度。对零温四态反铁磁模型，在宽 6、高 3*M* 的无错位三角环面上，WSK 链不遍历当且仅当 *M* 除以 4 余 2。 |
+
+### 转载、翻译与代码复用
+
+论文 PDF、LaTeX 源稿、研究报告及 README 正文采用 **CC BY 4.0**，允许转载、翻译、改编和商用。公开分享时请注明作品及来源，附原作和许可链接，并标明翻译或其他修改。原创 Lean 证明及配套验证脚本采用 **MIT**，分发代码副本或其实质部分时请附上版权与许可声明。第三方材料沿用各自条款。[按文件类型查看许可](./LICENSE) · [CC BY 4.0 全文](./LICENSES/CC-BY-4.0.txt) · [MIT 全文](./LICENSES/MIT.txt)
+
+例如，转载量子纠错论文的中译本时，可写为「Chatgpt，*Logical distance can collapse under a change of local dimension*，[原项目](https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/stabilizer-code-distance-collapse)，[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。译者：［姓名］。」未单独署名的研究说明可用文档题名和仓库名标注出处。

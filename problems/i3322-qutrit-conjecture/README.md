@@ -37,6 +37,12 @@ Take **α = 19/25 = 0.76**. For any fixed menu of three binary measurements per 
 
 The Lean project starts with the 9 × 9 density matrix and allows arbitrary complex positive measurement effects with positive complements. The theorem `IsotropicI3322.maximum` checks an upper bound for every measurement choice and the existence of measurements attaining it. `violation_iff` gives the strict threshold. `IsoSeparation.strict_separation` checks the I3322 bound at 19/25 and the explicit A₅ violation there. The conclusion about a local model for every three-setting menu also uses the published facet classification. The linked Lean entry file imports the modules in the full project archive. [Paper (PDF)](./IsotropicI3322.pdf) · [LaTeX source](./IsotropicI3322.tex) · [Lean entry file](./Lean/IsotropicI3322.lean) · [Full Lean project and verification logs](./Lean/IsotropicI3322_Lean.zip)
 
+### License and attribution
+
+The original paper (PDF and LaTeX) and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+
+Suggested paper citation — Chatgpt (2026), *The exact I3322 Bell value of isotropic qutrit pairs*, [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
+
 ## 中文
 
 在检验贝尔非局域性时，把每一方可选的测量从两种增加到三种，能否让原本被噪声掩盖的非局域性显现出来？对掺入白噪声的最大纠缠三能级粒子对，三设置 I3322 检验与两设置 CHSH 检验的**临界可见度完全相同**。这证明了 Ito、Imai 与 Avis 在 2006 年提出的猜想 1。若进一步增加到每方四种设置，则确实能在所有三设置二元测量实验都容许局域模型的情形下检出非局域性。[原论文第 IV C 节，猜想 1][ito]
@@ -72,8 +78,19 @@ Alice 和 Bob 在相互分离的两地各自选择三种测量中的一种，每
 
 Lean 工程从 9 × 9 密度矩阵和玻恩规则出发，允许每个测量结果由任意复数域上的正算符表示，且其补算符也须为正。`IsotropicI3322.maximum` 同时证明分数上界及其可达到性，`violation_iff` 给出严格的违反条件。`IsoSeparation.strict_separation` 核验了 19/25 处的 I3322 上界和显式 A₅ 违反。从这些结论推及每组三设置实验都存在局域模型，还使用了文献中的贝尔不等式分类。单独列出的 Lean 文件是定理入口，依赖模块与核验记录均在完整工程内。[英文论文 PDF](./IsotropicI3322.pdf) · [LaTeX 源码](./IsotropicI3322.tex) · [Lean 定理入口](./Lean/IsotropicI3322.lean) · [完整 Lean 工程及核验记录](./Lean/IsotropicI3322_Lean.zip)
 
+### 许可与署名
+
+本项目原创的论文 PDF、LaTeX 源稿和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+
+论文的推荐署名为 Chatgpt（2026），*The exact I3322 Bell value of isotropic qutrit pairs*，[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
+
 [ito]: https://arxiv.org/pdf/quant-ph/0508210#page=6
 [cg]: https://arxiv.org/abs/quant-ph/0306129
 [ld]: https://arxiv.org/pdf/quant-ph/0604045#page=5
 [nav]: https://arxiv.org/pdf/1507.07521#page=7
 [pv]: https://arxiv.org/abs/1006.3032
+
+[doc-license]: https://creativecommons.org/licenses/by/4.0/
+[code-license]: ../../LICENSES/MIT.txt
+[lic-scope]: ../../LICENSE
+[project-source]: https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/i3322-qutrit-conjecture
