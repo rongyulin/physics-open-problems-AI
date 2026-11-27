@@ -1,0 +1,138 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.87in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={Chatgpt},pdftitle={A certified analytic family of nonconcentric equilateral triangles in the Newtonian six-body problem}}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newcommand{\R}{\mathbb R}
+\title{A certified analytic family of nonconcentric equilateral triangles\\in the Newtonian six-body problem}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Xie, Bhusal and Tahir exhibited numerical examples of planar central configurations consisting of two nonconcentric equilateral triangles with a common reflection axis. We give an exact interval proof of a one-parameter analytic family in this class. After fixing the outer triangle and normalizing its two base masses to one, we describe a corridor of shapes containing exactly one solution at every inner-apex height in a prescribed interval. The outer-apex mass ratio is strictly increasing along the family. The conclusion gives local uniqueness for fixed mass within this corridor. It leaves the general fixed-mass six-body finiteness problem open.
+\end{abstract}
+
+\section{The configuration and statement}
+In the Newtonian point-mass problem, with gravitational constant one, positions $q_i$ and positive masses $m_i$ are central if their accelerations satisfy
+\[
+\sum_{j\ne i}m_j\frac{q_j-q_i}{\lVert q_j-q_i\rVert^3}
+=-\lambda(q_i-\bar q),\qquad
+\bar q=\frac{\sum_j m_jq_j}{\sum_jm_j},\quad \lambda>0.
+\]
+We use coordinates $(x,y)$ for the physical Cartesian point $(x,\sqrt3\,y)$. Put $d=a-b$. The normalized positions and their masses are
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Bodies & Coordinates & Mass per body\\
+\midrule
+$1,2$ & $(d,b),(-d,b)$ & $u$\\
+$3$ & $(0,a)$ & $v$\\
+$4$ & $(0,0)$ & $w$\\
+$5,6$ & $(1,1),(-1,1)$ & $1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus the side lengths of the two triangles are $2d$ and $2$. Put $z=a-7/8$ and
+\[
+P(a)=0.28057414+0.5382z-3.12z^2,\qquad \epsilon=1/40000.
+\]
+All terminating decimals in this paper denote exact rationals.
+
+\begin{theorem}\label{thm}
+For every $a\in[0.87,0.88]$ there is exactly one choice of $b,u,v,w$ with $|b-P(a)|\le\epsilon$ and $u,v,w>0$ for which the displayed positions and masses are central. The functions $b,u,v,w$ are real analytic locally at every point of the interval. Throughout the family,
+\[
+0.0879<w<0.1037,\qquad 0.5054<u<0.5672,\qquad 1.1055<v<1.3109 .
+\]
+The derivative of the normalized outer-apex mass satisfies $1.4531<w'(a)<1.7431$. Consequently at most one marked shape in this corridor belongs to any prescribed value of $w$.
+\end{theorem}
+
+The triangles have centroid heights $(a+2b)/3$ and $2/3$ in our scaled coordinate. The corridor has $0<b<a<1$, $0<d<1$, and $a+2b<2$. In particular its six positions are pairwise distinct and its triangles have different centroids. The fixed outer triangle determines the similarity frame and the marked inner-apex height distinguishes the shapes.
+
+Xie, Bhusal and Tahir imposed the same geometric ansatz. Their Theorem~1.1(E), Remark~1.2 and Table~2 report Maple searches for four distinct mass values with different triangle centroids. They plotted candidate curves and explicitly identified this part as numerical~\cite{xie}. Our $a,b$ equal their vertical coordinates divided by $\sqrt3$. Their examples provide the prior evidence for the phenomenon. Theorem~\ref{thm} supplies existence, local analytic uniqueness and mass monotonicity on an explicit corridor. The classification of concentric twisted triangles in~\cite{crowns} treats a different geometric locus.
+
+\section{Reduction of the Newton equations}
+Define $g(x)=1/(x\sqrt{x})$, $e=1/8$, and
+\begin{align*}
+h&=(2d)^{-3}, &t&=g(d^2+3b^2),&c&=g(3a^2),\\
+s&=g((1-d)^2+3(1-b)^2),&
+r&=g((1+d)^2+3(1-b)^2),&
+l&=g(1+3(1-a)^2).
+\end{align*}
+These are the inverse cubed distances obtained from the metric $dx^2+3dy^2$. For instance $s$ and $r$ correspond to body~1 interacting with bodies~5 and~6. Write the physical acceleration as $(X_i,\sqrt3 Y_i)$. Reflection symmetry leaves six independent components. Directly summing the forces gives
+\begin{align*}
+X_1&=-2dhu-dhv-dtw+(1-d)s-(1+d)r,\\
+Y_1&=dhv-btw+(1-b)(s+r),&
+Y_3&=-2dhu-acw+2(1-a)l,\\
+Y_4&=2btu+acv+2e,&
+X_5&=((d-1)s-(d+1)r)u-lv-ew-2e,\\
+Y_5&=(b-1)(s+r)u+(a-1)lv-ew .
+\end{align*}
+An affine acceleration law $X_i=k x_i$, $Y_i=k y_i+j$ requires $k=X_5$ and $j=Y_4$. Conversely these choices obey the law precisely when
+\begin{align}
+Y_3-Y_1-X_1&=0,&Y_5-Y_4-X_5&=0,\notag\\
+X_1-dX_5&=0,&Y_3-Y_4-aX_5&=0.\label{eq:four}
+\end{align}
+Indeed $a-b=d$, and the remaining three bodies are obtained by reflection. For positive masses in the specified corridor the expression for $X_5$ is negative. Pairwise cancellation of internal forces gives $j=-k\bar y$ after summation with mass weights. The affine slope therefore gives $\lambda=-k>0$ in the physical central-configuration equation.
+
+Write $R=v/u$. The first three equations in~\eqref{eq:four} can be solved explicitly, in the order
+\begin{align}
+w&=\frac{(2-a)s-ar-2(1-a)l}{a(t-c)},&
+R&=\frac{2bt-(b-d)s-(b+d)r}{a(l-c)},\notag\\
+S&=(d-1)s-(d+1)r-Rl,&
+u&=\frac{-dtw+(1-d)s-(1+d)r+de(w+2)}{d[h(2+R)+S]},\qquad v=uR.\label{eq:m}
+\end{align}
+Substitution into the final equation gives one scalar function
+\[
+F(a,b)=u[-2dh-2bt-acR-aS]+[-acw+2(1-a)l-2e+ae(w+2)].
+\]
+On the corridor the interval computations below bound every divisor in~\eqref{eq:m} away from zero. All masses for central shapes in this class must take the displayed values. Each zero of $F$ with these masses satisfies all four equations.
+
+\section{Uniform bounds and analytic continuation}
+Subdivide $[0.87,0.88]$ into 4,000 equal closed intervals $[a_0,a_1]$. The derivative $P'(a)=0.5382-6.24(a-7/8)$ is positive throughout. The curvilinear slab $P(a)-\epsilon\le b\le P(a)+\epsilon$ is therefore contained in
+\[
+[a_0,a_1]\times[P(a_0)-\epsilon,P(a_1)+\epsilon].
+\]
+To evaluate $F$ along its two edges, replace the second interval with $[P(a_0)\pm\epsilon,P(a_1)\pm\epsilon]$, using a common sign at both ends. The two edge functions agree across the joins of adjacent slabs.
+
+The rational verifier accompanies this paper as \texttt{continuation.py}. It evaluates expressions by enclosing both operands at every operation. Each new endpoint is rounded outwards to a multiple of $10^{-9}$. If $x\ge0$ is rational, the lower enclosure for $\sqrt{x}$ is $10^{-9}\lfloor\sqrt{\lfloor10^{18}x\rfloor}\rfloor$, and adding $10^{-9}$ gives an upper enclosure. The code rejects a reciprocal unless the denominator's lower bound is positive. It differentiates the same formulas by the sum, product and chain rules. The following extrema are enclosures over all 4,000 slabs.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Lower endpoint & Upper endpoint\\
+\midrule
+$F(a,P(a)-\epsilon)$ & $-0.001953422$ & $-0.000376509$\\
+$F(a,P(a)+\epsilon)$ & $0.000289681$ & $0.002117357$\\
+$F_b$ & $27.439643169$ & $60.971361843$\\
+$w_a-w_b F_a/F_b$ & $1.453154120$ & $1.743050985$\\
+$w$ & $0.087941992$ & $0.103607943$\\
+$u$ & $0.505498846$ & $0.567175769$\\
+$v$ & $1.105569924$ & $1.310848936$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For fixed $a$, the edge signs and continuity give a root strictly between the edges. Strict positivity of $F_b$ gives uniqueness on that section. Since all divisors and square-root arguments stay positive, the formulas are real analytic on a neighborhood of each root. The analytic implicit function theorem gives $b'(a)=-F_a/F_b$. At a shared endpoint of two slabs the root is interior to the common section, so the local descriptions agree. The bound for $w_a-w_bF_a/F_b$ proves the claimed monotonicity. This completes the proof of Theorem~\ref{thm}.
+
+\section{Reproduction and scope}
+Run \texttt{python continuation.py 4000} alongside \texttt{make\_certificate.py} and \texttt{verify\_derivative.py}. These programs use the Python standard library, including exact rational arithmetic and integer square roots. The 4,000-slab result, differentiated enclosures and analytic continuation rely on this computation and the calculus argument above. A separate, smaller rectangle provides a compact certificate of the existence mechanism. For $0.874999999\le a\le0.875000001$, $0.28055\le b\le0.28060$, its left and right edge residuals lie respectively in $[-0.000898888,-0.000897720]$ and $[0.000953445,0.000954513]$.
+
+% LEAN_SCOPE
+For the smaller rectangle, Lean 4.28 verifies the interval arithmetic, the opposite edge signs and positivity of the masses, continuity, the intermediate value argument, and the per-particle Newton equations. The final formal statement proves that the six positions are distinct, all masses are positive, both triangles are equilateral with different centroids, and every particle's inverse-cube acceleration equals $-\lambda(q_i-\bar q)$ with $\lambda>0$ and the actual mass-weighted center $\bar q$. The final result uses only the standard Lean axioms of propositional extensionality, choice and quotient soundness. The wide-corridor and derivative statements use the separate rational verifier.
+
+The four mass classes on this family satisfy $w<u<1<v$. Changing $a$ strictly changes $w$, so the continuum of shapes does not yield a continuum for one mass vector. The unrestricted planar six-body finiteness problem asks about all shapes at fixed positive masses. Other stationary shapes at any of the masses considered here remain possible.
+
+\begin{thebibliography}{9}
+\bibitem{xie} Z. Xie, G. Bhusal and H. Tahir.
+Central configurations in the planar 6-body problem forming two equilateral triangles.
+\emph{J. Geom. Phys.} \textbf{153} (2020), 103645.
+\href{https://doi.org/10.1016/j.geomphys.2020.103645}{doi:10.1016/j.geomphys.2020.103645}.
+\bibitem{crowns} E. Barrab\'es and J. M. Cors.
+On central configurations of the $\kappa n$-body problem.
+\emph{J. Math. Anal. Appl.} \textbf{476} (2019), 720--736.
+\href{https://doi.org/10.1016/j.jmaa.2019.04.010}{doi:10.1016/j.jmaa.2019.04.010}.
+\end{thebibliography}
+\end{document}

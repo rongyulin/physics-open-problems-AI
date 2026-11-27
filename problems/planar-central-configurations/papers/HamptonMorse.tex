@@ -1,0 +1,91 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.93in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,float}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={Chatgpt},pdftitle={Morse indices of equal-mass Newtonian central configurations for six and seven bodies}}
+\newtheorem{theorem}{Theorem}
+\setlength{\emergencystretch}{1em}
+\title{Morse indices of equal-mass Newtonian central configurations\\for six and seven bodies}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Hampton predicted the Morse polynomials of the planar equal-mass central configurations for six and seven bodies in the Newtonian case. Combining the exhaustive catalogues of Moczurad and Zgliczyński with rational interval certificates for the Hessian inertia and the orthogonal stabilizer of each geometric shape, we obtain both polynomials. The certificates cover nine six-body and fourteen seven-body representatives. The result establishes the Newtonian clause of Hampton's Conjecture~4 and the seven-body clause of Conjecture~5. The coefficients had been investigated numerically. We give a reproducible certification of their association to all labelled shapes.
+\end{abstract}
+
+\section{The two polynomial identities}
+A planar central configuration consists of distinct points $q_i$ whose Newtonian accelerations are a common negative multiple of their displacements from the center of mass. Normalize the total mass to one, place the center of mass at the origin, and use a positive scaling to set the multiplier to one. Rotations are identified. The bodies retain their labels. The coefficient of $t^j$ in $M_N(t)$ counts configurations for which the second variation of the normalized potential has $j$ negative directions.
+
+\begin{theorem}
+For the planar Newtonian problem with equal masses,
+\begin{align*}
+M_6(t)&=384+840t+1080t^2+960t^3+360t^4,\\
+M_7(t)&=840+10080t+15840t^2+12600t^3+10080t^4+4200t^5.
+\end{align*}
+\end{theorem}
+
+Hampton stated the first polynomial in the $A=3$ clause of Conjecture~4, and the second, in factored form, in the $N=7$ clause of Conjecture~5 in Sections~3.4--3.5 of~\cite{hampton}. Here $A=3$ denotes the inverse-distance potential and Newtonian acceleration. The large-$A$ statement in Conjecture~4 and the cases $N=8,9$ in Conjecture~5 are beyond our theorem. Hampton discussed earlier numerical calculations by Ferrario; Doicu, Zhao and Doicu subsequently computed configurations and Hessian indices numerically through $N=12$~\cite{doicu}. Moczurad and Zgliczyński rigorously listed all geometric shapes for $N=5,6,7$~\cite{mz}. Our proof uses their completeness theorem, independently encloses points, and certifies both their index and labelled multiplicity. A public report by Foundation-0, dated 15 November 2026, independently documents interval root, Morse-index and symmetry certificates for lists at $N=8,9,10$; it explicitly leaves their global completeness open~\cite{f0}. Its published certificate replay covers those three values. Here a pre-existing completeness theorem at $N=6,7$ turns exact local certificates into full Morse counts. We make no priority claim for the numerical coefficients or the interval method. The sums of our coefficients are 3,624 and 53,640.
+
+\section{Index, normalization and rotational gauge}
+At the chosen normalization put
+\[
+ \Phi(q)=\tfrac12\sum_i |q_i|^2+\tfrac1N\sum_{i<j}|q_i-q_j|^{-1},
+ \qquad F_i=\nabla_i\Phi=q_i-\tfrac1N\sum_{j\ne i}\frac{q_i-q_j}{|q_i-q_j|^3}.
+\]
+At $m_i=1/N$, total mass $M=1$ and $A=3$, this is precisely $N$ times Hampton's function $f=MI/2+U/(A-2)$. Thus the index of $\Phi$ on the quotient by proper rotations agrees with his definition. Let $J=DF$. Summing the $F_i$ shows that each zero is centered. Translating all bodies contributes two eigenvalues of $J$ equal to one. The radial vector $q$ has eigenvalue three at a zero, since $F(sq)=sq-s^{-2}q$. Rotation invariance contributes a null vector $(\mathcal J q_i)_i$, where $\mathcal J$ is the planar quarter-turn. On centered fixed-inertia shapes the radial direction is removed, and passing to the orbit space removes the rotation direction. Hence these normalizations preserve the negative index. The Hessian of the augmented potential on the tangent space of the fixed-inertia surface is precisely the constrained second variation.
+
+Put a marked body on the positive horizontal axis, remove its $y$ coordinate, and drop its $y$ force equation. This linear slice is transverse to the rotational null vector. Its $(2N-1)$-dimensional principal submatrix $J_*$ represents the restriction of the quadratic form. Completing a basis of the slice by the rotation vector shows that the full form is congruent to the direct sum of $J_*$ with a one-dimensional zero form. The omitted force equation follows from $\sum_i q_i\wedge F_i=0$, the exact pairwise torque identity.
+
+For $d=q_i-q_j$ put $B(d)=I/|d|^3-3dd^T/|d|^5$. Start with the identity matrix. Each pair subtracts $B(d)/N$ from both diagonal blocks and adds it to both off-diagonal blocks of $J$. To certify the inertia of the symmetric matrix $J_*$, at a pivot $p$ with remaining column $w$ and trailing block $C$, use congruence with the direct sum of $p$ and $C-ww^T/p$. An interval excluding zero for every pivot proves that their negative signs count the negative eigenvalues at the exact root.
+
+\section{Representatives, symmetry and counting}
+For each shape, the input is a vector $c$ of decimal rationals on the slice. The half-width $r$ of its box $X$ is $10^{-12}$ for six bodies and $10^{-11}$ for seven. Enclose a fixed rational matrix $R$ approximating the inverse of the midpoint Jacobian. Using endpoints on the grid $10^{-42}\mathbb Z$ and rounding outwards, verify
+\[
+ L=\sup_{q\in X}\lVert I-RJ_*(q)\rVert_\infty<1,\qquad
+ \lVert RF_*(c)\rVert_\infty+Lr<r .
+\]
+The row-sum bound gives strict contraction and self-inclusion for $q\mapsto q-RF_*(q)$. The first inequality implies that $R$ is nonsingular. Thus the box contains exactly one zero of $F_*$. Square roots are enclosed by integer square roots, and interval elimination on $X$ determines the index at that zero. For fixed $N$, the nine or fourteen computed intervals for $\max_i |q_i|^2$ are pairwise disjoint. This quantity is invariant under permutations and orthogonal transformations. Together with the published exhaustive shape counts~\cite{mz}, disjointness identifies a complete set of geometries.
+
+To certify multiplicities, fix the marked positive-axis body and test all its possible preimages under an orthogonal symmetry. Choosing a preimage and the sign of the determinant determines the transformation. For each admissible candidate the verifier encloses all transformed positions, after reordering, inside their original uniqueness boxes. The transformed tuple solves the same equations, so uniqueness proves equality. Every rejected candidate has a disjoint coordinate enclosure or an incompatible radius. Every shape in both catalogues admits a reflection. When $h$ is the size of the rotation subgroup, its labelled multiplicity under orientation-preserving similarities is $N!/h$. The reflection makes a second mirror copy of the underlying geometric shape unnecessary. A reflection fixing a collinear shape pointwise leaves this formula valid.
+
+\begin{table}[H]
+\centering
+\caption{Index $j$, rotation count $h$ and labelled weight $w=N!/h$. Identifiers follow A.2.4 and A.2.5 of the expanded catalogue~\cite{mz}.}
+\smallskip
+\begin{tabular}{rrrr@{\qquad\qquad}rrrr}
+\toprule
+\multicolumn{4}{c}{Six bodies}&\multicolumn{4}{c}{Seven bodies}\\
+ID&$j$&$h$&$w$&ID&$j$&$h$&$w$\\
+\midrule
+1&4&2&360&1&5&2&2520\\
+2&2&2&360&2&3&2&2520\\
+3&3&3&240&3&2&7&720\\
+4&2&1&720&4&0&6&840\\
+5&1&6&120&5&2&1&5040\\
+6&0&3&240&6&1&1&5040\\
+7&3&1&720&7&1&1&5040\\
+8&1&1&720&8&2&1&5040\\
+9&0&5&144&9&2&1&5040\\
+&&&&10&3&1&5040\\
+&&&&11&5&3&1680\\
+&&&&12&4&1&5040\\
+&&&&13&3&1&5040\\
+&&&&14&4&1&5040\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Adding the weights within each index proves the theorem. At $N=6$, for example, the two minima have multiplicities 240 and 144. At $N=7$ representative 4 is the only minimum and contributes 840.
+
+\section{Verification and scope}
+The distributed certificates give rational centers, checks on the full coordinate boxes, the pivot signs and the symmetry counts. The Python verifiers use only the standard library. The closed Lean theorems \texttt{HamptonReplay.hampton6} and \texttt{HamptonReplay.hampton7} recompute the 23 interval Hessians and pivot-sign counts from the coordinate data using dyadic arithmetic, and sum the supplied orbit weights at each index. Both kernel checks report only propositional extensionality and quotient soundness among their axioms. The point enclosures and orbit weights are justified by the separate interval certificates. This proof combines a published completeness theorem, exact interval computations and the inertia and counting arguments above. These steps together have not been formalized end to end in Lean.
+
+\begin{thebibliography}{9}
+\bibitem{hampton} M. Hampton, Planar $N$-body central configurations with a homogeneous potential, \emph{Celest. Mech. Dyn. Astron.} \textbf{131} (2019), 20. \href{https://doi.org/10.1007/s10569-019-9898-0}{doi:10.1007/s10569-019-9898-0}. \href{https://arxiv.org/abs/1810.13011}{arXiv:1810.13011}.
+\bibitem{mz} M. Moczurad and P. Zgliczyński, Central configurations in planar $n$-body problem with equal masses for $n=5,6,7$, \emph{Celest. Mech. Dyn. Astron.} \textbf{131} (2019), 46. \href{https://doi.org/10.1007/s10569-019-9920-6}{doi:10.1007/s10569-019-9920-6}. \href{https://arxiv.org/abs/1812.07279}{arXiv:1812.07279}.
+\bibitem{doicu} A. Doicu, L. Zhao and A. Doicu, A stochastic optimization algorithm for analyzing planar central and balanced configurations in the $n$-body problem, \emph{Celest. Mech. Dyn. Astron.} \textbf{134} (2022), 29. \href{https://doi.org/10.1007/s10569-022-10075-7}{doi:10.1007/s10569-022-10075-7}.
+\bibitem{f0} Foundation-0, Central configurations computation report, 15 November 2026, revision \texttt{7c74606d01da}. \href{https://github.com/Foundation-0/f0/blob/7c74606d01da2b89b6fd5ef8710006842ad2b698/org/review/2026-11/science/threads/reports/cc.md}{Archived report and associated GitHub project}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,348 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Exactly 4104 labelled oriented planar central configurations for five nearly equal masses and one light mass},pdfauthor={Chatgpt}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\cc}{central configuration}
+\title{Exactly 4104 labelled oriented planar central configurations\\for five nearly equal masses and one light mass}
+\author{Chatgpt}
+\date{Research manuscript, 27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Five nearly equal positive masses and a sufficiently light sixth body have exactly 4104 labelled Newtonian central configurations in the plane up to translation, rotation and positive scale. The count becomes 2232 when reflections are identified. For five exactly equal heavy masses, identifying their permutations gives 35 shapes up to rotation and 27 when reflections are also identified. Exact-arithmetic interval computations isolate all equilibria of a massless test body at the five equal-mass primary shapes, yielding respectively 8, 12, 10, 14 and 16 simple roots. Nondegenerate continuation and compactness give the count on an open mass regime. Comparison with the 3624 labelled oriented configurations for six equal masses forces a degenerate noncollinear configuration at an intermediate real algebraic mass ratio where the count changes. We also prove a finiteness transfer that allows degenerate test equilibria, bound their isolated physical multiplicities, and describe a conditional extension to arbitrary five primary masses. The interval certificates and the separately formalized Lean results are identified below.
+\end{abstract}
+
+\section{The mass regime}
+A planar Newtonian central configuration consists of distinct positions at which every acceleration equals a common negative multiple of displacement from the centre of mass. Such shapes generate rigidly rotating solutions. The finiteness problem asks whether prescribing the masses leaves only finitely many shapes. We count labelled configurations up to translation, positive scale and rotation. Allowing reflections or permutations among equal bodies can only decrease the count.
+
+The equal-mass enumerations of Moczurad and Zgliczyński \cite{equal} cover all shapes and establish their nondegeneracy modulo rotation. Their later perturbation result covers a neighbourhood of six equal masses \cite{near}. A recent generic six-body theorem excludes an algebraic exceptional set containing every mass vector with three equal entries \cite{six}. Thus its sufficient condition fails on the entire ray of mass ratios studied here. The small sixth mass puts our interval at the opposite end of this parameter family from the point of six equal masses.
+
+\begin{theorem}\label{counttheorem}
+There exist an open neighbourhood $V$ of $(1,1,1,1,1)$ in $(0,\infty)^5$ and $\epsilon>0$ such that, for every $b\in V$ and $0<t<\epsilon$, the planar Newtonian problem with masses $(b_1,\dots,b_5,t)$ has exactly $4104$ labelled oriented similarity classes of central configurations. Every class is nondegenerate modulo rotation. If reflections are identified, there are $2232$ labelled classes. No permutation of equal-mass labels is used in either count. For $b=(1,1,1,1,1)$, identifying permutations of the five heavy bodies gives exactly $35$ classes up to rotation and $27$ if reflections are also identified.
+\end{theorem}
+
+\begin{corollary}\label{degen}
+There is a real algebraic $t_*\in(0,1)$ such that the planar problem with masses $(1,1,1,1,1,t_*)$ has a noncollinear central configuration degenerate modulo rotation. Every neighbourhood of $t_*$ contains mass ratios at which the labelled oriented counts differ.
+\end{corollary}
+The theorem states the existence of an open mass regime. The computation below isolates the limiting equilibria and does not give a numerical value of $\epsilon$ or $t_*$. We first develop the local and compactness arguments for a general number of primaries.
+\begin{theorem}\label{main}
+Let $n\ge2$ and $a\in(0,\infty)^n$. Suppose the normalized planar $n$-body configurations for $a$ form finitely many rotation orbits, all nondegenerate modulo rotation. There exist an open neighbourhood $V$ of $a$, numbers $\epsilon>0$ and $B<\infty$, such that for every $b\in V$ and every $0<t<\epsilon$ the planar $(n+1)$-body system of masses $(b,t)$ has at most $B$ labelled oriented similarity classes of central configurations.
+\end{theorem}
+
+\begin{corollary}\label{equalcor}
+For $n=5,6,7$ one may take $a=(1,\ldots,1)$ in Theorem~\ref{main}. The five-primary count is given by Theorem~\ref{counttheorem}; for six and seven primaries we obtain finiteness.
+\end{corollary}
+The nondegeneracy assertion used in this corollary is explicit in \cite[Theorem 1 and end of Sect.~5.2]{equal}. Reflection and labelling conventions matter for numerical counts. We use the 354 labelled, oriented five-body classes tabulated in \cite[Table 3]{near}; see also \cite{count}.
+
+\section{The limiting equations}
+Translate the centre of mass to the origin and use scale to set the positive multiplier to one. With $r_{ij}=|q_i-q_j|$, the divided acceleration equations are
+\begin{equation}\label{normal}
+ F_i(q,m)=q_i+\sum_{j\ne i}m_j(q_j-q_i)r_{ij}^{-3}=0 .
+\end{equation}
+Summing with weights $m_i$ gives $\sum m_iq_i=0$. All rows, including that of the test body, extend analytically through zero test mass on collision-free configurations. Multiplying the last row by its mass would lose its equation at the boundary. For the compactness argument we fix rotation globally by $y_1=y_2$ and $x_1>x_2$ on two distinguished primaries. Each labelled oriented orbit has one such representative. To continue simple roots we use the equivalent local slice $y_k=0$, $x_k>0$, rotating a nonzero primary onto the positive horizontal axis.
+
+Write the primary positions as $Q$ and the light position as $u$. At $(a,0)$ the heavy equations are exactly those for $a$, independent of $u$. The light equations are $\nabla W_Q(u)=0$, where
+\[
+ W_Q(u)=\tfrac12 |u|^2+\sum_{j=1}^n \frac{a_j}{|u-Q_j|}.
+\]
+For each such $Q$ the test-body equilibria form a finite set by Hampton and Jensen \cite[Theorem 3.1]{hj}, applied to a zero-mass additional body. Their primaries are fixed. For positive $t$ our primaries are free to move in response to the light body.
+
+\begin{lemma}[Compactness with one vanishing mass]\label{compactone}
+If $b\to a\in(0,\infty)^n$ and $t\downarrow0$, every sequence of normalized physical configurations of masses $(b,t)$ has a subsequence converging in the chosen slice to a collision-free solution of the divided boundary equations.
+\end{lemma}
+\begin{proof}
+Pass to subsequences in the finite list of mutual distances so that every distance is either bounded or tends to infinity. Bounded mutual distance is an equivalence relation on the labels. For a class $S$ let $M_S=\sum_{i\in S}m_i$ and $C_S=M_S^{-1}\sum_{i\in S}m_iq_i$. Write $v_{ij}=(q_i-q_j)/r_{ij}^3$. The internal pair forces cancel after multiplication by the masses, so \eqref{normal} gives
+\[
+ C_S=\sum_{i\in S}\frac{m_i}{M_S}\sum_{j\notin S}m_jv_{ij}.
+\]
+The right hand side tends to zero since each external distance tends to infinity, the masses are bounded, and the nonnegative weights $m_i/M_S$ sum to one. This includes a singleton light class. It also includes the one-class partition, when $C_S=0$. Since every class has bounded diameter, all positions are bounded. In particular, an originally unbounded sequence cannot exist: start with a subsequence along which the maximal norm tends to infinity and apply the same argument.
+
+Suppose a heavy--heavy collision occurs and let $\delta$ be the minimum distance among heavy pairs. Along a further subsequence $\delta\to0$, the same heavy pair realizes this minimum, and each quotient $r_{ij}/\delta$ is either bounded or tends to infinity. Form the bounded-quotient class $S$ of the closest pair, including the light body if it belongs. Every $|q_i-C_S|$ for $i\in S$ is $O(\delta)$. Taking inner products of \eqref{normal} with $m_i(q_i-C_S)$ and summing over $S$ yields the cluster virial identity
+\[
+ \sum_{i<j\,;\ i,j\in S}\frac{m_im_j}{r_{ij}}
+ =\sum_{i\in S}m_i|q_i-C_S|^2
+ -\sum_{i\in S}m_i(q_i-C_S)\cdot\sum_{j\notin S}m_jv_{ij}.
+\]
+The first term on the right is $O(\delta^2)$. Each external acceleration is $o(\delta^{-2})$, so the second term is $o(\delta^{-1})$. The pair attaining $\delta$ contributes at least $c/\delta$ to the positive left hand side for a uniform $c>0$. This is a contradiction.
+
+The primaries thus remain separated after passage to a convergent subsequence. If the light body approached one primary, that primary's contribution to its divided acceleration equation would have unbounded norm, while all other terms, including its position, stay bounded. This rules out the final collision. Continuity now gives the divided equations at $t=0$. The two primaries used in the global gauge remain separated, so its strict horizontal orientation persists. Related heavy--light compactness results appear in \cite[Theorems 6 and 8, Lemmas 9--10]{light}.
+\end{proof}
+The proof also gives compactness over a compact family of strictly positive mass vectors: all masses then have a uniform positive lower bound, and the cluster argument applies to a closest pair among all the bodies.
+
+\section{Local reduction and the count}
+\begin{proof}[Proof of Theorem~\ref{main}]
+Fix a physical boundary solution $(Q,u_0)$. The heavy coordinate slice has dimension $2n-1$. By nondegeneracy, the kernel of the full primary Jacobian is the rotation tangent. The slice is transverse to it since the infinitesimal change in $y_1-y_2$ under rotation is $x_1-x_2\ne0$. Select $2n-1$ primary scalar rows with an invertible derivative on the slice. All full configurations satisfy these rows. The real analytic implicit function theorem expresses the primary positions uniquely as $Q=H(u,b,t)$ locally. At $(b,t)=(a,0)$ this graph is identically $Q$ as a function of $u$.
+
+Substitute the graph in the two light rows. At the boundary their derivative in $u$ is $D^2W_Q(u_0)$. A direct planar differentiation gives
+\begin{equation}\label{trace}
+ \mathop{\rm tr}D^2W_Q(u_0)=2+\sum_j a_j |u_0-Q_j|^{-3}>0.
+\end{equation}
+One of the two diagonal entries is positive. Name its coordinate $x$ and the other $s$. A second application of analytic implicit elimination solves the corresponding light row for $x=h(s,b,t)$. Denote the remaining scalar residual by $g(s,b,t)$. At the limiting masses its zeros correspond locally to actual test-body equilibria for $Q$, since both test equations are imposed and the heavy solution is fixed. The boundary value $s_0$ is an isolated zero by \cite{hj}. Analyticity makes its order $k$ finite.
+
+On a small interval about $s_0$ and a common parameter neighbourhood, $\partial_s^k g$ stays nonzero. Repeated Rolle's theorem then allows at most $k$ distinct real zeros for each parameter: $k+1$ ordered zeros would force a zero of the $k$th derivative. Every full configuration in a sufficiently small open neighbourhood of $(Q,u_0)$ is reconstructed from such a zero by the two graphs. This upper bound only uses necessity of the selected primary rows, so discarding extra rows cannot invalidate it.
+
+There are finitely many boundary solutions. Choose one such neighbourhood for each and intersect their parameter neighbourhoods. If their union missed full solutions arbitrarily near $(a,0)$, a sequence of missed solutions would have a subsequence converging to one of the boundary points by the compactness result above, a contradiction. The sum of the local $k$'s bounds every sufficiently nearby positive fiber. A product neighbourhood gives the stated $V$ and $\epsilon$.
+\end{proof}
+
+\section{The exact six-body count}
+
+\paragraph{Primary representatives.}
+Moczurad and Zgliczyński classify the five equal-mass planar primary shapes and prove their nondegeneracy \cite{equal}. Appendix A.2.3 of their arXiv version supplies approximate coordinates. Our first checker uses mass $1/5$ for each primary and multiplier one. Given decimal centres rounded to 12 places, it checks a cube of radius $10^{-11}$ for each of the five configurations. The fourth body's $y$ coordinate and its corresponding force row are removed. A preconditioned fixed-point test verifies a strict self-map and contraction in the remaining nine coordinates using rational fixed-point interval arithmetic with outward rounding and integer square roots. The five certified ranges for $\max_i |Q_i|^2$ are pairwise disjoint. They therefore describe five distinct shapes, exhausting the published catalogue. For a common scaling of all masses by $h>0$, multiplying every position by $h^{1/3}$ conjugates the normalized equations. Thus certification at $1/5$ gives the unit-mass result.
+
+\paragraph{Test-particle certification.}
+For each primary representative the second checker encloses the true primary coordinates in cubes of radius $10^{-9}$. The decimal centres match those of the first checker. Each candidate position of the test body seeds a box $X$ of coordinate half-width at least $2^{-14}$, obtained by outward rounding. For each fixed selection of primaries in their boxes, the checker verifies that $v\mapsto v-B\nabla W_Q(v)$ maps $X$ strictly into itself and has derivative norm strictly below one there, for an invertible dyadic matrix $B$. This proves existence, uniqueness and nonsingularity in every listed box. All test boxes are pairwise disjoint.
+
+Completeness is checked separately. Each primary lies within distance 2 of the origin, and every pair is separated by more than $1/4$. For $|v|\ge4$ the total gravitational acceleration has norm at most $(|v|-2)^{-2}<|v|$. If $0<|v-Q_i|\le1/32$, the $i$th acceleration has norm at least $1024/5$, while the other four and the centrifugal term have combined norm less than $(4/5)(32/7)^2+2+1/32$. The verifier recursively bisects $[-4,4]^2$ into closed boxes. Every terminal box lies in a root box, lies wholly in a collision-exclusion disk, or has an interval force component excluding zero. The arithmetic uses outward-rounded dyadic endpoints of denominator $2^{72}$, with integer square roots. The companion primary script, restricted verifier, seed files and replay instructions give the finite checks; the search which proposed the seeds is not needed.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+Primary shape & Oriented labellings & Test roots & Product & Tree nodes\\
+\hline
+Collinear & 60 & 8 & 480 & 3183\\
+Square with centre & 30 & 12 & 360 & 5783\\
+Two isosceles triangles & 120 & 10 & 1200 & 6805\\
+Trapezium & 120 & 14 & 1680 & 25159\\
+Regular pentagon & 24 & 16 & 384 & 13559\\
+\hline
+Total & 354 & & 4104 & \\
+\end{tabular}
+\end{center}
+The second column divides $5!$ by the order of the shape's rotation group, respectively $2,4,1,1,5$. Each shape has a reflective symmetry \cite{equal}, so allowing both orientations before assigning labels adds no missing unlabelled shapes. These multiplicities sum to the independent total in \cite[Table 3]{near}.
+
+\begin{figure}[htbp]
+\centering
+\begingroup
+\setlength{\unitlength}{1mm}
+\definecolor{primaryDot}{RGB}{25,40,51}
+\definecolor{equilibriumRing}{RGB}{0,95,111}
+\newcommand{\pMass}[2]{\put(#1,#2){\color{primaryDot}\circle*{1.65}}}
+\newcommand{\pRoot}[2]{\put(#1,#2){\color{equilibriumRing}\linethickness{0.18mm}\circle{1.3}}}
+\newcommand{\pSmall}[2]{\put(#1,#2){\color{equilibriumRing}\linethickness{0.12mm}\circle{0.55}}}
+\begin{picture}(147,95)
+\put(24.00,89.00){\makebox(0,0){\sffamily\footnotesize Collinear $\cdot$ 8}}
+\pMass{9.730}{66.000}
+\pMass{17.269}{66.000}
+\pMass{30.731}{66.000}
+\pMass{38.270}{66.000}
+\pMass{24.000}{66.000}
+\pRoot{3.652}{66.000}
+\pRoot{13.564}{66.000}
+\pRoot{20.648}{66.000}
+\pRoot{24.000}{54.485}
+\pRoot{24.000}{77.515}
+\pRoot{27.352}{66.000}
+\pRoot{34.436}{66.000}
+\pRoot{44.348}{66.000}
+\put(73.00,89.00){\makebox(0,0){\sffamily\footnotesize Square with centre $\cdot$ 12}}
+\pMass{62.759}{66.000}
+\pMass{73.000}{55.759}
+\pMass{73.000}{66.000}
+\pMass{83.241}{66.000}
+\pMass{73.000}{76.241}
+\pRoot{55.992}{66.000}
+\pRoot{63.637}{56.637}
+\pRoot{63.637}{75.363}
+\pRoot{67.825}{66.000}
+\pRoot{73.000}{48.992}
+\pRoot{73.000}{60.825}
+\pRoot{73.000}{71.175}
+\pRoot{73.000}{83.008}
+\pRoot{78.175}{66.000}
+\pRoot{82.363}{56.637}
+\pRoot{82.363}{75.363}
+\pRoot{90.008}{66.000}
+\put(122.00,89.00){\makebox(0,0){\sffamily\footnotesize Two triangles $\cdot$ 10}}
+\pMass{111.346}{72.558}
+\pMass{119.337}{56.593}
+\pMass{126.271}{66.329}
+\pMass{134.511}{66.000}
+\pMass{118.536}{68.519}
+\pRoot{105.920}{75.826}
+\pRoot{110.563}{60.671}
+\pRoot{114.970}{70.500}
+\pRoot{117.476}{50.020}
+\pRoot{120.868}{62.000}
+\pRoot{122.374}{67.321}
+\pRoot{125.287}{77.611}
+\pRoot{128.946}{55.467}
+\pRoot{130.345}{66.147}
+\pRoot{140.844}{65.938}
+\put(48.50,47.00){\makebox(0,0){\sffamily\footnotesize Trapezium $\cdot$ 14}}
+\pMass{39.272}{27.520}
+\pMass{44.570}{14.998}
+\pMass{49.883}{22.971}
+\pMass{59.246}{25.000}
+\pMass{49.529}{34.510}
+\pRoot{32.567}{29.317}
+\pRoot{36.109}{19.264}
+\pRoot{40.678}{36.478}
+\pRoot{41.992}{8.850}
+\pRoot{44.466}{25.230}
+\put(28.0,29.675){\line(1,0){17.0}}
+\put(18.0,25.675){\framebox(10,8){}}
+\pRoot{21.710}{31.571}
+\pRoot{24.290}{27.779}
+\put(23.0,21.8){\makebox(0,0){\sffamily\scriptsize $20\times$}}
+\pSmall{45.247}{29.773}
+\pSmall{45.376}{29.584}
+\pRoot{47.122}{19.061}
+\pRoot{49.761}{28.839}
+\pRoot{50.309}{41.409}
+\pRoot{54.532}{24.111}
+\pRoot{55.719}{14.408}
+\pRoot{58.370}{34.435}
+\pRoot{65.911}{25.150}
+\put(97.50,47.00){\makebox(0,0){\sffamily\footnotesize Regular pentagon $\cdot$ 16}}
+\pMass{90.132}{30.353}
+\pMass{100.314}{16.339}
+\pMass{100.314}{33.661}
+\pMass{106.607}{25.000}
+\pMass{90.132}{19.647}
+\pRoot{82.947}{25.000}
+\pRoot{84.364}{15.456}
+\pRoot{84.364}{34.544}
+\pRoot{90.012}{25.000}
+\pRoot{93.003}{11.160}
+\pRoot{93.003}{38.840}
+\pRoot{95.186}{17.879}
+\pRoot{95.186}{32.121}
+\pRoot{97.500}{25.000}
+\pRoot{102.518}{9.558}
+\pRoot{102.518}{40.442}
+\pRoot{103.558}{20.599}
+\pRoot{103.558}{29.401}
+\pRoot{109.273}{16.446}
+\pRoot{109.273}{33.554}
+\pRoot{113.737}{25.000}
+\end{picture}
+\endgroup
+\caption{The five limiting primary shapes (filled disks) and the respective equilibria of the sixth, massless body (open circles), in the same coordinate scale. The trapezium inset enlarges the separation of a close pair twentyfold. Points are drawn at certificate box centres; the proofs of the counts use the full enclosures.}\label{fig:five}
+\end{figure}
+
+\begin{proof}[Proof of Theorem~\ref{counttheorem}]
+For each labelled oriented primary shape choose a primary $k$ with nonzero position and rotate it to $y_k=0$, $x_k>0$. Remove the scalar row $F_{k,y}$ from \eqref{normal}. The omitted row follows from the torque identity
+\[
+ \sum_i m_i q_i\wedge F_i=0,
+\]
+because each pair force acts along its joining line. If every retained row vanishes, this identity gives $m_k x_k F_{k,y}=0$. The heavy mass $m_k$ and $x_k$ remain strictly positive at the limiting solution and near it. Thus every zero of the reduced equations is a full configuration, including at zero test mass where both divided test rows are retained.
+
+In the primary subsystem, differentiating the torque identity at a full zero expresses the derivative of the omitted row as a linear combination of the retained row derivatives. The full heavy Jacobian has only the rotation tangent in its kernel by \cite{equal}, and the slice is transverse since the tangent has $k$th vertical component $x_k\ne0$. The square reduced heavy Jacobian $A$ is therefore invertible. At zero test mass the Jacobian after restoring the two test rows has the block form
+\[
+ \begin{pmatrix}A&0\\ *&D^2 W_Q(u)\end{pmatrix}.
+\]
+Each certified test Hessian is invertible. The implicit function theorem now continues each of the $4104$ boundary solutions to exactly one full, nondegenerate solution for all masses in a neighbourhood of the boundary vector. Disjoint neighbourhoods in the global labelled slice keep these solutions distinct. The one-light compactness argument above prevents further solutions over parameters tending to that vector, so shrinking all neighbourhoods gives the asserted product $V\times(0,\epsilon)$.
+
+Under a reflection, a labelled oriented shape is fixed precisely when all its bodies are collinear: composing any identifying rotation with the reflection gives an orientation-reversing isometry fixing each labelled point. Moulton's ordering theorem gives $6!/2=360$ collinear labelled oriented classes for every positive mass vector \cite{moulton}. Burnside's lemma for reflection therefore gives $(4104+360)/2=2232$.
+
+If the five heavy masses coincide and their permutations are identified, keeping orientation, fix one representative of each unlabelled primary shape. The remaining equivalence on the restricted roots is the rotation group of that shape. For the collinear and square-with-centre shapes the origin is occupied by a primary; a nonidentity rotation fixes only the origin, so the actions on the restricted roots are free and give $8/2=4$ and $12/4=3$ orbits. The two-triangle and trapezium groups are trivial and give $10$ and $14$. For the regular pentagon the origin is a restricted equilibrium by cyclic symmetry, and the other fifteen roots form three free five-element orbits, giving $4$ orbits. Thus the total is $4+3+10+14+4=35$. For all orthogonal transformations the five orbit counts are respectively $4,3,7,9,4$. The accompanying symmetry checker verifies the exact permutations of the root boxes induced by each primary symmetry. It enumerates the determinant sign and the primary carried to the fourth body's positive horizontal ray. Enclosing the transformed primaries in the certified boxes and invoking local uniqueness proves equality after relabelling. For each certified transformation its image of a test-root box intersects exactly one admissible target box, so the already exhaustive list identifies the image root. In the two-triangle and trapezium cases four restricted roots each are fixed by the reflection; the other roots are exchanged in pairs. For the other three shapes reflection preserves each rotation orbit. This gives $4+3+7+9+4=27$. Both permutations of equal-mass labels and reflection commute with the equations. Uniqueness makes the continuation bijection equivariant for both actions, giving the same orbit counts for all sufficiently small $t>0$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{degen}]
+The six-equal-mass catalogue and continuation give 3624 labelled oriented classes near $t=1$ \cite[Table 3]{near}. Let $T$ consist of the $t\in(0,1)$ for which the oriented count differs from $4104$, including an infinite fiber if one occurs. This is semialgebraic over $\mathbb Q$. Indeed the gauge $y_1=y_2$, $x_1>x_2$ represents each orbit exactly once, and positive inverse distances satisfy polynomial equations over $\mathbb Q$. A formula for exactly $4104$ solutions specifies $4104$ distinct solution tuples together with the condition that every solution equals one of them. Quantifier elimination over real closed fields gives the claim. A one-variable set semialgebraic over $\mathbb Q$ has only real algebraic finite boundary points. The near-zero count and the different near-one count thus imply $0<t_*:=\inf T<1$, with $t_*$ real algebraic. Every neighbourhood of $t_*$ contains parameters inside and outside $T$. Over a compact subinterval of positive $t$, the compactness argument following Lemma~\ref{compactone} applies. If every solution at $t_*$ were nondegenerate, that fiber would be compact and discrete, hence finite, and the implicit function theorem together with compactness would make the count locally constant. This contradiction proves degeneracy. Collinear classes cannot account for the required degeneracy. Indeed, for a collinear configuration with ordered coordinates $x_i$, put $(Lv)_i=\sum_{j\ne i}m_j(v_i-v_j)/|x_i-x_j|^3$. On the line the two Jacobian blocks of \eqref{normal} are $I+2L$ and $I-L$. The first is positive definite in the mass inner product. The classical collinear nondegeneracy theorem identifies the kernel of the second with the span of the rotation tangent $(x_i)$ \cite{collinear}. Thus at least one noncollinear class degenerates. For comparison, Meyer and Schmidt give the two critical mass candidates for a centred regular pentagon as approximately $6.478$ and $-0.2442$ \cite[Appendices A--B, $n=5$]{polygon}. The transition in $(0,1)$ therefore concerns a different configuration from the regular pentagon with the sixth body at its centre.
+\end{proof}
+
+\paragraph{Morse indices for all 4104 configurations.}
+The Morse index here counts negative eigenvalues of the second variation of the normalized Newtonian potential on shape space. In increasing index order $0,1,2,3,4$, the numbers of labelled oriented classes are
+\[
+ (264,\ 1080,\ 1440,\ 960,\ 360).
+\]
+To verify them, on a rotation slice take the Hessian of
+$U+\frac12\sum_i m_i|q_i|^2$, where $U=\sum_{i<j}m_im_j/r_{ij}$. Its gradient rows are the acceleration residuals multiplied by their corresponding masses. The two translation directions and the radial scaling direction are positive directions of the second variation, so retaining them leaves the negative index unchanged. For the five heavy representatives in table order, exact interval symmetric elimination on the nine-dimensional principal block gives indices $(3,0,2,1,0)$. On the original sixty restricted root boxes, the positive traces and strictly signed determinant enclosures give, respectively, the following numbers of minima and saddles:
+\[
+ (2,6),\quad(4,8),\quad(3,7),\quad(5,9),\quad(6,10).
+\]
+At fixed equal primary masses, along each continued branch the heavy Hessian block tends to an invertible matrix, the mixed block is $O(t)$ and the light block is $t(D^2 W_Q(u)+O(t))$. The Schur complement therefore has the same inertia as $D^2 W_Q(u)$ for sufficiently small $t>0$. Adding the heavy and restricted indices and weighting by the labelled multiplicities gives the displayed distribution. Each branch remains nondegenerate on a sufficiently small connected product neighbourhood, so its index stays constant also for nearly equal heavy masses. All 360 index-four classes are the collinear ones \cite{collinear}. The indices concern the shape potential; orbital stability would require analysis of the equations of motion.
+
+The companion manuscript on equal-mass Morse polynomials verifies the Newtonian six-body part of Hampton's Conjecture~4 and the seven-body part of his Conjecture~5 \cite{hamptonmorse}. In particular the six-equal vector is $(384,840,1080,960,360)$. Along the interval from the one-light regime to equality, the number of local minima therefore rises by 120 even though the total count falls by 480.
+
+\section{Bounds in the absence of a restricted count}
+
+\paragraph{A quantitative bound on the number of solutions.}
+For each primary shape we need an upper bound on the sum of the local orders of its physical restricted equilibria. Following the polynomial formulation of Arustamyan et al. \cite{arust}, introduce $p_j$ for the inverse distances of the test body, with equations
+\[
+ p_j^2\big((x-X_j)^2+(s-Y_j)^2\big)=1.
+\]
+Adjoin the two components of $u+\sum_j a_jp_j^3(Q_j-u)=0$. This gives $n+2$ polynomial equations of total degree at most four in $n+2$ unknowns. At a physical zero, every $p_j$ is a regular implicit coordinate, since the derivative of its distance equation with respect to $p_j$ is nonzero. Complexifying the remaining implicit elimination in the proof leaves the single holomorphic germ $g(s,a,0)$. The local intersection multiplicity is its order $k$: the local quotient after the regular eliminations is the ring of one-variable holomorphic germs modulo $g$. Each physical root is thus an isolated complex root on its distance sheet. The isolated-root form of B\'ezout's inequality bounds the sum of these multiplicities by $4^{n+2}$, also in the presence of other components \cite[Theorem 3]{bezout}. 
+A sharper estimate uses three blocks of variables. Pass to complex coordinates
+$z=x+is$, $w=x-is$ and put all $p_j$ in one block. With fixed centres $(z_j,w_j)$ the equations become
+\[
+ p_j^2(z-z_j)(w-w_j)=1,\qquad
+ z+\sum_j a_j p_j^3(z_j-z)=w+\sum_j a_j p_j^3(w_j-w)=0 .
+\]
+Homogenize in $\mathbb P^1_z\times\mathbb P^1_w\times\mathbb P^n_p$.
+Writing $Z,W,P$ for the three hyperplane classes, the multihomogeneous B\'ezout bound on isolated roots with multiplicity is
+\begin{align*}
+ B_n&=[ZWP^n](Z+W+2P)^n(Z+3P)(W+3P)\\
+    &=2^n+6n\,2^{n-1}+18\binom n2 2^{n-2}.
+\end{align*}
+Indeed the distance equations contribute block degrees $(1,1,2)$ and the two force rows $(1,0,3)$ and $(0,1,3)$. The formula follows by taking zero, one or two positional classes from the first $n$ factors. The generic intersection number bounds the sum at isolated affine zeros also when the special system has excess components: a small generic perturbation in these multidegrees preserves the local number counted with multiplicity at every isolated zero, and the generic total is the displayed coefficient \cite{multi}. In particular $B_5=1952$. This bound counts every inverse-distance sign sheet.
+
+\paragraph{Removing roots on the other sign sheets.}
+In fact the total local multiplicity of the isolated equilibria on the positive physical sheet is at most
+\[
+ C_n=B_n-(2^n-1)(n-1).
+\]
+For a sign vector $\sigma\in\{-1,1\}^n$, consider the real gradient field of
+$|u|^2/2+\sum_j \sigma_j a_j/|u-Q_j|$. It is proper from the punctured plane to the plane: its magnitude diverges at infinity and at every puncture. Its topological degree is $1-n$. The field winds once on a large positively oriented circle and once on a small positively oriented circle about each puncture. Changing the sign of a point mass rotates its leading radial vector by $\pi$ and preserves the winding. The inner circles have negative boundary orientation in the punctured disk. At a regular value the signed count is therefore $1-n$.
+
+Choose a sufficiently small real vector that is a regular value of all $2^n$ fields simultaneously, using Sard's theorem. The same constant shift of the two force equations realizes it on every real sign sheet. Each of the $2^n-1$ nonphysical sheets supplies at least $n-1$ distinct nonsingular real roots, hence simple complex roots of the lifted system. At each original isolated physical root, the local count with complex multiplicities is preserved for small shifts. In the implicit scalar chart this follows from Rouch\'e's theorem on a small circle around the zero of order $k$, after solving the shifted first force equation. Choose these finitely many neighbourhoods disjoint and with $\Re p_j>0$ throughout. The roots on other real sheets are outside them. Applying the same multihomogeneous bound to the shifted system proves the subtraction. Thus $C_5=1952-31\cdot4=1828$, giving the independent bound $354\cdot1828=647\,112$ for five nearly equal primaries before using the restricted-root certificates.
+
+This also gives a bound for the separate counting problem for $n$ arbitrary distinct positive centres in the plane with an added quadratic potential. Every isolated physical zero is complex-isolated on its physical sheet by the same trace and implicit-function argument. Their total multiplicity is at most $C_n$. This improves the general $4^{n+2}$ estimate in \cite{arust}; at $n=5$ the two bounds are $1828$ and $16384$. For fixed central configurations, \cite{hj} ensures these are all the physical equilibria. For arbitrary distinct positive planar centres the recent preprint \cite{zhou} asserts their finiteness. The maximal attainable number remains undetermined in general.
+
+\paragraph{Eventual constancy on the ray.}
+For fixed heavy masses, after shrinking $\epsilon$, the number of labelled oriented shapes is constant on $(0,\epsilon)$. In the normalized equations introduce positive inverse distances as above for every pair. The gauge, all equations and the condition for $k$ pairwise distinct solutions are semialgebraic. Tarski--Seidenberg gives a semialgebraic subset of the real parameter line where at least $k$ solutions exist. It is a finite union of intervals and points. Apply this to each integer $1\le k\le B$ and choose the interval next to zero on which all these tests are constant. This argument neither counts the shapes nor assumes simple restricted equilibria.
+
+\section{Complex isolation and five arbitrary primary masses}
+The following variant dispenses with invertibility of the heavy Jacobian. It separates the algebraic input used for the stronger five-body application from the published inputs used in Theorem~\ref{main}.
+
+\begin{theorem}\label{transfer}
+Suppose each physical configuration of masses $a$ is an isolated point of its complex, rotation-fixed fiber, with the inverse distances taken on their physical sheets. For every $b$ sufficiently near $a$ and every sufficiently small $t>0$, all physical configurations for $(b,t)$ are again isolated in the corresponding complex fiber. In particular there are finitely many.
+\end{theorem}
+\begin{proof}
+Use an affine complex family in the coordinates $q_i=(x_i,y_i)$, the masses and all inverse distances $p_{ij}$. Take $y_1=y_2$, the acceleration equations \eqref{normal} with $r_{ij}^{-3}$ replaced by $p_{ij}^3$, and
+$p_{ij}^2((x_i-x_j)^2+(y_i-y_j)^2)=1$. The inequalities $x_1>x_2$, $p_{ij}>0$ select physical real points.
+
+Projection of the boundary fiber $(a,0)$ to the primary fiber is defined because the primary equations lose all dependence on the test body. A physical primary point $Q$ is isolated there. Hence in a neighbourhood of a physical extension of $Q$ the underlying primary coordinates are fixed at $Q$. The distance equations choose local holomorphic inverse-distance sheets. For the two test equations, \eqref{trace} yields a holomorphic implicit graph solving one equation. Its restriction to real coordinates is real by uniqueness. The remaining holomorphic scalar residual has an isolated zero since an identically vanishing germ would give an arc of real test equilibria, contrary to \cite{hj}. The full boundary point is therefore isolated as a complex point of its fiber.
+
+The projection to the mass parameters is of finite type. Its locus of points isolated in their fibers is the quasi-finite locus, open in the source \cite{stacks}. Its complement is Euclidean closed and contains no physical point above $(a,0)$. A sequence of physical points in that complement over nearby positive masses would converge along a subsequence to such a point by the same compactness argument. Every inverse distance converges because the limit is collision-free. This proves the isolation claim. A finite-type complex fiber has finitely many isolated closed points, each an irreducible component.
+\end{proof}
+
+\paragraph{Conditional consequence of two five-body preprints.}
+Assume the complex-curve results of \cite{tomfive,tomspecial}. For every fixed choice $a_1,\ldots,a_5>0$ there is a neighbourhood $V$ of this vector and a single $\epsilon>0$ for which every six-body mass vector in $V\times(0,\epsilon)$ has finitely many physical configurations. Here is the precise dependence. On the rotation quotient of \cite[Lemmas 2.2 and 2.4, Corollary 2.5]{tomfive}, the potential is constant on every irreducible curve and the map to squared mutual distances has finite fibers. A curve through a physical point would have nonzero potential and some varying distance. The cases called settled in that paper exclude such curves. Its Corollary 8.3 and Theorem 9.15 leave three ratios, up to permutation and scaling, for this purpose. At $(1,4,4,4,4)$ none of the positive configurations lies on the listed complex curves. At $(1,1,4,4,4)$ the complex slice is finite. At $(9,36,36,36,4)$ every complex curve has zero potential \cite[Theorems 1.1--1.3]{tomspecial}. The gauges agree locally up to a finite rotation choice: in $z=x+iy,w=x-iy$ one solves $s^2=w_{12}/z_{12}$ for the rotation, with both differences nonzero. Theorem~\ref{transfer} now applies. Real finiteness alone would not imply its complex isolation hypothesis. This deduction has not been independently verified in Lean. It gives no cutoff uniform over the whole positive mass cone. Equivalently, on the unit-total-mass simplex, no sequence of hypothetical six-body counterexample mass vectors can approach the relative interior of a codimension-one face. A counterexample sequence approaching the boundary would have to lose at least two masses in the limit.
+
+\section{Verification and remaining questions}
+The exact-arithmetic primary and symmetry computations are supplied as Python source. The restricted calculation has two independent implementations. Five closed theorems in \texttt{RestrictedReplay.lean} verify in the Lean kernel the integer inequalities used to certify all sixty local root boxes; the reported axiom dependency for each is \texttt{propext}. The full $54\,489$-node subdivision runs as an executable in both Lean and C++/GMP. Both produce the same five counts and node totals. The interval enclosures for the real Newtonian equations and the proof that the accepted leaves cover every possible equilibrium are given in the section on the exact six-body count.
+
+The main Lean project also verifies the restricted-potential derivatives, positive Hessian trace, local scalar bound and torque identity. In \texttt{BranchGluing.lean}, the machine-checked inverse function theorem constructs the uniform nearby bijection from the specified invertible derivatives of an augmented map, parameter continuity, disjoint neighbourhoods and sequential compactness. In \texttt{SixBodyCount.lean}, finite-sum cardinality and the supplied fibre counts give 4104. Other theorems verify the reflection quotient, both geometric orbit totals and the connected-parameter inference. Instantiating every such hypothesis for the Newtonian family, including the published five-body enumeration and the bridge from certified interval tests to real Hessians, is part of the mathematical argument. The six-body counting theorem as a whole has a partial Lean formalization.
+
+The root certificates and the implicit function theorem give the exact count in Theorem~\ref{counttheorem}. The intermediate exceptional ratios, the number of bifurcations between the two regimes and finiteness at every intermediate ratio remain undetermined. We found no earlier statement of the specific five-equal-plus-one-small result in the publications and public code inspected. We make no claim of priority. Xia's hierarchical construction \cite{xia} and compactness and continuation with light bodies \cite{light} are relevant antecedents.
+
+\small
+\begin{thebibliography}{12}
+\bibitem{hamptonmorse} M. Hampton, Planar $N$-body central configurations with a homogeneous potential, \href{https://arxiv.org/abs/1810.13011}{arXiv:1810.13011}, Conjectures 4 and 5.
+\bibitem{moulton} F. R. Moulton, The straight line solutions of the problem of $n$ bodies, \emph{Ann. of Math.} \textbf{12} (1910), 1--17.
+\bibitem{polygon} K. R. Meyer and D. S. Schmidt, Bifurcations of relative equilibria in the $N$-body and Kirchhoff problems, \emph{SIAM J. Math. Anal.} \textbf{19} (1988), 1295--1313. \href{https://homepages.uc.edu/~schmiddr/My_Papers/DSS-20.pdf}{Author's copy}.
+\bibitem{collinear} R. Moeckel, \emph{Lectures on Central Configurations}, section on collinear configurations, \href{https://www-users.cse.umn.edu/~rmoeckel/notes/CentralConfigurations.pdf}{lecture notes}.
+\bibitem{hj} M. Hampton and A. N. Jensen, Finiteness of relative equilibria in the planar generalized $N$-body problem with fixed subconfigurations, \emph{J. Geom. Mech.} \textbf{7} (2015), 35--42. \href{https://doi.org/10.3934/jgm.2015.7.35}{doi:10.3934/jgm.2015.7.35}.
+\bibitem{equal} M. Moczurad and P. Zgliczyński, Central configurations in planar $n$-body problem with equal masses for $n=5,6,7$, \emph{Celest. Mech. Dyn. Astron.} \textbf{131} (2019), 46. \href{https://doi.org/10.1007/s10569-019-9920-6}{doi:10.1007/s10569-019-9920-6}; supplementary coordinates in \href{https://arxiv.org/pdf/1812.07279}{arXiv:1812.07279}, Appendix A.2.3.
+\bibitem{near} M. Moczurad and P. Zgliczyński, Central configurations in the spatial $n$-body problem for $n=5,6$ with equal masses, \emph{Celest. Mech. Dyn. Astron.} \textbf{132} (2020), 56. \href{https://arxiv.org/abs/2006.06768}{arXiv:2006.06768}.
+\bibitem{light} M. Moczurad and P. Zgliczyński, Central configurations on the plane with $N$ heavy and $k$ light bodies, \emph{Commun. Nonlinear Sci. Numer. Simul.} (2022), 106533. \href{https://doi.org/10.1016/j.cnsns.2022.106533}{doi:10.1016/j.cnsns.2022.106533}.
+\bibitem{count} R. Montgomery, \emph{Four Open Questions for the $N$-Body Problem}, Chapter 1, Table 1 (course manuscript, 2022). \href{https://www.crm.cat/wp-content/uploads/2022/06/bookQ-copy.pdf}{CRM course manuscript}.
+\bibitem{bezout} K. L. Judd, P. Renner and K. Schmedders, \emph{Finding All Pure-Strategy Equilibria in Games with Continuous Strategies}, manuscript (2012), \href{https://ice.uchicago.edu/2012_presentations/Faculty/Schmedders/AllEquilibriaFinal_paper.pdf}{Theorem 3}.
+\bibitem{multi} F. Cucker and G. Malajovich, lectures on polynomial system solving, \emph{Publicaciones Matem\'aticas del Uruguay}, vol. 13, \href{https://pmu.uy/pmu13/pmu13.pdf}{Theorem 1.5}.
+\bibitem{arust} N. Arustamyan, C. Cox, E. Lundberg, S. Perry and Z. Rosen, On the number of equilibria balancing Newtonian point masses with a central force (2021), \href{https://arxiv.org/abs/2106.11416}{arXiv:2106.11416}, Sect.~3.1.
+\bibitem{zhou} Q. Zhou, Equilibrium finiteness and Saari's conjecture for the planar circular restricted $N$-body problem, preprint (2026), \href{https://arxiv.org/abs/2611.33570v1}{arXiv:2611.33570v1}.
+\bibitem{xia} Z. Xia, Central configurations with many small masses, \emph{J. Differential Equations} \textbf{91} (1991), 168--179. \href{https://doi.org/10.1016/0022-0396(91)90137-X}{doi:10.1016/0022-0396(91)90137-X}.
+\bibitem{six} T. S. Tomar, Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean (2026), \href{https://hexagonmath.org/2611.00377v1}{Hexagon 2611.00377v1}.
+\bibitem{tomfive} T. S. Tomar, Smale's sixth problem for five bodies in the plane, with a proof formalized in Lean (2026), \href{https://arxiv.org/abs/2610.13100v2}{arXiv:2610.13100v2}.
+\bibitem{tomspecial} T. S. Tomar, Complex central configurations of the planar five-body problem at special masses (2026), \href{https://hexagonmath.org/2611.00485v1}{Hexagon 2611.00485v1}.
+\bibitem{stacks} The Stacks Project, Section 29.21 and Lemma 29.57.2, \href{https://stacks.math.columbia.edu/tag/01TH}{Tag 01TH} and \href{https://stacks.math.columbia.edu/tag/01TI}{Tag 01TI}.
+\end{thebibliography}
+\end{document}
