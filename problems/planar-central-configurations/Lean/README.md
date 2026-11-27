@@ -4,6 +4,8 @@
 
 ## English
 
+For the generic finiteness theorem, begin with the standalone manuscript. It connects the real Newtonian equations to the singular-end calculations. The modules described below verify particular algebraic identities and implications. The enumerations and polynomial computations have separate exact replays, and the passage from these checks to the global theorem is a mathematical argument in the paper. [Standalone paper (PDF)](../papers/FiveEqualFiniteness.pdf) · [LaTeX](../papers/FiveEqualFiniteness.tex) · [Exact verification archive](../papers/FiveEqualFiniteness-checks.zip) · [Case ledger and replays](../notes/last-diagrams/README.md) · [Guide to the other papers](../papers/README.md)
+
 ### Small mass, triangles and Morse indices
 
 Download and extract [SixBodyVerification.zip](SixBodyVerification.zip). Its `SixBodyResearch` directory contains all original certificate inputs, Lean modules, verification scripts, research notes and run transcripts. The [PDFs and LaTeX sources](../papers/) are distributed separately. Use Lean 4.28.0. The main and triangle projects pin mathlib to `8f9d9cff6bd728b17a24e163c9402775d9e6a365`.
@@ -55,6 +57,8 @@ The finite shape classifications, polynomial gcds, lifting computations, and fin
 [CoulombFour.lean](CoulombFour.lean) deduces the allowed mass polynomial from the scalar equations for a noncollinear real Coulomb equilibrium. For an ordered collinear quartet it proves that a positive determinant factor contradicts simultaneous field cancellation under the stated inverse-distance inequalities. The companion paper treats the larger signed system and the realization of its exceptional ratios. [Companion paper (PDF)](../papers/SignedQuartetEquilibria.pdf)
 
 ## 中文
+
+复验五重等质量线上的一般有限性时，可先读独立论文，了解实牛顿方程怎样导向逐个退化端的计算。本页的 Lean 模块检查指定的代数恒等式与推论。候选枚举及多项式运算有各自的精确复验程序，从这些局部检查到全局定理的推导见论文正文。[独立论文 PDF](../papers/FiveEqualFiniteness.pdf) · [LaTeX 源稿](../papers/FiveEqualFiniteness.tex) · [精确计算复验包](../papers/FiveEqualFiniteness-checks.zip) · [逐项清单与复验](../notes/last-diagrams/README.md#中文) · [其他论文导读](../papers/README.md#中文)
 
 ### 小质量、正三角形与 Morse 指标
 

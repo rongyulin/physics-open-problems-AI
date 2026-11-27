@@ -1,16 +1,22 @@
 # Planar Newtonian central configurations · 平面牛顿中心构型
 
-[English](#english) · [中文](#中文) · [Verification / 复验](Lean/README.md)
+[English](#english) · [中文](#中文) · [Lead paper / 专题主论文](papers/FiveEqualFiniteness.pdf) · [Paper guide / 论文导读](papers/README.md) · [Verification / 复验](Lean/README.md)
 
 ## English
 
-In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The ten manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
+In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The eleven manuscripts by Chatgpt include a standalone account of generic finiteness on the five-equal-mass line and ten earlier papers. For an individual result, the reading guide lists the precise question each paper answers. [Guide to the eleven manuscripts](papers/README.md)
+
+### Start here for Smale’s problem on the five-equal-mass line
+
+For masses $(1,1,1,1,1,t)$ there is a finite set of algebraic numbers outside which **every positive $t$ admits only finitely many real planar central configurations up to similarity**. Tomar’s generic six-body theorem leaves this entire line in its exceptional set. The standalone manuscript gives the argument in one place, starting from the normalized equations and the catalogue of possible singular ends in Tomar’s preprint. It explains why a hypothetical infinite real family would give a complex end satisfying additional energy constraints, how the candidate list is obtained, and how the remaining cases in diagrams 88 and 94 are excluded. Earlier project papers are unnecessary for following the argument. The computational parts use exact certificates. Lean checks specified lemmas. The theorem leaves open whether any positive ratio actually has infinitely many shapes. It also leaves open the count at general ratios and finiteness for arbitrary positive six-body masses. [Standalone paper (PDF)](papers/FiveEqualFiniteness.pdf) · [LaTeX](papers/FiveEqualFiniteness.tex) · [Exact verification archive](papers/FiveEqualFiniteness-checks.zip) · [Evidence and verification](Lean/README.md)
+
+The ten earlier papers include independent counting, classification and bifurcation theorems. Three also preserve intermediate case lists and an alternative proof for the final quartet. Their individual contributions are described below.
 
 ### Five nearly equal masses and a light sixth body
 
 Moczurad and Zgliczyński rigorously enumerated the five- and six-body equal-mass configurations. Tomar’s generic six-body finiteness theorem has an exceptional set containing every mass vector with three equal entries. In particular, its criterion gives no information anywhere on the line with five unit masses and a sixth mass of size *t*. Near *t* = 0, one can first study a massless test body, but counting the actual positive-mass shapes requires proving that all limiting equilibria are isolated and that every small-mass solution is accounted for. [Equal-mass enumeration](https://doi.org/10.1007/s10569-019-9920-6) · [Tomar, Theorem 1.1](https://hexagonmath.org/pdf/2611.00377v1)
 
-The manuscript obtains **4,104 labelled shapes** for five masses that can vary independently near one and a sufficiently small positive sixth mass. Reflections are counted separately whenever they give different labelled shapes. Identifying reflections gives 2,232. Exact interval certificates isolate 8, 12, 10, 14 and 16 test-body equilibria at the five limiting shapes. Continuation and compactness transfer the count to positive mass. On the five-equal-mass line the count changes between this regime and six equal masses, where it is 3,624. At least one intermediate algebraic mass ratio admits a degenerate noncollinear configuration. The manuscript gives no numerical mass cutoff, and finiteness along the entire line remains open. [Paper (PDF)](papers/SmallMass.pdf) · [LaTeX](papers/SmallMass.tex)
+The manuscript obtains **4,104 labelled shapes** for five masses that can vary independently near one and a sufficiently small positive sixth mass. Reflections are counted separately whenever they give different labelled shapes. Identifying reflections gives 2,232. Exact interval certificates isolate 8, 12, 10, 14 and 16 test-body equilibria at the five limiting shapes. Continuation and compactness transfer the count to positive mass. On the five-equal-mass line the count changes between this regime and six equal masses, where it is 3,624. At least one intermediate algebraic mass ratio admits a degenerate noncollinear configuration. The manuscript gives no numerical mass cutoff. Finiteness at every positive ratio on the line remains open. [Paper (PDF)](papers/SmallMass.pdf) · [LaTeX](papers/SmallMass.tex)
 
 ### Two nonconcentric equilateral triangles
 
@@ -22,7 +28,7 @@ Hampton conjectured how many labelled equal-mass configurations have each Morse 
 
 ### Five equal masses and a variable sixth mass
 
-Tomar’s diagram 98 describes a possible escape to infinity in the complex equations, with the six bodies splitting into two triples. When three masses coincide, the leading force condition can vanish identically. The manuscript derives a further necessary condition by expanding the potential to cubic order. It excludes diagram 98 on the line $(1,1,1,1,1,t)$ for all positive $t$ outside a finite set of algebraic candidates, and individually at $t=3$. It also excludes that diagram on a nonempty Zariski open subset of $(1,1,1,a,b,c)$ containing $(a,b,c)=(2,3,7)$. Other diagrams remain to be controlled before one can conclude that the full generic fibre over $\mathbb{Q}(t)$ is finite. [Paper (PDF)](papers/FiveEqualSixBody.pdf) · [LaTeX](papers/FiveEqualSixBody.tex)
+Tomar’s diagram 98 describes a possible escape to infinity in the complex equations, with the six bodies splitting into two triples. When three masses coincide, the leading force condition can vanish identically. The manuscript derives a further necessary condition by expanding the potential to cubic order. It excludes diagram 98 on the line $(1,1,1,1,1,t)$ for all positive $t$ outside a finite set of algebraic candidates, and individually at $t=3$. It also excludes that diagram on a nonempty Zariski open subset of $(1,1,1,a,b,c)$ containing $(a,b,c)=(2,3,7)$. For the unrestricted signed complex equations, other diagrams remain to be controlled before one can conclude that the full generic fibre over $\mathbb{Q}(t)$ is finite. [Paper (PDF)](papers/FiveEqualSixBody.pdf) · [LaTeX](papers/FiveEqualSixBody.tex)
 
 ### Six local bifurcations along the mass line
 
@@ -36,15 +42,15 @@ The supplementary notes specialize 1,928 published certificate polynomials on th
 
 ### Three candidate diagrams for generic positive mass ratio
 
-The later census reduces 14 candidate diagram classes to 88, 93 and 94. Of the original 738 core-certified placements, 76 remain. Among the 114 placements of the separate 19 core-free cells, 111 remain. The two lists combine into 55 orbits under relabelling and exchange of the complex projections. Of these, 29 also satisfy a necessary condition for an infinite family of real configurations. The new paper derives the exclusions and distinguishes the finite Python replays and checked Lean lemmas from the analytic arguments. [Paper](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [Case lists and reproduction](notes/reduction/README.md)
+The later census reduces 14 candidate diagram classes to 88, 93 and 94. Of the original 738 core-certified placements, 76 remain. Among the 114 placements of the separate 19 core-free cells, 111 remain. The two lists combine into 55 orbits under relabelling and exchange of the complex projections. Of these, 29 also satisfy a necessary condition for an infinite family of real configurations. The reduction paper derives the exclusions and distinguishes the finite Python replays and checked Lean lemmas from the analytic arguments. [Paper](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [Case lists and reproduction](notes/reduction/README.md)
 
 ### Energy bounds for physical ends
 
 The eighth paper uses energy and mass-derivative bounds to identify 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. The accompanying local results exclude a regular-square quartet in diagram 88 and the specified equilateral leading solution of diagram 94 at generic mass ratio. [PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [Case lists](notes/physical-ends/README.md)
 
-### Generic finiteness on the five-equal-mass line
+### The original final-diagram paper and its alternative proof
 
-For five unit masses and a sixth mass *t* > 0, the ninth manuscript establishes that the real planar central configurations up to similarity form a finite set for every *t* outside a finite algebraic set. Previous generic finiteness in the full six-dimensional mass space excluded every mass vector with three equal entries from its scope. A reduction using the real potential and its marked-mass derivative left 22 possible types of complex ends in diagrams 88 and 94. Projected-shape classification, a lift through the coupled six-body equations and an expansion at infinite mass exclude all three possible mass positions of diagram 94.
+The original closing paper starts with the previous reduction to 22 classes. For five unit masses and a sixth mass *t* > 0, it establishes that the real planar central configurations up to similarity form a finite set for every *t* outside a finite algebraic set. Previous generic finiteness in the full six-dimensional mass space excluded every mass vector with three equal entries from its scope. A reduction using the real potential and its marked-mass derivative left 22 possible types of complex ends in diagrams 88 and 94. Projected-shape classification, a lift through the coupled six-body equations and an expansion at infinite mass exclude all three possible mass positions of diagram 94.
 
 In diagram 88 the four-body forces and the torque exerted by the binary must vanish in compatible projections. For a quartet containing the variable mass, a valuation at mass 2 in residue characteristic 65521 covers finite and collapsing shapes. The three regular charts have 420, 4 and 102 points over the algebraic closure. Every ordering and both orientations fail the signed torque. A second proof uses the degree-4046 distance-ratio resultant and accounts for escaping branches. All 74 placements in the 22 real-finiteness classes are excluded. Seven signed-complex placements remain in five classes, one in diagram 88 and four in diagram 93. Their existence remains open. The proof does not determine the exceptional *t* or give a count for each nonexceptional *t*. This research manuscript has not undergone peer review; Lean covers selected lemmas, and the full proof also uses analytic deductions and separate exact computations. [Case ledger and verification](notes/last-diagrams/README.md) · [English paper (PDF)](papers/LastDiagrams.pdf) · [LaTeX source](papers/LastDiagrams.tex)
 
@@ -58,7 +64,13 @@ The verification package includes Lean sources, exact-arithmetic verifiers, thei
 
 ## 中文
 
-在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的十篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
+在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的十一篇研究稿，其中一篇独立给出五重等质量线上一般质量比的有限性论证，另十篇是此前的研究稿。论文导读逐篇标明要回答的问题和独立成果。[十一篇论文导读](papers/README.md#中文)
+
+### 从这里读起 · 五重等质量线上的 Smale 问题
+
+对质量 $(1,1,1,1,1,t)$，存在一个仅含有限个代数数的集合，使得**集合之外每个正 $t$ 对应的实平面中心构型，按相似分类都只有有限多个**。Tomar 的六体一般质量定理把这条线全部留在例外集合中。这篇独立论文从归一化方程和 Tomar 公开的退化图分类出发，解释为何无穷多个实构型会产生受额外能量条件约束的复曲线退化端，怎样得出候选清单，以及怎样排除余下的图 88 和图 94。读者可以从头读完论证，无需先读项目内其他论文。计算部分使用精确证书，Lean 检查其中列明的引理。是否真有某个正质量比对应无穷多个构型、一般质量比的具体构型数，以及任意六个正质量的有限性，仍待确定。[独立论文 PDF](papers/FiveEqualFiniteness.pdf) · [LaTeX 源稿](papers/FiveEqualFiniteness.tex) · [精确计算复验包](papers/FiveEqualFiniteness-checks.zip) · [证据与复验](Lean/README.md#中文)
+
+下文介绍此前十篇论文。它们包括独立的计数、分类和分岔定理，另有三篇保留逐步缩短的候选清单及最后一个四体组的另一条证明。
 
 ### 五个近等质量天体与一个轻天体
 
@@ -76,7 +88,7 @@ Hampton 猜想了各 Morse 指标的有标签构型数。指标给出形状势�
 
 ### 五个单位质量与一个可变的第六质量
 
-Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，其中六个天体分成两个三元组。三个质量相等时，首阶力矩条件可能恒等成立。论文将势展开到三阶，得到一个额外的必要条件。对于质量线 $(1,1,1,1,1,t)$，除了有限多个实代数候选值，所有正 $t$ 都能排除图 98，$t=3$ 也得到单独验证。对于 $(1,1,1,a,b,c)$，在包含 $(a,b,c)=(2,3,7)$ 的一个非空 Zariski 开集上也可排除该图。要证明有理函数域 $\mathbb{Q}(t)$ 上整个几何一般纤维有限，还需处理其他退化图。[英文论文 PDF](papers/FiveEqualSixBody.pdf) · [LaTeX 源稿](papers/FiveEqualSixBody.tex)
+Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，其中六个天体分成两个三元组。三个质量相等时，首阶力矩条件可能恒等成立。论文将势展开到三阶，得到一个额外的必要条件。对于质量线 $(1,1,1,1,1,t)$，除了有限多个实代数候选值，所有正 $t$ 都能排除图 98，$t=3$ 也得到单独验证。对于 $(1,1,1,a,b,c)$，在包含 $(a,b,c)=(2,3,7)$ 的一个非空 Zariski 开集上也可排除该图。对允许任意距离符号的复方程，要证明有理函数域 $\mathbb{Q}(t)$ 上整个几何一般纤维有限，还需处理其他退化图。[英文论文 PDF](papers/FiveEqualSixBody.pdf) · [LaTeX 源稿](papers/FiveEqualSixBody.tex)
 
 ### 质量线上的六处局部分岔
 
@@ -90,15 +102,15 @@ Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，�
 
 ### 一般正质量比下的三种候选退化图
 
-通过节点力平衡、恒定势能与局部力矩检验，原先的 14 个图类缩至图 88、93、94。旧表中的 738 个带证书组合剩下 76 个，另列的 19 个无证书单元在展开标记位置之后由 114 个组合缩至 111 个。两部分合计 55 个对称代表，针对无限实构型族所需的曲线，还有 29 个代表满足原点相容性。剩余情形的实际存在性及该质量族的完整有限性仍有待证明。[论文 PDF](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [清单和复验](notes/reduction/README.md#中文)
+通过节点力平衡、恒定势能与局部力矩检验，原先的 14 个图类缩至图 88、93、94。旧表中的 738 个带证书组合剩下 76 个，另列的 19 个无证书单元在展开标记位置之后由 114 个组合缩至 111 个。两部分合计 55 个对称代表，针对无限实构型族所需的曲线，还有 29 个代表满足原点相容性。后续论文继续区分来自实曲线的候选与任意有符号复曲线的候选，并排除了前一类的全部代表。[论文 PDF](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [清单和复验](notes/reduction/README.md#中文)
 
 ### 实中心构型的能量约束
 
 对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。局部计算还排除了图 88 的等质量正方形首项以及图 94 的一个等边首项。[论文 PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [逐项清单](notes/physical-ends/README.md#中文)
 
-### 五重等质量线上一般质量比的实中心构型有限性
+### 早期的收尾论文与另一条消元证明
 
-固定五个单位质量和一个正质量 *t*，第九篇研究稿得到，除有限多个代数质量比外，平移、旋转和整体缩放意义下的实平面牛顿中心构型只有有限多个。前人针对六个一般质量的有限性定理留下的例外集合，包含每一个具有三个相等质量的向量。沿这条线，此前利用实构型势能及其质量导数，把反证需要考察的复退化压缩到图 88、94 的 22 类。图 94 的三种变质量位置分别用投影分类、完整六体方程的局部延拓，以及质量比趋于无穷的展开排除。
+这篇收尾论文以此前取得的 22 类候选清单为出发点。固定五个单位质量和一个正质量 *t*，论文得到，除有限多个代数质量比外，平移、旋转和整体缩放意义下的实平面牛顿中心构型只有有限多个。前人针对六个一般质量的有限性定理留下的例外集合，包含每一个具有三个相等质量的向量。沿这条线，此前利用实构型势能及其质量导数，把反证需要考察的复退化压缩到图 88、94 的 22 类。图 94 的三种变质量位置分别用投影分类、完整六体方程的局部延拓，以及质量比趋于无穷的展开排除。
 
 图 88 的四体组若含有变质量，除了满足孤立四体的引力方程，还须满足双体组施加的首阶力矩条件。一条证明把质量特化到 2，在特征 65521 的有限域中处理所有有界与塌缩极限。三个常规坐标图在代数闭包中分别有 420、4、102 个点，所有可能的标记顺序与投影方向均未通过力矩检验。另一条证明研究距离比函数域中的 4046 次结式，并计入各项边界重数。实构型有限性所需的 74 个带标号候选、22 个对称类全部排除。任意有符号复曲线仍有 7 种放置、5 个对称类，其中图 88 有 1 类，图 93 有 4 类。它们的存在性尚未确定。第九篇研究稿没有确定例外质量值，也没有给出一般参数下的具体构型数。研究稿未经同行评审，Lean 检查其中若干引理，完整论证还依赖书面推导和独立的精确计算。[最新清单与复验](notes/last-diagrams/README.md) · [英文论文 PDF](papers/LastDiagrams.pdf) · [LaTeX 源稿](papers/LastDiagrams.tex)
 

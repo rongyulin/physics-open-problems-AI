@@ -4,6 +4,8 @@
 
 ## English
 
+This directory accompanies the original closing paper. It contains the exact case ledger and two exclusions of the last asymmetric quartet, including the characteristic-zero resultant calculation. For the theorem from the normalized equations onward, read the standalone manuscript first. [Standalone paper (PDF)](../../papers/FiveEqualFiniteness.pdf) · [LaTeX](../../papers/FiveEqualFiniteness.tex) · [Guide to the component papers](../../papers/README.md)
+
 Fix planar Newtonian masses $(1,1,1,1,1,t)$, with $t>0$. A central configuration is a shape in which each acceleration is proportional to the displacement from the center of mass, with the same proportionality factor for every body. Smale asked whether there are only finitely many such shapes up to similarity for **every** fixed set of positive masses. Tomar’s generic six-body mass theorem leaves every vector with three equal entries in its exceptional algebraic set. The entire five-equal line lies there. The present manuscript works along that line and allows finitely many exceptions in $t$. It uses Tomar’s catalogue and polynomial equations for the possible ends of curves of configurations. [Tomar, §§1 and 6.7](https://hexagonmath.org/pdf/2611.00377v1) · [Chang and Chen’s diagrams](https://arxiv.org/abs/2303.02853)
 
 **The manuscript proves that for every positive mass ratio $t$ outside a finite set of algebraic numbers, the number of real planar Newtonian central configurations for $(1,1,1,1,1,t)$ is finite up to similarity.** The previous paper left 22 possible symmetry classes of singular ends of a hypothetical curve arising from infinitely many real shapes. The present reductions exclude every class. They give neither the number of shapes at a fixed mass nor a list of exceptional values. Moczurad and Zgliczyński previously gave a complete enumeration at $t=1$ and an independent local result for masses sufficiently near equality. [Equal masses](https://doi.org/10.1007/s10569-019-9920-6) · [Neighborhood of equality](https://ww2.ii.uj.edu.pl/~zgliczyn/papers/cc-3d/cc-3d.pdf) The proof depends on the cited prior reductions and is a research manuscript awaiting independent verification. [English proof](../../papers/LastDiagrams.pdf) · [Previous 22 classes](../physical-ends/README.md)
@@ -71,6 +73,8 @@ python3 RatioInfinity88.py
 ~~~
 
 ## 中文
+
+本目录对应早期的收尾论文，保存逐项清单和非对称四体组的两条排除路线，包括特征零下的结式计算。若希望从归一化方程读起、了解主定理的完整论证，可先读独立论文。[独立论文 PDF](../../papers/FiveEqualFiniteness.pdf) · [LaTeX 源稿](../../papers/FiveEqualFiniteness.tex) · [各篇论文导读](../../papers/README.md#中文)
 
 **对五个质量为 1、第六个质量为 $t$ 的平面牛顿六体系统，除了至多有限个代数例外值，对每个正 $t$，实中心构型按相似分类只有有限多个。** Tomar 的六体一般质量定理允许的例外集合包含所有至少三个质量相等的向量，这整条质量线都在其中。本文在这条线上逐类处理了无穷多个实构型可能导致的退化端。证明没有给出例外质量的清单，也没有计算各质量下的构型数。对任意六个正质量证明有限性，以及对这条线证明无例外，仍是更强的问题。六个质量全相等及其充分小的邻域已有独立的有限性结果。[英文论文 PDF](../../papers/LastDiagrams.pdf) · [LaTeX 源稿](../../papers/LastDiagrams.tex)
 

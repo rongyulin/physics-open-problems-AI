@@ -4,9 +4,9 @@
 
 ## English
 
-This page records the energy-bound stage. A subsequent paper excludes all 22 remaining physical classes, proving real finiteness for all positive mass ratios outside a finite algebraic set on this mass line. [Latest case ledger](../last-diagrams/README.md) · [Paper (PDF)](../../papers/LastDiagrams.pdf) · [LaTeX](../../papers/LastDiagrams.tex)
+This page records the energy-bound stage. A subsequent paper excludes all 22 remaining physical classes, proving real finiteness for all positive mass ratios outside a finite algebraic set on this mass line. [Standalone paper (PDF)](../../papers/FiveEqualFiniteness.pdf) · [Final case ledger](../last-diagrams/README.md) · [Original final-diagram paper](../../papers/LastDiagrams.pdf)
 
-For masses $(1,1,1,1,1,t)$ and generic positive $t$, a hypothetical infinite family of real planar central configurations must yield a complex end in **diagram 88 or 94**. The previous 29 symmetry classes compatible with real finiteness are reduced to **22**. Generic here allows a finite set of algebraic exceptions. The derivation builds on Tomar’s nonpositive-end catalogue on this mass line and our earlier list. Whether any surviving case extends to a relevant six-body curve remains open. [Previous list](../reduction/README.md) · [Tomar’s preprint](https://hexagonmath.org/pdf/2611.00377v1)
+For masses $(1,1,1,1,1,t)$ and generic positive $t$, a hypothetical infinite family of real planar central configurations must yield a complex end in **diagram 88 or 94**. The previous 29 symmetry classes compatible with real finiteness are reduced to **22**. Generic here allows a finite set of algebraic exceptions. The derivation builds on Tomar’s nonpositive-end catalogue on this mass line and our earlier list. [Previous list](../reduction/README.md) · [Tomar’s preprint](https://hexagonmath.org/pdf/2611.00377v1)
 
 | Diagram | Signed placements | Signed orbits | Placements still needed for real finiteness | Orbits still needed for real finiteness |
 | --- | ---: | ---: | ---: | ---: |
@@ -19,7 +19,7 @@ The potential of a normalized central configuration is constant on a fixed-mass 
 
 The unrestricted signed-complex count falls from 55 to 53 orbits, or from 187 to 185 labelled placements. In diagram 93 the force supports at cells 60 and 62 put the partially circled vertex in a forbidden range of exponents when it carries the marked mass. These two cells also belonged to the 29 physical candidates and have already been counted there. In fact any negative special exponent is inconsistent for that placement. [Two-cell derivation](Negative93.md) · [Full exponent restriction](OuterStiffness93.md)
 
-The supplementary local calculations address specific leading shapes. For diagram 88 they exclude the regular-square unit quartet for every positive binary ratio, including the three ratios admitted by the first torque. For diagram 94 an equilateral triple of units around the shared body solves the leading four-body equations with positive internal distances; the first cross torque admits it for every binary ratio. A cubic obstruction excludes its lift at generic parameter when the marked mass belongs to the shared body or the opposing binary. Other complex leading shapes in the same cells remain open. On the 72 core-bearing placements of diagram 94, the four-body projection obeys one of four quartics and thus has at most sixteen ratios per fixed assignment of masses. [Diagram 88 shape and sign tests](Diagram88Cluster.md) · [Square obstruction](SquareLift.md) · [Equilateral obstruction](Equilateral94.md) · [Quartic reduction](ShapeCandidates.md)
+The supplementary local calculations address specific leading shapes. For diagram 88 they exclude the regular-square unit quartet for every positive binary ratio, including the three ratios admitted by the first torque. For diagram 94 an equilateral triple of units around the shared body solves the leading four-body equations with positive internal distances; the first cross torque admits it for every binary ratio. A cubic obstruction excludes its lift at generic parameter when the marked mass belongs to the shared body or the opposing binary. On the 72 core-bearing placements of diagram 94, the four-body projection obeys one of four quartics and thus has at most sixteen ratios per fixed assignment of masses. [Diagram 88 shape and sign tests](Diagram88Cluster.md) · [Square obstruction](SquareLift.md) · [Equilateral obstruction](Equilateral94.md) · [Quartic reduction](ShapeCandidates.md)
 
 ### Reproduce the counts
 
@@ -36,9 +36,9 @@ diff OrbitLedger.csv /tmp/sixbody-ends/OrbitLedger.csv
 
 ## 中文
 
-本页保留能量约束阶段的结果与复验材料。后续研究稿排除这一阶段剩余的全部 22 类，得到五重等质量线上除有限多个代数例外值外的实中心构型有限性。[最新清单与复验](../last-diagrams/README.md) · [英文论文 PDF](../../papers/LastDiagrams.pdf) · [LaTeX 源稿](../../papers/LastDiagrams.tex)
+本页保留能量约束阶段的结果与复验材料。后续研究稿排除这一阶段剩余的全部 22 类，得到五重等质量线上除有限多个代数例外值外的实中心构型有限性。[独立论文 PDF](../../papers/FiveEqualFiniteness.pdf) · [最终清单与复验](../last-diagrams/README.md#中文) · [早期收尾论文](../../papers/LastDiagrams.pdf)
 
-对五个单位质量和第六个正质量 $t$，上轮发现一般参数下的实构型有限性只需考察 29 个对称代表。本次把它们缩至 **22 个**，其中图 88 有 3 个，图 94 有 19 个。图 93 的 5 个代表全部排除；图 88 中变质量落在双体组的 2 个代表也被排除。已假定 $t$ 避开有限多个可能的代数例外值。剩余情形是否真的对应无穷多个实构型，仍然未知。[英文论文](../../papers/PhysicalSixBodyEnds.pdf) · [22 项实问题清单](PhysicalRepresentatives.csv)
+对五个单位质量和第六个正质量 $t$，上轮发现一般参数下的实构型有限性只需考察 29 个对称代表。本次把它们缩至 **22 个**，其中图 88 有 3 个，图 94 有 19 个。图 93 的 5 个代表全部排除；图 88 中变质量落在双体组的 2 个代表也被排除。已假定 $t$ 避开有限多个可能的代数例外值。[英文论文](../../papers/PhysicalSixBodyEnds.pdf) · [22 项实问题清单](PhysicalRepresentatives.csv)
 
 证明使用了实中心构型在归一化后必须满足的势能下界。即使反证所用曲线的端点坐标已经变成复数，其势能仍等于曲线上实构型的势能。图 93 会把这个值拆成两个三体贡献，当能量的大小还不能给出矛盾时，可以检验能量随质量比变化的导数。图 88 的孤立双体在同一导数上也与实构型给出的严格下界冲突。
 

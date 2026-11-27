@@ -4,9 +4,11 @@
 
 ## English
 
-The **physical candidate list is empty for generic positive mass ratio** on the line with five equal masses. The previously surviving asymmetric quartet in diagram 88 is excluded both by a test at sixth mass 2 in residue characteristic 65521 and over a distance-ratio function field. This completes the physical finiteness argument outside a finite algebraic set. The unrestricted signed-complex ledger has seven placements in five classes, one in diagram 88 and four in diagram 93. [Case ledger and verification](../notes/last-diagrams/README.md) · [English paper (PDF)](../papers/LastDiagrams.pdf) · [LaTeX source](../papers/LastDiagrams.tex)
+For the full argument on the five-equal-mass line, read the standalone manuscript. This directory preserves the intermediate candidate lists, local algebra, and exact scripts that readers can use to inspect individual steps. [Standalone paper (PDF)](../papers/FiveEqualFiniteness.pdf) · [LaTeX](../papers/FiveEqualFiniteness.tex) · [Exact verification archive](../papers/FiveEqualFiniteness-checks.zip) · [Guide to all papers](../papers/README.md)
 
-The subsequent reduction leaves diagrams 88, 93 and 94 at generic positive mass ratio. That shortlist contains 55 symmetry representatives, 29 of which satisfy the additional origin requirement for real finiteness. [Three-diagram paper](reduction/README.md)
+The **physical candidate list is empty for generic positive mass ratio** on the line with five equal masses. The previously surviving asymmetric quartet in diagram 88 is excluded both by a test at sixth mass 2 in residue characteristic 65521 and over a distance-ratio function field. This completes the physical finiteness argument outside a finite algebraic set. The unrestricted signed-complex ledger has seven placements in five classes, one in diagram 88 and four in diagram 93. [Case ledger and verification](last-diagrams/README.md) · [English paper (PDF)](../papers/LastDiagrams.pdf) · [LaTeX source](../papers/LastDiagrams.tex)
+
+The first reduction after the census left diagrams 88, 93 and 94 at generic positive mass ratio. That shortlist contains 55 symmetry representatives, 29 of which satisfy the additional origin requirement for real finiteness. [Three-diagram paper](reduction/README.md)
 
 The zero-multiplier quartet at a simultaneous collapse also leads to a complete classification for masses $(t,1,1,1)$. A separate manuscript establishes the two positive noncollinear mass ratios and the four positive collinear ratios allowed by the signed equations. [Paper (PDF)](../papers/SignedQuartetEquilibria.pdf) · [LaTeX source](../papers/SignedQuartetEquilibria.tex)
 
@@ -30,7 +32,9 @@ Changing weights requires reconsidering cells previously discarded solely becaus
 
 ## 中文
 
-五重等质量线上，**一般正质量比下与实构型有限性有关的候选已全部排除**。最后的图 88 非对称四体组，用特征 65521 下质量取 2 的特化和距离比函数域消元分别排除，从而得到有限多个代数例外值之外的实中心构型有限性。有符号复曲线仍有 7 种放置、5 个对称类，其中图 88 有 1 类，图 93 有 4 类。[最新清单与复验](../notes/last-diagrams/README.md) · [英文论文 PDF](../papers/LastDiagrams.pdf) · [LaTeX 源稿](../papers/LastDiagrams.tex)
+若要了解五重等质量线上的完整有限性论证，可从独立论文读起。本目录保留各阶段候选清单、局部代数推导和精确计算程序，供逐步复核。[独立论文 PDF](../papers/FiveEqualFiniteness.pdf) · [LaTeX 源稿](../papers/FiveEqualFiniteness.tex) · [精确计算复验包](../papers/FiveEqualFiniteness-checks.zip) · [论文导读](../papers/README.md#中文)
+
+五重等质量线上，**一般正质量比下与实构型有限性有关的候选已全部排除**。最后的图 88 非对称四体组，用特征 65521 下质量取 2 的特化和距离比函数域消元分别排除，从而得到有限多个代数例外值之外的实中心构型有限性。有符号复曲线仍有 7 种放置、5 个对称类，其中图 88 有 1 类，图 93 有 4 类。[最新清单与复验](last-diagrams/README.md#中文) · [英文论文 PDF](../papers/LastDiagrams.pdf) · [LaTeX 源稿](../papers/LastDiagrams.tex)
 
 本页记录第一轮筛查。随后一般正质量比下的清单已缩至图 88、93、94，合并对称性后有 55 个代表，针对实构型有限性进一步剩下 29 个。[三种图的论文与复验](reduction/README.md#中文)
 
