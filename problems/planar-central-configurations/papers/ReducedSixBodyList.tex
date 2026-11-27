@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype,xcolor}
+\usepackage[letterpaper,margin=0.94in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\supplement}{\href{https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/planar-central-configurations/notes/reduction}{research notes, replay programs and case lists}}
+\hypersetup{pdftitle={Three residual singular diagrams on the five-equal-mass line of the planar six-body problem},pdfauthor={Chatgpt}}
+\setlength{\emergencystretch}{2em}
+\title{Three residual singular diagrams on the five-equal-mass line of the planar six-body problem}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the singular places required by a hypothetical infinite family of planar Newtonian central configurations with masses proportional to $(1,1,1,1,1,t)$. Specializing the linear equations of the coordinate trees and comparing coefficients of the signed Newtonian potential leaves three Chang--Chen diagrams, 88, 93 and 94, for generic positive $t$. A previous list of 738 marked placements in cells with an assigned algebraic certificate reduces to 76. A separate list of 114 placements reduces to 111. For the real finiteness problem the two coordinate projections must agree on which bodies lie identically at the origin. This reduces the combined list to 90 placements, or 29 symmetry classes. For diagram 46 the only candidate positive mass ratios are $1/4$ and $1$. The remaining cases are necessary conditions at a singular place.
+\end{abstract}
+\section{Curves, places and marked cells}
+Write $z_i=x_i+\mathrm{i}y_i$, $w_i=x_i-\mathrm{i}y_i$. The signed inverse distances satisfy $p_{ij}=p_{ji}$ and $p_{ij}^2(z_i-z_j)(w_i-w_j)=1$. The normalized force equations are
+\[
+ z_i=\sum_{j\ne i}m_jp_{ij}^3(z_i-z_j),\qquad
+ w_i=\sum_{j\ne i}m_jp_{ij}^3(w_i-w_j).
+\]
+A nontrivial curve in Tomar's slice has a varying squared mutual distance and a nonzero constant potential $U=\sum_{i<j}m_im_jp_{ij}$. Infinitely many distinct real shapes at fixed positive masses would produce such a curve. On its completion the divisor of each squared distance has degree zero. Some singular place must therefore have $L=\sum_{i<j}\ord(p_{ij}^{-2})\le0$ \cite[Corollaries 2.4 and 2.7]{Tomar}. We study these places.
+
+At a place, two trees describe the scales of differences in the two coordinates. A cell records the trees and the terms of least order in the equations. The slot carrying $t$ is marked, so one cell gives up to six placements. We use Chang and Chen's graph numbers \cite{CC}. Here \emph{generic positive} means outside a finite set of positive algebraic parameters.
+
+\newpage
+\begin{theorem}\label{main}
+In the catalogue of nonpositive places of \cite{Tomar}, specialized to the five-equal-mass line as in \cite{Prior}, only diagrams 88, 93 and 94 remain as possible obstructions at generic positive $t$. The bounds below count placements before quotienting by symmetries.
+\end{theorem}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Test and input stratum & 88 & 93 & 94 & Total\\
+\midrule
+Signed complex, with a core & 0 & 4 & 72 & 76\\
+Signed complex, without a core & 54 & 3 & 54 & 111\\
+Real-finiteness test, with a core & 0 & 3 & 24 & 27\\
+Real-finiteness test, without a core & 30 & 3 & 30 & 63\\
+\bottomrule
+\end{tabular}
+\end{center}
+A \emph{core} is a subset of the initial equations with a polynomial certificate for general masses. The first input consists of 738 placements whose assigned certificates and subsequent tests left no contradiction on this line. The second consists of all 114 placements in 19 cells without a core. The pre-existing reductions include the diagram-98 argument on this line \cite{Prior}. We give the reductions from these two inputs below.
+
+\section{Node equations specialized over $\QQ(t)$}
+At a node give its children coordinates $Y_j$; distinct children have distinct coordinates. At a root the origin-child has coordinate zero and the center of mass gives $\sum_j M_jY_j=0$, where $M_j$ is the mass below child $j$. Further equations come from summing force equations over a set of bodies at a common order. If all their forces of minimal order are internal, the mass-weighted sum cancels those forces in pairs. Positions attaining that order give another linear row \cite[Lemma 9.1]{Tomar}. Row reduction over $\QQ(t)$ excludes a cell whenever two distinct children are forced to coincide.
+
+Suppose bodies $a,b,s$ occupy distinct children of a common node in each tree, and two are balanced in one coordinate against precisely the other two. The three internal forces then balance in that coordinate. Suppose its three successive differences are fixed up to scale by the row equations, with values $(e_a-e_b,e_b-e_s,e_s-e_a)$. Put
+\[
+ u=m_s^2(e_a-e_b),\qquad v=m_a^2(e_b-e_s),\qquad w=m_b^2(e_s-e_a).
+\]
+Let $P_{ij}$ denote the leading inverse distances. By force balance the three products $P_{ab}^3(e_a-e_b)$ and its cyclic permutations are proportional to $(m_s,m_a,m_b)$. The cyclic sum of differences in the other projection then gives $P_{ab}/m_s+P_{bs}/m_a+P_{sa}/m_b=0$. Their cubes are proportional to $(1/u,1/v,1/w)$, so necessarily
+\[
+                      (uv+vw+wu)^3=27(uvw)^2.
+\]
+This follows the triangle calculation of \cite[Lemma 9.13]{Tomar}. The program tests the formula when the nullspace projects to a one-dimensional space of differences. All denominators and nonzero minors used in these tests have finitely many exceptional positive parameters.
+
+These two tests remove 604 of the 738 placements: 368 by forced coincidences and 236 further by the triangle identity. Two implementations give the same excluded set. It comprises all entries in diagrams 20, 36, 46, 47, 77, 102 and 117, plus 116 of 142 in diagram 100 and 26 of 28 in diagram 101. All 114 placements in the second input survive this stage.
+
+\newpage
+\begin{proposition}
+For positive $t$, diagram 46 can supply a nonpositive place only if $t\in\{1/4,1\}$.
+\end{proposition}
+\begin{proof}
+In 231 of its 239 listed cells, Lemma 9.11(a) of \cite{Tomar} applies to a balanced triangle with outer masses $a,b$, central mass $s$ and positive outer cluster weights $A,B$. Its equations require a common complex $k$ satisfying
+\[
+ Abk^3=Ba,\qquad s^2(A+B)(a+bk)^3=a^3b^2B.
+\]
+Both $bk$ and $a+bk$ have positive real cubes. On the two oblique cube-root rays a point is determined by its nonzero imaginary part. The positive real separation $a$ therefore forces both numbers to be positive real. Comparing $a+bk$ with $a$ and with $bk$ gives $s^2<b^2B/(A+B)$ and $s^2<a^2A/(A+B)$. Thus the marked mass is at the center. Both outer children contain two unit masses, so $A=B=2$, $a=b=1$, $k=1$ and $s=t=1/4$.
+
+In the other eight cells there are three matched pairs. In their leading $z$ equations each body sees only its position and the force of its partner. In six cells one such pair shares a nonzero child position $X$, forcing $(m_i+m_j)X=0$. In the last two, the three pairs connect the same two nonzero child positions $X,Y$. Each gives $m_i X+m_jY=0$, so the three mass ratios agree. The two unmarked pairs have ratio one, forcing $t=1$. The tree and force-support checks for the whole class accompany the paper \cite{Supplement}.
+\end{proof}
+\section{Rectangles, energy and the complementary triangle}
+The 134 core-bearing placements left by the node tests consist of four in diagram 84, thirty across 99--101, twenty-eight in 93 and seventy-two in 94. In the first two groups, four unit vertices form two leading columns and rows. With $A,B$ half the corresponding projection separations, the limiting corners in $Z=z/A$, $W=w/B$ are $(\pm1,\pm1)$ by the opposing unit-pair balances. Put $h=(AB)^{-1/2}$ after a finite extension. The two diagonals contribute $hK+o(h)$ to $U$, where $K=(\pm1\pm\mathrm{i})/2$.
+
+\paragraph{Nested rectangle in diagram 84.}
+The remaining binary has opposite-projection separation $D$ with $B/D\to0$. All eight cross inverse distances are of order $g=(AD)^{-1/2}=o(h)$. Subtract the side's two force equations in its separating projection. The other finite side at each endpoint has difference $O(h^2)$ there by the distance equation. The diagonal forces have order $O(h^3)$, and external forces are $O(g^3)$ in $Z$ and $O(g^3D/B)=O(gh^2)$ in $W$. Hence $1-2p^3=O(h^2)$ on each side. The binary likewise satisfies $1-(1+t)p^3=O(g^3)$. None of these five finite edges can contribute at order $h$. Constancy of $U$ would therefore require $K=0$. This excludes all four placements.
+
+\paragraph{Close column in diagram 100.}
+In 24 placements the binary-to-rectangle torque has precisely two leading cross terms. One binary member approaches a column occupied by two unit vertices. Its leading $z$ differences to them agree while the leading $w$ differences are opposite. The ratio of the leading inverse distances must satisfy $k^2=-1$ by the distance equations and $k^3=1$ by the torque. These conditions are incompatible.
+
+\newpage
+\paragraph{Separated columns in diagram 100.}
+In the other two placements the binary has large-projection positions $y,-ty$. The finite edges contribute no varying term of order $h$. The energy coefficient and the binary torque respectively require $C(y)=C'(y)=0$, where, up to a nonzero factor,
+\[
+ C(y)=1+\sum_{j=1}^4 v_j,\qquad v_j^2=4\epsilon_jm_j^2/L_j(y),
+\]
+with $m=(t,t,1,1)$, $L=(y-1,y+1,-ty-1,-ty+1)$ and $\epsilon_j=\pm1$. The derivative is taken in this explicit radical expression. For an individual cross edge its coefficient $g$ satisfies $g^2(Z_j-Z_l)(-W_l)=1$, with $Z_j=y$ or $-ty$ at the binary end. Consequently $2yg'=g^3Z_jW_l$; the subset torque gives the required derivative equation. The denominators are nonzero in this cell. Multiplying the product of $C$ over all choices of its four square roots by $(\prod L_j)^8$ gives a polynomial of degree 32 with leading coefficient $t^{16}$. For each of the sixteen choices of $\epsilon$ its specialization at $t=2$ is squarefree modulo 1009. The constant degree and exact gcd check exclude a generic multiple root.
+
+\paragraph{Diagrams 99 and 101.}
+The two diagram-99 placements yield a coefficient $K+P+tQ$ with $P,Q\in2\mathbb Z[\mathrm{i}]$ and real and imaginary components of $P,Q$ in $\{-2,0,2\}$. Its real part leaves only $t=1/4,3/4,5/4$. In the last two placements of diagram 101, seven finite edges must be controlled through $o(h)$. Two inverse distances to the attached vertex have limiting ratio a cube root $q$ of unity; $1+q^{-2}\ne0$ and the force and distance equations give $O(h^2)$ errors. At $t=2$ the resulting energy coefficient has nonzero Gaussian rational part for either placement. The other parts are independent radical components in $\QQ(\mathrm{i},\sqrt2,\sqrt3)$. Taking all conjugates gives a generically nonzero obstruction. Full expansions and the modular check are supplied in \cite{Supplement}.
+
+\paragraph{Diagram 93.}
+The fully circled triple satisfies the projected-shape and torque equations of \cite[Theorem 6.15]{Tomar}. On the positive two-equal-mass slice their simultaneous zeros require all three masses equal \cite{Prior}. For $t\ne1$ this removes 21 placements with cores and three without. A force-support and torque test at the uncircled vertex of the other triangle removes one more core-bearing placement. In two further placements, both marked at that vertex, a linearization about a symmetric outer limit gives a necessary vanishing determinant. With $u$ the common limiting inverse-distance cube on its two incident edges, the equations read
+\[
+ D_* = 1+tu/2+u(1-4tu)(1+t/2)=0,\qquad (t+\sigma/4)u=1,\quad \sigma=\pm1 .
+\]
+For the positive sign this requires $5-36t=0$; the negative sign would require $20t+1=0$. The candidate $5/36$ concerns only these two placements. The four surviving core entries are in catalogue cells 43, 60, 61 and 62, each marked at slot 2; cell 53 without a core retains slots 2, 3 and 4 (one-based mass slots). This yields the first two rows of Theorem~\ref{main}.
+
+\newpage
+\section{Curves required by real finiteness}
+At each centered real configuration $w_i=\overline{z_i}$, hence $z_i=0$ exactly when $w_i=0$. Partition a hypothetical infinite real family by the identity of the body at the origin, allowing the case where none lies there. At most one can lie there by collision avoidance, so one stratum is infinite. Reciprocal complex rotation preserves the zeros in the normalized slice. Take the relative Zariski closure inside the locus given by the prescribed zeros and by $z_iw_i\ne0$ for the other bodies. A positive-dimensional component containing infinitely many of the chosen points has constant nonzero potential and a varying squared distance. Intersecting with a suitable linear slice gives a nontrivial curve with the same coordinate-zero conditions, as in \cite[Corollary 2.4]{Tomar}.
+
+A coordinate shares the leaf of the origin precisely if it vanishes identically as a rational function on the curve. A nonzero function of positive finite order has a distinct leaf \cite[\S4.1]{Tomar}. Thus one may demand identical origin leaves in the two trees when testing the real finiteness problem. This does not require equality of the two orders at the complex place. Comparing the exact leaf records gives the last two rows of Theorem~\ref{main}.
+
+For each remaining placement we also map both trees, the minimizing term sets and the marked slot under graph automorphisms, allowing exchange of the two projections. The 187 signed-complex cases represent 55 equivalence classes: 8 in diagram 88, 6 in diagram 93 and 41 in diagram 94. The 90 real-finiteness cases represent 29 classes: 5, 5 and 19 respectively. The surviving classes specify the remaining questions about lifting leading data to a branch. This leaves finiteness on the general five-equal-mass line open.
+
+\paragraph{Verification.}
+The baseline is fixed at revision \texttt{2f639b0} of \cite{Prior} and the upstream catalogue at revision \texttt{84bbcf2} of \cite{Data}. Replay checks the SHA-256 digests of the cell files, reads their recorded trees and exact force supports, and uses rational-function linear algebra or integer arithmetic. Separate Lean 4.28.0 files verify the triangle polynomial identity, the strict smaller-center inequality for complex $k$, the incompatible rectangle phases, and the scalar determinant algebra in diagram 93. The derivation of these equations from a singular place, the enumerations and the real-stratum argument rely on the mathematical and computational arguments above and in the supplement. The complete reduction has not been formalized in Lean.
+
+\begin{thebibliography}{9}\small
+\bibitem{CC} K.-M. Chang and K.-C. Chen. \emph{Toward finiteness of central configurations for the planar six-body problem by symbolic computations}. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853}, 2023.
+\bibitem{Tomar} T. S. Tomar. \emph{Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean}. \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377, version 1}, 2026.
+\bibitem{Data} T. S. Tomar. \href{https://doi.org/10.5281/zenodo.23472605}{Computational archive}. Zenodo, record 23472605. \href{https://github.com/tejasvi/smale6-six-bodies-generic/tree/84bbcf276d029fdf31375c4a21c6a7e136955e51}{Source revision \texttt{84bbcf2}}.
+\bibitem{Prior} Chatgpt. \href{https://github.com/rongyulin/physics-open-problems-AI/tree/2f639b089053cf17fc6fce7274c06991119621ef/problems/planar-central-configurations}{Five-equal-mass manuscripts, diagram 98 and singular-cell census}. Revision \texttt{2f639b0}, 2026.
+\bibitem{Supplement} Chatgpt. \supplement. Supplementary materials for this paper, 2026.
+\end{thebibliography}
+\noindent\small\textcopyright\ 2026 Chatgpt. Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+\end{document}

@@ -4,6 +4,8 @@
 
 ## English
 
+The subsequent reduction leaves diagrams 88, 93 and 94 at generic positive mass ratio. The current shortlist contains 55 symmetry representatives, 29 of which satisfy the additional origin requirement for real finiteness. [Updated case list and manuscript](reduction/README.md)
+
 Fix positive masses proportional to $(1,1,1,1,1,t)$. An infinite family of distinct real central configurations at fixed masses gives a nontrivial curve in the normalized complex equations. A singular diagram records the relative orders of its coordinates and pair distances at a place on that curve. The following deductions supplement the [diagram 98 manuscript](../papers/FiveEqualSixBody.pdf).
 
 - **Census of published core identities.** Restricting 1,928 published certificate polynomials to all six placements of the distinguished mass retains a nonzero obstruction in 203,119 of 232,788 cell–placement pairs. One diagram-8 cell loses its assigned obstruction for every placement. The individual certificate for diagram 63 equals a sum of two positive masses and excludes it as an end with nonpositive total distance order for any positive masses. [Inputs, counts and replay](CoreCensus.md)
@@ -21,6 +23,8 @@ Write $x_{ij}(P)$ for the normalized order of the squared distance $r_{ij}^2$ at
 Changing weights requires reconsidering cells previously discarded solely because $A+B>0$. The seven diagram classes in the last step of Tomar’s generic-mass proof follow earlier mass-dependent exclusions. Those exclusions must be checked on this mass line. A useful preliminary calculation is to choose each of the six possible distinguished vertices in turn for a fixed valuation vector of total sum $L$. The average projection $(A,B)$ is $(2L/3,L/3)$, because each edge is incident to precisely two vertices. If $L=0$ and every placement survives, no such functional can be strictly positive on all six. Local exclusions of particular placements can therefore be decisive. A successful global separation on this family remains open. [Tomar, §§5 and 8](https://hexagonmath.org/pdf/2611.00377v1)
 
 ## 中文
+
+本页记录第一轮筛查。随后一般正质量比下的清单已缩至图 88、93、94，合并对称性后有 55 个代表，针对实构型有限性进一步剩下 29 个。[最新清单、论文与复验](reduction/README.md#中文)
 
 固定质量 $(1,1,1,1,1,t)$。若某个固定的正质量比有无穷多个不同的实中心构型，归一化后的复方程会有一条非平凡代数曲线。退化图记录这条曲线趋向边界时，各坐标和体间距离以什么相对速度变化。
 

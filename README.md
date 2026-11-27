@@ -60,7 +60,9 @@ For five masses independently near one and a sufficiently light sixth mass, the 
 
 On the mass line $(1,1,1,1,1,t)$, three further manuscripts exclude Tomar’s diagram 98 for all positive mass ratios outside a finite set of algebraic candidates, isolate three folds and three pitchfork bifurcations, and prove finiteness of the signed complex collinear subsystem. Finiteness of the entire generic planar fibre on this line remains open. [Diagram 98 and the mass line](./problems/planar-central-configurations/papers/FiveEqualSixBody.pdf) · [Pitchfork bifurcations](./problems/planar-central-configurations/papers/Pitchfork.pdf) · [Signed collinear equations](./problems/planar-central-configurations/papers/SignedCollinear.pdf)
 
-[Project and six papers](./problems/planar-central-configurations/README.md) · [Small-mass count](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Two triangles](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse indices](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean and verification](./problems/planar-central-configurations/Lean/README.md)
+A seventh paper reduces the generic five-equal-mass case list from 14 diagram classes to three. Diagrams 88, 93 and 94 contain 55 remaining symmetry representatives, including 29 compatible with the origin condition for real configurations. [Paper and case list](./problems/planar-central-configurations/notes/reduction/README.md)
+
+[Project and seven papers](./problems/planar-central-configurations/README.md) · [Small-mass count](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Two triangles](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse indices](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean and verification](./problems/planar-central-configurations/Lean/README.md)
 
 ### Reuse and attribution
 
@@ -126,7 +128,9 @@ Liu 等在 2025 年利用 37 个光学模式实现了基于 Perkel 图的 57 事
 
 另三篇论文研究质量线 $(1,1,1,1,1,t)$，在有限多个代数候选值以外排除 Tomar 退化图 98，定位三处折叠与三处叉形分岔，并证明有符号复共线子系统只有有限个解。整条质量线的一般平面纤维是否有限仍待证明。[退化图与质量线](./problems/planar-central-configurations/papers/FiveEqualSixBody.pdf) · [叉形分岔](./problems/planar-central-configurations/papers/Pitchfork.pdf) · [有符号共线方程](./problems/planar-central-configurations/papers/SignedCollinear.pdf)
 
-[项目与六篇论文](./problems/planar-central-configurations/README.md) · [小质量计数](./problems/planar-central-configurations/papers/SmallMass.pdf) · [两个正三角形](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse 指标](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean 与复验](./problems/planar-central-configurations/Lean/README.md)
+第七篇研究稿把五重等质量线一般参数上的退化图候选从 14 种缩至 88、93、94 三种。仍有 55 个对称代表，29 个满足实构型有限性所需的原点条件。[论文与清单](./problems/planar-central-configurations/notes/reduction/README.md#中文)
+
+[项目与七篇论文](./problems/planar-central-configurations/README.md) · [小质量计数](./problems/planar-central-configurations/papers/SmallMass.pdf) · [两个正三角形](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse 指标](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean 与复验](./problems/planar-central-configurations/Lean/README.md)
 
 ### 转载、翻译与代码复用
 

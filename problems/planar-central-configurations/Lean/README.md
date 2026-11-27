@@ -28,6 +28,10 @@ The papers and original documentation are licensed under CC BY 4.0, the original
 
 Use the extracted mass-parameter project’s pinned Lean 4.28.0 and mathlib. From its `Lean` directory, run `lake env lean /path/to/Diagram88Square.lean` and `lake env lean /path/to/Diagram93Algebra.lean`, substituting the paths to these standalone sources. [Diagram 88](Diagram88Square.lean) classifies all positive mass-ratio parameters for the square torque equation in real coordinates. [Diagram 93](Diagram93Algebra.lean) proves the distance-ratio bound, force-residual identity, and root-of-unity facts used in the hand derivation. [Research notes](../notes/README.md)
 
+### Reduction to three candidate diagrams
+
+Four standalone files use the same Lean 4.28.0 and mathlib as the mass-parameter project. Run `lake env lean /path/to/FILE.lean` on each. [NodeTriangle](NodeTriangle.lean) checks the fixed-shape identity. [ClusterTriangle](ClusterTriangle.lean) checks the complex-root mass bound. [RectanglePhase](RectanglePhase.lean) proves the phase contradiction and central-binary arithmetic. [Diagram93Slice](Diagram93Slice.lean) checks the scalar determinant restrictions. The cell enumeration, finite-field calculation and Puiseux expansions are documented separately. [Full scope and replay](../notes/reduction/README.md)
+
 ## 中文
 
 ### 小质量、正三角形与 Morse 指标
@@ -53,3 +57,7 @@ Use the extracted mass-parameter project’s pinned Lean 4.28.0 and mathlib. Fro
 [TriangleMass.lean](TriangleMass.lean) 核查[图 8](../notes/Diagram8.md) 用到的两种三体质量条件都要求 $t=1/4$。在同一环境运行 `lake env lean /path/to/TriangleMass.lean`。
 
 使用上述质量参数工程固定的 Lean 4.28.0 和 mathlib。在解压后工程的 `Lean` 目录运行 `lake env lean /path/to/Diagram88Square.lean` 和 `lake env lean /path/to/Diagram93Algebra.lean`，将路径替换为下载的文件位置。[图 88](Diagram88Square.lean) 完整分类正方形首阶力矩方程的正参数。[图 93](Diagram93Algebra.lean) 核查距离比的模下界、剩余力恒等式及两个单位根性质。图 93 从六体方程到局部极限的论证见[研究笔记](../notes/README.md#中文)。
+
+### 三种候选退化图的清单
+
+用同一 Lean 4.28.0 与 mathlib 环境对下列四个文件分别运行 `lake env lean /path/to/FILE.lean`。[NodeTriangle](NodeTriangle.lean) 核查投影形状恒等式，[ClusterTriangle](ClusterTriangle.lean) 核查三体簇的质量约束，[RectanglePhase](RectanglePhase.lean) 核查复相位矛盾及中心双体的质量算术，[Diagram93Slice](Diagram93Slice.lean) 核查图 93 的行列式条件。单元枚举、有限域计算与从六体方程导出的渐近展开各有独立的复验或书面推导。[方法与范围](../notes/reduction/README.md#中文)

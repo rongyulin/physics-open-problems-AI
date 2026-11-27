@@ -8,6 +8,8 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 
 ### English
 
+- **Reduction to three six-body diagrams.** Published a manuscript, four Lean modules and a reproducible ledger reducing the earlier list to diagrams 88, 93 and 94. [Reduced list][reduced]
+
 - **Six-body singular diagrams.** Added an exact census of published certificate polynomials on the five-equal-mass line, local torque calculations, and supplementary Lean algebra checks. [Notes][diagrams]
 
 - **Five-equal-mass six-body problem.** Added three manuscripts on diagram 98 over a rational function field, six local bifurcations, and signed collinear configurations. Includes the ten-module Lean project, exact certificate replays and a second Chinese research log. [Papers][central] · [Verification][parameter]
@@ -19,6 +21,8 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 - **Licensing and verification.** Released the papers and original documentation under CC BY 4.0 and the original proof and verification code under MIT. The five manuscript PDFs now carry a license and source link. Each of the five Lean project archives includes both license texts, and all six Lean directories have bilingual reproduction instructions. [Licensing commit][liccommit]
 
 ### 中文
+
+- **六体退化图的候选缩至三种。** 新增英文论文、四个 Lean 模块与逐项可复算的清单，一般正质量比下剩余 88、93、94 三种图。[新清单][reduced]
 
 - **六体退化图。** 补入五重等质量线上的原始证书逐项筛查、退化图局部力矩计算和配套 Lean 代数检验。[研究笔记][diagrams]
 
@@ -42,3 +46,5 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 [docs]: https://github.com/rongyulin/physics-open-problems-AI/commit/f09c3c82abb8a437745b00ecedb9fc1e5bf8b045
 [render]: https://github.com/rongyulin/physics-open-problems-AI/commit/0d4e2036ed316ebd4bce62b029ae04afe428b37d
 [liccommit]: https://github.com/rongyulin/physics-open-problems-AI/commit/709e633dfa51e2f9303b19aba0ff1bca7bd2501f
+
+[reduced]: ./problems/planar-central-configurations/notes/reduction/README.md

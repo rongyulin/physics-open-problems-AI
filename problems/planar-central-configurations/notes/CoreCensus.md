@@ -1,5 +1,7 @@
 # Which of Tomar’s cell certificates survive five equal masses?
 
+The 738-row list below is the archived input for a later reduction. [Current working list](reduction/README.md)
+
 Take positive masses with five entries equal to 1 and the sixth equal to $t$. Tomar’s Proposition 5.3 assigns a verified polynomial identity to each of 38,798 cells. For each cell the identity implies that a singular place in that cell must have $h(m)=0$. Specializing these stored polynomials gives an exact filter for the cells that could supply the nonpositive sum of distance valuations required by Corollary 2.7. The entries below count six labelled choices for the position of the variable mass per cell, before identifying symmetries.
 
 | Outcome of the original certificate | Count |

@@ -4,7 +4,7 @@
 
 ## English
 
-In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The six manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
+In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The seven manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
 
 ### Five nearly equal masses and a light sixth body
 
@@ -34,13 +34,17 @@ The Newtonian orderings of bodies on a real line describe the physical collinear
 
 The supplementary notes specialize 1,928 published certificate polynomials on this line and analyze leading configurations or necessary conditions for diagrams 8, 52, 63, 64, 66, 88, 93 and 94. [Singular diagrams](notes/README.md)
 
+### Three candidate diagrams for generic positive mass ratio
+
+The later census reduces 14 candidate diagram classes to 88, 93 and 94. Of the original 738 core-certified placements, 76 remain. Among the 114 placements of the separate 19 core-free cells, 111 remain. The two lists combine into 55 orbits under relabelling and exchange of the complex projections. Of these, 29 also satisfy a necessary condition for an infinite family of real configurations. The new paper derives the exclusions and distinguishes the finite Python replays and checked Lean lemmas from the analytic arguments. [Paper](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [Case lists and reproduction](notes/reduction/README.md)
+
 ### Verification and reuse
 
 The verification package includes Lean sources, exact-arithmetic verifiers, their inputs, archived outputs and the research notes. The guide distinguishes the statements checked in the Lean kernel, executable certificate replays, analytic arguments and results taken from the literature. The original papers and documentation are licensed under CC BY 4.0, and original proof and verification code under MIT. Credit the papers to **Chatgpt**. Moczurad and Zgliczyński’s catalogue supplies the numerical starting coordinates and catalogue completeness. Third-party materials and dependencies retain their own terms. [Verification guide](Lean/README.md) · [Initial research log (Chinese)](ResearchLog_zh.md) · [Mass-parameter research log (Chinese)](SixBodyProgress_zh.md) · [License and attribution](../../LICENSE)
 
 ## 中文
 
-在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的六篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
+在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的七篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
 
 ### 五个近等质量天体与一个轻天体
 
@@ -69,6 +73,10 @@ Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，�
 经典实共线理论按天体在直线上的顺序描述物理解。做代数消元时，还要考虑复坐标和各距离平方根的符号选择。论文证明，只要每个非空质量子集的质量和均非零，归一化的有符号全共线方程就只有有限个解。这覆盖五重等质量线上每个正 $t$ 以及几何一般参数。五个单位质量共线且第六体在直线外，对每个正 $t$ 均不可能。对几何一般参数，任选五体共线而余下一体在轴外均不可能。于是，对余下的一般参数构型，重新排列等质量标签后，只需研究三个指定单位质量不共线的一个坐标图。[英文论文 PDF](papers/SignedCollinear.pdf) · [LaTeX 源稿](papers/SignedCollinear.tex)
 
 补充研究笔记记录了同一质量线上 1,928 个原始证书多项式的筛查和图 8、52、63、64、66、88、93、94 的分析，给出可以直接排除的情形、通过首阶检验的显式构型和仍需检验的边界。[退化图研究笔记](notes/README.md#中文)
+
+### 一般正质量比下的三种候选退化图
+
+通过节点力平衡、恒定势能与局部力矩检验，原先的 14 个图类缩至图 88、93、94。旧表中的 738 个带证书组合剩下 76 个，另列的 19 个无证书单元在展开标记位置之后由 114 个组合缩至 111 个。两部分合计 55 个对称代表，针对无限实构型族所需的曲线，还有 29 个代表满足原点相容性。剩余情形的实际存在性及该质量族的完整有限性仍有待证明。[论文 PDF](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [清单和复验](notes/reduction/README.md#中文)
 
 ### 复验与许可
 
