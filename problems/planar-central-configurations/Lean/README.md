@@ -36,6 +36,24 @@ Four standalone files use the same Lean 4.28.0 and mathlib as the mass-parameter
 
 Run each standalone file with the same Lean 4.28.0/mathlib environment, using `lake env lean /path/to/File.lean`. The six files verify the following statements. [EnergyBounds](EnergyBounds.lean) (finite weighted energy bound, triple energy identity and regular-vertex derivative inequalities) · [Physical93Bounds](Physical93Bounds.lean) (central-vertex energy gap) · [MarkedBinaryEnvelope](MarkedBinaryEnvelope.lean) (marked-binary inequalities) · [Negative93Algebra](Negative93Algebra.lean) (Jacobian and Schur complement) · [FourTermCancellation](FourTermCancellation.lean) (four-radical elimination) · [EquilateralCubic94](EquilateralCubic94.lean) (discriminant of the binary cubic). The analytic reductions and the catalogue are documented in the [paper and replay](../notes/physical-ends/README.md).
 
+### Generic finiteness on the five-equal-mass line
+
+Use the same pinned Lean 4.28.0 and mathlib environment. Each file runs independently with `lake env lean /path/to/File.lean`.
+
+- [CenterForces94.lean](CenterForces94.lean) eliminates the shared body's small coordinate from an outer force equation and recovers the marked mass when two normalized center-edge cubes differ.
+- [QuartetTorque88.lean](QuartetTorque88.lean) derives the quartic obstruction from four torque summands, eliminates a common mass from two affine equations, and verifies the two signed-length identities for a reflected quartet.
+- [ZeroProjection88.lean](ZeroProjection88.lean) eliminates a common coefficient from two edge equations, gives the identity used to remove the two distance signs, and shows when equality of two center-edge cubes forces equality of the third. Two further theorems link the specialization to the finite-fibre check. The cleared torque polynomial forces all four specialized abscissas to be nonzero when they are pairwise distinct and the signed mass squares remain nonzero. For any evaluation from a rational factor algebra to a field that kills the three force equations, the certified membership of the product of the 13 chart factors in their ideal forces at least one factor to vanish. The supplied rational rank computation establishes this membership separately on the 49 factor pairs.
+- [QuartetDistanceChart.lean](QuartetDistanceChart.lean) derives a squared pair distance from affine dependence of the quartet and checks the quadratic determining its projection. It also checks the parity obstruction for a rational square at a simple pole. The AbsoluteInversion88 section verifies inversion of signed quartet distances and force cancellation in the explicit zero-multiplier constructions.
+- [OpposingPairWindow.lean](OpposingPairWindow.lean) checks a triangle distance-ratio identity, the exact squared-displacement sum for a trial configuration, and the upper bound for the marked derivative under the stated energy estimates.
+- [QuartetEnergy88.lean](QuartetEnergy88.lean) proves the real cube-root comparison used for the strict quartet energy gap, under the displayed polynomial inequality, and the elementary sum identities for the endpoint trial. The angular averaging and the polynomial signs are established in the accompanying proof and replay.
+- [ZeroStressGram88.lean](ZeroStressGram88.lean) checks every one of the 243 normalized squared-distance triples of outer edges and two remaining star distances. It proves that the required Gram determinant cannot vanish over any extension of the test field, whereas planar positions force it to vanish.
+
+The finite shape classifications, polynomial gcds, lifting computations, and final exclusion of all physical classes have separate executable or analytic proofs. [Paper (PDF)](../papers/LastDiagrams.pdf) · [Case ledger and verification](../notes/last-diagrams/README.md)
+
+### Signed quartets and the Coulomb specialization
+
+[CoulombFour.lean](CoulombFour.lean) deduces the allowed mass polynomial from the scalar equations for a noncollinear real Coulomb equilibrium. For an ordered collinear quartet it proves that a positive determinant factor contradicts simultaneous field cancellation under the stated inverse-distance inequalities. The companion paper treats the larger signed system and the realization of its exceptional ratios. [Companion paper (PDF)](../papers/SignedQuartetEquilibria.pdf)
+
 ## 中文
 
 ### 小质量、正三角形与 Morse 指标
@@ -69,3 +87,21 @@ Run each standalone file with the same Lean 4.28.0/mathlib environment, using `l
 ### 实构型的势能与质量导数
 
 本轮六个文件按上面的 Lean 4.28.0 方法分别运行。EnergyBounds、Physical93Bounds 和 MarkedBinaryEnvelope 核查有限求和的能量下界、三体能量恒等式和质量导数所用的不等式，Negative93Algebra 核查雅可比行列式和 Schur 补，FourTermCancellation 核查四个根式的消去，EquilateralCubic94 核查二元三次式判别式的必要条件。从六体方程到这些检验的推导见[英文论文与复验说明](../notes/physical-ends/README.md#中文)。
+
+### 五重等质量线上一般参数的有限性
+
+在同一 Lean 4.28.0 和 mathlib 环境中，对每个独立文件运行 `lake env lean /path/to/File.lean`。
+
+- [CenterForces94.lean](CenterForces94.lean) 从一个外体的引力方程中消去共享体的小投影坐标，并在两条中心边的归一化逆距离立方不等时解出标记质量。
+- [QuartetTorque88.lean](QuartetTorque88.lean) 从四项力矩和推出四次必要条件，在两个关于质量的一次方程间消元，并核查反射对称四体组的两条有符号边长恒等式。
+- [ZeroProjection88.lean](ZeroProjection88.lean) 消去两个边方程共有的系数，给出消去两个距离符号的恒等式，并证明在所列中心方程下，只要两条中心边的逆距离立方相等，第三条也与它们相等。特化后，只要四个横坐标仍两两不同、有符号质量平方均非零，清除分母后的力矩多项式就保证四个横坐标均非零。另一条定理证明，若 13 个坐标因子的乘积属于三个受力方程生成的理想，则在任何使三个方程为零的域值点，至少一个因子必须为零。49 对因子各自所需的理想成员关系由有理矩阵秩证书检验。
+- [QuartetDistanceChart.lean](QuartetDistanceChart.lean) 从四个位置的仿射相关关系推出成对距离的平方，并核查确定投影的二次方程，以及用有理函数平方的零极点阶数奇偶性得到的限制。其中 AbsoluteInversion88 部分核查有符号四体距离反演及零力乘子显式构造中的合力抵消。
+- [OpposingPairWindow.lean](OpposingPairWindow.lean) 核查三体距离比恒等式、一个试验构型的位移平方和，以及从给定能量估计推出的标记质量导数上界。
+- [QuartetEnergy88.lean](QuartetEnergy88.lean) 证明了四体能量严格间隙用到的立方根比较引理，以及端点试验构型的求和恒等式。比较引理以一个明确的多项式不等式为前提，角度平均和多项式符号分别由书面推导和计算复验给出。
+- [ZeroStressGram88.lean](ZeroStressGram88.lean) 检查归一化后一条边以外的五个平方距离的全部 243 种组合，证明在特征 65521 测试域的任何扩域上，它们给出的 Gram 行列式都非零；而四个位置若能在平面实现，该行列式必为零。
+
+形状分类、多项式最大公因式、延拓计算及全部实问题对称类的排除，分别由计算程序和论文中的推导支撑。[英文论文 PDF](../papers/LastDiagrams.pdf) · [清单与复验说明](../notes/last-diagrams/README.md)
+
+### 四体有符号绝对平衡及库仑特例
+
+[CoulombFour.lean](CoulombFour.lean) 从非共线实库仑平衡的标量方程推出质量比必须满足的多项式条件。共线时，从按位置排序得到的逆距离不等式推出一个行列式因子严格为正，因而相应的电场不能在各点同时抵消。更一般的逐边带符号系统及其例外质量比的构造见[配套论文](../papers/SignedQuartetEquilibria.pdf)。

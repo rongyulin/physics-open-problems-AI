@@ -1,0 +1,228 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[letterpaper,margin=0.84in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue,pdftitle={Generic finiteness on the five-equal-mass line of the planar six-body problem},pdfauthor={Chatgpt}}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\KC}{K_{\mathrm C}}
+\newcommand{\supplement}{\href{https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/planar-central-configurations/notes/last-diagrams}{electronic supplement}}
+\title{Generic finiteness on the five-equal-mass line\\of the planar six-body problem}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For five equal positive Newtonian point masses and a sixth of mass ratio $t>0$, the number of planar central configurations up to similarity is finite outside a finite set of algebraic values of $t$. A six-body diagram classification and earlier reductions restrict a hypothetical infinite real family to 22 symmetry classes in two singular diagrams. We exclude diagram 94 for every position of the unequal mass by classifying projected shapes and obstructing their lifts. Diagram 88 with a marked quartet body is excluded by two computations. The first specializes the four-body equations and cross torque at the mass $2$ in residue characteristic 65521, with control of all boundary strata. The second works over a varying distance ratio in characteristic zero and accounts for the boundary multiplicities of a resultant of degree 4046. Five signed-complex classes remain possible on curves not needed for real finiteness. The exceptional mass ratios are not determined. The proof combines written arguments, exact arithmetic programs and Lean checks of selected lemmas.
+\end{abstract}
+
+\section{The residual finiteness question}
+Normalize the acceleration to $-q_i$ about the center of mass. Put $z_i=x_i+\mathrm i y_i$ and $w_i=x_i-\mathrm i y_i$. Over $\C$, regard the projections as independent and use signed inverse distances $p_{ij}=p_{ji}$. Writing $u_{ij}=u_i-u_j$, the equations are
+\begin{equation}\label{system}
+ u_i=\sum_{j\ne i}m_jp_{ij}^3u_{ij}\quad (u=z,w),\qquad p_{ij}^2 z_{ij}w_{ij}=1 .
+\end{equation}
+An infinite set of real shapes yields an algebraic curve whose complex ends obey necessary order and sign conditions. A diagram encodes dominant interactions at such an end. We use the six-body diagram numbers of Chang and Chen \cite{CC}. Tomar's generic-mass theorem leaves an exceptional algebraic subset containing every vector with three equal masses \cite{Tomar}. Consequently that criterion gives no information on the line considered here. Moczurad and Zgliczy\'nski enumerated the planar configurations at $t=1$ \cite{MZplanar}, and obtained exact counts for masses sufficiently close to equality \cite{MZnear}. The small-mass regime $0<t\ll1$ is also covered by the \href{https://github.com/rongyulin/physics-open-problems-AI/blob/main/problems/planar-central-configurations/papers/SmallMass.pdf}{earlier small-mass manuscript in this series}. The present result covers the full positive parameter line outside a finite algebraic set. The previous reduction left 22 classes of ends on curves arising in a contradiction to real finiteness, in diagrams 88 and 94 \cite{Previous}.
+
+\begin{theorem}\label{main}
+There is a finite set $E\subset\overline{\mathbb Q}\cap\mathbb R_{>0}$ such that for $t\in\mathbb R_{>0}\setminus E$ the Newtonian six-body problem of masses $(1,1,1,1,1,t)$ has finitely many real planar central configurations up to similarity. At such $t$ no signed six-body singular place has diagram 94, or diagram 88 with the marked mass in the quartet. If the marked mass lies in the binary of diagram 88, every small quartet projection is nonzero.
+\end{theorem}
+Throughout, generic means outside a finite parameter set. An exponent cell refines a diagram. A labelled placement specifies a cell and the slot occupied by $t$. Classes identify diagram-preserving relabellings and permitted projection interchanges. The physical list additionally requires that a curve could arise from a stratum containing infinitely many real shapes. The diagram-94 exclusions apply to the complex signed equations themselves.
+
+\section{Marking the shared body of diagram 94}
+The quartet has three outer bodies and a shared body $c$. The other two bodies and $c$ form a second cluster. Tomar's $\KC$ system comprises all quartet forces in the large projection $X$, the three outer forces in its small projection $Y$, and the six quartet distance equations \cite[Lemma 6.16]{Tomar}. The small-coordinate force at $c$ in the full system contains terms from the other cluster.
+
+First take $m_c=t$. Set $X_c=0$, $X_1=1$. Centering gives $\sum_{i=1}^3 X_i=0$. The leading torque requires three quantities $v_i=d_i/\sqrt{X_i}$ to sum to zero, where $d_i=\pm(1\pm\mathrm i)$. Put $z=v_2/v_1$ and $e_i=d_i^2/d_1^2\in\{1,-1\}$. Then
+\begin{equation}\label{quartic}
+ z^2(1+z)^2+e_2(1+z)^2+e_3z^2=0,\qquad
+ X=(1,e_2/z^2,e_3/(1+z)^2).
+\end{equation}
+For $e_2=e_3=1$ the quartic is $(z^2+z+1)^2$. The other three have four distinct roots each. Modulo 673 all fourteen projected triples are admissible and distinct.
+
+Set $p_*=p_{1c}$, $r_i=p_{ic}/p_*$, $q_{ij}=p_{ij}/p_*$ and $v=p_*^{-3}$. The normalized relative projection is $y_i=p_*^2(Y_i-Y_c)=1/(X_ir_i^2)$. The center force gives the smooth plane cubic $\sum X_i r_i^3=0$. On its chart $r_1=1$ adjoin the three nonzero square roots $q_{ij}^2=[(X_i-X_j)(y_i-y_j)]^{-1}$. Define
+\begin{equation}\label{res}
+ a_i=\sum_{j\ne i}q_{ij}^3(1-X_j/X_i),\qquad
+ C_i=\sum_{j\ne i}q_{ij}^3(X_jy_i/X_i-y_j).
+\end{equation}
+The outer forces give $v=t r_i^3+a_i$ and $C_i=v p_*^2Y_c$. Over the collision-free open cubic the three square roots form a finite étale cover. Every component maps onto the open cubic. One fibre where each sheet violates at least one of $C_1=C_2=C_3$ proves the simultaneous zero set finite.
+
+For each $X$ the shape certificate exhibits such a fibre modulo 673. Its $r_2$ lifts to an integer and the cubic for $r_3$ has a simple nonzero root at the specified residue. At a place over 673 all denominators are units and all residual signs are tested in $\F_{673^2}$. Hensel lifting gives the required characteristic-zero fibre. When some $r_i^3\ne1$, the geometry determines $t=(a_i-a_1)/(1-r_i^3)$. The other tuples have $r_i^3=1$ for all $i$ and require $a_1=a_2=a_3$. The certificate checks all nine ordered pairs $(r_2,r_3)$ per projection and all edge signs. A residual collision forces an equilateral $X$ and an actual equality of cube roots of unity. Only two geometries survive, in either orientation, with $X=(1,\omega,\omega^2)$, $\omega^2+\omega+1=0$:
+\begin{equation}\label{two}
+ (r_i,y_i)=(1,X_i^{-1})\quad\text{or}\quad (r_i,y_i)=(X_i^{-1},X_i).
+\end{equation}
+Each has three equal outer inverse-distance cubes and $Y_c=0$.
+
+\section{Lifting and the marked binary}
+Both shapes in \eqref{two} satisfy equations that discard the coupling of the clusters. To test the lift, use coordinates relative to $c$, with $A=\{5,6\}$ and $B=\{1,2,3\}$:
+\[
+ (z_i,w_i)=(hU_i,h^{-1}(v_i+h^2b))\ (i\in A),\qquad
+ (z_j,w_j)=(h^{-1}(x_j+h^2a),hY_j)\ (j\in B).
+\]
+Here $h\to0$, $v_5-v_6=x_1=1$, $\sum_A m_i v_i=\sum_Bx_j=0$. Nonzero separations permit this chart after reciprocal rotation and a finite extension of the branch parameter. Equations \eqref{system} give stationarity of $L=V+I/2$, where $V=\sum_{i<j}m_im_jp_{ij}$ and $I$ is the centered bilinear inertia. Expand $L=F+hG+h^2H+h^3J+O(h^4)$. With $g_{ij}^2=-1/(x_jv_i)$, expansion of the cross-edge potential gives
+\[
+ G=\sum_{i,j}m_i g_{ij},\qquad J=\tfrac12\sum_{i,j}m_i g_{ij}
+ \left((U_i-a)/x_j+(Y_j-b)/v_i\right).
+\]
+For both shapes, $G=0$ forces $g_{ij}=d_i x_j$ with $d_i^2=-1/v_i$. Indeed a nonzero signed sum of the three cube roots of unity is twice a sixth root, whereas the binary row weights have purely imaginary ratio. Hence $dG=0$ on centered shape variations. Both $\sum Y_j$ and $\sum p_{cj}/x_j$ vanish. After division by $h^2$, stationarity in $a,b$ has an invertible Jacobian, with zero diagonal and cross derivative $-3(m_5+m_6)/(2\sum m_i)$. The two $U$ and three $Y$ variables have invertible transverse Hessian blocks on all sheets through the all-equal witness. Eliminating them leaves $k=x_2-\omega$ and $h$, with sole possible quadratic term $Ak^2$ and homogeneous cubic
+\[
+ P=f k^3+g h k^2+e h^2k+jh^3 .
+\]
+If $A\ne0$, stationarity in $k$ gives $k=O(h^2)$, so stationarity in $h$ requires $j=0$. If $A=0$, a nonconstant stationary germ has a limiting projective direction where both derivatives of $P$ vanish, forcing its discriminant to vanish.
+
+Two programs compute the transverse Hessians, $j$ and the discriminant at six unit masses. The first geometry uses both relative center/outer signs represented by the conjugates of $\sqrt3$. For the second, its common normalized outer cube satisfies $\kappa^2=-1/27$, and $p_*^{-3}=m_c+3\kappa$. At each witness both Hessian determinants, $j$, and the discriminant are nonzero on all 864 choices of roots. The primes are 73 and 97, respectively. The binary scales, distance signs and parameters are algebraic and regular above the all-equal mass, with invertible denominators. Taking norms extends nonvanishing to generic $t$ whether the marked mass sits at $c$ or in the binary. This test at $t=1$ concerns the two specified shapes only.
+
+\paragraph{Why marking a binary body leads to the same two shapes.}
+The quartet now has fixed unit masses. Its collision-free $\KC$ solutions have finitely many normalized large projections. To see this, put $r_2=u$, $r_3=w$ and $X=(1,x,-1-x)$. Away from $u^3=w^3$, the center equation gives $x=(w^3-1)/(u^3-w^3)$. For three affinely noncollinear outer points put
+$\lambda_i=(X_jy_k-X_ky_j)/\sum_{\rm cyc}(X_jy_k-X_ky_j)$, using cyclic indices. Writing $b_{ij}=q_{ij}^3$, two force differences give
+\[
+ b_{12}-b_{13}=-\lambda_1(u^3-w^3),\qquad
+ b_{12}-b_{23}=-\lambda_2(1-w^3).
+\]
+These identities follow by expressing the origin in barycentric coordinates of the outer triangle and subtracting the outer force equations. Squaring to remove the edge signs yields integer polynomials of bidegrees $(102,102)$ and $(96,102)$ in $(u,w)$. After removing common chart factors, their exact gcd is one. The other cases can be checked directly. If $y_i=A X_i+B$ then $C_i=-B a_i$. When $B=0$, the normalized $y_i=X_i$ give $\sum_i\pm X_i^{-2}=0$, a nonidentity with a pole at $x=0$. When $B\ne0$ all $r_i^3=1$, and collinearity of $(X_i,r_i/X_i)$ is a nonidentity, again by its pole at $x=0$. If $u^3=w^3$, the center equation gives both cubes one. In the noncollinear case the outer cubes then coincide; equating cubed squared edge lengths gives a nonidentity (set $x=1$ after clearing denominators).
+
+For the resulting finite set of $X$, the two binary torque rows have constant signed sums $P_1,P_2$. Their weights depend on $t$ through $t^{3/2}$ or its reciprocal, so both sums must vanish on a dominant family. A zero signed sum of $X_i^{-1/2}$ and $\sum X_i=0$ give the $e_2=e_3=1$ case of \eqref{quartic}. At this equilateral projection a second calculation uses the diagonal cubic $w^3=-\omega-\omega^2u^3$. Norms of the two force constraints to $\Q[u]$ have gcd, up to a constant, $(u-1)^4(u^2+u+1)^{21}$. Thus $u^3=w^3=1$. For collinear outer points the preceding $B\ne0$ argument applies; for $B=0$ the center equation becomes $\sum\pm X_i=0$ and fixes the signs. The classification \eqref{two} and its cubic obstructions exclude this placement.
+
+\section{A variable outer mass in diagram 94}
+Give the quartet labels $0,1,2,3$ with $0$ marked, $3$ shared, and $X_0=1$, $X_3=0$. The mass-weighted sum of the four $X$-force equations gives $t+X_1+X_2=0$. Combining it with the equal-binary torque gives
+\[
+ X_1=\delta_1/(t^2z^2),\quad X_2=\delta_2/[t^2(1+z)^2],\quad
+ t^3z^2(1+z)^2+\delta_1(1+z)^2+\delta_2z^2=0 .
+\]
+Here $\delta_i=\pm1$. At $t=\infty$ the last equation is monic after division by $t^3$, reducing to $z^2(1+z)^2=0$. Relabel the equal outer bodies so $z\to0$. For $\nu(t)=-1$ we then have $X_1\sim-t$, $X_2\sim\delta_2t^{-2}$. In edge order $01,02,03,12,13,23$ the six $a_{ij}=\nu(X_i-X_j)$ are $(-1,0,0,-1,-1,2)$. Write $b_{ij}=\nu(Y_i-Y_j)$ and $w_i=\nu(m_i)$. The orders of the $X$ and $Y$ forces from body $j$, doubled, are
+\[
+ 2w_j-a_{ij}-3b_{ij},\qquad 2w_j-3a_{ij}-b_{ij}.
+\]
+In the four additive $Y$-triangle equations, the four $X$ forces and the three outer $Y$-force differences, each minimum order must occur at least twice. Exact rational linear arithmetic leaves just three vectors for $b$:
+\[
+ (0,-2,0,-2,1,-2),\qquad (1/3,-2,-2,-2,-2,-2),\qquad
+ (0,0,-4,1,-4,-4).
+\]
+In the initial equations use $\operatorname{lc}(Y_{ij})=1/(\operatorname{lc}(X_{ij})P_{ij}^2)$, $P_{ij}=\operatorname{lc}(p_{ij})\ne0$. Saturating by $\prod P_{ij}$ gives the unit ideal for both $\delta_2$ signs of the first two vectors and for $\delta_2=-1$ in the third. With $\delta_2=1$ the remaining initial coefficients are
+\[
+ (\epsilon A,A,-A,B,\eta A,A),\quad A^3=B^3=1,\quad \epsilon^2=1,\quad\eta^2=-1 .
+\]
+There are 36 assignments. Set $s=t^{-1/2}$ and divide the six inverse distances by $s$ to the powers $(1,0,4,0,5,2)$. Six regularized equations have invertible Jacobian in the six resulting variables. Formal implicit lifting gives their unique series, including in any Puiseux extension. For each fixed $\delta_1\in\{1,-1\}$, there are two projection constants satisfying $\lambda^2=-\delta_1$, giving four $(\delta_1,\lambda)$ choices in total. Among the $36\cdot4$ combinations, the unused shared-body $X$ force first fails at $s^3$ in 108 cases and at $s^8$ in 36 cases modulo 97; an independent replay at 193 gives the same counts. Both primes split the initial constants and every denominator used is a unit. Thus every characteristic-zero lift fails.
+
+Any solution over $\overline{\Q(t)}$ would have a place above infinity. Its exclusion establishes an empty generic fibre of the algebraic necessary equations. Their image in the affine parameter line is constructible, so only finitely many exceptional parameters remain. This completes diagram 94.
+
+\section{The surviving diagram and its quartet}
+Diagram 88 has a separate binary and quartet. The quartet satisfies the full four-body equations $N_4$ in both projections \cite[Lemma 6.16(a)]{Tomar}. For a unit binary, the first torque requires $\sum \gamma_i m_i/\sqrt{X_i}=0$ with $\gamma_i\in\{\pm1,\pm\mathrm i\}$ after common rescaling.
+
+\paragraph{A zero in the marked small projection.}
+Let $Y_o=0$ at the marked body, $m_o=t$, and $r_i=p_{oi}/p_{o1}$ on the three unit bodies. Centering and the force at $o$ give $\sum Y_i=\sum r_i^3Y_i=0$. Thus the cubes are pairwise distinct or all equal. In the distinct case normalize $(Y_1,Y_2,Y_3)=(r_2^3-r_3^3,r_3^3-1,1-r_2^3)$. Put $d_i=(r_i^2Y_i)^{-1}$, $k=\sum r_i^3 d_i/\sum d_i$, $\alpha_i=r_i^3-k$, and $b_{ij}=(p_{ij}/p_{o1})^3$. The quartet is noncollinear: proportional centered projections would also force $X_o=0$. Its symmetric force matrix with off-diagonal entries $m_im_j(b_{ij}-k)$ and zero row sums annihilates $\mathbf1,X,Y$ and has rank at most one. Its rank-one identities give
+\[
+ b_{ij}-k=L\alpha_i\alpha_j,\quad t=-L\sum\alpha_i,\quad
+ b_{ij}^2=[(Y_i-Y_j)(d_i-d_j)]^{-3}.
+\]
+Eliminate $L$ using two pairs of edges, then square to eliminate signs. The two integer polynomials obtained have degrees $(100,100)$ in $(r_2,r_3)$. Specializing either variable to 2 modulo 1009 preserves degree in the other variable and gives gcd one. Both coordinate resultants are nonzero, so only finitely many shapes and masses occur. For equal cubes the zero-stress condition constrains an edge length; a rank-one stress gives collinearity of the three outer points. Each gives a nonidentity in their remaining ordinate ratio. At each of the finitely many fixed shapes the marked torque term grows as $t^{3/2}$ and the other terms stay bounded. Thus this case also allows only finitely many $t$.
+
+\paragraph{A zero in the small projection of a unit body.}
+Label this unit body $o$, and the other three $1,2,3$ with masses $(t,1,1)$. Suppose a component of the necessary equations has varying $t$. Take a branch on a curve in this component above $t=2$, passing to a finite extension when extracting roots. The relative shape must have a collision-free projective limit in both projections, with all four centered abscissas nonzero. The force multiplier in these projective coordinates is allowed to vanish. We give the boundary argument below since an empty affine fibre alone does not imply this specialization property.
+
+At a valuation above $t-2$, balance the minimum orders in the two lists of positions and pair forces, $(X_i,p_{ij}^3 X_{ij})$ and $(Y_i,p_{ij}^3 Y_{ij})$, by a reciprocal rescaling of $X,Y$. Their common minimum is nonpositive. At minimum zero, both positions and pair forces are integral. The distance equations then force every $X_{ij}$ and $Y_{ij}$ to be a unit. At negative minimum the four-body order balances give the five diagrams of Albouy and Kaloshin \cite[Fig.~8 and \S5]{AK}. The mass coefficients are units with residues $(1,2,1,1)$ and all nonempty partial mass sums remain units. The supplement verifies the five possibilities by exact inequalities on the valuations. The first four require, respectively, the mass conditions of \cite[\S\S5.1--5.4]{AK}. None hold for any placement of $(1,2,1,1)$, as checked on their signed radicals at the splitting prime 65521. In diagram V all six edges are maximal in both colours. All $X_{ij}$ and $Y_{ij}$ have the same positive valuation and all inverse distances have its negative.
+
+In either case divide $X,Y$ by $X_{1o},Y_{1o}$, respectively, and put $P=p_{o1}$. In the new coordinates all pair differences and inverse-distance ratios $p_{ij}/P$ specialize to units. The normalized force multiplier is $P^{-3}$, integral in both cases and zero in the limit in diagram V. Centering and the unit total mass give integral centered positions. If one high coordinate had zero residue, all the others would be units by pair separation. The corresponding inverse square-root torque term would have uniquely negative order. Thus every high coordinate has nonzero residue. Also $Y_o=0$, and centered collinearity would give proportional projections, contradicting $X_o\ne0$. This proves the asserted specialization property, including the absolute-equilibrium limit.
+
+At the resulting limit write $r_i=p_{oi}/p_{o1}$, $r=(1,r_2,r_3)$ and $a_i=r_i^3$. The small force and centering imply that the three $a_i$ are pairwise distinct or all equal. In the distinct case put
+\[
+ y=((a_2-a_3)/2,\ a_3-1,\ 1-a_2),\qquad
+ d_i=(r_i^2y_i)^{-1},\qquad
+ k=\frac{\sum m_i a_i d_i}{\sum m_i d_i}.
+\]
+The denominator represents the centered abscissa of $o$ up to scale and is nonzero. Set $W=\sum m_i(a_i-k)$. The nonzero rank-one stress gives $W\ne0$ and the three necessary equations
+\[
+ \left[k-\frac{(a_i-k)(a_j-k)}W\right]^2
+              [(y_i-y_j)(d_i-d_j)]^3=1,\qquad i<j.
+\]
+These equations include the absolute-equilibrium value $k=0$.
+
+Writing $F_1,F_2,F_3$ for their cleared numerators, two resultants eliminating $r_3$ have degrees 3892 and 3936 in $r_2$. They are reconstructed over $\mathbb Z$ using 63 primes greater than $2^{58}$. The product exceeds twice a 3619-bit coefficient bound from the row sums of the Sylvester determinants. The gcd has degree 3172 and squarefree part of degree 26. Removing the forbidden factors $r_2(r_2-1)(r_2^2+r_2+1)$ leaves seven factors of degrees at most four. By symmetry the same factors cover $r_3$. For each of the 49 factor pairs $(P,Q)$ the product of the required nonzero coordinates and differences belongs to the ideal generated by the $F_i$ in $\Q[r_2,r_3]/(P,Q)$, as verified by rational linear algebra. This contradicts admissibility. For equal cubes the same expression gives $k=1$. With ordinates $y=(1,x,-2-x)$, either the stress vanishes and every outer edge cube equals one, or the three outer bodies are collinear. After removing forbidden divisors, the product of the two necessary univariate equations is coprime over $\Q(\sqrt{-3})$ to the torque numerator for all nine cube-root patterns and eight sign choices. This exhausts the special fibre, including the collapsed limit. Hence this mass placement also permits only finitely many $t$.
+
+\paragraph{Marking a binary body in diagram 88.}
+The finite list of signed equal-mass four-body shapes is independent of $t$ \cite{Previous}. For each fixed shape, the binary torque reads $S+\mathrm i\rho T=0$ with $\rho=t^{3/2}$ or its reciprocal. The two signed rows $S,T$ must therefore vanish separately at generic $t$. Each row is a signed sum of the four $X_i^{-1/2}$. Apply the preceding zero-projection chart with four unit quartet masses. In its pairwise-distinct-cube case, integer resultants of degrees 3850 and 3915 are recovered from 50 primes using a 2865-bit coefficient bound. The squarefree eliminant has degree 17 and four admissible factors. On all 16 ordered factor pairs, the forced product of nonzero chart quantities lies in the ideal of the three force equations. In the equal-cube case the nine star-root patterns fail the univariate gcd test using a single vanishing signed row. Squaring its four summands removes all their individual signs. A quartet with a zero ordinate is impossible in a generic marked-binary placement as well.
+
+\paragraph{Collinearity and symmetry.}
+Normalize a collinear quartet affinely to $(0,1,x,y)$ with $t$ at $y$. For signed differences, $f_i=\sum_{j\ne i}m_j\theta_{ij}/(q_i-q_j)^2$ must be affine in $q_i$. Clearing squared edge differences gives two rows $C+tD=E+tF=0$. The six edge signs reduce to six force representatives by permuting the three equal bodies and reversing all signs. Squared torque summands are proportional to $A_i=\pm m_i^2/(q_i-\bar q)$, where $\bar q$ is the mass center. A necessary sign-independent identity is
+\[
+ \Phi(A,B,C,D)=\big[(A+B-C-D)^2-4AB-4CD\big]^2-64ABCD=0.
+\]
+Eliminate $t=-C/D$. The remaining force polynomial is primitive in $y$. At $x=3$ modulo 1009 it retains its degree and is coprime to the torque polynomial for all $6\cdot8$ sign representatives. For $D=0$, coprimality of $C,D$ and the fixed-shape torque estimate above give the same finiteness.
+
+A nontrivial symmetry fixes the marked body for $t\ne1$. A complex rotation fixing its nonzero centered large coordinate must be the identity. A reflection of a noncollinear quartet exchanges two unit bodies and fixes the third. Affine similarity coordinates give the two exchanged positions $(d,\pm w)$ and the fixed pair $(0,0),(1,0)$. Transverse force cancellation enforces equal signs on the exchanged edges at each fixed body. The two signed distances $R,S$ to the axis vertices obey $R^2=d^2+w^2$, $S^2=(d-1)^2+w^2$. The parameters $a=(d+R)/w$, $b=(d-1+S)/w$ rationalize both roots. The axial and transverse forces give $C+tV=0$. Eliminating $t$ leaves a primitive force polynomial of bidegree $(10,12)$ coprime to the squared torque polynomial for both signs of the exchanged pair's edge and all eight torque signs. The replay uses $a=2$ in $\F_{1009}$ with a chosen square root of $-1$ and checks preservation of degree. The exceptional $C=V=0$ shapes are finite and the same fixed-shape estimate applies. The collinearity and symmetry arguments constrain shapes within a cell. Both zero-projection results delete entire diagram-88 placements.
+
+\paragraph{Three collinear points and the remaining equations.}
+Suppose exactly three quartet bodies lie on a line. The normal force equations at those bodies give $p_{io}^3=1/M$ on all three edges to the off-line body $o$, where $M=t+3$. Choose scaled Cartesian coordinates $(u_i,0)$ on the line and $(0,h)$ at $o$. Then $u_i^2=B+\zeta_i$ with $B=-h^2$ and $\zeta_i^3=1$. Choose $i$ so that the other two line masses are one. The axial force requires
+\[
+ 2u_i-u_j-u_k=\frac{\pm1}{(u_i-u_j)^2}+\frac{\pm1}{(u_i-u_k)^2}.
+\]
+Near $B=\infty$ write $u_l\sim s_l\sqrt B$, $s_l=\pm1$. If neither other sign agrees with $s_i$, the left side grows and the right decays. If just one agrees, that term grows as $B$ while the left is $O(\sqrt B)$. If all agree, collision avoidance requires distinct cube roots; their difference ratios have square a primitive cube root and the two terms of order $B$ cannot cancel. Thus the equation restricts $B$ to a finite set. The fixed-shape torque estimate excludes persistence in $t$.
+
+For the remaining fully two-dimensional shapes the four-body stress of the preceding argument either vanishes, giving finitely many fixed shapes, or has rank one with four nonzero entries in its image generator. With $Q_i=p_{o1}(q_i-q_o)$, $R_i=Q_i^2=r_i^{-2}$ and $D_{ij}=(Q_i-Q_j)^2$, the relation $\sum_{i=1}^3\alpha_i Q_i=0$ yields, for distinct $i,j,l$,
+\[
+ D_{ij}=\frac{(\alpha_i+\alpha_j)(\alpha_iR_i+\alpha_jR_j)-\alpha_l^2R_l}
+                 {\alpha_i\alpha_j},
+ \qquad (k+L\alpha_i\alpha_j)^2D_{ij}^3=1.
+\]
+The three equations have four parameters $(r_2,r_3,k,L)$ with nonzero chart denominators; $t=-L\sum\alpha_i$. The orientation of the pair of projections has at most two choices at fixed shape. For each one the remaining condition is the torque equation $\Phi=0$, together with any cell-specific vanishing ordinate. The three normalized cubes $r_i^3$ at the marked body must be pairwise distinct at generic $t$. Indeed, a repeated cube forces equal stress entries for two unit bodies. Their midpoint lies on the line of the other two bodies. Their paired squared-distance ratios are primitive cube roots, yielding six rational shape families. A test fibre on each family modulo 1009 checks all eight distance-sign sheets and makes the remaining force residual nonzero. The fixed-shape torque then leaves finitely many $t$. For the remaining shapes put $A=\alpha_1\alpha_2$, $B=\alpha_1\alpha_3$, and $e_{ij}=D_{ij}^{-3}$. Now $kAB(B-A)\ne0$. Subtracting the squared edge equations eliminates $L$ exactly:
+\[
+ L=\frac{B^2(e_{12}-k^2)-A^2(e_{13}-k^2)}{2kAB(B-A)}.
+\]
+The residual equations and the torque on the two-sheeted projection cover use only three independent parameters $(r_2,r_3,k)$. At least one of $r_2,r_3$ must vary on any component with varying $t$. Indeed, otherwise $k$ varies. As $k\to r_i^3$, the two edges $D_{ij},D_{il}$ would both have poles unless $(r_j^3-r_i^3)^2R_j=(r_l^3-r_i^3)^2R_l$. If both have poles, subtracting their inverse-cube equations forces $L\alpha_i\to0$ and hence $k+L\alpha_i\alpha_j\to r_i^3\ne0$, a contradiction. The three equalities leave three irreducible quartics for signed ratio choices. At $k=2$ exact tests in their number fields violate a remaining distance equation in each case. It suffices, after relabelling the three unit bodies, to exclude a component on which $r=r_2$ varies. We do this below.
+
+\paragraph{An all-mass constraint from a real configuration.}
+For every $t>0$, any normalized real positive-distance quartet of masses $(t,1,1,1)$ has potential $E_4$ satisfying
+\[
+ E_4+2^{-1/3}<\frac{10+5t}{(5+t)^{1/3}}.
+\]
+An angular average of the convex projected four-body potential bounds $E_4$ from above; two trial spacings and rational polynomial inequalities certify the strict gap. Jensen's inequality gives the right side as a lower bound for the potential at any physical six-body configuration. This energy is constant on its normalized fixed-mass component. At an end the unit binary contributes a potential of modulus $2^{-1/3}$. Hence the quartet at such a diagram-88 end cannot be the positive-distance real quartet up to a complex orthogonal transformation and a single common cube-root-of-unity rescaling. The bound holds for all $t>0$. Complex quartet geometries and mixed internal distance signs remain possible. This all-mass bound is independent of the generic exclusions below.
+
+\section{Exclusion of the marked quartet in diagram 88}
+\subsection{A finite fibre at a good reduction}
+Suppose a component of the quartet forces and equal-binary torque dominates the $t$-line. It supplies a solution over a finite extension of $\Q(t)$, enlarged for square roots. Put $p=65521$, write $t=2+pU$ and take the Gauss extension of the $p$-adic valuation with $U$ a unit of transcendental residue. Extend to the solution field. All nonempty mass sums are units. As in the mixed-zero proof, balance the two projection minima. If the common minimum is negative the four-body order tests leave only the five diagrams of \cite[Fig.~8]{AK}. The fourth-root signs and cube-root ratios in the first four diagrams must satisfy their mass identities in the residue field. All their phases split at $p$, and none of these identities holds. In the fifth diagram the rescaled limit has multiplier zero. At nonnegative minimum all pair differences and inverse distances are units after normalization. These two alternatives exhaust approaches to the boundary, including a quartet with an identically zero small coordinate. The integral normalized quadruple has masses $(2,1,1,1)$, nonzero pair differences in both projections, and nonzero high coordinates by the four-term torque. The equations are over $\mathbb F_p$. A solution in the residue extension would therefore imply one in $\overline{\mathbb F}_p$ by the Nullstellensatz after adjoining inverses for the open conditions.
+
+At zero force multiplier the noncollinear inversion and collinear force equations of the appendix exclude every projective shape at this test mass over $\overline{\mathbb F}_p$. The noncollinear test ranges over all ten unordered cube-root edge patterns in the residue field. For a zero stress at nonzero multiplier, normalize one squared distance to one; the other five lie in $\mu_3$. For all $3^5$ tuples the three-by-three Gram determinant of the relative vectors is nonzero, excluding planar realizations. If the normalized stress has rank one with a zero entry in its image generator, three bodies are collinear. When just three lie on a line, the normal forces fix equal inverse cubes to the off-line point. Normalizing the two axial units to $0,1$ reduces the axial force and signed distance constraints to two univariate polynomials. Their gcd has no noncollision root for either choice of the third line mass, all four signed axial force patterns and all choices of the two relative cube roots. For an entirely collinear quartet, the two affine forces in the chart $(0,1,x,y)$ give a nonzero resultant in $y$ in all six force-sign orbits. At every irreducible $x$-factor the common $y$ polynomial is coprime to each of the eight torque numerators after deleting the collision and zero-abscissa factors.
+
+It remains to treat a two-dimensional quartet with nonzero multiplier and four nonzero stress entries, in $\overline{\mathbb F}_p$. Normalize the offset $\lambda/5$ in the stress equations to one by a common change of scale. Call the three star inverse distances $b_i$, and put $\alpha_i=b_i^3-1$, $T=\sum_i\alpha_i$. We have $T\prod_i b_i\alpha_i\ne0$. Write $b_i=B u_i$, $s=B^3$, $g=u_1u_2u_3$, with $B\ne0$ to be specified. The affine dependence determines the squared outer separations. After denominator clearance the three necessary edge equations become
+\[
+ (T-2\alpha_i\alpha_j)^2N_{ij}^3=T^2s^2(g^2\alpha_i\alpha_j)^3,\quad
+ N_{ij}=(\alpha_i+\alpha_j)(\alpha_i u_j^2+\alpha_j u_i^2)u_k^2-
+ \alpha_k^2u_i^2u_j^2 .
+\]
+For the regular chart take $B=\sum b_i\ne0$ and assume distinct $b_i$. With $f=\sum_{i<j}u_i u_j$, the $u_i$ are roots of $Q(z)=z^3-z^2+fz-g$. Express the edge opposite $u_k=z$ using the other two roots' sum $1-z$ and product $z^2-z+f$. All three coefficients of the remainder modulo $Q$ must vanish. Adjoin an inverse of $sgT\,\mathrm{disc}(Q)\,\mathrm{Res}_z(Q,sz^3-1)$. For zero $\sum b_i$ take $u=(1,x,-1-x)$; for a repeated $b_i$ relabel and use $u=(1,1,x)$. In these two charts impose the displayed edge equations directly and invert $sgT\prod_i\alpha_i$.
+
+The respective finite-field algebras have dimensions $420,4,102$. These upper bounds come from exact Gr\"obner bases and counting the monomials outside the leading ideals. The independent OpenF4 replay obtains 165, 3 and 36 leading-ideal generators in these three charts and the same quotient dimensions as msolve. Each is attained by that many distinct geometric points: the replay verifies squarefree univariate parameter equations, recovers each parameter from its listed coordinates and checks the original equations on every root. To test the torque in the regular chart adjoin an ordered first root of $Q$ and then a second root of the remaining quadratic. The six possible label orders are included. In each chart, recover both orientations by the monic quadratic for the second high projection as in the distance chart and center all four abscissas. For every one of eight sign patterns the norm of the squared torque over these finite algebras is nonzero, in each residue field of each point's parameter polynomial. Hence the torque fails for every ordering and orientation. This eliminates the final nonzero-multiplier stratum and contradicts the existence of the proposed generic quartet.
+
+\subsection{Independent calculation over a distance-ratio function field}
+Work in characteristic zero on the admissible open three-parameter chart already obtained. If a solution dominates the mass line, after a permutation $r$ is nonconstant. Write $F,G\in\mathbb Z[r,s,k]$ for the primitive numerators of the two force identities after eliminating $L$, and $P=\mathrm{Res}_k(F,G)$. Its degree in $s$ over $\Q(r)$ is 4046. To see the upper bound, combine the two rational forces $f_0,g_0$ into $C^2f_0-A^2 g_0$, with $C=\alpha_2\alpha_3$, and let $H$ be its numerator. The resultant with $F$ now uses $k$-degrees 28 and 22. Removing the extra low-degree factors adds 1424 to the $s$-degree. For the 22 Newton--Puiseux roots of $H$ at $s=\infty$, the bounds on the degrees of $F$ and their multiplicities are $(70,2),(82,2),(86,3),(80,3),(81,6),(118,3),(112,3)$. The degree of the leading coefficient of $H$ contributes $28\cdot23$, giving $2622+1424=4046$. The six bounds of 81 use $w=s^{-1/3}$, $k=c w^{-6}-c^2 w^{-3}+v w^{-2}$, $c^2=r^2/[2(r^2+1)]$. Divisibility of $w^{264}F$ by $w^{207}H$ modulo $w^{21}$ is checked over a rational parametrization of $\Q(r,c)$.
+
+At $r=3$ the exact integer resultant has degree 4046, so $s$ is integral above this fibre. Its multiplicity-one part has degree 676. At a place over 1009 it remains squarefree with factors of degrees 670 and 6. At each one, a force equation keeps its leading $k$ coefficient and the two forces have a linear gcd in $k$. All needed denominators specialize to units and none of the eight torques has a common root with the orientation quadratic. For multiple roots one must also exclude an admissible curve specializing entirely into a forbidden locus. The supplement computes lower bounds for the generic local intersection multiplicities on the boundary divisors of $P$ using the Newton polygons of $F,G$ after translating $k$ to the forbidden ordinates. For example the $s=0$ divisor accounts for $696+72+24=792$ intersections after a second translation on the slope-two roots. Interchanging the unit reference bodies takes the two coincident-ratio divisors to $r'=1/3$, where the quotient after removing $(s'-1)^{76}$ is a unit at $s'=1$ and the other primitive cube-root fibres are empty. The orders thus accounted for exhaust the multiple factors in the fibre at 3. Dividing out their forbidden contributions preserves a necessary equation even for an admissible point lying on one of these divisors, since it would contribute an additional local intersection. No admissible branch remains at $r=3$, including points at infinity. This gives an exclusion independent of the mass-$2$ residue-field calculation.
+
+\section{Case ledger and reproducibility}
+A real counterexample at a fixed generic mass gives a positive-dimensional real semialgebraic stratum after fixing translations, rotation and scale. Its complex closure contains an irreducible component with a varying squared distance. The normalized potential $E$, positive at the real configurations, is constant there. Tomar's curve selection and order-sum argument therefore give a nonpositive singular end \cite[Corollaries 2.4 and 2.7]{Tomar}. The preceding catalogue reduction uses equality of the identically vanishing centered coordinate sets in the two projections on that stratum; it does not assume equal valuations at a complex end. Further, on mass-dominant components the force equations give $\frac32 dE=H\,dt$, with $H$ the marked potential derivative, algebraic over the mass line. Away from finitely many parameters $E,H$ agree with their values on the originating real stratum, so the real energy and mass-derivative exclusions of \cite{Previous} apply to the signed end. In particular they exclude diagram 93 and the marked binary in diagram 88. The 74 labelled cases in 22 real-finiteness classes then had to lie in diagram 94 or in diagram 88 with the marked mass in the quartet. We have excluded both. Taking the finite union of all exceptional parameter sets proves Theorem~\ref{main}.
+
+In the unrestricted signed ledger, 185 placements in 53 classes fall to seven placements in five classes. Two placements, in one diagram-88 class, have a marked binary and a quartet of four units with all small projections nonzero. Diagram 93 contributes five placements in four classes. Their existence as signed ends is open, and no further test of these five classes is needed for the stated real-finiteness result. The method does not determine the exceptions or establish a uniform number of real configurations.
+The \supplement{} contains the proof notes, certificate programs, recounted ledger and replay instructions. For the shared body, \texttt{center\_shapes.py} checks the fixed projections and \texttt{collinear.py} checks the collinear lift. The earlier equilateral-lift certificate is in \cite{Previous}. For the marked binary, \texttt{verify\_binary\_cluster.py} computes integer polynomial gcds, including a norm through cubic and quadratic extensions. For the outer placement, \texttt{outer94.py} enumerates the valuations, computes the saturated initial ideals and lifts the surviving roots modulo the two primes. The quartet scripts \texttt{ZeroProjection88.py}, \texttt{Collinear88.py} and \texttt{Kite88.py} check the two planar resultants and the two geometric sign enumerations. The mixed-zero specialization and its boundary analysis are detailed in the supplementary notes \texttt{MixedZeroFibre.md} and \texttt{BoundaryAudit.md}. The exact integer resultants and rational quotient algebras are recomputed by \texttt{MixedZeroFibre88.py} for a variable quartet mass and \texttt{UnitZeroFibre88.py} for a variable binary mass. The programs \texttt{RepeatedStar88.py}, \texttt{ConstantRatios88.py} and \texttt{quartet\_energy88.py} check the repeated-cube fibres, constant-ratio exclusions and polynomial energy gap. Lean checks elementary force elimination, selected quartet stress, distance and energy identities, and the stationary-direction discriminant implication. Lean independently checks the full 243-case Gram obstruction to zero stress over any extension of the test field. In the special fibre Lean also derives nonvanishing of the four distinct abscissas from the cleared torque, and the vanishing of at least one chart factor from the certified ideal membership in each rational algebra. For the complete quartet test see \texttt{FullQuartetSpecialization.md}, \texttt{RegularQuartet88.md}, and \texttt{LineFibre88.md}. Its upper dimension tests use exact computer algebra and its point and orientation tests use finite-field arithmetic. The distance-ratio route is reproduced in \texttt{FixedRatio88.md}, \texttt{RatioInfinity88.md} and \texttt{FiniteRatioBoundary88.md}. The full finiteness theorem relies on these computations and the analytic and catalogue arguments; its complete proof has not been formalized in Lean.
+
+\appendix
+\section{The signed zero-multiplier quartet}
+At a simultaneous collapse, normalization of the pair distances can produce a four-body system in which each vector force vanishes \cite[\S5.5]{AK}. For its role in six-body finiteness see \cite[\S7.2]{Tomar}. For masses $(t,1,1,1)$ the accompanying paper classifies all positive $t$ admitting this signed absolute equilibrium. The noncollinear masses are exactly
+\[
+ t=1/\sqrt3\quad\text{and the unique positive root of}\quad
+ 3t^6-106t^4-97t^2-25=0\quad (t\simeq6.019309).
+\]
+There are four additional positive mass ratios in the collinear case. Every ratio has a realization with real positions and mixed signs of inverse distance. For a noncollinear quartet the force matrix has rank one. Euclidean inversion at the marked body turns the three outer squared edge lengths into cube roots of unity, reducing necessity to three finite eliminations. In the collinear case the forces along the common line reduce to rational functions in two relative positions. The complete necessity and realization proofs, exact defining polynomials, and sign choices are given in
+\href{https://github.com/rongyulin/physics-open-problems-AI/blob/main/problems/planar-central-configurations/papers/SignedQuartetEquilibria.pdf}{the companion classification of signed four-body absolute equilibria}. Ordinary Newtonian positions and positive inverse distances have positive potential for positive masses, so cannot give zero force at every body.
+
+\begin{thebibliography}{9}\small\setlength{\itemsep}{1pt}
+\bibitem{AK} A. Albouy and V. Kaloshin. Finiteness of central configurations of five bodies in the plane. \textit{Annals of Mathematics} \textbf{176} (2012), 535--588. \href{https://doi.org/10.4007/annals.2012.176.1.10}{doi:10.4007/annals.2012.176.1.10}.
+\bibitem{CC} K.-M. Chang and K.-C. Chen. Toward finiteness of central configurations for the planar six-body problem by symbolic computations. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853} (2023).
+\bibitem{Tomar} T. S. Tomar. Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean. \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377v1} (2026).
+\bibitem{MZplanar} M. Moczurad and P. Zgliczy\'nski. Central configurations in planar $n$-body problem with equal masses for $n=5,6,7$. \textit{Celestial Mechanics and Dynamical Astronomy} \textbf{131}, 46 (2019). \href{https://doi.org/10.1007/s10569-019-9920-6}{doi:10.1007/s10569-019-9920-6}.
+\bibitem{MZnear} M. Moczurad and P. Zgliczy\'nski. Central configurations in the spatial $n$-body problem for $n=5,6$ with equal masses. \textit{Celestial Mechanics and Dynamical Astronomy}. \href{https://doi.org/10.1007/s10569-020-09993-1}{doi:10.1007/s10569-020-09993-1}.
+\bibitem{Previous} Chatgpt. Energy bounds for physical singular ends on the five-equal-mass line. \href{https://github.com/rongyulin/physics-open-problems-AI/tree/37af8654080f5c3b72b5debfec0c99460e1b48db/problems/planar-central-configurations/notes/physical-ends}{Preprint supplement, case lists and equilateral-lift verifier} (2026).
+\end{thebibliography}
+\noindent\small\copyright\ 2026 Chatgpt. Paper and source licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+\end{document}

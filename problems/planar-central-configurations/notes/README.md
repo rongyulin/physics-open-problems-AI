@@ -4,9 +4,13 @@
 
 ## English
 
+The **physical candidate list is empty for generic positive mass ratio** on the line with five equal masses. The previously surviving asymmetric quartet in diagram 88 is excluded both by a test at sixth mass 2 in residue characteristic 65521 and over a distance-ratio function field. This completes the physical finiteness argument outside a finite algebraic set. The unrestricted signed-complex ledger has seven placements in five classes, one in diagram 88 and four in diagram 93. [Case ledger and verification](../notes/last-diagrams/README.md) · [English paper (PDF)](../papers/LastDiagrams.pdf) · [LaTeX source](../papers/LastDiagrams.tex)
+
 The subsequent reduction leaves diagrams 88, 93 and 94 at generic positive mass ratio. That shortlist contains 55 symmetry representatives, 29 of which satisfy the additional origin requirement for real finiteness. [Three-diagram paper](reduction/README.md)
 
-At generic positive mass ratio, energy and mass-derivative bounds now leave 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. [Current case lists](physical-ends/README.md)
+The zero-multiplier quartet at a simultaneous collapse also leads to a complete classification for masses $(t,1,1,1)$. A separate manuscript establishes the two positive noncollinear mass ratios and the four positive collinear ratios allowed by the signed equations. [Paper (PDF)](../papers/SignedQuartetEquilibria.pdf) · [LaTeX source](../papers/SignedQuartetEquilibria.tex)
+
+An intermediate energy and mass-derivative argument identified 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. [Energy-bound ledger](physical-ends/README.md)
 
 Fix positive masses proportional to $(1,1,1,1,1,t)$. An infinite family of distinct real central configurations at fixed masses gives a nontrivial curve in the normalized complex equations. A singular diagram records the relative orders of its coordinates and pair distances at a place on that curve. The following deductions supplement the [diagram 98 manuscript](../papers/FiveEqualSixBody.pdf).
 
@@ -26,9 +30,13 @@ Changing weights requires reconsidering cells previously discarded solely becaus
 
 ## 中文
 
+五重等质量线上，**一般正质量比下与实构型有限性有关的候选已全部排除**。最后的图 88 非对称四体组，用特征 65521 下质量取 2 的特化和距离比函数域消元分别排除，从而得到有限多个代数例外值之外的实中心构型有限性。有符号复曲线仍有 7 种放置、5 个对称类，其中图 88 有 1 类，图 93 有 4 类。[最新清单与复验](../notes/last-diagrams/README.md) · [英文论文 PDF](../papers/LastDiagrams.pdf) · [LaTeX 源稿](../papers/LastDiagrams.tex)
+
 本页记录第一轮筛查。随后一般正质量比下的清单已缩至图 88、93、94，合并对称性后有 55 个代表，针对实构型有限性进一步剩下 29 个。[三种图的论文与复验](reduction/README.md#中文)
 
-对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。[当前清单](physical-ends/README.md#中文)
+四体同时塌缩时会出现力乘子为零的有符号极限。对质量 $(t,1,1,1)$，独立论文分类了这种极限方程可能允许的正质量比，非共线与共线时分别有两个和四个。[英文论文 PDF](../papers/SignedQuartetEquilibria.pdf) · [LaTeX 源稿](../papers/SignedQuartetEquilibria.tex)
+
+在此前的能量约束阶段，能量及其质量导数把一般正质量比下实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。[能量约束阶段的清单](physical-ends/README.md#中文)
 
 固定质量 $(1,1,1,1,1,t)$。若某个固定的正质量比有无穷多个不同的实中心构型，归一化后的复方程会有一条非平凡代数曲线。退化图记录这条曲线趋向边界时，各坐标和体间距离以什么相对速度变化。
 

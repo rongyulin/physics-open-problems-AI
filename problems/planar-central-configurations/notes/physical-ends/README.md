@@ -4,6 +4,8 @@
 
 ## English
 
+This page records the energy-bound stage. A subsequent paper excludes all 22 remaining physical classes, proving real finiteness for all positive mass ratios outside a finite algebraic set on this mass line. [Latest case ledger](../last-diagrams/README.md) · [Paper (PDF)](../../papers/LastDiagrams.pdf) · [LaTeX](../../papers/LastDiagrams.tex)
+
 For masses $(1,1,1,1,1,t)$ and generic positive $t$, a hypothetical infinite family of real planar central configurations must yield a complex end in **diagram 88 or 94**. The previous 29 symmetry classes compatible with real finiteness are reduced to **22**. Generic here allows a finite set of algebraic exceptions. The derivation builds on Tomar’s nonpositive-end catalogue on this mass line and our earlier list. Whether any surviving case extends to a relevant six-body curve remains open. [Previous list](../reduction/README.md) · [Tomar’s preprint](https://hexagonmath.org/pdf/2611.00377v1)
 
 | Diagram | Signed placements | Signed orbits | Placements still needed for real finiteness | Orbits still needed for real finiteness |
@@ -33,6 +35,8 @@ diff OrbitLedger.csv /tmp/sixbody-ends/OrbitLedger.csv
 [PhysicalRepresentatives.csv](PhysicalRepresentatives.csv) contains the 22 representatives. [PlacementLedger.csv](PlacementLedger.csv) and [OrbitLedger.csv](OrbitLedger.csv) give a status and reason for each entry of the previous lists, including entries that failed the earlier origin test. A slot is numbered from one. A cell retains its zero-based Tomar index. The individual research notes give commands for the supplementary local checks, including SymPy for the square replay. The signed and physical conclusions have distinct hypotheses. [Lean files and verification scope](../../Lean/README.md)
 
 ## 中文
+
+本页保留能量约束阶段的结果与复验材料。后续研究稿排除这一阶段剩余的全部 22 类，得到五重等质量线上除有限多个代数例外值外的实中心构型有限性。[最新清单与复验](../last-diagrams/README.md) · [英文论文 PDF](../../papers/LastDiagrams.pdf) · [LaTeX 源稿](../../papers/LastDiagrams.tex)
 
 对五个单位质量和第六个正质量 $t$，上轮发现一般参数下的实构型有限性只需考察 29 个对称代表。本次把它们缩至 **22 个**，其中图 88 有 3 个，图 94 有 19 个。图 93 的 5 个代表全部排除；图 88 中变质量落在双体组的 2 个代表也被排除。已假定 $t$ 避开有限多个可能的代数例外值。剩余情形是否真的对应无穷多个实构型，仍然未知。[英文论文](../../papers/PhysicalSixBodyEnds.pdf) · [22 项实问题清单](PhysicalRepresentatives.csv)
 

@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue,pdftitle={Signed four-body equilibria with three equal masses},pdfauthor={Chatgpt}}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\supp}{\href{https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/planar-central-configurations/notes/last-diagrams}{electronic supplement}}
+\title{Signed four-body equilibria with three equal masses}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the positive parameters $t$ for which the signed Newtonian four-body equations with masses $(t,1,1,1)$ admit a collision-free equilibrium with zero force multiplier. Complex planar positions and both signs of each inverse distance are allowed. Exactly two positive mass ratios admit noncollinear solutions and four other positive ratios admit collinear solutions. All six are realized with real positions and mixed signs. For noncollinear configurations an inversion reduces the force equations to three cube-root edge patterns of a triangle; two real inversions of an equilateral triangle give the converse. For collinear configurations an exact enumeration of 32 sign patterns gives the mass polynomials and rational reconstruction of the positions. The classification supplies an explicit mass condition for a four-body boundary system in the finiteness problem for planar central configurations.
+\end{abstract}
+
+\section{The equilibrium problem}
+Write $q_i\in\C^2$ and $q^2=q\cdot q$ for the complex bilinear extension of the Euclidean form. With $m=(t,1,1,1)$, $t>0$, the unknowns are the four positions and six symmetric inverse distances $p_{ij}$ subject to
+\begin{equation}\label{eq}
+ p_{ij}^2(q_i-q_j)^2=1,\qquad
+ \sum_{j\ne i}m_jp_{ij}^3(q_i-q_j)=0\quad(0\leq i\leq 3).
+\end{equation}
+The first equations exclude collisions and isotropic pair differences. The second equations set the force multiplier to zero. In the fully edged four-body diagram of Albouy and Kaloshin, this system arises by rescaling a simultaneous collapse \cite[\S5.5]{AK}. Tomar denotes it by $E_4$, recalls Aquino-Michaels's generic exclusion, and gives a mass-polynomial construction using a rank-one stress in the planar case and signed differences in the collinear case \cite[\S7.2]{Tomar}. Here we identify which positive points of one mass line actually admit solutions, including the converse for each point.
+
+Put
+\begin{align*}
+ H(t)&=3t^6-106t^4-97t^2-25,\\
+ P(t)&=t^8-116t^6-4810t^4-1044t^2+81,\\
+ Q(t)&=t^8-32t^7+300t^6-864t^5-5098t^4-4320t^3+7500t^2-4000t+625.
+\end{align*}
+\begin{theorem}\label{mass}
+A noncollinear solution of \eqref{eq} exists exactly when $t=1/\sqrt3$ or $H(t)=0$. A collinear solution exists exactly when $P(t)Q(t)=0$. The table lists all positive values. Each admits a solution with real positions and signed inverse distances.
+\end{theorem}
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule Geometry & Exact positive roots & Approximate parameters\\\midrule
+Noncollinear & $1/\sqrt3$ and the positive root of $H$ & $0.57735027,\;6.01930864$\\
+Collinear & two positive roots of $P$ & $0.24622523,\;12.18396656$\\
+Collinear & two positive roots of $Q$ & $0.25401697,\;19.68372436$\\\bottomrule
+\end{tabular}
+\end{center}
+For ordinary positive masses and positive inverse distances, contraction of the four forces with $m_iq_i$ and summation gives a strictly positive pair potential at every real configuration. The signs in \eqref{eq} matter even when all positions are real. In particular, the familiar equilateral triangle with a central charge of relative magnitude $1/\sqrt3$ gives one signed example \cite{UF}.
+
+\section{Necessity in the noncollinear case}
+Translate the marked point to $q_0=0$. The symmetric stress, with off-diagonal entries $m_i m_j p_{ij}^3$ and diagonal entries chosen for zero row sums, annihilates $\mathbf1$ and both position columns. These three columns are independent for a noncollinear quartet. The stress therefore has rank one, since its off-diagonal entries are nonzero. Write it as $c vv^{\mathsf T}$. All entries of $v$ are nonzero and $\sum v_i=0$. Comparing its three star entries $t p_{0i}^3$ to its other entries gives $p_{ij}^3=L p_{0i}^3p_{0j}^3$ for a common $L\ne0$. The relations on $v$ give $t=-L\sum p_{0i}^3$ and $\sum p_{0i}^3q_i=0$ for sums over $i=1,2,3$.
+
+Scale the inverse distances by $L^{1/3}$ and positions by its reciprocal. Write $a_i$ for the resulting signed star inverse distances and $Q_i$ for the relative positions. Then the outer inverse cubes are $a_i^3a_j^3$, $t=-\sum a_i^3$ and $\sum a_i^3Q_i=0$. Invert the three points at the origin by setting $V_i=a_i^2 Q_i$. We have $V_i^2=a_i^2$ and $\sum a_i V_i=0$. For $i\ne j$,
+\[
+ \eta_{ij}=(V_i-V_j)^2=a_i^2a_j^2(Q_i-Q_j)^2,\qquad \eta_{ij}^3=1.
+\]
+Set $\eta_{ii}=0$. Dotting the relation with $2V_j$ and eliminating the bilinear products gives
+\begin{equation}\label{cubic}
+ (\sum_i a_i)a_j^2-t-\sum_i\eta_{ij}a_i=0\quad (1\leq j\leq 3),
+ \qquad \sum_i a_i^3+t=0.
+\end{equation}
+Unit-body permutations, simultaneous multiplication $a_i\mapsto\rho a_i$, $\eta_{ij}\mapsto\rho^2\eta_{ij}$ with $\rho^3=1$, and complex conjugation preserve the positive real parameter. For a primitive cube root $w$, the three unordered edge patterns reduce to $(1,1,1)$, $(1,1,w)$ and $(1,w,w^2)$.
+
+Here are the exact elimination tests. Reducing the following polynomials times $t$ by a rational Gr\"obner basis of \eqref{cubic} and $w^2+w+1$ gives remainder zero in the respective cases:
+\begin{enumerate}
+\item $(3t^2-1)H(t)$;
+\item $A(t)B(t)$, where
+\begin{align*}
+ A(t)&=9t^{12}-33t^{10}+3724t^8+14825t^6+11487t^4-5500t^2+625,\\
+ B(t)&=243t^{16}-85860t^{14}+14424304t^{12}+13781204t^{10}+17197074t^8\\
+ &\qquad{}+484271t^6+345418t^4-25725t^2+1875;
+\end{align*}
+\item $(3t^2+1)^2(t^4+118t^2+25)$.
+\end{enumerate}
+The Sturm counts of distinct positive roots are $2,0,0$. The program \texttt{AbsoluteQuartet88.py} constructs the ideal directly, performs the three reductions, and verifies the counts. No converse to the stress elimination is assumed.
+
+\section{Two explicit realizations}
+Let $E_1,E_2,E_3$ be the vertices of a real unit equilateral triangle. For nonzero real $a_i$ with $S=\sum a_i\ne0$, put
+\[
+ B=\frac{\sum a_iE_i}{S},\quad V_i=E_i-B,\quad Q_0=0,\quad Q_i=V_i/a_i^2.
+\]
+If $|V_i|^2=a_i^2$ and $t=-\sum a_i^3>0$, take $p_{0i}=a_i$ and $p_{ij}=a_i a_j$. Inversion gives $|Q_i|^2=1/a_i^2$, $|Q_i-Q_j|^2=1/(a_i a_j)^2$. The vector $v=(t,a_1^3,a_2^3,a_3^3)$ satisfies $\sum v_i=0$ and $\sum v_i Q_i=0$. Consequently $vv^{\mathsf T}$ gives exactly the signed stress and satisfies all four force equations. A line through all $Q_i$ would contain all $V_i$, which form an equilateral triangle.
+
+For $a_i=-1/\sqrt3$ the point $B$ is the centroid and $t=1/\sqrt3$. For the second case let $u$ be the unique real root of $g(u)=u^3+2u^2+3u+3$. Its derivative is positive and $-7/5<u<-4/3$. Put
+\[
+ a_1=a_2=a>0,\quad a_3=ua,\qquad a^2=(1+u+u^2)/(2+u)^2 .
+\]
+Use $E_1=(-1/2,0), E_2=(1/2,0), E_3=(0,\sqrt3/2)$. Then $|V_1|^2=|V_2|^2=a^2$ and $|V_3|^2=3/(2+u)^2=u^2a^2$ by $u^4+u^3+u^2-3=(u-1)g(u)$. Here $t=-a^3(2+u^3)>0$. The resultant in $u$ of $g(u)$ and $t^2(2+u)^6-(1+u+u^2)^3(2+u^3)^2$ equals $243H(t)$. The signs of its coefficients give $H$ exactly one positive root. These constructions prove both noncollinear converses.
+
+\section{The collinear equations and the converse}
+Normalize the three unit positions to $0,1,x$ on their complex line and let $y$ be the marked position. The line is nonisotropic. Divide out the common edge sign to fix the sign on $01$. For the other five signed differences write $a,b,c,d,e\in\{1,-1\}$. Clearing the squared denominators in the three unit-body force equations gives $n_i+t d_i=0$ with
+\begin{align*}
+ n_0&=(x^2+a)y^2, &d_0&=b x^2,\\
+ n_1&=[c-(1-x)^2](1-y)^2, &d_1&=d(1-x)^2,\\
+ n_2&=[-a(1-x)^2-cx^2](x-y)^2,&d_2&=e x^2(1-x)^2.
+\end{align*}
+The mass-weighted sum of all forces vanishes identically, so these equations imply the fourth at $t\ne0$. On the collision-free chart $d_0\ne0$. Eliminate $t$ by using $g=n_1d_0-d_1n_0$ and $h=bn_2-e(1-x)^2n_0$, both quadratic in $y$.
+
+For each of the 32 sign choices, factor $\mathrm{Res}_y(g,h)$ over $\Q$. Remove the collision factors $x,x-1$. For each other irreducible factor $f$, compute the combination cancelling the quadratic term in $y$. Its linear coefficient is a unit in $K=\Q[x]/(f)$. This supplies a unique $y\in K$ and $t=-n_0/d_0\in K$. Remove $y=0,1,x$ and $t=0$. Direct substitution verifies all three original force equations for each retained field solution. The complete set of minimal polynomials for $t$, up to nonzero rational factors, is
+\[
+ P(t),\quad Q(t),\quad Q(-t),\quad 3t^2+1,\quad t^4+118t^2+25,
+\]
+together with $6561t^8+6156t^6-2698t^4+1900t^2+625$. In each occurrence $[\Q(t):\Q]=[K:\Q]$, so $K=\Q(t)$. Every positive real conjugate of $t$ therefore gives a real embedding of the entire field solution. All pair differences stay nonzero under the embedding. This step gives existence for the actual force equations at every listed mass.
+
+Sturm counts isolate the two positive roots of $P$ in $(16/65,49/199)$ and $(1060/87,1523/125)$, and those of $Q$ in $(16/63,63/248)$ and $(1929/98,2303/117)$. The other four polynomials have no positive root. The four disjoint intervals also separate these solutions from the two noncollinear masses. The program \texttt{CollinearAbsoluteMasses.py} performs all field inversions, force substitutions, degree tests and root counts over $\Q$. This completes Theorem~\ref{mass}.
+
+\section{Interpretation for electric point charges}
+The noncollinear classification also determines when four free point charges in Euclidean three-space, with magnitudes $(t,1,1,1)$ and some choice of their signs, can all be in static equilibrium under Coulomb's inverse-square law. Four affinely independent positions are impossible: their nonzero equilibrium stress would annihilate four independent columns, namely the constant column and all three coordinate columns. Hence every equilibrium is planar. For a planar equilibrium, indeed for charges $e_i=\epsilon_i m_i$, $\epsilon_i=\pm1$, take signed inverse distances $p_{ij}=\epsilon_i\epsilon_j/|q_i-q_j|$ in \eqref{eq}. Conversely both noncollinear constructions above have this form, with $\epsilon_0=1$ and $\epsilon_i=\mathrm{sgn}(a_i)$. Thus the two positive noncollinear mass ratios in Theorem~\ref{mass} are precisely the possible charge ratios. The same charge signs need not be used in the two configurations.
+
+No four nonzero real collinear point charges can balance. At positions $x_1<x_2<x_3<x_4$ write $K_{ij}=(x_j-x_i)^{-2}$ for $i<j$, with $K$ skew-symmetric. Force balance after division by each charge implies $Ke=0$. Its Pfaffian is $K_{12} K_{34}-K_{13}K_{24}+K_{14}K_{23}>0$, since $K_{12}>K_{13}$ and $K_{34}>K_{24}$. This is the four-point case of the positivity discussed by Ferrario \cite{Ferrario}. The four axial ratios in the table concern the independently signed system \eqref{eq}. None of these results establishes the occurrence of a six-body degeneration.
+
+\paragraph{Verification.} The \supp{} includes the scripts cited above, using Python and SymPy. In the associated Lean directory, \texttt{QuartetDistanceChart.lean} checks the inversion identities, the signed-force reconstruction identity and the cubic identity used for the third squared norm. The companion \texttt{CoulombFour.lean} proves the necessary polynomial mass condition from the real triangle cubics and the collinear Pfaffian obstruction. The polynomial eliminations and real-root counts are separate exact computations. The manuscript has not undergone peer review.
+\begin{thebibliography}{9}\small
+\bibitem{AK} A. Albouy and V. Kaloshin. Finiteness of central configurations of five bodies in the plane. \emph{Ann. of Math.} 176 (2012), 535--588. \href{https://annals.math.princeton.edu/2012/176-1/p10}{Publisher}.
+\bibitem{Tomar} T. S. Tomar. Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean. \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377v1} (2026), \S7.2.
+\bibitem{Ferrario} D. L. Ferrario. Pfaffians and the inverse problem for collinear central configurations. \href{https://arxiv.org/abs/2006.13049}{arXiv:2006.13049} (2020).
+\bibitem{UF} University of Florida, Physics 2049. Spring 2002, exam 1, solutions, problem 2. \href{https://www.phys.ufl.edu/courses/phy2049/old_exams/2002s/exam1_solutions.pdf}{Exam solutions}.
+\end{thebibliography}
+\noindent\small\copyright\ 2026 Chatgpt. Paper and source licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+\end{document}

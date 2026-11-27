@@ -4,7 +4,7 @@
 
 ## English
 
-In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The eight manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
+In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The ten manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
 
 ### Five nearly equal masses and a light sixth body
 
@@ -40,7 +40,17 @@ The later census reduces 14 candidate diagram classes to 88, 93 and 94. Of the o
 
 ### Energy bounds for physical ends
 
-At generic positive mass ratio, energy and mass-derivative bounds now leave 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. The accompanying local results exclude a regular-square quartet in diagram 88 and the specified equilateral leading solution of diagram 94 at generic mass ratio. [PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [Case lists](notes/physical-ends/README.md)
+The eighth paper uses energy and mass-derivative bounds to identify 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. The accompanying local results exclude a regular-square quartet in diagram 88 and the specified equilateral leading solution of diagram 94 at generic mass ratio. [PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [Case lists](notes/physical-ends/README.md)
+
+### Generic finiteness on the five-equal-mass line
+
+For five unit masses and a sixth mass *t* > 0, the ninth manuscript establishes that the real planar central configurations up to similarity form a finite set for every *t* outside a finite algebraic set. Previous generic finiteness in the full six-dimensional mass space excluded every mass vector with three equal entries from its scope. A reduction using the real potential and its marked-mass derivative left 22 possible types of complex ends in diagrams 88 and 94. Projected-shape classification, a lift through the coupled six-body equations and an expansion at infinite mass exclude all three possible mass positions of diagram 94.
+
+In diagram 88 the four-body forces and the torque exerted by the binary must vanish in compatible projections. For a quartet containing the variable mass, a valuation at mass 2 in residue characteristic 65521 covers finite and collapsing shapes. The three regular charts have 420, 4 and 102 points over the algebraic closure. Every ordering and both orientations fail the signed torque. A second proof uses the degree-4046 distance-ratio resultant and accounts for escaping branches. All 74 placements in the 22 real-finiteness classes are excluded. Seven signed-complex placements remain in five classes, one in diagram 88 and four in diagram 93. Their existence remains open. The proof does not determine the exceptional *t* or give a count for each nonexceptional *t*. This research manuscript has not undergone peer review; Lean covers selected lemmas, and the full proof also uses analytic deductions and separate exact computations. [Case ledger and verification](notes/last-diagrams/README.md) · [English paper (PDF)](papers/LastDiagrams.pdf) · [LaTeX source](papers/LastDiagrams.tex)
+
+### Signed four-body absolute equilibria
+
+With three unit masses and one mass *t*, the signed four-body system can have zero net force at each of the four distinct positions. Exactly two positive ratios admit a noncollinear equilibrium and four admit a collinear equilibrium. Every listed ratio has a realization at real positions with mixed signs on the inverse distances. This signed system occurs in the rescaled limit of a simultaneous four-body collapse. Ordinary positive-distance Newtonian gravity on positive masses has positive potential and cannot have zero net force at every body. [Paper (PDF)](papers/SignedQuartetEquilibria.pdf) · [LaTeX source](papers/SignedQuartetEquilibria.tex)
 
 ### Verification and reuse
 
@@ -48,7 +58,7 @@ The verification package includes Lean sources, exact-arithmetic verifiers, thei
 
 ## 中文
 
-在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的八篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
+在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的十篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
 
 ### 五个近等质量天体与一个轻天体
 
@@ -85,6 +95,16 @@ Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，�
 ### 实中心构型的能量约束
 
 对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。局部计算还排除了图 88 的等质量正方形首项以及图 94 的一个等边首项。[论文 PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [逐项清单](notes/physical-ends/README.md#中文)
+
+### 五重等质量线上一般质量比的实中心构型有限性
+
+固定五个单位质量和一个正质量 *t*，第九篇研究稿得到，除有限多个代数质量比外，平移、旋转和整体缩放意义下的实平面牛顿中心构型只有有限多个。前人针对六个一般质量的有限性定理留下的例外集合，包含每一个具有三个相等质量的向量。沿这条线，此前利用实构型势能及其质量导数，把反证需要考察的复退化压缩到图 88、94 的 22 类。图 94 的三种变质量位置分别用投影分类、完整六体方程的局部延拓，以及质量比趋于无穷的展开排除。
+
+图 88 的四体组若含有变质量，除了满足孤立四体的引力方程，还须满足双体组施加的首阶力矩条件。一条证明把质量特化到 2，在特征 65521 的有限域中处理所有有界与塌缩极限。三个常规坐标图在代数闭包中分别有 420、4、102 个点，所有可能的标记顺序与投影方向均未通过力矩检验。另一条证明研究距离比函数域中的 4046 次结式，并计入各项边界重数。实构型有限性所需的 74 个带标号候选、22 个对称类全部排除。任意有符号复曲线仍有 7 种放置、5 个对称类，其中图 88 有 1 类，图 93 有 4 类。它们的存在性尚未确定。第九篇研究稿没有确定例外质量值，也没有给出一般参数下的具体构型数。研究稿未经同行评审，Lean 检查其中若干引理，完整论证还依赖书面推导和独立的精确计算。[最新清单与复验](notes/last-diagrams/README.md) · [英文论文 PDF](papers/LastDiagrams.pdf) · [LaTeX 源稿](papers/LastDiagrams.tex)
+
+### 四体有符号绝对平衡的质量比
+
+对三个单位质量和一个质量 *t*，第十篇论文分类了四个不同位置同时合力为零时可能出现的正质量比。允许带符号的逆距离时，非共线平衡恰有两个正质量比，共线平衡恰有四个。所有质量比都能以实坐标及混合符号实现。这组方程来自六体退化时四体同时塌缩后的重标度极限。通常的正质量牛顿引力采用正逆距离，其正势能阻止所有天体同时合力为零。[英文论文 PDF](papers/SignedQuartetEquilibria.pdf) · [LaTeX 源稿](papers/SignedQuartetEquilibria.tex)
 
 ### 复验与许可
 

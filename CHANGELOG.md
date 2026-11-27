@@ -8,6 +8,10 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 
 ### English
 
+- **Signed four-body absolute equilibria.** The tenth manuscript classifies all positive marked mass ratios admitting zero net force at four distinct points. It gives two ratios in the noncollinear case and four in the collinear case, with exact real-coordinate witnesses using signed inverse distances. [Paper (PDF)](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.pdf) · [LaTeX source](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.tex)
+
+- **Generic finiteness on the five-equal-mass line.** The ninth manuscript excludes all 74 labelled placements in the 22 classes needed for an infinite real family. This gives finiteness for every positive sixth mass outside a finite algebraic set. The unrestricted signed ledger falls from 185 placements in 53 classes to seven in five classes. The last quartet is excluded by a finite-field specialization and independently in a distance-ratio function field. [Case ledger and verification](./problems/planar-central-configurations/notes/last-diagrams/README.md) · [English paper (PDF)](./problems/planar-central-configurations/papers/LastDiagrams.pdf) · [LaTeX source](./problems/planar-central-configurations/papers/LastDiagrams.tex)
+
 - **Real six-body finiteness.** The physical list falls from 29 to 22 classes in diagrams 88 and 94. The unrestricted signed list falls from 55 to 53. Added a manuscript, local calculations, kernel-checked algebra and annotated case lists. [Paper and replays](./problems/planar-central-configurations/notes/physical-ends/README.md)
 
 - **Reduction to three six-body diagrams.** Published a manuscript, four Lean modules and a reproducible ledger reducing the earlier list to diagrams 88, 93 and 94. [Reduced list][reduced]
@@ -23,6 +27,10 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 - **Licensing and verification.** Released the papers and original documentation under CC BY 4.0 and the original proof and verification code under MIT. The five manuscript PDFs now carry a license and source link. Each of the five Lean project archives includes both license texts, and all six Lean directories have bilingual reproduction instructions. [Licensing commit][liccommit]
 
 ### 中文
+
+- **四体有符号绝对平衡。** 第十篇论文分类了三个单位质量和一个正质量天体在带符号逆距离下合力均为零的质量比，非共线时有两个，共线时有四个，均给出实坐标的精确实现。[英文论文 PDF](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.pdf) · [LaTeX 源稿](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.tex)
+
+- **五重等质量线上一般正质量比的有限性。** 第九篇研究稿排除实构型反证所需的全部 22 类、74 种放置，由此得到有限多个代数例外值以外的平面中心构型有限性。允许任意有符号复曲线时，清单从 185 种放置、53 类缩至 7 种放置、5 类。对最后的四体组给出有限域特化与距离比函数域消元两条排除路线。[最新清单与复验](./problems/planar-central-configurations/notes/last-diagrams/README.md) · [英文论文 PDF](./problems/planar-central-configurations/papers/LastDiagrams.pdf) · [LaTeX 源稿](./problems/planar-central-configurations/papers/LastDiagrams.tex)
 
 - **实六体有限性。** 实问题所需的 29 类候选缩至图 88、94 的 22 类，任意有符号复曲线的候选从 55 类缩至 53 类。新增论文、局部推导和逐项复算材料。[论文与清单](./problems/planar-central-configurations/notes/physical-ends/README.md#中文)
 

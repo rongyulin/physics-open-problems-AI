@@ -62,9 +62,13 @@ On the mass line $(1,1,1,1,1,t)$, three further manuscripts exclude Tomar’s di
 
 A seventh paper reduces the generic five-equal-mass case list from 14 diagram classes to three. Diagrams 88, 93 and 94 contain 55 remaining symmetry representatives, including 29 compatible with the origin condition for real configurations. [Paper and case list](./problems/planar-central-configurations/notes/reduction/README.md)
 
-At generic positive mass ratio, energy and mass-derivative bounds now leave 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. [Eighth paper and updated list](./problems/planar-central-configurations/notes/physical-ends/README.md)
+An eighth paper used energy and mass-derivative bounds to identify 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. [Eighth paper and its case list](./problems/planar-central-configurations/notes/physical-ends/README.md)
 
-[Project and eight papers](./problems/planar-central-configurations/README.md) · [Small-mass count](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Two triangles](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse indices](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean and verification](./problems/planar-central-configurations/Lean/README.md)
+The ninth manuscript gives a computer-assisted proof of **generic finiteness on the five-equal-mass line**. For five unit masses and a sixth positive mass *t*, only finitely many real planar Newtonian central configurations exist up to similarity for every *t* outside a finite set of algebraic ratios. Earlier six-body generic-mass criteria left this entire line in their exceptional set. All 22 candidate classes needed for an infinite real family are now excluded. Two calculations treat the last four-body cluster, one by reduction to a finite field at mass 2 and another over a field of rational functions in a distance ratio. The exceptional masses and the arbitrary-mass planar six-body problem remain open. The manuscript includes exact arithmetic certificates and Lean-checked lemmas. The full theorem has not been peer reviewed or formally verified end to end. [Case ledger and verification](./problems/planar-central-configurations/notes/last-diagrams/README.md) · [English paper (PDF)](./problems/planar-central-configurations/papers/LastDiagrams.pdf) · [LaTeX source](./problems/planar-central-configurations/papers/LastDiagrams.tex)
+
+A tenth paper classifies the positive mass ratios admitting a four-body signed absolute equilibrium for masses $(t,1,1,1)$. There are two noncollinear ratios and four collinear ratios. All are realized with real coordinates and both signs of inverse distance. This zero-force problem describes a rescaled collapse in the algebraic six-body equations. [Paper (PDF)](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.pdf) · [LaTeX source](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.tex)
+
+[Project and ten papers](./problems/planar-central-configurations/README.md) · [Small-mass count](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Two triangles](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse indices](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean and verification](./problems/planar-central-configurations/Lean/README.md)
 
 ### Reuse and attribution
 
@@ -132,9 +136,13 @@ Liu 等在 2025 年利用 37 个光学模式实现了基于 Perkel 图的 57 事
 
 第七篇研究稿把五重等质量线一般参数上的退化图候选从 14 种缩至 88、93、94 三种。仍有 55 个对称代表，29 个满足实构型有限性所需的原点条件。[论文与清单](./problems/planar-central-configurations/notes/reduction/README.md#中文)
 
-对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。[第八篇论文与清单](./problems/planar-central-configurations/notes/physical-ends/README.md#中文)
+第八篇论文利用能量及其质量导数，把一般正质量比下实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。[第八篇论文与清单](./problems/planar-central-configurations/notes/physical-ends/README.md#中文)
 
-[项目与八篇论文](./problems/planar-central-configurations/README.md) · [小质量计数](./problems/planar-central-configurations/papers/SmallMass.pdf) · [两个正三角形](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse 指标](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean 与复验](./problems/planar-central-configurations/Lean/README.md)
+第九篇研究稿给出**五重等质量线上一般质量比的有限性证明**。固定五个单位质量和第六个正质量 *t*，除有限多个代数质量比外，平移、旋转与整体缩放意义下的实平面牛顿中心构型只有有限多个。前人的六体一般质量定理将整条质量线留在例外集合中。本研究从实构型反证所需的 22 个退化候选出发，逐一排除；最后的四体组分别通过质量取 2 的有限域特化，以及在距离比的有理函数域上消元，两条路线给出排除论证。尚未确定允许例外的质量比，也未解决任意正质量的平面六体问题。研究稿提供精确运算证书和经 Lean 检查的引理，主定理尚无端到端形式化证明，也未经同行评审。[最新清单与复验](./problems/planar-central-configurations/notes/last-diagrams/README.md) · [英文论文 PDF](./problems/planar-central-configurations/papers/LastDiagrams.pdf) · [LaTeX 源稿](./problems/planar-central-configurations/papers/LastDiagrams.tex)
+
+第十篇论文分类了四体质量为 $(t,1,1,1)$ 时有符号绝对平衡的正质量比。四个天体合力同时为零，在非共线情形有两个质量比，在共线情形有四个。各质量比均有实坐标、逆距离正负混合的解。该问题来自六体代数方程中四体同时塌缩的极限。[英文论文 PDF](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.pdf) · [LaTeX 源稿](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.tex)
+
+[项目与十篇论文](./problems/planar-central-configurations/README.md) · [小质量计数](./problems/planar-central-configurations/papers/SmallMass.pdf) · [两个正三角形](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse 指标](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean 与复验](./problems/planar-central-configurations/Lean/README.md)
 
 ### 转载、翻译与代码复用
 
