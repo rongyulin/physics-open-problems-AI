@@ -22,13 +22,11 @@
 
 ### 为什么这 144 个方向不可能出现？
 
-只看那些作用在两个比特上、保持三能级系统不动的位移，就有 **15 个必要条件**。设 $\rho$ 是两比特约化态。每个非恒等两比特泡利算符 $P$ 都必须满足 $|\operatorname{tr}(\rho P)|=1/\sqrt{13}$。由泡利基的正交性，$\rho$ 的纯度因此被固定为
+只看那些作用在两个比特上、保持三能级系统不动的位移，就有 **15 个必要条件**。设 $\rho$ 是两比特约化态。每个非恒等两比特泡利算符 $P$ 都必须满足 |tr(ρP)| = 1/√13。由泡利基的正交性，ρ 的纯度因此被固定为
 
-$$
-\operatorname{tr}(\rho^2)=\frac14\left(1+\frac{15}{13}\right)=\frac7{13}.
-$$
+<p align="center">tr(ρ²) = ¼(1 + 15/13) = 7/13.</p>
 
-另一方面，初态是纯态，而被取迹的系统只有三个能级，所以这个四维约化态至少有一个零特征值。在上述 15 个条件下，$\rho=(I+S/\sqrt{13})/4$，其中 $S$ 是带正负号的泡利算符之和，特征多项式具有整数系数。零特征值使 $-\sqrt{13}$ 成为 $S$ 的特征值，它的代数共轭 $+\sqrt{13}$ 也必须出现。所以 $\rho$ 有一个特征值恰为 $1/2$。其余特征值非负、总和为 $1/2$，于是纯度至多为 $1/2$，与 $7/13>1/2$ 矛盾。[完整证明，论文第 2 节](./LocalSIC12.pdf)
+另一方面，初态是纯态，而被取迹的系统只有三个能级，所以这个四维约化态至少有一个零特征值。在上述 15 个条件下，ρ = (I + S/√13)/4，其中 $S$ 是带正负号的泡利算符之和，特征多项式具有整数系数。零特征值使 $-\sqrt{13}$ 成为 $S$ 的特征值，它的代数共轭 $+\sqrt{13}$ 也必须出现。所以 $\rho$ 有一个特征值恰为 $1/2$。其余特征值非负、总和为 $1/2$，于是纯度至多为 $1/2$，与 $7/13>1/2$ 矛盾。[完整证明，论文第 2 节](./LocalSIC12.pdf)
 
 ### 这个结果改变了什么？
 
@@ -55,7 +53,7 @@ This project keeps $d=12$ and changes the displacement group. Up to overall phas
 
 ### Why is the orbit impossible?
 
-Just **15 of the overlap conditions** suffice. Take the displacements that act on the qubits alone and let $\rho$ be the two-qubit reduced state. Each nonidentity two-qubit Pauli operator $P$ would have to satisfy $|\operatorname{tr}(\rho P)|=1/\sqrt{13}$. Orthogonality of the Pauli basis then fixes the purity at $\operatorname{tr}(\rho^2)=(1+15/13)/4=7/13$.
+Just **15 of the overlap conditions** suffice. Take the displacements that act on the qubits alone and let $\rho$ be the two-qubit reduced state. Each nonidentity two-qubit Pauli operator $P$ would have to satisfy |tr(ρP)| = 1/√13. Orthogonality of the Pauli basis then fixes the purity at tr(ρ²) = (1 + 15/13)/4 = 7/13.
 
 Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank at most three, so $\rho$ has a zero eigenvalue. The 15 constraints give $\rho=(I+S/\sqrt{13})/4$ for a signed Pauli sum $S$ with integer characteristic polynomial. The zero eigenvalue puts $-\sqrt{13}$ in the spectrum of $S$, forcing its algebraic conjugate $+\sqrt{13}$ into the spectrum as well. Hence $\rho$ has an eigenvalue $1/2$. Its remaining eigenvalues are nonnegative and sum to $1/2$, giving purity at most $1/2$, in contradiction with $7/13$. [Full proof, §2](./LocalSIC12.pdf)
 
