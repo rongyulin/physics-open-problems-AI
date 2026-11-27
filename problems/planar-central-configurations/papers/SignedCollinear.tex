@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,geometry,booktabs,microtype,hyperref}
+\geometry{margin=1in}\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,pdftitle={Collinear strata on the five-equal-mass line of the planar six-body problem},pdfauthor={Chatgpt}}
+\newtheorem{theorem}{Theorem}\newtheorem{corollary}[theorem]{Corollary}\newtheorem{lemma}[theorem]{Lemma}
+\DeclareMathOperator{\Spec}{Spec}
+\title{Collinear strata on the five-equal-mass line of the planar six-body problem}
+\author{Chatgpt}\date{27 November 2026}
+\begin{document}\maketitle
+\begin{abstract}For five unit masses and a distinguished mass $t$, we exclude a signed complex planar central configuration with precisely the five unit masses on a line, both over $\overline{\mathbb Q(t)}$ and at every positive specialization. Two scalar force equations suffice. Over $\mathbb Q(\zeta_3)$ they give univariate polynomials of degrees eight and sixteen, and an exact calculation finds gcd one for all 256 pairs of local sign choices. A resultant specialization then excludes every placement of the distinguished body in a configuration with precisely five collinear points over the function field. We also prove that all signed complex collinear configurations form a finite set for any number of bodies when every nonempty subset mass is nonzero. A Lean formalization proves the latter finite-set assertion for the function field and all positive real specializations. Consequently a single chart in which three designated unit masses form a noncollinear triangle suffices for the outstanding generic planar dimension calculation, after permutation of the equal labels. We do not determine the dimension of that chart.\end{abstract}
+
+\section{The signed equations}
+Fix the center of mass at the origin and the Newtonian multiplier at one. In a characteristic-zero algebraically closed field, coordinates are equipped with the bilinear squared distance $r_{ij}^2=(x_i-x_j)^2+(y_i-y_j)^2$ and a choice of each nonzero square root $r_{ij}=r_{ji}$. The equations are
+\begin{equation}\label{eq:cc}
+ q_i=\sum_{j\ne i}m_j(q_i-q_j)r_{ij}^{-3}.
+\end{equation}
+Positive distances give the physical sheet over the reals. A nonzero multiplier may be normalized by a common dilation over an algebraically closed field. We identify translations, orthogonal changes of coordinates and scale when describing shape finiteness. Each reduction below has only finitely many unrecorded choices. Tomar's generic-mass criterion leaves the entire $(1,1,1,1,1,t)$ line in its exceptional set \cite{tomar}. On the physical collinear sheet Moulton's counting theorem already gives $6!/2=360$ labelled similarity classes for every positive mass vector \cite{moulton}. We treat all signed complex sheets for use in a dimension calculation.
+
+\section{No configuration with precisely the five unit masses collinear}
+\begin{theorem}\label{th:five}
+Suppose $t(5+t)\ne0$. In a normalized complex six-body solution of masses $(1,1,1,1,1,t)$, if the five unit bodies lie on a line, the sixth lies on that line as well. This applies over every characteristic-zero algebraically closed field.
+\end{theorem}
+\begin{proof}
+A line containing two bodies cannot be isotropic since their squared distance is nonzero. Use orthogonal coordinates and a translation to place the five on the horizontal axis and the sixth at $(0,h)$. Suppose $h\ne0$ and temporarily denote the positive-sheet or complex multiplier by $\lambda\ne0$. The center of mass has height $th/(5+t)$. The vertical acceleration of the $i$th unit body is $t h r_{i6}^{-3}$, so all five inverse cubes are $\lambda/(5+t)$. Make a common dilation to set this quantity to one. Subtracting the sixth body's contribution from each horizontal force equation now gives the five-body collinear central equations with multiplier $5$ and center at the average of the five horizontal coordinates.
+
+The five squared distances to $(0,h)$ belong to $\{1,w,w^2\}$, where $w^2+w+1=0$. On the horizontal line, each value admits at most two distinct points. Five distinct bodies must therefore occupy two shells twice and the third shell once. A residual cubic-root dilation puts the singleton on the shell of squared radius one. Permuting the unit bodies gives horizontal coordinates $(a,b,-b,c,-c)$ where
+\begin{equation}\label{eq:shell}
+ a^2+h^2=1,\qquad b^2=B=a^2+w-1,\qquad c^2=C=a^2+w^2-1.
+\end{equation}
+In particular $b$ and $c$ are nonzero. Write $x_i$ for these five coordinates. The normalized horizontal equations have the form
+\begin{equation}\label{eq:axial}
+ 5x_i-a=\sum_{j\ne i}\frac{e_{ij}}{(x_i-x_j)^2},\qquad e_{ij}=-e_{ji},\quad e_{ij}\in\{-1,1\}.
+\end{equation}
+Only the equations at $a$ and $b$ will be used. For different shells of squared radii $d_i,d_j$, multiply by three and replace $3/(x_i-x_j)^2$ by $k_{ij}(x_i+x_j)^2$ with
+\[
+ k_{1,w}=-w^2,\qquad k_{1,w^2}=-w,\qquad k_{w,w^2}=-1.
+\]
+These identities follow from $x_i^2-x_j^2=d_i-d_j$. For the row at $b$, multiply by $4B$ as well, so that the term from $-b$ becomes the integer $3e_{b,-b}$. Reduce both cleared residuals to the form $f+gb+uc+vbc$ with $f,g,u,v\in\mathbb Q(w)[a]$. A necessary condition for a residual to vanish is
+\begin{equation}\label{eq:norm}
+ N=(f^2+Bg^2-Cu^2-BCv^2)^2-B(2fg-2Cuv)^2=0 .
+\end{equation}
+Indeed, multiplication first by the conjugate under $c\mapsto-c$ and then by the conjugate under $b\mapsto-b$ gives \eqref{eq:norm}. This computation is a polynomial identity even at a specialization where conjugate values coincide.
+
+The sixteen sign choices in the row at $a$ give degree-eight polynomials. The sixteen choices in the row at $b$ give degree-sixteen polynomials. The ancillary script \texttt{five\_axial.py} constructs them by \eqref{eq:axial}--\eqref{eq:norm} and computes the gcd of each of the $16^2=256$ pairs by exact arithmetic in $\mathbb Q(w)[a]$. All gcds have degree zero. The computation includes both possibilities for the sign of the shared edge in each row independently. An independent check of the univariate gcds by specialization sends $w$ to $13$ modulo $61$. Both degrees are preserved throughout, and all 256 gcds again have degree zero. No common root of the two necessary equations exists.
+\end{proof}
+The physical exclusion alone is immediate because all five positive distances would be equal, and a real circle intersects a line in at most two points. The three different squared distances and the independent signs in the proof arise in the complex algebraic problem.
+
+\begin{corollary}\label{cor:anyfive}
+Over $\overline{\mathbb Q(t)}$ with masses $(1,1,1,1,1,t)$, there is no signed complex planar central configuration with precisely five collinear bodies, for any choice of those five labels. For the placement with $t$ on the line, the two row equations give an explicitly defined nonzero obstruction polynomial on the parameter line.
+\end{corollary}
+\begin{proof}
+Give the five axial bodies masses $\mu_0,\ldots,\mu_4$ in the order $(a,b,-b,c,-c)$ and write $L=\sum\mu_i$. The off-line mass may be arbitrary and nonzero, with total mass nonzero. Vertical balance and dilation again set all five inverse cubes to one. Subtracting the off-line contribution changes \eqref{eq:axial} to
+\[
+  Lx_i-\sum_j \mu_jx_j=\sum_{j\ne i}e_{ij}\mu_j/(x_i-x_j)^2.
+\]
+The three-shell reduction is unchanged. Form the two row norms $N_0,N_1$ by the same clearing and conjugation as above. Treating $a,b,c$ as degree one, the cleared rows have degree at most two and four respectively because $B=b^2$ has degree two. Each row is linear in the masses. Four conjugate factors therefore give upper bounds $8,16$ for the degrees in $a$, and $4$ for each total mass degree. The Sylvester determinant $R_{e,f}(\mu)=\operatorname{Res}_{a}(N_0,N_1)$ using these degree bounds is a polynomial over $\mathbb Q(w)$. At the all-unit mass point the degrees attain both bounds, and each of the 256 determinants is nonzero by the gcd certificate. Whenever the two row equations have a common root, the corresponding determinant vanishes.
+
+For each placement $k$ of the distinguished axial mass, specialize $\mu_k=t$ and set the other axial masses to one. Take the product of these resultants over the five placements and the 256 pairs of row signs, and multiply by its cyclotomic conjugate. The resulting polynomial belongs to $\mathbb Q[t]$ and is nonzero at $t=1$. Each determinant has degree at most $4(8+16)=96$ in the masses, giving the coarse product degree bound $245{,}760$. This defines an obstruction without expanding the product. Theorem~\ref{th:five} already treats the other placement, with $t$ off the line. The polynomial concerns only the stratum with precisely five collinear points. It is not the desired obstruction for all six-body shapes.
+\end{proof}
+
+\section{All bodies on a line}
+On a nonisotropic line take an orthogonal coordinate $x$. The signed scalar equations at multiplier one are
+\begin{equation}\label{eq:one}
+ x_i=\sum_{j\ne i} s_{ij}m_j(x_i-x_j)^{-2},\qquad s_{ji}=-s_{ij}.
+\end{equation}
+The Newtonian sign sheets have $s_{ij}=\pm1$ for $i\ne j$. The following argument applies even to arbitrary fixed skew coefficients.
+\begin{theorem}\label{th:val}
+Let $k$ be an algebraically closed field of characteristic zero, and let $s_{ij},m_i\in k$. If each nonempty subset of the masses has nonzero sum, then the collision-free solution set of \eqref{eq:one} is finite for every fixed skew array $s$. The union over all Newtonian sign sheets is also finite.
+\end{theorem}
+\begin{proof}
+Suppose there were an irreducible solution curve. In the function field of the curve take the valuation ring $O$ at any place of its smooth projective model. For fixed $k_0$ put $I=\{i:x_i-x_{k_0}\in O\}$. When $i\in I$ and $j\notin I$, the difference $x_i-x_j$ has a pole and its inverse belongs to $O$. Multiply \eqref{eq:one} by $m_i$ and sum over $i\in I$. All terms internal to $I$ cancel by skew symmetry. Therefore $\sum_{i\in I}m_i x_i\in O$. Subtracting $\sum_{i\in I}m_i(x_i-x_{k_0})\in O$ gives $x_{k_0}\sum_{i\in I}m_i\in O$. The subset sum is a nonzero constant, so $x_{k_0}\in O$. This holds at every place, making every coordinate constant on the complete curve. This contradicts positive dimension. The equations are of finite type on the open noncollision locus, so zero dimension gives finitely many geometric points. There are only finitely many Newtonian sign choices.
+\end{proof}
+In fact this argument proves integrality of all coordinates over any coefficient subring containing the inverse of every nonempty subset mass: apply it to every valuation ring containing that coefficient subring, then take the intersection of these valuation rings (the lemma \nolinkurl{iInf_valuationSubring_superset} in mathlib, related to \cite{stacks}). For six bodies with five unit masses, $t(t+1)(t+2)(t+3)(t+4)(t+5)$ suffices to keep all subset sums nonzero. Its zero set is only an exclusion of the criterion. The positive mass half-line has no such exclusions.
+
+For arbitrary fixed positive masses the signed complex stratum with five collinear and one off the line is finite even if a resultant vanishes. Indeed, upon setting the five cross inverse cubes to one as above, the axial five-body subsystem has multiplier $L=\sum \mu_i\ne0$ and center at its weighted mean. Theorem~\ref{th:val}, applied after one fixed dilation to multiplier one, gives only finitely many axial tuples modulo translation. For each such tuple, the sixth body's squared distance to each of two fixed distinct axial points has only three choices. Subtracting the two squared-distance equations determines its horizontal coordinate and then gives at most two heights.
+
+\begin{corollary}
+On the five-equal-mass family, generic finiteness up to similarity reduces to zero dimensionality on the collision-free chart $\det(q_2-q_1,q_3-q_1)\ne0$ with the five unit masses labelled $1,\ldots,5$. In particular every positive-dimensional component has, after a permutation of the five unit labels, a nonempty open part on that chart.
+\end{corollary}
+\begin{proof}
+Theorems~\ref{th:five} and~\ref{th:val} give a finite union of shapes when all five unit masses are collinear. Any other configuration has a noncollinear triple of unit bodies. There are only finitely many permutations of their labels. The argument applies over $\overline{\mathbb Q(t)}$ and after any positive specialization.\end{proof}
+
+\section{A bound for the full complex system at positive real masses}
+The following elementary estimate describes a difficulty with applying the collinear proof to the full plane. Equip $\mathbb C^2$ with its Hermitian norm $\|\cdot\|$ while retaining bilinear squared distances in \eqref{eq:cc}. Write $R=\max_i\|q_i\|$ and $M=\sum_i m_i$. For $n\ge2$, a collision-free normalized configuration with positive real masses has a pair such that
+\[
+ \|q_i-q_j\|>\frac R{2(n-1)},\qquad |r_{ij}|\le (4M)^{1/3}.
+\]
+Join two vertices when the Hermitian separation is at most $R/[2(n-1)]$. The component containing a point of maximal norm has diameter at most $R/2$. Its positive-mass centroid has norm at least $R/2$, so the component cannot be the entire configuration with centroid zero. Sum the equations over the component with mass weights. Internal forces cancel, so for at least one crossing pair $\|q_i-q_j\|/|r_{ij}|^3\ge R/(2M)$. Use $\|q_i-q_j\|\le2R$ to conclude. In isotropic coordinates $z=x+\mathrm i y$, $v=x-\mathrm i y$, this pair satisfies $\min(|\Delta z|,|\Delta v|)\le2(n-1)(4M)^{2/3}/R$. Accordingly, on a sequence escaping to infinity, a separation vector of order $R$ can have bounded bilinear distance. The chart in the corollary still admits this phenomenon.
+
+\paragraph{Verification.} \texttt{CollinearValuation.lean} proves the actual finiteness of the signed noncollision scalar solution set over $\overline{\mathbb Q(t)}$ and the complex scalar fiber for each positive real $t$. The code proves integrality through the intersection of valuation rings, then uses an ultrafilter over a hypothetical infinite solution set to deduce finiteness. Its convention $0^{-1}=0$ has no effect on the final collision-free set. The geometric reduction in Theorem~\ref{th:five} is supplied above. Its exact arithmetic is reproduced by \texttt{five\_axial.py}. In addition, \texttt{FiveAxialArithmetic.lean} checks the norm tables modulo $61$ against an independent force formula at seventeen points, the preserved degrees, and all 256 Euclidean sweeps. The degree bounds follow directly from the displayed formulas. The translation from positions to the residue-field calculation remains in the manuscript. The unsolved chart contains general asymmetric noncollinear six-body configurations. No claim of bibliographic priority is made for the collinear valuation argument.
+
+\begin{thebibliography}{9}
+\bibitem{moulton} F. R. Moulton, The straight line solutions of the problem of $n$ bodies, \emph{Annals of Mathematics} (2) \textbf{12} (1910), 1--17.
+\bibitem{tomar} T. S. Tomar, Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean, \href{https://hexagonmath.org/2611.00377v1}{Hexagon 2611.00377v1} (2026), Theorem 1.1.
+\bibitem{stacks} The Stacks Project Authors, \href{https://stacks.math.columbia.edu/tag/090P}{Lemma 10.50.11, Tag 090P}, valuation rings.
+\end{thebibliography}
+\noindent Manuscript and source: CC BY 4.0. Original verification code: MIT.
+\end{document}

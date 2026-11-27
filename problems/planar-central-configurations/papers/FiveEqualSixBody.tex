@@ -1,0 +1,1129 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\allowdisplaybreaks
+\setlength{\emergencystretch}{2em}
+\title{A singular diagram and six bifurcations of planar Newtonian six-body central configurations}
+\author{Chatgpt}
+\date{Research manuscript, 27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study planar Newtonian central configurations with mass vector
+$(1,1,1,1,1,t)$ over a rational function field and at real positive parameters.
+We rule out Tomar's diagram 98 on this line over the geometric generic
+parameter, and at $t=3$. We extend the exclusion to a nonempty Zariski open subset of the three-parameter family $(1,1,1,a,b,c)$, including $(a,b,c)=(2,3,7)$. The original leading torque vanishes on an
+equilateral factor. Expanding the normalized potential to cubic order
+yields an additional necessary condition. A finite resultant witness
+and exact interval calculations exclude both its ordinary and complex
+collinear equal-triangle lifts. We also prove a lower bound of 4104
+simple points in the unrestricted geometric generic fibre, assuming the
+previous small-mass count. Endpoint catalogues and local certificates
+identify three folds and three symmetry-breaking pitchforks in $0<t<1$.
+They account for the observed net change of 480 labelled oriented
+real configurations. Global real counts between the events and generic
+finiteness of the entire six-body fibre on this line remain open.
+\end{abstract}
+\section{The mass parameter and the global target}
+At a central configuration each gravitational acceleration is
+$-\lambda(q_i-c)$, where $c$ is the centre of mass and $\lambda>0$.
+We identify translations, rotations and positive dilations and retain all
+labels unless otherwise specified. The preprint of Tomar~\cite{Tomar}
+proves finiteness off an algebraic set containing this whole mass line.
+Its approach studies a complex curve that would result from infinitely
+many physical shapes at fixed masses. Its possible singular places have
+combinatorial types called diagrams. Diagram 98 involves two triples
+of bodies and a necessary leading torque balance between them.
+Here $t$ denotes a mass parameter. It is distinct from the two projected
+shape variables of the triples. In the section on diagram 98 the same
+mass parameter is denoted by $k$.
+
+\subsection*{What the full algebraic system already implies}
+Translate the marked sixth body to $(0,0)$ and place body five at $(1,0)$
+by the unique orientation-preserving similarity with these properties.
+The four remaining positions give eight real coordinates $x$.
+Adjoin inverse distances $s_{ij}$ by
+$s_{ij}^2\lVert q_i-q_j\rVert^2=1$, using the positive sheet for real
+physical solutions and fixing $s_{56}=1$. With masses $m_i$, define
+$U=\sum_{i<j}m_im_js_{ij}$ and
+$I=(\sum m_i)^{-1}\sum_{i<j}m_im_j\lVert q_i-q_j\rVert^2$.
+The shape equations are the eight derivatives of $U\sqrt I$ in this
+chart. They have a rational formulation
+$2I\,\partial_x U+U\,\partial_x I=0$, using implicit differentiation
+on the distance sheets. Restrict to $I(5+t)\ne0$. All physical solutions
+in the positive mass range are represented. The distance equations are
+\'{e}tale in their auxiliary variables at physical solutions, so a
+nondegenerate physical shape gives a simple zero of this square algebraic
+system.
+
+\begin{theorem}
+Over $\overline{\mathbb Q(t)}$ this normalized system has at least 4104
+distinct simple solutions. If the whole coordinate algebra is finite over
+$\mathbb Q(t)$, its dimension is at least 4104.
+\end{theorem}
+\begin{proof}
+The small-mass theorem in~\cite{Small} gives 4104 distinct nondegenerate
+labelled oriented solutions for every sufficiently small positive $t$.
+Over an algebraically closed field the existence of at least 4104
+distinct zeros with nonzero Jacobian determinant is a constructible
+condition on $t$. Indeed it is the image of the locus of 4104 ordered
+tuples of such solutions, deleting the pairwise diagonals. Its image in
+the affine line contains infinitely many real points, hence a nonempty
+Zariski open subset. This proves the assertion at the geometric generic
+point. Each simple point contributes one to the dimension when the
+algebra is finite. This argument permits other positive-dimensional
+components.
+\end{proof}
+For a proof of the desired upper finiteness bound, each shape coordinate
+must satisfy a monic polynomial over $\mathbb Q(t)$ on every component
+under consideration, or all remaining components must be shown unable
+to contain a physical curve. A sufficient obstruction for one diagram
+alone does not supply this conclusion.
+
+\section{A reduction of the diagram-98 torque condition on the five-equal-mass line}
+
+Consider masses proportional to \( (1,1,1,1,1,k) \), with \(k>0\). In a diagram-98 singular place, two triples separate in opposite complex coordinates. After interchanging the triples and relabelling bodies, their masses are \(\mu=(1,1,1)\) and \(\nu=(1,1,k)\). This note restricts their leading coefficients. The cubic-order argument in the next section will exclude the remaining leading shapes at generic mass.
+
+\textbf{Proposition.} There exists an explicitly defined nonzero polynomial \(P\in\mathbb Z[k]\) with \(P(3)\ne0\) such that, for every \(k>0\) with \(P(k)\ne0\), every solution to the diagram-98 leading shape and cross-torque conditions has both of the following properties.
+
+\begin{enumerate}
+\item The projected shape \(x\) of the all-equal triple satisfies \(x^2-x+1=0\).
+\item The cross sign matrix is of rank one over the complex numbers. Its signs can be written as \(\epsilon_{jl}=\delta_j\eta_l\), independently of the chosen square-root branches.
+\end{enumerate}
+
+The proposition includes \(k=3\). It covers every labelled allocation of the five interchangeable unit masses. The projected complex shape need not represent a real equilateral triangle.
+
+\subsection*{Input from the central-configuration equations}
+
+Tomar, \emph{Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean} (Hexagon 2611.00377v1, Sections~6.4--6.6), Lemmas 6.9 and 6.11, and Theorem 6.12, gives the following necessary conditions. For the triple with masses \(m=(1,1,h)\) and shape \(z\), set
+
+\[
+(\ell_1,\ell_2,\ell_3)=(1+hz,hz-1-h,1-2z),\qquad
+\Lambda_j=\prod_{i\ne j}\ell_i.
+\]
+
+All three linear forms are nonzero at a diagram-98 place. Write \(S_h\) for Tomar's degree-34 shape polynomial. With \(S_1(x)=S_k(y)=0\), the cross-torque vanishes only if some signed sum
+
+\[
+\sum_{j,l=1}^{3}\epsilon_{jl} r_j s_l = 0,\qquad
+r_j^2=\mu_j^2\Lambda_j(x;1),\quad
+s_l^2=\nu_l^2\Lambda_l(y;k)
+\]
+
+vanishes. The signs of a row or column change when a corresponding square-root branch changes. Rank and the equation with the transformed sign matrix are invariant. Overall sign is irrelevant, so require \(\epsilon_{11}=1\). Tomar's Remark 6.14 observes that rank-one matrices include the factorable sums that vanish for an equal-mass triple. The corresponding original obstruction polynomial therefore vanishes identically on this line. The proposition tests the other signs and the other equal-triple shapes separately.
+
+\subsection*{Reduction of the shape equations}
+
+Put \(E(z)=z^2-z+1\) and
+
+\[
+L=E(z)(z^4-5z^3+9z^2-5z+1)(z^4+z^3-2z+1)(z^4-2z^3+z+1).
+\]
+
+For the equal triple retain the degree-26 polynomial
+
+\[
+\begin{aligned}A=L{}&(2z^4-z^3+2z^2-2z+1)(z^4-2z^3+2z^2-z+2)\\
+&(2z^4-7z^3+11z^2-7z+2).\end{aligned}
+\]
+
+For the other triple put
+
+\[
+\begin{aligned}
+B_k=L{}&[2z^5-5z^4+4z^3-(3k+3)z^2+(3k+2)z-(k+1)]\\
+&[z^4-2z^3+(k+1)z^2-kz+k+1]\\
+&[2z^5-5z^4+4z^3+(3k+1)z^2-(3k+2)z+k+1]\,
+[z^2-z-k-1].
+\end{aligned}
+\]
+
+Its degree is 30 for every \(k\). Direct multiplication in \(\mathbb Z[k,z]\) gives
+
+\[
+\begin{aligned}S_1&=A(z)(2z-1)^2 E(z)(z+1)^2(z-2)^2,\\
+S_k&=B_k(z)(2z-1)^2 E(z).\end{aligned}
+\]
+
+In both products the retained polynomial already contains \(E\). Every other removed root makes at least one \(\ell_i\) vanish. Thus these equations retain every admissible shape even at special masses. The equal-triple polynomial \(A/E\) has no common root with \(E\); in particular, a non-equilateral equal-triple branch cannot specialize to an equilateral root at 3. Both retained polynomials have constant leading coefficient 4; no shape escapes to infinity by a degree drop. These identities and the checks on specialization are reproduced by \texttt{SourceAlgebra.py}.
+
+\subsection*{An integer obstruction polynomial}
+
+Let \(\mathcal N\) be the 240 canonical matrices of rank greater than one and \(\mathcal F\) the 16 canonical matrices of rank one. For either class \(\mathcal C\), define
+
+\[
+H_{\mathcal C}(r,s)=
+\prod_{e\in\mathcal C}\left(\sum_{j,l} e_{jl}r_js_l\right).
+\]
+
+Changing the sign of any \(r_j\) or \(s_l\) permutes these factors up to overall signs. If \(e_{11}\) is affected, \emph{every} factor needs a minus sign to restore the normalization, and the number of factors is even. Hence every exponent of every radical in the product is even. Substituting the six square identities above yields \(h_{\mathcal C}(x,y,k)\in\mathbb Z[x,y,k]\). Define
+
+\[
+P(k)=\operatorname{Res}_x\big(A,\operatorname{Res}_y(B_k,h_{\mathcal N})\big)
+\operatorname{Res}_x\big(A/E,\operatorname{Res}_y(B_k,h_{\mathcal F})\big).
+\]
+
+All polynomial evaluations take place after replacing radicals by their squares in the invariant product. This is an explicit polynomial specified by products and determinants rather than by expanded coefficients. A root pair with either a nonfactorable sign matrix, or a non-equilateral equal-triple shape and a factorable matrix, makes the corresponding nested resultant zero.
+
+It suffices to check \(P(3)\ne0\). At 3 both shape polynomials have their full degrees and all roots are simple. The product formula for a resultant of a fixed-degree outer polynomial multiplies the inner values over all outer roots, up to a nonzero power of the leading coefficient, even if the degree of the inner polynomial drops in a specialization. Thus the finite check below establishes \(P(3)\ne0\) without assuming that a component of any system of rational equations meets the tested affine chart. No inversion of a parameter, radical, or shape coordinate is needed to construct \(P\). For a sign class of size \(M\), \(H_{\mathcal C}\) is homogeneous of degree \(M/2\) in the squared coordinates of each triple separately. The substituted entries have shape degree at most two, and the mixed entries have parameter degree at most four. Hence \(h_{\mathcal C}\) has degrees at most \((M,M,2M)\) in \((x,y,k)\). The mixed-shape polynomial has parameter degree at most four and shape degree 30. The Sylvester determinant bounds the inner resultant's parameter degree by \(30(2M)+4M=64M\); the outer shape polynomials are constant in the parameter. In particular,
+
+\[
+\deg P \le 26\cdot64\cdot240+24\cdot64\cdot16=423936.
+\]
+
+The finite calculation below proves nonvanishing, and hence the finite-exception assertion.
+
+\subsection*{The finite witness}
+
+The computation at 3 uses \(a_j=\mu_j/\sqrt{\ell_j(x;1)}\) and \(b_l=\nu_l/\sqrt{\ell_l(y;3)}\). All linear forms are nonzero on both root sets, so multiplying by one nonzero common scalar for each triangle, with harmless changes of row/column signs, identifies this test with the signed sums in \(r,s\).
+
+The input file \texttt{seeds98.json} contains Gaussian dyadic centres of denominator \(B=2^{48}\). A floating-point calculation can be used to generate them; the verifier treats them as arbitrary untrusted input. Set \(R=2^{-39}\) and \(H=2^{-32}\). For a proposed root centre \(c\), write the exact Taylor coefficients of its assigned factor as \(f(c+w)=\sum d_i w^i\). The verifier proves \(|d_1|R>|d_0|+\sum_{i\ge2}|d_i|R^i\). Rouché's theorem gives exactly one zero in each disk. Disjointness and the degrees certify completeness.
+
+For the proposed radical centre \(w\), let \(\ell_0=\ell(c)\) and let \(s\) be the slope of this linear form. The true value differs from \(\ell_0\) by at most \(|s|R\). The verifier proves
+
+\[
+2|\ell_0w|H>
+|\ell_0w^2-m_j^2|+|\ell_0|H^2+|s|R(|w|+H)^2.
+\]
+
+A second application of Rouché's theorem isolates a radical root in each disk. The other root is its negative. The global sign enumeration covers all choices. Given centres \(w_j,v_l\) with error at most \(H\), the product \(a_jb_l\) has error at most \((|w_j|+|v_l|)H+H^2\). The verifier sums these errors and compares them to a lower bound on the modulus of every signed sum. It bounds \(|z|\) below by \(\max(|\Re z|,|\Im z|)\) and above by \(|\Re z|+|\Im z|\), so every comparison uses integers or exact rational arithmetic.
+
+There are 26 equal-triple roots and 30 mixed-triple roots. All \(26\cdot30\cdot240=187200\) rank-greater-than-one combinations are excluded. All \(24\cdot30\cdot16=11520\) non-equilateral rank-one combinations are also excluded. The least certified lower bound on the modulus over these two classes exceeds 0.036477197 in the inverse-root coordinates used for this finite witness. Among 199680 total combinations, 240 fall within the interval error. Every one has an equilateral equal-triple root and factorable signs. This count is a count of signed algebraic tests, not of central configurations.
+
+For either equilateral root, set \(Y_j=\mu_j^2\Lambda_j(x;1)\). The product of the four three-term signed sums equals
+
+\[
+Y_1^2+Y_2^2+Y_3^2-2(Y_1Y_2+Y_2Y_3+Y_3Y_1)=9E(x)^2.
+\]
+
+It follows that for both equilateral roots some signed sum over the equal triangle vanishes. Multiplying this identity by an arbitrary signed sum over the mixed triangle produces a factorable solution of the scalar torque equation. Additional information from the governing equations is required to decide whether any such leading solution extends to a singular place.
+
+\subsection*{A force identity on the surviving branch}
+
+There is a useful further restriction in the physical leading coordinates. Suppose
+\(k>0\), \(k\ne1\), and \(P(k)\ne0\). Write \(Z_j\) for the leading
+projected coordinate of equal body \(j\), and \(W'_l\) for that of mixed
+body \(l\), in the two opposite coordinates of Tomar's Lemma 6.11. Then
+there are nonzero \(\gamma_l\) such that for the leading cross inverse
+distances
+\[
+   \widehat p_{jl}=\gamma_l Z_j .
+\]
+In particular, for each mixed body \(l\), the three values
+\(\widehat p_{jl}^3\) are equal, and
+\[
+\sum_{j=1}^3\widehat p_{jl}=0,\qquad
+\sum_{j=1}^3\widehat p_{jl}^3 Z_j=0.
+\]
+
+To see this, first rule out a cancellation in the mixed triple.
+At its shape \(y\), set \(Y_l=\nu_l^2\Lambda_l(y;k)\) and
+\(D=\sum_lY_l^2-2\sum_{l<q}Y_lY_q\). Calculating the resultant with
+each of the eight displayed factors of \(B_k\) and applying Sturm's
+algorithm to its irreducible factors finds just one positive root in
+their union, namely \(k=1\). The exact calculation is in
+\texttt{SourceAlgebra.py}. Thus the mixed factor of a rank-one
+vanishing sum is nonzero, so the equal factor must vanish.
+
+The three equal masses have centered coordinates proportional, in some
+order, to \((1,\omega,\omega^2)\), where \(\omega\) is a primitive cube
+root of unity. This follows by substituting \(x^2-x+1=0\) into the
+linear forms above. The three numbers \(Z_j^3\) have a common nonzero
+value, so for a common constant \(c\) one possible set of radicals
+of \(1/Z_j\) is \(cZ_j\). These sum to zero. A signed zero sum of
+three nonzero complex numbers has only one sign pattern up to a
+global sign: two inequivalent patterns would isolate a single nonzero
+term after adding or subtracting the relations. The equal-triple
+radicals in a vanishing factor must therefore be proportional to
+\(Z_j\). Factorability and
+\(\widehat p_{jl}^{\,2}Z_jW'_l=-1\) give the displayed formula.
+Both moment identities follow from \(\sum_j Z_j=0\).
+
+\subsection*{Reproduction}
+
+Run \texttt{python3 Diagram98.py} (Python 3.10+ standard library) and \texttt{python3 SourceAlgebra.py} (SymPy). The optional \texttt{generate98.py} regenerates the untrusted dyadic input with NumPy. The program certifies the finite specialization with exact arithmetic. The specialization and elimination argument is the mathematical proof above.
+
+\section{Cubic-order exclusion of diagram 98}
+
+\textbf{Proposition.} Outside a finite algebraic set of parameters
+\(k>0\), no diagram-98 singular place exists for the masses
+\((1,1,1,1,1,k)\). The exclusion holds at \(k=3\).
+
+\paragraph{A chart near the two triangles.}
+Use Tomar's exponents in Lemma 6.10. By a complex rotation fix
+\(z^A_{12}=1\), and set \(h^2=1/w^B_{12}\) in these rotated
+coordinates. A further quadratic extension to extract \(h\) is harmless.
+Write the physical positions in the chart as
+\[
+ (Z_j,W_j)\quad(j\in A),\qquad (h^2 Z'_l,h^{-2} W'_l)\quad(l\in B).
+\]
+Thus \(Z_{12}=W'_{12}=1\), \(h\to0\), and all the coordinate
+vectors in capital letters have finite limits. The designated pair
+differences and all the individual \(Z_j,W'_l\) at the limit are nonzero.
+The two triples obey their own isolated normalized three-body equations at
+the limit. The two triple centres are included as chart variables; stationarity of the harmonic translation terms recovers the centre-of-mass condition. For \(h\ne0\),
+the chart gives configurations modulo the common rotation, locally up
+to the choice of sign of \(h\).
+
+With each local inverse-distance branch chosen by the given place, the
+normalized central equations imply stationarity of
+\(V=\frac12\sum_i m_i z_iw_i+\sum_{i<j}m_im_jp_{ij}\).
+Write \(V_A,V_B\) for the analogous isolated-triple functions. Each cross
+inverse distance, divided by \(h\), is locally analytic and equals
+\[
+ (-Z_jW'_l)^{-1/2}
+ (1-h^2Z'_l/Z_j)^{-1/2}(1-h^2W_j/W'_l)^{-1/2},
+\]
+with its own leading sign. Thus, as an analytic function of all chart
+coordinates,
+\[
+ V=V_A+V_B+h C_0+h^3 C_1+O(h^5).
+\]
+The preceding section gives a rank-one sign matrix, hence
+\(C_0=a(Z)b(W')\), where the signed terms of \(a\) are branches of
+\(1/\sqrt{Z_j}\) and those of \(b\) are branches of a common nonzero
+constant times \(\nu_l/\sqrt{W'_l}\). At the limiting equal triple
+\(a=0\), the signed radicals in \(a\) are \(c Z_j\), and
+\(\partial a/\partial Z_j=-c/2\) for all three bodies. The mixed
+triple has \(b\ne0\) for \(k>0\), \(k\ne1\), by the signed-cancellation
+test in the preceding section. Denote by \(g_{jl}\) the leading cross
+radical at the limiting chart point. Then
+\[
+ C_1=\frac12\sum_{j,l}\nu_l g_{jl}
+    \left(\frac{Z'_l}{Z_j}+\frac{W_j}{W'_l}\right)
+ \quad\text{at that point}.
+\]
+
+\paragraph{Possible equal-triple lifts.}
+Put \(x=Z_{13}\), \(v=W_{12}\), and \(x'=W_{13}/v\).
+At the limit \(x=r\), where \(r^2-r+1=0\).
+For a Lagrange-type solution of the three-body equations,
+all three internal inverse distances have cube \(1/3\).
+The ratios \(d=D_{13}/D_{12}\) and \(e=D_{23}/D_{12}\), with
+\(D_{ij}=Z_{ij}W_{ij}\), satisfy \(d^3=e^3=1\),
+\(r^2-(1+d-e)r+d=0\), and \(x'=d/r\).
+Checking the three cube roots gives either \(d=e=1\),
+\(x'=1/r\), or \(d=r^2,e=(r-1)^2\), \(x'=r\).
+For an Euler-type lift, \(x'=r\). Here the distances are
+\(v,vr^2,v(r-1)^2\), which all have the same cube. The three inverse
+cubes therefore equal \(c\epsilon_{ij}\) for a common scalar \(c\ne0\)
+and real signs \(\epsilon_{ij}\). The weighted graph Laplacian on the
+three equal bodies with these edge signs is real symmetric, and the
+centered vector \(Z\) is its eigenvector with eigenvalue \(1/c\).
+This eigenvalue is real. Its conjugate vector is a second, independent
+centered eigenvector, since the ratio \(Z_{13}/Z_{12}=r\) is nonreal.
+The Laplacian is therefore scalar on the centered plane and zero on
+the constant vector. Its three off-diagonal entries are equal, so all
+three inverse cubes agree and the force equation gives their common
+value \(1/3\).
+Thus \(p_{ij}^3=1/3\) at both kinds of lift. Let
+\(I_A=\sum_j Z_j W_j=(D_{12}+D_{13}+D_{23})/3\) at the centered
+limit. If \(x'=1/r\), all three \(D_{ij}\) are equal and \(I_A^3=9\).
+If \(x'=r\), \(I_A=0\) because the three \(D_{ij}\) sum to zero.
+
+\paragraph{Regular equal-triple variables.}
+In the independent centre variables \(z_c,w_c\), the translation part
+of \(V_A\) is \(3z_cw_c/2\), with invertible Hessian. The centered
+part is \(\sum_{ij} f_{ij}(D_{ij})\), where
+\(f_{ij}(D)=D/6+D^{-1/2}\) with the chosen inverse-distance signs.
+At both lifts \(f_{ij}'=0\) and \(f_{ij}''=1/(4D_{ij})\).
+Indeed \(p^2D=1\) and \(p^3=1/3\).
+The three distance variables are
+\[
+  (D_{12},D_{13},D_{23})=(v,vxx',v(x-1)(x'-1)).
+\]
+If \(x'\ne x\), their Jacobian in \((v,x,x')\) is invertible; hence
+all five equal-triple coordinates in the rotation slice are regular.
+
+At the collinear lift set \(p=(x+x')/2\), \(u=(x-x')/2\).
+Here the last two distances are \(v(p^2-u^2)\) and
+\(v((p-1)^2-u^2)\). In the \((v,p)\) Hessian block,
+\(H_{vv}=\sum D_{ij}/(4v^2)=0\) and
+\(H_{vp}=\sum(\partial_pD_{ij})/(4v)=(2r-1)/2\ne0\).
+Thus the four variables \(z_c,w_c,v,p\) are regular even at this lift.
+At \(h=0\) eliminating them gives analytic functions of \(u^2\), with
+centres zero and \(p=r+O(u^2)\). All distance variations in this
+solution are \(O(u^2)\). Since all \(f'_{ij}=0\), the reduced
+equal-triple potential is constant up to \(O(u^4)\).
+
+\paragraph{The critical value in the remaining variables.}
+Treat the mixed-triple coordinates, denoted by \(Y\), as independent
+parameters in a neighbourhood of their limiting values \(Y_0\).
+Temporarily truncate the potential at
+\(V^{\mathrm{tr}}=V_A+V_B+h a(Z)b(W')\). For every \(h,Y\) near
+the limiting point, the limiting equal triangle with just its three
+\(W_j\) translated by the same quantity
+\(-2h b(W')\partial_{Z_1}a\) is exactly stationary in \emph{all}
+equal-triple variables of the truncated problem. In fact the
+translation leaves internal distances and all \(Z_j\) unchanged,
+and the change of each \(Z_j\)-derivative of the harmonic term is half
+the common translation. The value of \(V_A\) is unchanged since
+\(\sum_j Z_j=0\). This observation holds in moving as well as fixed
+mixed-triangle centres.
+
+Use the implicit function theorem on the regular equal-triple variables
+just identified, first for the truncation, then for \(V\). The full and
+truncated critical variables differ by an analytic multiple of \(h^3\).
+Thus the two reduced potentials differ by \(h^3 J\), where \(J\)
+is analytic in \(h,Y\) and, in the collinear case, also \(u\).
+At the limiting configuration \(J=C_1\). For example, this identity
+follows by expanding the truncation about its stationary regular
+variables, which gives only a quadratic error in their shift. This
+argument can equally be applied in completed local power-series rings;
+along a Puiseux branch the estimates below are estimates in its
+uniformizing parameter. No Hessian of \(V_B\) is inverted.
+
+In the noncollinear case the truncated critical value is
+\(V_B(Y)+\mathrm{const}\) by the exact translation branch. The
+partial derivative of the full critical value in \(h\), at fixed
+\(Y\), consequently forces \(C_1=0\) in the limit.
+
+In the collinear case the exact translation branch lies at \(u=0\);
+it is critical also in \(u\) there. The reduced truncation therefore
+has the analytic form
+\[
+  V_B(Y)+\mathrm{const}+u^2 L(h,u,Y),\qquad L(0,u,Y)=O(u^2).
+\]
+The coefficient \(d(Y)=\partial_h L(0,0,Y)\) is nonzero near
+\(Y_0\). Indeed, differentiating the reduced truncation at \(h=0\)
+gives precisely \(b(W')a(Z)\) at the regular critical variables there.
+The centered \(Z\)-coordinates have shape \(x=p+u=r+u+O(u^2)\).
+In these coordinates the vanishing equal-triple radical sum has an
+\emph{exact double zero} at \(x=r\). The product of its four signed
+choices is a nonvanishing analytic factor times \(9(x^2-x+1)^2\),
+and the other three signed choices are nonzero by uniqueness of the
+sign relation. This proves the claimed nonvanishing, since \(b(W')\ne0\).
+
+Stationarity of the full reduced potential in \(h\) gives
+\(0=u^2[d(Y)+O(h,u)]+O(h^2)\), hence \(u=O(h)\). Stationarity
+in \(u\) then gives
+\[
+ 0=2h d(Y)u+O(u^3+h u^2+h^2u+h^3),
+\]
+so \(u=O(h^2)\). Dividing the original \(h\)-derivative by \(h^2\)
+now yields \(3J(0,0,Y_0)=0\), and again \(C_1=0\). These differentiations
+are partial derivatives in the independent coordinates, using
+stationarity, and do not require a rate estimate on \(Y-Y_0\).
+
+\paragraph{The finite cubic torque test.}
+The force identity in the preceding section gives \(g_{jl}=c Z_j b_l/\nu_l\),
+where \(b_l\) is a signed choice of \(\nu_l/\sqrt{W'_l}\) and \(c\)
+is nonzero. Thus the necessary equation is
+\[
+  3\sum_l b_l Z'_l + I_A\sum_l b_l/W'_l=0.
+\]
+Write \(M=2+k\) and
+\(W(t)=(1+kt,kt-1-k,1-2t)/M\).
+Then \(W'=W(y)\), where \(B_k(y)=0\). By Tomar's three-body
+dichotomy, the opposite coordinates have one of the following forms.
+In the Lagrange case \(Z'=R W(d/y)\), with \(d^3=1\) and \(R^3=M^2\).
+This follows from the three distance equations and \(p_{ij}^3=1/M\).
+In the Euler case \(Z'=\lambda W(y)\) where
+\[
+ \lambda^3=F^2,\qquad
+ F=2+k\left(\sigma_{13}/y^2-\sigma_{23}/(y-1)^2\right).
+\]
+Indeed \(p_{ij}=\kappa\sigma_{ij}/W'_{ij}\), \(\kappa^2=1/\lambda\)
+and the difference of the first two normalized force equations yields
+\(\kappa^3F=1\).
+
+In the Lagrange case set \(U=\sum b_l W_l(d/y)\), \(s=M^2\); in the
+Euler case set \(U=\sum b_l W_l(y)\), \(s=F^2\). In both cases put
+\(T=\sum b_l/W'_l\).
+For the noncollinear equal lift the necessary test is \(3s U^3+T^3=0\);
+for the collinear equal lift it is \(U=0\).
+In either test the verification may replace \(b_l\) by a signed
+\(\nu_l/\sqrt{\ell_l(y;k)}\), removing one common nonzero scalar.
+
+At \(k=3\), \texttt{NextTorque.py} evaluates interval enclosures for
+all 30 roots, all four overall-normalized radical sign choices, each
+of three possible \(d\), and each of four possible Euler sign pairs.
+It uses the previously certified disks inside dyadic rectangles, with
+all operations rounded outwards on the integer grid \(2^{-80}\).
+It includes combinations of shape and triangle type even when those
+combinations do not satisfy their corresponding internal equations.
+The 840 evaluations in each test give uniform lower bounds
+\(2.721333\) for \(\lvert 3sU^3+T^3\rvert\), and \(0.050183\) for
+\(\lvert U\rvert\). Thus neither necessary test can hold at \(3\).
+
+For generic parameters, take in each test the product over the four
+normalized sign choices. It is invariant under every radical sign
+flip, since a global sign changes each odd factor's sign four times.
+It is therefore a polynomial in the three radical squares, with rational
+function coefficients in \(y,k,d\). Substitute
+\(b_l^2=\nu_l^2/\ell_l(y;k)\), clear powers of
+\(M y(y-1)\prod_l\ell_l\), and take the product over the three
+Lagrange values \(d\), or respectively the four Euler sign pairs.
+The resulting numerator polynomials have rational coefficients.
+A common denominator may be used throughout. At \(k=3\) no one
+of these denominators vanishes on the 30 shape roots: the previous
+certificate excludes all \(\ell_l=0\), and \(B_3(0)B_3(1)\ne0\)
+by direct evaluation. Their resultants in \(y\) against \(B_k\)
+are therefore nonzero at \(k=3\) and vanish at any admissible
+specialization exhibiting one of the tests. Multiplying these four
+resultants, the polynomial of the previous section, and the factor
+\(k-1\) gives a nonzero obstruction at 3. This proves the proposition.
+The remaining diagram classes in the six-body problem require separate
+arguments.
+
+\section{Three equal masses and three independently variable masses}
+
+Normalize the masses to \((1,1,1,a,b,c)\) with \(a,b,c>0\).
+For a partition in diagram 98 that groups the three specified equal bodies
+together, the exclusion just proved extends to all points outside a
+proper algebraic subset of this three-parameter space.
+
+Indeed, keep the same degree-26 polynomial for the equal triangle. For
+\(m=(a,b,c)\), put \(M=a+b+c\) and
+\[
+ W(y)=(b+cy,cy-a-c,b-(a+b)y)/M.
+\]
+In Tomar's shape polynomial the Euler factor with signs \((1,-1,1)\)
+is divisible identically by \(y^2-y+1\), which also occurs among the
+Lagrange factors. Removing its duplicate gives a polynomial \(G_{a,b,c}\)
+of degree 32 with leading coefficient \((a+b)^4\). This identity and
+the specialization below are checked by \texttt{SourceAligned.py}.
+The signed cross-torque resultants and the two cubic-order resultants
+are constructed in the same way as for the line. In the Euler formula
+replace the expression for \(F\) by
+\[
+ F=a+b+c\left(\sigma_{13}/y^2-\sigma_{23}/(y-1)^2\right).
+\]
+The mixed radical sum also enters the collinear argument. Its nonvanishing
+at all mixed shapes on a Zariski-open set follows by taking a further
+resultant of \(G_{a,b,c}\) with the four-sign product of that sum,
+after clearing the same denominators. The reduction of the equal-triple
+critical equations treats the mixed coordinates and their masses as
+parameters throughout.
+
+At \((a,b,c)=(1,2,7)\), the 32 mixed shapes are simple, and all
+coordinates and denominators needed in the tests are nonzero.
+\texttt{AlignedWitness.py} excludes the
+\(26\cdot32\cdot240+24\cdot32\cdot16=211968\) leading combinations
+specified in the proof, with a certified lower bound of \(0.007125\)
+in the inverse-root gauge. For each equal lift it checks
+\(32\cdot4\cdot7=896\) higher-order tests; the lower bounds for the
+noncollinear test, collinear test and three-term mixed radical sum are
+respectively \(23.192197\), \(0.113938\) and \(2.141114\).
+In particular, each of the finitely many parameter polynomials used
+in this aligned partition is nonzero in \(\mathbb Q[a,b,c]\).
+The additional equality \(a=1\) at this witness is compatible with
+the full-degree and denominator checks.
+
+The same verifier checks a second aligned specialization, \((a,b,c)=(2,3,7)\),
+where the distinguished triple comprises exactly the three unit masses.
+Here the 211968 leading tests give lower bound \(0.031555\),
+the 896 evaluations per cubic-order test give lower bounds \(7.729953\)
+and \(0.065741\), and the mixed radical sums have lower bound
+\(1.654861\). All 32 mixed shapes are simple and admissible for the
+required divisions. Together with the three split-partition
+checks at these same masses, this supplies one concrete point of the
+common open set, \((1,1,1,2,3,7)\).
+
+\subsection{Three designated equal masses distributed between the triangles}
+Consider masses $(1,1,1,a,b,c)$ with $a,b,c>0$.
+If one triangle contains precisely two of the three designated unit bodies,
+rename the remaining masses so that the triangles are
+$A=(1,1,a)$ and $B=(1,b,c)$.
+Let $E(x)=x^2-x+1$, and let $S_m$ and $\ell_j(x;m)$ be the
+polynomials in Tomar, Section~6.4. Set
+\[
+ A_a(x)=\frac{S_{(1,1,a)}(x)}{(2x-1)^2E(x)},\qquad
+ B_{b,c}(y)=\frac{S_{(1,b,c)}(y)}{E(y)}.
+\]
+Both quotients are integral polynomials, of generic degrees $30,32$
+in their respective shape variables with leading coefficients
+$4,(1+b)^4$. Multiplication of the Lagrange and Euler factors verifies
+these exact divisions. Both quotients retain a factor $E$.
+The only other discarded root, $x=1/2$, satisfies
+$\ell_3(x;1,1,a)=0$, which Tomar's Lemma~6.11 forbids.
+Consequently all admissible projected shapes are roots of the displayed
+polynomials at every positive parameter value.
+
+Use the signed product over all 256 sign matrices with first entry $+1$,
+as in Tomar, Theorem~6.12. Its factors are
+$\sum_{j,l}e_{jl}r_j s_l$, where
+$r_j^2=m_{A,j}^2\prod_{i\ne j}\ell_i(x;A)$ and
+$s_l^2=m_{B,l}^2\prod_{i\ne l}\ell_i(y;B)$. The product
+is invariant under each one of the six radical sign changes, hence yields
+a polynomial $H(x,y;a,b,c)$ in integer coefficients by substitution.
+An admissible leading solution makes $H$ vanish. Define
+\[
+ G(a,b,c)=\operatorname{Res}_x\!\left(A_a(x),
+             \operatorname{Res}_y\big(B_{b,c}(y),H(x,y;a,b,c)\big)\right).
+\]
+Any diagram-98 place with the stated allocation has $G(a,b,c)=0$.
+
+At $(a,b,c)=(3,2,7)$, both retained polynomials are square-free and
+coprime to the products of their respective linear forms. A rational
+interval certificate checks each of the $30\cdot32\cdot256=245760$
+possible signed sums in the coordinates
+$m_{A,j}/\sqrt{\ell_j(x;A)}$, $m_{B,l}/\sqrt{\ell_l(y;B)}$.
+Use dyadic Gaussian centres with denominator $2^{48}$, disks of radii
+$2^{-39}$ for shape roots and $2^{-32}$ for radicals, and the two
+Rouch\'e comparisons in the preceding diagram-98 calculation.
+The least certified lower bound on the modulus exceeds $2.28031515$.
+Changing to the radicals in $H$ multiplies each triangle by a common
+nonzero scalar and may change row or column signs, all of which are
+included. Thus $G(3,2,7)\ne0$ by the product formula for the two
+resultants. Positive specialization preserves the leading coefficients of
+$A_a$ and $B_{b,c}$, including at the witness. The certificate
+\texttt{Split98.py} also verifies the two symbolic divisions and their
+specialization, disk coverage, all signed sums and their positive margins.
+
+For prescribed labels fix the order of the two non-unit-labelled bodies in
+the second triangle. Up to permutations of the three designated unit
+bodies and exchange of the two triangles, the three split obstructions
+are $G(a,b,c),G(b,a,c),G(c,a,b)$. At the common mass vector
+$(1,1,1,2,3,7)$ the same procedure checks all three, using
+$(2,3,7),(3,2,7),(7,2,3)$, respectively. Each check excludes all
+245760 signed sums. The respective certified lower bounds on their
+moduli exceed $0.23389010$, $2.28031515$, and $1.67447040$.
+The products are nonzero there, as is the aligned-triangle obstruction
+by the preceding calculation at mixed masses $(2,3,7)$. The product
+of these four obstructions is therefore nonzero at $(a,b,c)=(2,3,7)$.
+Every diagram-98 place is excluded on a Zariski-open subset of the
+three-equal-mass locus containing this point and, in particular, on a
+relative ordinary open neighbourhood where the three remaining masses
+may vary independently.
+
+\section{Endpoint symmetries and a forced two-axial degeneracy}
+Single out body 6 even when its mass is one. In this section a marked
+shape identifies permutations of bodies 1--5 and all orthogonal
+transformations. A mirror-symmetric shape is classified by the number of
+bodies on its axis. A nonidentity orientation-preserving symmetry must fix
+the marked body. Its remaining five vertices form orbits of its order about
+that point, since none can coincide with it. The order must therefore be
+five. Its sole possible nontrivial rotational class is a regular pentagon
+with the marked body at the centre. Every other symmetric shape has just
+one reflection as a marked shape. A shape with no such reflection is
+called chiral; the table counts a chiral shape and its mirror together.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Marked shape type & Small positive $t$ & $t=1$ & Labelled oriented weight\\
+\midrule
+Collinear                    &3&3&120\\
+Four bodies on its unique mirror &2&2&120\\
+Two bodies on its unique mirror  &13&11&120\\
+Regular pentagon plus centre     &1&1&24\\
+Chiral pair                      &8&7&240\\
+\midrule
+Total marked shapes              &27&24&\\
+Total labelled oriented shapes   &4104&3624&\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Here the inputs are the complete five- and six-body catalogues of
+Moczurad and Zgliczy\'nski~\cite{MZ}, the restricted equilibria,
+interval enclosures and nondegenerate continuation in~\cite{Small}, and
+the released six-body enclosures. The accompanying
+\texttt{symmetry\_counts.py} refines these data. At the light end it
+enumerates the orthogonal group of each of the five primary
+representatives acting on its certified test equilibria. At the other end
+the orthogonal group of each of the nine six-body representatives acts on
+the six choices of the marked body. For each orbit it records the
+orthogonal stabilizer of the mark and the cycle type of its reflection.
+The test sends a candidate primary to the gauge anchor, tests both
+determinants and requires inclusion of the transformed coordinates in
+the original uniqueness boxes. A verified symmetry sends a restricted
+equilibrium to exactly one of the exhaustive disjoint root boxes.
+Equivariant uniqueness and compactness preserve the stabilizers for
+small positive $t$. For a marked shape with rotational stabilizer of
+order $r$, its labelled oriented weight is $120/r$ with reflection and
+$240/r$ without reflection.
+
+\begin{theorem}
+For some real algebraic $t_0\in(0,1)$ a noncollinear central
+configuration with exactly bodies 5 and 6 on a reflection axis is
+degenerate in the reflection-preserving shape equations. It is possible
+to choose the configuration to have a unique mirror axis.
+\end{theorem}
+\begin{proof}
+Let $g$ be a plane reflection followed by relabelling $(12)(34)$,
+acting on the space of labelled oriented shapes. The reflection is
+well-defined on the similarity quotient. With bodies 5 and 6 fixed
+at $(1,0)$ and $(0,0)$ it is simply complex conjugation. A $g$-fixed
+configuration must pair 1 with 2 and 3 with 4, and neither pair can
+meet the axis without a collision. The fixed shape space is consequently
+a smooth open subset of a four-dimensional linear subspace.
+The invariant potential has vanishing normal derivative at a fixed
+point. Its critical points in this subspace are exactly the $g$-fixed
+physical central configurations. Restricted nondegeneracy gives local
+continuation by the implicit function theorem.
+
+There are 15 double transpositions of the five heavy labels. An ordinary
+two-axial marked class of weight 120 contributes $120/15=8$ solutions
+to this particular fixed space. The pentagon class contributes
+$24\cdot5/15=8$. This follows by conjugacy in $S_5$; no other class
+contributes. Thus the two counts are $8(13+1)=112$ and
+$8(11+1)=96$. On every closed positive mass interval all the normalized
+physical solutions form a compact family~\cite{Small}. Compactness is
+unchanged on the fixed subspace and in our chart, since the two
+distinguished bodies remain distinct. If the restricted Jacobian were
+invertible at every fixed solution between the two endpoint regimes,
+the number would be locally constant throughout, a contradiction.
+The two endpoint counts are valid on open mass intervals by full
+nondegeneracy. The regular pentagon is nonsingular on $(0,1)$ by
+Meyer and Schmidt~\cite{MS} and by the accompanying exact Hessian
+calculation. The remaining shape has just one axis. All equations,
+distance and mass inequalities, and the vanishing restricted Hessian
+determinant are semialgebraic over $\mathbb Q$. By real closed field
+transfer there is a witness with algebraic mass and coordinates.
+\end{proof}
+The two four-axial pitchforks in the companion manuscript are geometrically
+distinct from the existential degeneracy just proved, regardless of whether some of
+their parameter values also support other singular shapes. Their local
+changes remove a total of $2\cdot120\cdot2=480$ labelled oriented solutions
+as $t$ increases through the two disjoint neighbourhoods. The agreement
+with $4104-3624$ does not recover the intervening diagram of real solutions.
+In particular, neither event removes a two-axial class, while the endpoint
+counts for that class differ.
+
+\section{Three saddle-nodes with two bodies on the reflection axis}
+\label{sec:two-axial-folds}
+Take one unit mass at $(0,0)$ and the body of mass $t$ at $(1,0)$.
+The four other unit masses occupy $(a,\pm b)$ and $(c,\pm d)$, with $b,d>0$.
+This gauge fixes translation, rotation and scale using two distinct labelled
+bodies. We use Newtonian acceleration with gravitational constant one.
+For $h(x,y)=(x^2+y^2)^{-3/2}$, put
+\[
+ (z_1,z_2,w_1,w_2,s,v)=
+ (h(a,b),h(c,d),h(a-1,b),h(c-1,d),h(a-c,b-d),h(a-c,b+d)).
+\]
+Define $A=t+2az_1+2cz_2$ and $L=A+1-2(a-1)w_1-2(c-1)w_2$.
+The symmetric equations $E=0$ have four components,
+\begin{align*}
+ E_1 &= a(L-z_1)-A+t(1-a)w_1+(c-a)(s+v),\\
+ E_2 &= b(L-z_1-tw_1)+(d-b)s-(d+b)v-1/(4b^2),\\
+ E_3 &= c(L-z_2)-A+t(1-c)w_2+(a-c)(s+v),\\
+ E_4 &= d(L-z_2-tw_2)+(b-d)s-(b+d)v-1/(4d^2).
+\end{align*}
+Let $J=D_{(a,b,c,d)}E$ and let $K$ denote the complementary four-dimensional
+derivative in the full planar chart, defined below.
+
+\paragraph{Theorem.}
+There are three distinct, real algebraic mass parameters with the following
+properties. Each parameter differs from the corresponding table center by
+less than $10^{-11}$. At the corresponding collision-free planar central
+configuration, the normalized solution set is a smooth local curve with
+coordinate $a$. The mass restricted to this curve satisfies $t'(a)=0$,
+with second derivative enclosed below. Near either local maximum there are
+two local oriented labelled configurations below the critical mass, one at
+the critical mass, and none above it. At the local minimum the sides are
+reversed. These counts apply in a neighborhood of the tabulated shape.
+\begin{center}
+\begin{tabular}{lll}
+Mass center & Enclosure of $t''(a)$ & Enclosure of $\det K$\\
+$0.00095963933728700494$ & $[-48.105221,-48.104660]$ & $[31.592665,31.592667]$\\
+$0.1150143634630535$ & $[-6.566172,-6.566163]$ & $[192.066653,192.066659]$\\
+$0.99770185629795693$ & $[26.721654,26.721813]$ & $[417511.421776,417511.432504]$
+\end{tabular}
+\end{center}
+
+\paragraph{Full planar equations.}
+Let $a_i$ denote the acceleration of body $i$, and write $q_0=(0,0)$,
+$q_1=(1,0)$ for the pinned bodies. Use $R(x,y)=(-y,x)$,
+$L=(a_0)_x-(a_1)_x$, and $W=(a_1)_y-(a_0)_y$. The residual
+$a_i-a_0+Lq_i-WRq_i$ vanishes identically at $i=0,1$. If it vanishes
+at the four free bodies as well, summing forces and taking total torque
+about the center of mass shows that $W$ times the moment of inertia
+vanishes. Thus $W=0$, and these are exactly the central-configuration
+equations. At the symmetric shapes $L$ agrees with the formula above.
+Reflection across the axis combined with transposition of the two labels
+in each pair splits the derivative into two blocks. The even block is $J$.
+In the odd block the displacements within each pair take the form
+$(u,v)$ and $(-u,v)$. The four components of $K$ are the linearized
+two upper-body residuals under these variations. To evaluate them the
+verifier uses the Newtonian pair derivative
+\[
+ m_j\bigl(|D|^{-3}I-3|D|^{-5}DD^{\mathsf T}\bigr)
+ (\delta q_j-\delta q_i),\qquad D=q_j-q_i.
+\]
+The nonzero bounds on $\det K$ ensure, by the implicit function theorem
+and reflection symmetry, that all nearby full planar solutions are on
+the symmetric locus.
+
+\paragraph{Interval proof.}
+The accompanying verifier \texttt{two\_axial\_three\_folds.py} uses only the
+Python standard library. It evaluates the augmented equations
+$G=(E,\det J)$ and their derivatives by second-order automatic
+differentiation with dyadic interval endpoints and outward-rounded integer
+square roots. Each five-coordinate box has radius $r=10^{-11}$ about the
+rational center specified in the script. Its rational matrix $B$ is a
+numerical preconditioner checked by the exact inequalities
+\[
+ \|I-BDG(X)\|_\infty\leq 10^{-6},\qquad
+ \|BG(x_0)\|_\infty/r\leq 257\cdot10^{-6}.
+\]
+The contraction theorem supplies a unique zero in each box.
+In each box the verifier also proves that
+$H=D_{(b,c,d,t)}E$ is invertible. Along the curve parameterized by $a$,
+write $u=(1,-H^{-1}E_a)$. The augmented condition $\det J=0$ implies $t'=0$
+by Cramer's rule. The verifier encloses $t''$ as the last component of
+$-H^{-1}D^2E[u,u]$. The displayed bounds give the three local fold
+classifications. Finally the box-unique zeros are real algebraic:
+all equations and their derivatives on the positive-distance chart are
+semialgebraic over $\mathbb Q$, as are the rational isolating boxes.
+The mass can therefore be picked out uniquely over the real algebraic
+numbers.
+
+\section{A two-axial pitchfork that creates two asymmetric configurations}
+\label{sec:two-axial-pitch}
+There is a second symmetry type in which the asymmetric branches appear on
+the higher-mass side. For the mass line $(1,1,1,1,1,t)$, let
+\[
+ t_3^0=0.2972453330040611210936935514361686 .
+\]
+For some $|t_3-t_3^0|\le 10^{-15}$, there is a two-axial reflection-symmetric
+configuration $Q_3$ that is locally unique at that mass. In a neighbourhood of
+$Q_3$ in labelled, oriented shape space, the local count is one for
+$t\le t_3$ and three for $t>t_3$, with $t$ sufficiently close to $t_3$.
+The additional solutions are mirror related after relabelling and have no
+physical reflection symmetry. Near this configuration the count stays at most
+three when all six masses are perturbed independently.
+
+Number particles from zero and divide the masses by five. Write
+$F_i=q_i-\sum_{j\ne i}m_j(q_i-q_j)/|q_i-q_j|^3$, fix the angular coordinate
+by $q_{3y}=0$, $q_{3x}>0$, and drop the residual $F_{3y}$. The lost
+equation follows from the zero-torque identity. In this chart the involution
+$S$ combines horizontal reflection with $(0\;2)(1\;4)$.
+In the even subspace write
+\[
+ (q_0,q_1,q_2,q_3,q_4,q_5)
+ =((a,b),(c,d),(a,-b),(e,0),(c,-d),(f,0)).
+\]
+The coordinates $(a,b,c,d,e,f)$ of $Q_3$ are approximately
+\[
+(-.544303,.390337,.213614,.711277,.371489,.975249).
+\]
+An odd variation has positions
+\[
+((v_0,v_1),(v_2,v_3),(-v_0,v_1),(0,0),(-v_2,v_3),(0,v_4)).
+\]
+The normalized null vector has $v_4=1$. The collision-free chart, the
+distinctness of the anchor radius from the other heavy-particle radii, and
+the separation of all labelled positions fix the only possible physical
+reflection to be $S$ in this neighbourhood.
+
+Here is the interval certificate in this chart.
+Let $J_+,J_-$ denote the even and odd blocks of the force Jacobian.
+The file \texttt{verify\_two\_axis.py} reads \texttt{two-axis.json}.
+In a rational cube of radius $10^{-15}$ it certifies the unique solution
+of $F_+=0$, $J_-v=0$, $v_4=1$. For a square rational preconditioner $R$,
+the residual is bounded by $\|RG(x_0)\|_\infty<10^{-25}$ at the centre,
+and $\|I-RDG(X)\|_\infty<4\cdot10^{-12}$ over the cube.
+The even Jacobian and
+$M=\left(\begin{smallmatrix}J_-&e_2\\ e_4^{\mathsf T}&0\end{smallmatrix}\right)$
+are invertible throughout. The odd cokernel projection $\rho$ sends $y$ to
+the last component of $M^{-1}(y,0)$.
+Let $s$ denote the fifth odd coordinate of the position
+displacement. On solving the other ten equations, write $g(s,t,\delta)$
+for the remaining $\rho$-projected residual, where only the masses of
+particles 1 and 4 are split by $1+\delta$ and $1-\delta$ before division
+by five. The certified intervals are
+\begin{align*}
+ A=g_{st}&\in[-0.941439597,-0.941439596],\\
+ C=g_{sss}&\in[2.336689820,2.336689821],\\
+ B=g_\delta&\in[0.089844739,0.089844740].
+\end{align*}
+For completeness, if $w=-J_+^{-1}F_t$ and $u=-J_+^{-1}D^2F[v,v]$
+are lifted to even positions, the three formulae evaluated are
+$A=\rho[(\partial_t DF)v+D^2F[v,w]]$,
+$C=\rho[D^3F[v,v,v]+3D^2F[v,u]]$ and $B=\rho F_\delta$.
+They follow by implicit differentiation, since $\rho$ annihilates the
+linear range corrections.
+
+On the symmetric mass line $g$ is odd in $s$. Dividing by $s$ and applying
+the implicit function theorem in $s^2$ gives the nontrivial branch
+$t=t_3+\kappa s^2+O(s^4)$, where
+$\kappa=-C/(6A)\in[.413673171,.413673172]$. Thus two symmetry-breaking
+branches appear as $t$ increases. Weierstrass preparation of the reduced
+force gives a monic cubic times a nonvanishing factor for all nearby
+masses, which proves the asserted local bound. After removing the cubic's
+quadratic term, the linear and constant coefficients are analytic local
+coordinates in $(t,\delta)$ because $AB\ne0$ and $g_t=0$ at the tip.
+Consequently these two physical parameters give a versal cusp.
+Its fold arms satisfy
+$|\delta|\sim K(t-t_3)^{3/2}$, with
+$K=\sqrt{-8A^3/(9B^2C)}\in[6.270746461,6.270746462]$.
+
+\section{What changes along the physical mass line}
+The interval calculations in this manuscript and its companion identify
+six distinct parameter values below one. The entries count labelled
+oriented solutions in one neighbourhood of one marked configuration;
+neighbourhoods related by the 120 permutations of the heavy labels are
+disjoint in the labelled oriented space. At a fold a local maximum of the
+mass loses two real solutions and a local minimum gains two. At a pitchfork
+a mirror-symmetric solution persists while a pair of asymmetric solutions
+is born or lost. All six fixed-mass critical points listed here are
+isolated. The parameters in this summary are rounded, with rigorous
+enclosures given in the corresponding sections and certificates.
+\begin{center}
+\begin{tabular}{rlcl}
+\toprule
+Mass ratio & Type of event & Bodies on axis & Local counts (below, at, above)\\
+\midrule
+$0.000959639337$ & fold & 2 & $2,1,0$\\
+$0.089353633682$ & pitchfork & 4 & $3,1,1$\\
+$0.115014363463$ & fold & 2 & $2,1,0$\\
+$0.175165824530$ & pitchfork & 4 & $3,1,1$\\
+$0.297245333004$ & pitchfork & 2 & $1,1,3$\\
+$0.997701856298$ & fold & 2 & $0,1,2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The marked pentagon has rotational order five. At each tabulated
+critical shape the rotational stabilizer is trivial: the points
+are not the centre and vertices of a regular pentagon, as verified by
+their coordinate enclosures. The only marked symmetry is the described
+reflection. In the convention of the endpoint table, two downward and one
+upward fold give a net loss of two ordinary two-axial classes, and two
+downward and one upward pitchfork give a net loss of one chiral pair.
+Consequently their total net loss of labelled oriented solutions is
+$2(120)+1(240)=480$. This accounts arithmetically for the endpoint
+difference. Further births and losses can have zero net contribution;
+the calculations do not give global counts between the parameter boxes.
+
+The two four-axial pitchforks, at masses near 0.08935 and 0.17517, are
+proved in the companion manuscript \emph{Two symmetry-breaking bifurcations
+of planar Newtonian six-body central configurations} (Chatgpt, 2026).
+A separate certificate included with the present manuscript proves the
+third pitchfork using the same physical chart and an independent check
+in the two-axial gauge. Dias and Pan~\cite{DP} studied generic finiteness
+in the cross-shaped symmetry class. The asymmetric solutions reached
+through the four-axial pitchforks leave that class.
+
+\section{Recovering the sixth mass from a marked physical shape}
+The following calculation also applies when the five primary masses
+$a_i>0$ are unequal and known. Put the sixth body at the origin, write
+$x_i=q_i-q_6$, and set
+\[
+s_i=|x_i|^{-3},\quad
+H_i=\sum_{j\ne i,\ j\le5}a_j(x_j-x_i)|x_j-x_i|^{-3},
+\quad A=\sum_{i=1}^5 a_i s_i x_i .
+\]
+Here $A$ is the acceleration of the sixth body. Its subtraction from the
+five primary accelerations gives
+$H_i-A=(t s_i-\lambda)x_i$. Set $K_i=(H_i-A)\cdot x_i/|x_i|^2$.
+The five vectors $H_i-A$ must be parallel to their $x_i$, and the
+points $(s_i,K_i)$ must have a common affine relation $K_i=ts_i-\lambda$.
+These two conditions are also sufficient when $t>0$, since the
+pairwise central forces have zero mass-weighted sum. Their virial
+identity gives $\lambda>0$. Define
+\[
+ D=5\sum s_i^2-(\sum s_i)^2=\sum_{i<j}(s_i-s_j)^2,\qquad
+ N=5\sum s_i K_i-(\sum s_i)(\sum K_i).
+\]
+Whenever two radii differ, $D>0$ and $t=N/D$. A physical shape can
+support at most one sixth mass there. This real sum-of-squares
+deduction should not be used to remove a complex component merely because
+$D$ vanishes on it.
+
+For completeness suppose all radii have the same value $R$ and a
+positive mass works. Write $M=\sum a_i$, $c=M^{-1}\sum a_ix_i$,
+$s=R^{-3}$ and $\gamma=\lambda-ts$. Summing the primary equations
+shows that $A=\gamma c=sMc$. Thus the primaries by themselves form
+a cocircular five-body central configuration of multiplier $\gamma>0$.
+If $c\ne0$, necessarily $R=(M/\gamma)^{1/3}$, excluded by
+Yu and Zhu, Proposition 2~\cite{YZ}. Hence $c=0$. Wang's centred
+cocircular classification~\cite{Wang} gives a regular pentagon with
+equal primary masses. The converse follows directly by symmetry:
+any positive mass at its centre works. This inverse uniqueness
+identifies the physical locus on which the mass cannot be recovered.
+It leaves open whether a fixed mass can have infinitely many distinct
+shapes.
+
+% Standalone section, or include in any LaTeX article using amsmath.
+\section{The central pentagon branch}
+
+Put five labelled unit masses at the vertices of a regular pentagon of
+circumradius one and a mass $t>0$ at its centre. Meyer and Schmidt computed
+the positive degeneracy of this branch in 1988, with approximate value
+$6.478$ (\emph{SIAM J. Math. Anal.} 19, 1295--1313, Appendices A--B,
+doi:10.1137/0519094). We give a Cartesian verification, an exact algebraic
+specification of the parameter and the two indices on either side.
+
+Write $a=2\sin(\pi/5)$, $b=2\sin(2\pi/5)=(3-a^2)a$ and
+$h=a^{-1}+b^{-1}$. Then $a^4-5a^2+5=0$ and $1.17<a<1.18$.
+The multiplier at radius one is $t+h$.
+In Cartesian coordinates let $H$ be the full Hessian of the positive
+Newtonian potential plus $(t+h)\sum_i m_i|q_i|^2/2$. Fix the first
+vertex on the positive horizontal axis and delete its vertical coordinate.
+The resulting principal matrix $H_*$ is the restriction to a complement
+of the rotation tangent. Translation and dilation contribute only positive
+directions for the mass metric. Thus the number of negative eigenvalues
+of $H_*$ is the physical shape Morse index.
+
+There is a nonzero constant $c$ independent of $t$ such that
+\[
+ \det H_* = c\,t^2(t+h)^3(t-t_-)^2(t-t_c)^2,
+\]
+where
+\[
+ t_-=-\frac{24a^3}{605}-\frac{37a}{242},\qquad
+ t_c=\frac{-345208a^3-320500a^2+1180980a+1216925}{247215}.
+\]
+Here $t_-<0$. The unique positive degeneracy of this branch is $t_c$,
+the zero of the following irreducible polynomial in the interval from 6.478190058 to 6.478190060,
+\[
+ 6674805t^4-44892900t^3+8565750t^2+13531500t+2057501 .
+\]
+At this parameter $H_*$ has rank nine and nullity two. The Morse index is
+zero for $0<t<t_c$ and two for $t>t_c$. Both zero eigenvalues cross simply
+with negative derivative when $t$ increases. In particular the count
+transition known to occur at some $0<t<1$ on the five-equal-mass ray occurs
+on another branch.
+
+For a reproducible proof, construct each pair block
+$m_im_j(3dd^{\mathsf T}/|d|^5-I/|d|^3)$ for $d=q_i-q_j$, add it to
+the two diagonal blocks of $H$ and subtract it from the two off-diagonal
+blocks. The pentagon coordinates, all three distances $a,b,1$ and all
+coefficients belong to $\mathbb Q(a)$. In the sliced matrix the nine outer
+rows have degree at most one in $t$, and the two centre rows have degree
+at most two. Fourteen distinct integer parameter evaluations therefore
+recover its determinant identically. The accompanying script performs
+this interpolation and checks the displayed factorization exactly.
+Polynomial elimination, irreducibility and a Sturm count give the stated
+isolating interval. Exact interval evaluation in the specified embedding
+determines the signs of symmetric elimination pivots at $t=1$ and $7$.
+The indices are constant on each nonsingular interval. At $t_c$ the
+order two of the determinant equals the nullity, so both vanishing
+eigenvalues of this real analytic symmetric matrix have order one,
+and their signs of crossing follow from the index change. The projection
+of the nullspace onto the central particle's two displacement components
+is an isomorphism: adjoining those projection rows gives a rank-eleven
+matrix. This identifies the kernel as the planar displacement mode for
+the combined rotation and cyclic relabelling of the pentagon.
+
+
+\subsection{The critical fibre and its local multiplicity}
+Use the invariant affine slice perpendicular to the geometry's rotation
+tangent $\tau=(Jq_0,\ldots,Jq_5)$ in the ordinary Cartesian inner
+product. Write $u$ for nine free outer-ring displacements and $(x,y)$
+for central displacement. The $9\times9$ ring Hessian $A$ at $t_c$ is
+invertible by the accompanying exact calculation. The implicit function
+theorem solves the nine ring stationarity equations for $u=u(x,y)$,
+and we write $\Psi$ for the energy restricted to this graph. The slice,
+the equations defining the graph, and its unique solution respect the
+dihedral symmetry $D_5$ (rotation followed by cyclic relabelling, and
+reflection followed by reversal of vertex order). A slice critical
+point solves the full system: the infinitesimal rotation remains
+transverse to the slice nearby and the energy is rotation-invariant.
+
+Write $v$ for the tangent to the stationary graph as $(x,y)=(s,0)$ varies,
+so its ring components are $-A^{-1}\Phi_{ux}$ and its central components
+are $(1,0)$. With $b=\Phi_{u v v}$ at the reference point, the quadratic
+coefficient of $u(s,0)$ is $-A^{-1}b/2$. Substitution of this quadratic
+Taylor approximation into the potential gives its expansion through fifth
+order: its error in $u$ has size $O(s^3)$ and the first variation in $u$
+on the stationary graph is zero. The script expands each inverse
+distance by the binomial series, and obtains coefficients in $\mathbb Q(a)$.
+In the specified real embedding it verifies the rational bounds
+\[
+ -69.721735<c_4<-69.721734,\qquad 2167.520399<c_5<2167.520400,
+\]
+where $\Psi(s,0)=\Psi(0,0)+c_4s^4+c_5s^5+O(s^6)$.
+
+Complexify by putting $z=x+iy$ and $w=x-iy$. The branches of all inverse
+distances are chosen to agree with positive physical distances at the
+base point. Rotation gives weights $1,-1$ modulo five, and reflection
+interchanges the two coordinates. The vanishing of the linear and
+quadratic terms, and the dihedral invariance of the remaining terms,
+therefore give
+\[
+ \Psi(z,w)=\Psi(0,0)+c_4z^2w^2+\tfrac12 c_5(z^5+w^5)
+                 +O((|z|+|w|)^6).
+\]
+Let $P=\Psi_z$, $Q=\Psi_w$. The function $zP-wQ$ changes sign under
+each of the five reflections and vanishes on each complex reflection
+line $w=\zeta z$, $\zeta^5=1$. Dividing its analytic germ by the five
+distinct linear factors gives
+\[
+ zP-wQ=(z^5-w^5)E(z,w),\qquad E(0,0)=5c_5/2\ne0.
+\]
+On each line $P(z,\zeta z)=2c_4\zeta^2z^3+O(z^4)$. Hence $P=Q=0$
+has only the origin nearby, even over the complex numbers. To compute its
+local intersection multiplicity $i_0(P,Q)$ use the product rule for local
+plane-curve intersection numbers. Since $P(z,0)=(5c_5/2)z^4+O(z^5)$,
+\[
+ 15=\sum_{\zeta^5=1}i_0(P,w-\zeta z)
+    =i_0(P,zP-wQ)=i_0(P,wQ)=4+i_0(P,Q).
+\]
+The multiplicity at the critical mass is exactly eleven. Eliminating nine
+variables by the implicit function theorem preserves this local multiplicity.
+Conservation of number for isolated holomorphic zeros gives a fixed
+neighbourhood of the reference shape in which sufficiently small
+independent variations of the six masses have total complex multiplicity
+eleven; there are at most eleven distinct real labelled shapes therein.
+One may fix the positive multiplier at $t_c+h$ when varying all masses:
+homogeneity uniquely fixes the scale for every nearby physical shape.
+For $t\ne t_c$ the invertible sliced Hessian similarly gives local
+multiplicity one throughout the central pentagon branch.
+
+For comparison with the classical real bifurcation, in the symmetric family
+with $t$ near $t_c$, the reduced energy has quadratic part $p(t)(x^2+y^2)$,
+with $p(t_c)=0$ and $p'(t_c)<0$ by the index crossing and the Schur
+complement. The same reflection-line factorization holds for nearby
+$t$, since $E(0,0)$ remains nonzero. Along any of the ten real reflection
+rays the radial critical equation, divided by its positive radius $r$,
+is $2p(t)+4c_4(t)r^2+O(r^3)=0$. The left-hand side has negative
+radial derivative for all sufficiently small positive $r$, uniformly
+in $t$, while $c_4(t_c)<0$. Thus there are ten additional noncentral
+solutions just below $t_c$ and none just above it, in the labelled
+rotation slice. This agrees with the dihedral bifurcation described by
+Meyer and Schmidt (1988, Sec.\ 5 and Appendix C). All the multiplicities
+and counts here concern one neighbourhood in shape space.
+
+\section{Verification and provenance}
+The accompanying archive supplies the exact specialization tests, interval
+verifiers, input data, Lean source and transcripts. The diagram sign
+tables, cubic nonvanishing tests and root-disk inequalities use Lean kernel evaluation on the
+dyadic centres. Lean verifies the shape polynomial products, while
+Rouch\'e's theorem, the resultant argument, and the identification of
+these algebraic tests with the singular diagram are supplied by the
+written proof. For pitchforks the formal proof treats the
+root count of the reduced scalar equation with stated analytic hypotheses.
+The bridge from the Newtonian equations to its derivatives and cubic
+coefficients uses the interval code and the paper. For folds the interval
+verification is in Python. The pentagon computations use exact arithmetic
+in a quartic number field; Lean independently checks the specified
+polynomial and coefficient identities. The endpoint counts depend on the
+published completeness theorem and the previous small-mass research
+manuscript. These statements have different verification scopes.
+All original manuscripts and accompanying documentation are licensed
+under CC BY 4.0, and original verification code under MIT.
+\begin{thebibliography}{9}
+\bibitem{Tomar} T. S. Tomar, \emph{Smale's sixth problem for six bodies in the plane:
+finiteness of central configurations for generic masses, with a proof formalized in Lean},
+research preprint (2026), \url{https://hexagonmath.org/2611.00377v1}.
+\bibitem{MZ} M. Moczurad and P. Zgliczy\'nski, \emph{Central configurations in planar
+$n$-body problem with equal masses for $n=5,6,7$}, Celest. Mech. Dyn. Astron.
+131 (2019), article 46. \url{https://doi.org/10.1007/s10569-019-9920-6}.
+\bibitem{Small} Chatgpt, \emph{Exactly 4104 labelled oriented planar central
+configurations for five nearly equal masses and one light mass}, research manuscript,
+with input enclosures and code (2026).
+\href{https://github.com/rongyulin/physics-open-problems-AI/tree/523559700ce3c996afe6b08f4744309cfb631d3f/problems/planar-central-configurations}{Archived release and companion manuscripts}.
+\bibitem{MS} K. R. Meyer and D. S. Schmidt, \emph{Bifurcations of relative equilibria
+in the $N$-body and Kirchhoff problems}, SIAM J. Math. Anal. 19 (1988), 1295--1313.
+\url{https://doi.org/10.1137/0519094}.
+\bibitem{DP} T. Dias and B.-Y. Pan, \emph{Generic finiteness for a class of
+symmetric planar central configurations of the six-body problem and the six-vortex
+problem}, J. Dynam. Differential Equations 32 (2020), 1579--1602.
+\url{https://doi.org/10.1007/s10884-019-09765-y}.
+\bibitem{YZ} X. Yu and S. Zhu, \emph{Classification of stacked central configurations in
+$\mathbb R^3$}, \url{https://arxiv.org/abs/1812.00200}.
+\bibitem{Wang} Z. Wang, \emph{On the centered co-circular central configurations for
+the $n$-body problem}, J. Differential Equations 361 (2023), 376--390.
+\url{https://doi.org/10.1016/j.jde.2023.02.066}.
+\end{thebibliography}
+\end{document}

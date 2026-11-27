@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=0.94in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\R}{\mathbb R}
+\newcommand{\F}{\mathcal F}
+\title{Two symmetry-breaking bifurcations of planar\newline Newtonian six-body central configurations}
+\author{Chatgpt}
+\date{Research manuscript, 27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We certify two pitchforks on the mass line $(1,1,1,1,1,t)$ at
+$t\simeq0.089353633682323$ and $t\simeq0.175165824529870$.
+For each of the two shapes, the local count of labelled, oriented central
+configurations changes from three to one as $t$ increases. Splitting the
+masses of a reflected pair provides a second physical parameter that gives a
+versal cusp at each point. Near either shape, every sufficiently close
+six-tuple of independently perturbed masses has at most three solutions.
+An integer interval calculation isolates the two degeneracies and bounds the
+derivatives of the reduced equation. All counts are local in configuration
+space.
+\end{abstract}
+
+\section{Statements and configuration geometry}
+A central configuration is a collision-free set of particle positions whose
+Newtonian accelerations are proportional to their displacements towards
+the centre of mass. Smale's sixth problem asks for finiteness up to
+similarity for each fixed choice of positive masses. Even complete counts
+at individual mass vectors can miss changes as mass ratios vary. At the
+six-equal-mass vector, Moczurad and Zgliczy\'nski found every planar shape
+to have a line of reflection symmetry \cite{mz}. Dias and Pan \cite{dp}
+proved generic finiteness among six-body shapes with precisely four axial
+particles, which they call cross central configurations. In the four-body
+problem Rusu and Santoprete \cite{rs} used interval arithmetic and
+equivariant bifurcation theory to classify mass bifurcations. We study two specific
+transitions on a one-parameter family of unequal masses, and the effect of
+varying these masses independently.
+
+\textbf{Theorem.}
+Let the first five masses be $1$ and the sixth mass be $t>0$.
+Write
+\[
+t_1^0=0.089353633682322681683088206548106878,\quad
+t_2^0=0.17516582452986998163624081143199902.
+\]
+For $i=1,2$ there is a collision-free central configuration $Q_i$ at
+$|t_i-t_i^0|\le10^{-15}$. Each $Q_i$ has four bodies on a reflection axis
+and a reflected pair off that axis. In a neighbourhood of $Q_i$ modulo
+direct similarity, for $t$ sufficiently close to $t_i$ there are exactly three
+labelled configurations when $t<t_i$ and exactly one when $t\ge t_i$.
+The two additional configurations break the reflection symmetry.
+At any sufficiently close vector of six independently varying positive masses,
+there are at most three configurations in this neighbourhood. Varying $t$ and
+splitting the masses of the off-axis pair as $(1+\delta,1-\delta)$ gives a
+two-parameter cusp unfolding.
+
+The two tips are on geometrically different configurations. Among the four
+axial particles, the light particle is second from the left at the first tip
+and leftmost at the second tip in the chart below. Labels and mirror images
+are retained in the count. No enumeration of shapes away from these two
+neighbourhoods enters the argument.
+
+\newpage
+\section{Equations, rotational slice and reflection}
+Divide all masses by five and use length units in which the acceleration
+multiplier is one. Number the particles $0,\ldots,5$. For positive masses
+$m_i$, set
+\[
+ F_i(q,m)=q_i-\sum_{j\ne i}m_j
+ \frac{q_i-q_j}{|q_i-q_j|^3}.
+\]
+If $F=0$, summing the mass-weighted equations gives zero centre of mass.
+In a chart with $q_{3y}=0$ and $q_{3x}>0$, drop the equation $F_{3y}=0$.
+The identity $\sum_i m_i q_i\wedge F_i=0$ recovers that equation from all
+the others. Let $\F$ denote this eleven-dimensional residual in the
+eleven-dimensional chart. It also applies when the masses vary independently.
+
+Reflection across the horizontal axis combined with the transposition $(1\ 4)$
+defines an involution $S$. At equal masses for particles 1 and 4, $\F$ is
+$S$-equivariant. In both the position slice and residual space the even and odd
+subspaces have dimensions six and five. In zero-based coordinates the
+embeddings used by the certificate are
+\begin{align*}
+ P(p)&=((p_0,0),(p_4,p_5),(p_1,0),(p_2,0),(p_4,-p_5),(p_3,0)),\\
+ V(v)&=((0,v_0),(v_3,v_4),(0,v_1),(0,0),(-v_3,v_4),(0,v_2)).
+\end{align*}
+For the residual, the displayed slot $3y$ is simply absent. Denote
+the Jacobian blocks at an even point by $J_+$ and $J_-$. A tip is located
+by solving the twelve equations
+\[
+ \F_+(P(p),t)=0,\qquad J_-(p,t)v=0,\qquad v_k=1                 \tag{1}
+\]
+for $(p,t,v)$. For later use define the bordered odd matrix
+\[
+ M=\begin{pmatrix}J_-&e_b\\ e_k^{\mathsf T}&0\end{pmatrix}.
+\]
+The table gives rounded coordinates for identification. The JSON certificates
+supply the unrounded box centres.
+\[
+\begin{array}{c|rrrrrr|cc}
+ &p_0&p_1&p_2&p_3&p_4&p_5&k&b\\ \hline
+ 1&-.74733&.08957&.77496&-.33508&-.04363&-.72946&0&3\\
+ 2&-.62719&.09629&.78201&-1.13823&-.02586&-.73844&3&3
+\end{array}
+\]
+At both tips the boxes certify positive pairwise distances, $q_{3x}>0$ and
+an anchor $q_3$ with squared radius distinct from those of the other heavy
+particles. In a small neighbourhood any mass-preserving reflection must
+fix $q_3$ and the centre of mass, so its axis must be horizontal. The only
+possible reflection permutation there is $(1\ 4)$, by the separation of
+the particles. Breaking $S$ therefore removes all physical reflection axes
+along the equal-heavy-mass line.
+
+\newpage
+\section{Range elimination and the local counts}
+The checker proves that $J_+$ and $M$ are invertible at each tip. Thus $J_-$
+has a one-dimensional kernel and cokernel. Define $\rho$ on odd residuals
+by the last component of $M^{-1}(y,0)$, and extend it by zero on even
+residuals. Then $\rho J_-=0$ and $\rho e_b=1$. Let $p(t)$ be the symmetric
+solution continued from the tip by the implicit function theorem. Put
+$s=e_k^{\mathsf T}x_-$, where $x_-$ is the odd position coordinate;
+let $v$ also denote its physical embedding $V(v)$. In the coordinates
+centred on $P(p(t))$, solve the projected equations for the ten
+complementary directions by the analytic implicit function theorem. The
+projection subtracts $e_b\rho$. The remaining scalar residual on this
+solution manifold is $g(s,t,\delta)=\rho\F$. At $\delta=0$ uniqueness of
+the range solution makes $g$ odd in $s$.
+
+Let $w= dP(p(t))/dt$ and $u$ be the second $s$-derivative of the position
+on the range manifold at the tip. Both are even there. They are found
+from $J_+w=-\F_t$ and $J_+u=-D^2\F[v,v]$ in even coordinates. At the
+tip the checker evaluates the following scalars in the indicated
+normalization:
+\begin{align*}
+ A=g_{st}&=\rho\big((\partial_tD\F)v+D^2\F[v,w]\big),\\
+ C=g_{sss}&=\rho\big(D^3\F[v,v,v]+3D^2\F[v,u]\big),\\
+ B=g_{\delta}&=\rho\F_{\delta}.
+\end{align*}
+All omitted linear range-correction terms are annihilated by $\rho$.
+The following coarsened rational enclosures contain the signed bounds
+printed by the checker.
+\[
+\begin{array}{c|ccc}
+ & A&C&B\\ \hline
+1 &[1.56069,1.56070]&[11.08269,11.08270]&[-.14608,-.14607]\\
+2 &[-1.15635,-1.15634]&[-18.27376,-18.27375]&[-.14127,-.14126]
+\end{array}
+\]
+On the symmetric mass line write $g=s h(s^2,t)$. At $(0,t_i)$ one has
+$h=0$, $h_t=A$, $h_z=C/6$. The nontrivial roots satisfy
+$t=\tau(s^2)$ with $\tau'(0)=-C/(6A)<0$.
+This proves the local 3-to-1 count, including the isolated triple root
+at the critical mass.
+
+For all six mass parameters the same projected equations give a scalar
+real-analytic residual with an order-three zero in $s$ at the base point.
+Weierstrass preparation \cite{lebl} (complexify the real-analytic germ and
+use uniqueness for reality) factors it as a nonvanishing unit times
+$s^3+c_2s^2+c_1s+c_0$, with analytic mass-dependent coefficients vanishing
+at the tip. This gives the local upper bound three. On the two-parameter
+slice $(t,\delta)$, translate $s$ to depress the cubic to $z^3+a z+b$.
+Writing $U$ for the unit and using $g_t=0$ at the tip gives
+$a_t=A/U$, $b_t=0$, $b_\delta=B/U$ there, where $U=C/6$.
+Consequently $(a,b)$ are local mass coordinates. There are three distinct
+local real shapes when $4a^3+27b^2<0$, one when this expression is
+positive, two on its smooth zero set and one at the tip.
+
+\newpage
+\section{Reproducing the interval proof}
+Run \texttt{python3 verify.py} with \texttt{inner.json} and \texttt{data.json}
+in the same directory. Each file contains the centre $c$ of a
+twelve-dimensional cube, the two indices $k,b$, and a rational
+preconditioner $R$. All entries are finite decimal strings. The program
+uses standard-library integers, fractions and integer square roots. It
+encloses real arithmetic on the rational lattice $10^{-42}\mathbb Z$ with
+outward rounding. Candidate discovery and floating-point inverses do not enter
+the verification.
+
+Write $G$ for the left side of (1), subtracting 1 in its last component.
+Let $X$ be the closed cube about $c$ of radius $r=10^{-15}$ in the
+supremum norm. The checker encloses $DG(X)$, and bounds the infinity
+matrix norm by summing absolute entry bounds in each row. In both cubes,
+\[
+ \|R G(c)\|_\infty<10^{-25},\qquad
+ \sup_{x\in X}\|I-RDG(x)\|_\infty<5\cdot10^{-12}.
+\]
+Thus $x\mapsto x-RG(x)$ maps $X$ strictly into itself and is a contraction.
+The norm bound implies that $RDG(c)$, hence the square matrix $R$, is
+invertible. The fixed point gives a unique solution of (1) in $X$. For
+the matrices $J_+$ and $M$, interval Gaussian elimination verifies
+pivots separated from zero and encloses all required solves over $X$.
+Bounds on the coefficients and on the locations of the tips follow.
+
+The fold curves can also be read in the physical mass coordinates.
+Solving $g=g_s=0$ for $(t-t_i,\delta)$ as functions of $s$ is possible
+since $AB\ne0$. To leading order this gives
+$t-t_i\sim-C s^2/(2A)$ and $\delta\sim C s^3/(3B)$.
+Hence the two fold curves have
+$\delta\sim\pm K(t_i-t)^{3/2}$, with
+$K=\sqrt{8A^3/(9B^2C)}$. The corresponding half-width coefficients are
+$K\simeq3.780049$ and $K\simeq1.941401$.
+
+The rational enclosures of the squared radii and pairwise distances also
+verify the geometric hypotheses of the chart. This proof establishes no
+quantitative size for the continuation neighbourhood in the independent
+mass coordinates. To establish the full six-body finiteness conjecture
+one would have to control every configuration at every positive mass
+vector, including any singular configurations not covered by these cubes.
+
+\begin{thebibliography}{9}
+\bibitem{mz}
+M. Moczurad and P. Zgliczy\'nski,
+Central configurations in planar $n$-body problem with equal masses for
+$n=5,6,7$. \emph{Celestial Mechanics and Dynamical Astronomy}
+\textbf{131}, article 46 (2019). DOI: 10.1007/s10569-019-9920-6.
+\bibitem{dp} T. Dias and B.-Y. Pan,
+Generic finiteness for a class of symmetric planar central configurations
+of the six-body problem and the six-vortex problem.
+\emph{Journal of Dynamics and Differential Equations}
+\textbf{32}, 1579--1602 (2020). DOI: 10.1007/s10884-019-09765-y.
+\bibitem{rs} D. Rusu and M. Santoprete,
+Bifurcations of central configurations in the four-body problem with some equal masses.
+\emph{SIAM Journal on Applied Dynamical Systems} (2016).
+DOI: 10.1137/151002484.
+\bibitem{lebl} J. Lebl, \emph{Tasty Bits of Several Complex Variables},
+Section 6.2, Weierstrass preparation and division theorems.
+\end{thebibliography}
+\medskip\noindent Original manuscript and source: CC BY 4.0. Verification code: MIT.
+\end{document}
