@@ -12,7 +12,7 @@
 
 一般的 SIC 存在性问题问，每个维数 $d\ge2$ 是否都有一组 $d^2$ 条复等角线。Zauner 在 1999 年的博士论文第 3.4 节还提出了更具体的构造猜想：在每个维数都能选到一个初始向量，使标准 $d$ 能级 Weyl–Heisenberg 位移生成 SIC，并且这个向量可取在一个指定三阶对称算符的特征空间中。十二维已有带 Zauner 三阶对称性的标准位移 SIC 精确解。[Zauner 博士论文，第 3.4 节][zauner] · [SIC 与 Zauner 对称性综述][hoggar] · [十二维构造][appleby]
 
-本项目改变了构造中的一个条件：总维数仍为 12，位移则必须分别作用在两个比特和一个三能级系统上。忽略整体相位，标准位移群 $\mathbb Z_{12}^{\,2}$ 中有阶为 12 的操作；局域位移群 $\mathbb Z_2^{\,4}\times\mathbb Z_3^{\,2}$ 中每个操作至多做六次就回到恒等。两群因此不能靠换基等同。这里的否定答案排除了十二维的一种候选对称性，与标准构造的肯定答案相容。
+本项目改变了构造中的一个条件：总维数仍为 12，位移则必须分别作用在两个比特和一个三能级系统上。忽略整体相位，标准位移群 $\mathbb Z_{12}^{2}$ 中有阶为 12 的操作；局域位移群 $\mathbb Z_2^{4}\times\mathbb Z_3^{2}$ 中每个操作至多做六次就回到恒等。两群因此不能靠换基等同。这里的否定答案排除了十二维的一种候选对称性，与标准构造的肯定答案相容。
 
 ### 问题从哪里来？
 
@@ -26,7 +26,7 @@
 
 <p align="center">tr(ρ²) = ¼(1 + 15/13) = 7/13.</p>
 
-另一方面，初态是纯态，而被取迹的系统只有三个能级，所以这个四维约化态至少有一个零特征值。在上述 15 个条件下，ρ = (I + S/√13)/4，其中 $S$ 是带正负号的泡利算符之和，特征多项式具有整数系数。零特征值使 $-\sqrt{13}$ 成为 $S$ 的特征值，它的代数共轭 $+\sqrt{13}$ 也必须出现。所以 $\rho$ 有一个特征值恰为 $1/2$。其余特征值非负、总和为 $1/2$，于是纯度至多为 $1/2$，与 $7/13>1/2$ 矛盾。[完整证明，论文第 2 节](./LocalSIC12.pdf)
+另一方面，初态是纯态，而被取迹的系统只有三个能级，所以这个四维约化态至少有一个零特征值。在上述 15 个条件下，ρ = (I + S/√13)/4，其中 $S$ 是带正负号的泡利算符之和，特征多项式具有整数系数。零特征值使 $-\sqrt{13}$ 成为 $S$ 的特征值，它的代数共轭 $+\sqrt{13}$ 也必须出现。所以 $\rho$ 有一个特征值恰为 $1/2$。其余特征值非负、总和为 $1/2$，于是纯度至多为 $1/2$，与 7/13 > 1/2 矛盾。[完整证明，论文第 2 节](./LocalSIC12.pdf)
 
 ### 这个结果改变了什么？
 
@@ -43,7 +43,7 @@ A dimension-12 SIC has 144 outcomes. Each corresponds to a ray, every pair of di
 
 The general SIC existence problem asks whether $\mathbb C^d$ contains $d^2$ equiangular lines for every $d\ge2$. In §3.4 of his 1999 thesis, Zauner also proposed a more specific construction: in each dimension a fiducial can be chosen in a prescribed eigenspace of an order-three symmetry so that its orbit under the standard $d$-level Weyl–Heisenberg displacements is a SIC. An exact dimension-12 SIC for the standard action with Zauner symmetry is known. [Zauner’s thesis, §3.4][zauner] · [Review of Zauner symmetry][hoggar] · [Dimension-12 construction][appleby]
 
-This project keeps $d=12$ and changes the displacement group. Up to overall phase, the standard group $\mathbb Z_{12}^{\,2}$ has elements of order 12. Every element of the local group $\mathbb Z_2^{\,4}\times\mathbb Z_3^{\,2}$ returns to the identity after six applications. A change of basis cannot identify the two groups. The local obstruction rules out one candidate symmetry in dimension 12 and is consistent with the exact SICs for the standard action.
+This project keeps $d=12$ and changes the displacement group. Up to overall phase, the standard group $\mathbb Z_{12}^{2}$ has elements of order 12. Every element of the local group $\mathbb Z_2^{4}\times\mathbb Z_3^{2}$ returns to the identity after six applications. A change of basis cannot identify the two groups. The local obstruction rules out one candidate symmetry in dimension 12 and is consistent with the exact SICs for the standard action.
 
 ### Where did the question come from?
 
