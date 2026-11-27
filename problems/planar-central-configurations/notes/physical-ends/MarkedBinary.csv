@@ -1,0 +1,11 @@
+family,tomar_class,cell_id,chang_chen_diagram,variable_mass_slot_1_based,real_origin_compatible,representative_cell,representative_slot,permutation_to_representative_1_based,exchange_z_w
+core-free,127,0,88,1,1,0,1,123456,0
+core-free,127,0,88,6,1,0,1,623451,0
+core-free,127,1,88,1,1,0,1,132456,0
+core-free,127,1,88,6,1,0,1,632451,0
+core-free,127,6,88,1,1,6,1,123456,0
+core-free,127,6,88,6,1,6,1,623451,0
+core-free,127,7,88,1,1,0,1,124536,0
+core-free,127,7,88,6,1,0,1,624531,0
+core-free,127,8,88,1,1,0,1,124356,0
+core-free,127,8,88,6,1,0,1,624351,0

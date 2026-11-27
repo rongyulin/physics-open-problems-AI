@@ -32,6 +32,10 @@ Use the extracted mass-parameter project’s pinned Lean 4.28.0 and mathlib. Fro
 
 Four standalone files use the same Lean 4.28.0 and mathlib as the mass-parameter project. Run `lake env lean /path/to/FILE.lean` on each. [NodeTriangle](NodeTriangle.lean) checks the fixed-shape identity. [ClusterTriangle](ClusterTriangle.lean) checks the complex-root mass bound. [RectanglePhase](RectanglePhase.lean) proves the phase contradiction and central-binary arithmetic. [Diagram93Slice](Diagram93Slice.lean) checks the scalar determinant restrictions. The cell enumeration, finite-field calculation and Puiseux expansions are documented separately. [Full scope and replay](../notes/reduction/README.md)
 
+### Physical energy and mass derivative
+
+Run each standalone file with the same Lean 4.28.0/mathlib environment, using `lake env lean /path/to/File.lean`. The six files verify the following statements. [EnergyBounds](EnergyBounds.lean) (finite weighted energy bound, triple energy identity and regular-vertex derivative inequalities) · [Physical93Bounds](Physical93Bounds.lean) (central-vertex energy gap) · [MarkedBinaryEnvelope](MarkedBinaryEnvelope.lean) (marked-binary inequalities) · [Negative93Algebra](Negative93Algebra.lean) (Jacobian and Schur complement) · [FourTermCancellation](FourTermCancellation.lean) (four-radical elimination) · [EquilateralCubic94](EquilateralCubic94.lean) (discriminant of the binary cubic). The analytic reductions and the catalogue are documented in the [paper and replay](../notes/physical-ends/README.md).
+
 ## 中文
 
 ### 小质量、正三角形与 Morse 指标
@@ -61,3 +65,7 @@ Four standalone files use the same Lean 4.28.0 and mathlib as the mass-parameter
 ### 三种候选退化图的清单
 
 用同一 Lean 4.28.0 与 mathlib 环境对下列四个文件分别运行 `lake env lean /path/to/FILE.lean`。[NodeTriangle](NodeTriangle.lean) 核查投影形状恒等式，[ClusterTriangle](ClusterTriangle.lean) 核查三体簇的质量约束，[RectanglePhase](RectanglePhase.lean) 核查复相位矛盾及中心双体的质量算术，[Diagram93Slice](Diagram93Slice.lean) 核查图 93 的行列式条件。单元枚举、有限域计算与从六体方程导出的渐近展开各有独立的复验或书面推导。[方法与范围](../notes/reduction/README.md#中文)
+
+### 实构型的势能与质量导数
+
+本轮六个文件按上面的 Lean 4.28.0 方法分别运行。EnergyBounds、Physical93Bounds 和 MarkedBinaryEnvelope 核查有限求和的能量下界、三体能量恒等式和质量导数所用的不等式，Negative93Algebra 核查雅可比行列式和 Schur 补，FourTermCancellation 核查四个根式的消去，EquilateralCubic94 核查二元三次式判别式的必要条件。从六体方程到这些检验的推导见[英文论文与复验说明](../notes/physical-ends/README.md#中文)。

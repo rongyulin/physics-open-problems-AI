@@ -62,7 +62,9 @@ On the mass line $(1,1,1,1,1,t)$, three further manuscripts exclude Tomar’s di
 
 A seventh paper reduces the generic five-equal-mass case list from 14 diagram classes to three. Diagrams 88, 93 and 94 contain 55 remaining symmetry representatives, including 29 compatible with the origin condition for real configurations. [Paper and case list](./problems/planar-central-configurations/notes/reduction/README.md)
 
-[Project and seven papers](./problems/planar-central-configurations/README.md) · [Small-mass count](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Two triangles](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse indices](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean and verification](./problems/planar-central-configurations/Lean/README.md)
+At generic positive mass ratio, energy and mass-derivative bounds now leave 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. [Eighth paper and updated list](./problems/planar-central-configurations/notes/physical-ends/README.md)
+
+[Project and eight papers](./problems/planar-central-configurations/README.md) · [Small-mass count](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Two triangles](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse indices](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean and verification](./problems/planar-central-configurations/Lean/README.md)
 
 ### Reuse and attribution
 
@@ -130,7 +132,9 @@ Liu 等在 2025 年利用 37 个光学模式实现了基于 Perkel 图的 57 事
 
 第七篇研究稿把五重等质量线一般参数上的退化图候选从 14 种缩至 88、93、94 三种。仍有 55 个对称代表，29 个满足实构型有限性所需的原点条件。[论文与清单](./problems/planar-central-configurations/notes/reduction/README.md#中文)
 
-[项目与七篇论文](./problems/planar-central-configurations/README.md) · [小质量计数](./problems/planar-central-configurations/papers/SmallMass.pdf) · [两个正三角形](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse 指标](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean 与复验](./problems/planar-central-configurations/Lean/README.md)
+对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。[第八篇论文与清单](./problems/planar-central-configurations/notes/physical-ends/README.md#中文)
+
+[项目与八篇论文](./problems/planar-central-configurations/README.md) · [小质量计数](./problems/planar-central-configurations/papers/SmallMass.pdf) · [两个正三角形](./problems/planar-central-configurations/papers/NonconcentricTriangles.pdf) · [Morse 指标](./problems/planar-central-configurations/papers/HamptonMorse.pdf) · [Lean 与复验](./problems/planar-central-configurations/Lean/README.md)
 
 ### 转载、翻译与代码复用
 

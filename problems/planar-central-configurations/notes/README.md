@@ -4,7 +4,9 @@
 
 ## English
 
-The subsequent reduction leaves diagrams 88, 93 and 94 at generic positive mass ratio. The current shortlist contains 55 symmetry representatives, 29 of which satisfy the additional origin requirement for real finiteness. [Updated case list and manuscript](reduction/README.md)
+The subsequent reduction leaves diagrams 88, 93 and 94 at generic positive mass ratio. That shortlist contains 55 symmetry representatives, 29 of which satisfy the additional origin requirement for real finiteness. [Three-diagram paper](reduction/README.md)
+
+At generic positive mass ratio, energy and mass-derivative bounds now leave 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. [Current case lists](physical-ends/README.md)
 
 Fix positive masses proportional to $(1,1,1,1,1,t)$. An infinite family of distinct real central configurations at fixed masses gives a nontrivial curve in the normalized complex equations. A singular diagram records the relative orders of its coordinates and pair distances at a place on that curve. The following deductions supplement the [diagram 98 manuscript](../papers/FiveEqualSixBody.pdf).
 
@@ -24,7 +26,9 @@ Changing weights requires reconsidering cells previously discarded solely becaus
 
 ## 中文
 
-本页记录第一轮筛查。随后一般正质量比下的清单已缩至图 88、93、94，合并对称性后有 55 个代表，针对实构型有限性进一步剩下 29 个。[最新清单、论文与复验](reduction/README.md#中文)
+本页记录第一轮筛查。随后一般正质量比下的清单已缩至图 88、93、94，合并对称性后有 55 个代表，针对实构型有限性进一步剩下 29 个。[三种图的论文与复验](reduction/README.md#中文)
+
+对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。[当前清单](physical-ends/README.md#中文)
 
 固定质量 $(1,1,1,1,1,t)$。若某个固定的正质量比有无穷多个不同的实中心构型，归一化后的复方程会有一条非平凡代数曲线。退化图记录这条曲线趋向边界时，各坐标和体间距离以什么相对速度变化。
 

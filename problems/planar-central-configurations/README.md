@@ -4,7 +4,7 @@
 
 ## English
 
-In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The seven manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
+In a central configuration, the gravitational acceleration of each body points toward the center of mass and is proportional to its distance from that center, with the same constant of proportionality for all bodies. Such a shape can rotate rigidly. Smale’s sixth problem asks whether fixed positive masses permit only finitely many planar shapes after removing translations, rotations and changes of scale. The eight manuscripts by Chatgpt study mass perturbations, geometric families, Morse indices, and finiteness along the five-equal-mass line.
 
 ### Five nearly equal masses and a light sixth body
 
@@ -38,13 +38,17 @@ The supplementary notes specialize 1,928 published certificate polynomials on th
 
 The later census reduces 14 candidate diagram classes to 88, 93 and 94. Of the original 738 core-certified placements, 76 remain. Among the 114 placements of the separate 19 core-free cells, 111 remain. The two lists combine into 55 orbits under relabelling and exchange of the complex projections. Of these, 29 also satisfy a necessary condition for an infinite family of real configurations. The new paper derives the exclusions and distinguishes the finite Python replays and checked Lean lemmas from the analytic arguments. [Paper](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [Case lists and reproduction](notes/reduction/README.md)
 
+### Energy bounds for physical ends
+
+At generic positive mass ratio, energy and mass-derivative bounds now leave 22 symmetry classes relevant to an infinite real six-body family, three in diagram 88 and nineteen in diagram 94. Diagram 93 still has four candidates in the unrestricted signed-complex problem. The accompanying local results exclude a regular-square quartet in diagram 88 and the specified equilateral leading solution of diagram 94 at generic mass ratio. [PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [Case lists](notes/physical-ends/README.md)
+
 ### Verification and reuse
 
 The verification package includes Lean sources, exact-arithmetic verifiers, their inputs, archived outputs and the research notes. The guide distinguishes the statements checked in the Lean kernel, executable certificate replays, analytic arguments and results taken from the literature. The original papers and documentation are licensed under CC BY 4.0, and original proof and verification code under MIT. Credit the papers to **Chatgpt**. Moczurad and Zgliczyński’s catalogue supplies the numerical starting coordinates and catalogue completeness. Third-party materials and dependencies retain their own terms. [Verification guide](Lean/README.md) · [Initial research log (Chinese)](ResearchLog_zh.md) · [Mass-parameter research log (Chinese)](SixBodyProgress_zh.md) · [License and attribution](../../LICENSE)
 
 ## 中文
 
-在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的七篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
+在中心构型中，每个天体的引力加速度都指向质心，加速度的大小与该天体到质心的距离成正比，比例常数对所有天体相同。这样的形状可以刚性旋转。Smale 第六问题问，给定各天体的正质量，扣除平移、旋转和整体缩放后，平面中心构型是否只有有限多个。这里收录 Chatgpt 的八篇研究稿，讨论质量扰动、特殊几何构型、Morse 指标，以及五重等质量线上的有限性。
 
 ### 五个近等质量天体与一个轻天体
 
@@ -77,6 +81,10 @@ Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，�
 ### 一般正质量比下的三种候选退化图
 
 通过节点力平衡、恒定势能与局部力矩检验，原先的 14 个图类缩至图 88、93、94。旧表中的 738 个带证书组合剩下 76 个，另列的 19 个无证书单元在展开标记位置之后由 114 个组合缩至 111 个。两部分合计 55 个对称代表，针对无限实构型族所需的曲线，还有 29 个代表满足原点相容性。剩余情形的实际存在性及该质量族的完整有限性仍有待证明。[论文 PDF](papers/ReducedSixBodyList.pdf) · [LaTeX](papers/ReducedSixBodyList.tex) · [清单和复验](notes/reduction/README.md#中文)
+
+### 实中心构型的能量约束
+
+对于一般正质量比，能量及其质量导数把实六体有限性所需的候选由 29 类缩至 22 类，图 88 有 3 类，图 94 有 19 类。若考虑任意有符号复曲线，图 93 仍有 4 类候选。局部计算还排除了图 88 的等质量正方形首项以及图 94 的一个等边首项。[论文 PDF](papers/PhysicalSixBodyEnds.pdf) · [LaTeX](papers/PhysicalSixBodyEnds.tex) · [逐项清单](notes/physical-ends/README.md#中文)
 
 ### 复验与许可
 

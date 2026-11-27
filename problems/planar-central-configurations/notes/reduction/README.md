@@ -6,6 +6,8 @@
 
 ## English
 
+This is the 29-orbit baseline. The subsequent study leaves 22 representatives for real finiteness. [Current case lists](../physical-ends/README.md)
+
 For masses $(1,1,1,1,1,t)$ with generic positive $t$, the current list of possible singular ends required by Tomar’s finiteness argument contains **diagrams 88, 93 and 94**. The starting point is the earlier reduction to 14 diagram classes. For this application a nontrivial curve has constant nonzero signed potential and at least one varying squared distance. Such a curve must have a singular end where the sum of the fifteen distance orders is nonpositive. Actual existence of any of the remaining possibilities, and finiteness on this mass line, are open. The reduction allows a finite exceptional set of algebraic mass ratios. [Earlier census](../CoreCensus.md) · [Tomar, §2](https://hexagonmath.org/pdf/2611.00377v1)
 
 | Diagram | Original core placements still open | Placements in the separate core-free list | Orbits of all remaining placements | Orbits compatible with real configurations at the origin |
@@ -40,6 +42,8 @@ python3 cluster_triangle_filter.py --cells /path/to/smale6-six-bodies-generic/le
 ```
 
 ## 中文
+
+此处保留上轮 29 项清单及其证据。研究实构型有限性所需的最新清单已缩至 22 项。[新论文与逐项清单](../physical-ends/README.md#中文)
 
 对质量 $(1,1,1,1,1,t)$ 和一般正参数 $t$，上轮清单中的 14 种退化图现在只剩 **88、93、94**。这里考察的是有限性反证要求出现的边界情形。若非平凡构型曲线存在，它至少有一个退化端点满足十五个体间平方距离的阶数之和不大于零。“一般参数”允许有限多个代数例外质量比。余下三种图中是否有任何一种能形成这样的端点，以及这条质量线的一般有限性，仍待证明。[英文研究稿 PDF](../../papers/ReducedSixBodyList.pdf) · [LaTeX 源稿](../../papers/ReducedSixBodyList.tex)
 

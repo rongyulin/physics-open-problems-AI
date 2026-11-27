@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype,geometry,hyperref}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true,allcolors=blue!45!black,pdftitle={Energy bounds for physical singular ends on the five-equal-mass line},pdfauthor={Chatgpt}}
+\usepackage{xcolor}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\abs}[1]{\left|#1\right|}
+\title{Energy bounds for physical singular ends on the five-equal-mass line}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For planar Newtonian central configurations with masses $(1,1,1,1,1,t)$ we study which complex ends can be reached by curves used in a contradiction to real finiteness. For generic positive $t$ we exclude diagram 93 and the isolated marked binary in diagram 88. A lower bound for the energy of a real configuration and an upper bound for its logarithmic mass derivative constrain the algebraic critical values at an end. An additional estimate for a projected convex potential treats the isolated binary. The previously published physical list of 29 symmetry classes reduces to 22, three in diagram 88 and nineteen in diagram 94. Whether these classes support a curve relevant to real finiteness is open.
+\end{abstract}
+\section{Statement and real constraints}
+Normalize acceleration to $-q_i$ with center of mass zero. In a real configuration put $r_{ik}=|q_i-q_k|$, $p_{ik}=r_{ik}^{-1}$. The complex equations use $z_i=x_i+{\rm i}y_i$, $w_i=x_i-{\rm i}y_i$ and signed inverse distances satisfying $p_{ik}^2z_{ik}w_{ik}=1$. The normalized force equation in either coordinate $u$ is $u_i=\sum_{k\ne i}m_kp_{ik}^3u_{ik}$. We use the diagram numbers of Chang and Chen \cite{CC} and the normalized curve and catalogue of Tomar \cite{Tomar}. On a curve needed for a contradiction there is a varying squared distance, the potential is a nonzero constant, and there is an end at which the sum of the orders of the fifteen squared distances is nonpositive \cite[Corollaries 2.4 and 2.7]{Tomar}. Our baseline \cite{Prior} applies to these ends.
+\begin{theorem}
+On the five-equal-mass line, for all positive $t$ outside a finite set of algebraic numbers, an infinite set of real shapes would yield a nonpositive end in one of the 22 remaining physical classes. In particular diagram 93 and diagram 88 with the mass $t$ in its binary are excluded for that purpose.
+\end{theorem}
+The preceding list was already restricted to curves whose identically zero centered positions coincide in the two projections, a necessary condition when choosing a curve from an infinite real stratum. Its 29 symmetry classes correspond to 90 labelled placements. All five physical classes of diagram 93 (six placements) and two of diagram 88 (ten placements) are now excluded. The remaining 74 placements represent 22 classes. A physical class in this statement is a candidate type of a complex end, not a real singular configuration.
+\paragraph{Energy and its derivative.}
+Let $M=t+5$, $S=\sum_{i<k}m_i m_k=5(t+2)$ and $j$ be the marked body. The energy, inertia and marked quantity are
+\[
+ U=\sum_{i<k}m_i m_kp_{ik},\qquad I=\sum_i m_i z_iw_i,\qquad
+ H=\sum_{i\ne j}p_{ij}+z_jw_j/2 .
+\]
+The force equations give $U=I$ \cite[Lemma 2.3]{Tomar}; write $E$ for this value. At a physical point $I=M^{-1}\sum_{i<k}m_i m_k r_{ik}^2$. Jensen's inequality for $x\mapsto x^{-1/2}$ gives $E\ge S\sqrt{S/(ME)}$, hence
+\begin{equation}\label{jensen}
+ E\ge 5(t+2)/(t+5)^{1/3}.
+\end{equation}
+For derivations on a component of the mass-parametrized algebraic solution set, differentiation of the distance equations gives $dp_{ik}=-p_{ik}^3(w_{ik}\,dz_{ik}+z_{ik}\,dw_{ik})/2$. In the differential of $U+I/2$ the coordinate terms therefore cancel by the force equations:
+\begin{equation}\label{env}
+ \tfrac32\,dE=H\,dt.
+\end{equation}
+On each irreducible component dominating the parameter line, $E$ is algebraic over $\overline{\mathbb Q}(t)$, by vanishing of relative differentials in characteristic zero. Its derivative with respect to $t$ is algebraic too and $H=3E'/2$. In particular $H$ takes only finitely many values on any given fiber outside a finite set of algebraic $t$: clear denominators in its polynomial relation, omitting the parameters at which the polynomial specializes identically to zero. Vertical components add only finitely many parameter values. Thus an irreducible curve chosen from an infinite real stratum as in \cite{Prior} has the same $E,H$ as real configurations in that stratum. A rotation used in passing to Tomar's slice preserves both quantities.
+
+On a real configuration $t\sum_{i\ne j}p_{ij}\le E$. Cauchy's inequality applied to $-tq_j=\sum_{i\ne j}q_i$ gives $t|q_j|^2\le5E/(t+5)$. Consequently
+\begin{equation}\label{elastic}
+ 0<\frac{2tH}{3E}\le\frac{2t+15}{3t+15}.
+\end{equation}
+When a candidate energy $e(t)$ at an end has been computed algebraically, the equality $E=e(t)$ also gives $2H/3=e'(t)$ away from finitely many parameter values. To see this, take the algebraic curve of the candidate values $(t,e)$ and form its incidence with the solution family by imposing $E=e$. On each dominant irreducible component, differentiate the identity and use \eqref{env}. The rational identity extends throughout that component above the open set where the derivative on the base curve is regular. Discard vertical components, branch values, and poles. This argument needs no continuation of a real family across the full mass line.
+\section{The two triples of diagram 93}
+We use the paper labels of \cite[\S6.6]{Tomar}. The fully circled triple $B$ has unit masses in every surviving placement. Its projected leading coordinates are centered and proportional, after a permutation, to $(1,\omega,\omega^2)$ with $\omega^3=1$, $\omega\ne1$ \cite{PriorData}. Its two coordinate vectors solve the isolated three-body equations. Their energy $B_0$ is a constant independent of $t$ with
+\begin{equation}\label{boundB}
+ |B_0|\le 3^{2/3}.
+\end{equation}
+Indeed, if the two vectors are independent, the three-body dichotomy \cite[Lemma 6.9]{Tomar} gives $p_{ik}^3=1/3$ on all pairs, and there are finitely many choices. If the vectors are proportional, their bilinear inertia is a multiple of $1+\omega^2+\omega^4=0$. The isolated force equations equate this inertia to $B_0$.
+
+Write $a=m_4$, $b=m_5$, $c=m_6$ in the other triple, with 4 the partially circled vertex. Use the leading $z$ chart $Z_4=0$, $Z_5-Z_6=1$, and denote limiting signed inverse distances by $p_{ik}$. The complete three $z$-equations and the two regular $w$-equations at 5,6 yield \cite{PriorData}
+\[
+ Z_5=\frac{c}{b+c},\quad Z_6=-\frac{b}{b+c},\quad p_{45}^3=p_{46}^3,\quad
+ 1=a p_{45}^3+(b+c)p_{56}^3 .
+\]
+For completeness set $q=p_{46}/p_{45}$ and $g=p_{56}/p_{45}$. Then $q^3=1$ and $D_{46}/D_{45}=q$, where $D_{ik}=p_{ik}^{-2}$. With $d=W_5-W_4$ the distance equations imply $W_6-W_4=-qc d/b$, whence $D_{56}/D_{45}=(b+c)(b+qc)/(bc)$. In particular
+\begin{equation}\label{g}
+ g^2=\frac{bc}{(b+c)(b+qc)},\qquad
+ p_{45}^{-3}=a+(b+c)g^3 .
+\end{equation}
+All cross inverse distances tend to zero. The energy at an end is $E=A+B_0$, where the energy of the partially circled triple simplifies to
+\begin{equation}\label{A}
+ A=p_{45}\{a(b+qc)+bcg\}=(b+qc)p_{45}^{-2}.
+\end{equation}
+This formula uses no missing force equation at the partially circled vertex. It implies
+\begin{equation}\label{boundA}
+ |A|^{3/2}\le a|b+qc|^{3/2}+\frac{(bc)^{3/2}}{\sqrt{b+c}}.
+\end{equation}
+
+\paragraph{Marked mass at vertex 4.}
+For $a=t$, $b=c=1$, equation \eqref{boundA} gives $|A|\le2(t+1/4)^{2/3}$. Multiplying this bound and \eqref{boundB} by $(t+5)^{1/3}$, weighted arithmetic--geometric mean gives
+\[
+ (t+5)^{1/3}(|A|+|B_0|)\le
+ 2\frac{(t+5)+2(t+1/4)}3+\frac{(t+5)+2\cdot3}{3}
+ =\frac{7t+22}{3}<5(t+2).
+\]
+This contradicts \eqref{jensen} for every positive $t$ and this placement.
+\paragraph{Marked mass at a regular vertex.}
+Relabel so that $b=t$, $a=c=1$. First,
+\[
+ |A|\le (t+1)\left(1+\frac{t^{3/2}}{(t+1)^2}\right)^{2/3}\le\tfrac54(t+1).
+\]
+The ratio inside the parentheses is at most $3\sqrt3/16<1/3$ by maximization at $t=3$. Also $3^{2/3}<21/10$. For $0<t\le2$ multiply their sum by $(t+5)^{1/3}<2$; the result is less than $5(t+2)$. For $2\le t\le32$ one may use $(t+5)^{1/3}<10/3$ and still get the same strict inequality. Thus \eqref{jensen} excludes the regular placement up to $t=32$.
+
+For $t\ge32$ let $k=(t+1)g^3$. By \eqref{g}, $k^2=t^3/[(t+1)(t+q)^3]$. The energy in \eqref{A} has the form $A=(t+q)(1+k)^{2/3}$ with an allowed local determination of the cube root. Logarithmic differentiation on this algebraic branch gives
+\[
+ 1-\frac{t A'}{A}=\frac{q/(t+q)+kt/[3(t+1)]}{1+k}.
+\]
+Since $|t+q|\ge t-1\ge31$, one has $|k|\le (32/31)^{3/2}/\sqrt{33}<1/5$. Therefore
+\[
+ \left|1-\frac{t A'}{A}\right|
+ \le \frac{1/31+1/15}{4/5}<1/8,\qquad |A|\ge31(4/5)^{2/3}>24.
+\]
+In particular $|B_0|<|A|/10$. Away from the finitely many parameters described after \eqref{elastic}, $2H/3=A'$. Thus $|tA'|/|E|>(7/8)/(11/10)=35/44>3/4$. But \eqref{elastic} gives $2tH/(3E)\le(2t+15)/(3t+15)<3/4$ for $t\ge32$. This excludes the last placement of diagram 93 for generic positive $t$.
+
+\section{The marked binary of diagram 88}
+We prove a uniform real estimate to compare with the isolated binary at an end:
+\begin{equation}\label{Hb}
+ H>3/[2(1+t)^{1/3}] .
+\end{equation}
+Choose orthogonal real axes in generic directions so that their projected coordinates are distinct. In a projection $x$ hold $a_{il}=(|x_i-x_l|/r_{il})^3\le1$ fixed. The projected force equations make $x$ stationary for the strictly convex function
+\[
+ \sum_{i<l}m_im_la_{il}/|u_i-u_l|+\tfrac12\sum_i m_i u_i^2
+\]
+on the corresponding order chamber. Its minimum value is $3 I_x/2$, $I_x=\sum_i m_i x_i^2$, by variation along the ray through $x$. Take equally spaced trial positions at distances $s$ times the rank differences from body $j$. Minimizing over $s>0$ bounds $I_x\le (B^2 C)^{1/3}$, where $B$ is the sum of mass products divided by rank gaps and $C$ the sum of the five other squared rank differences from $j$. Deleting $j$ can only shorten the remaining gaps, giving $B\le 4+3/2+2/3+1/4+5t\le(77/12)(1+t)$; also $C\le\sum_{l=1}^5l^2=55$. Adding the two projection bounds yields $I<27(1+t)^{2/3}$.
+
+Centering gives $\sum_{i\ne j}r_{ij}^2=I+(t+5)|q_j|^2$. Let $y=|q_j|^2(1+t)^{1/3}$. If $y\ge3$, its contribution and positivity of all five inverse distances give \eqref{Hb}. If $y<3$, Jensen gives $(1+t)^{1/3}\sum_{i\ne j}1/r_{ij}\ge 5\sqrt5/\sqrt{27+5y}>3/2$, proving \eqref{Hb} in that case as well.
+
+At an end of diagram 88 the binary force equations close in both projections \cite[Lemma 6.16(a) and its proof]{Tomar}. If its masses are $t,1$, the common leading signed inverse distance has $b^3=(1+t)^{-1}$. In both projections the leading coordinates are centered for the binary, and the distance equation gives $\lim z_jw_j=1/[(1+t)^2b^2]=b/(1+t)$. All four cross inverse distances at $j$ vanish. The constant $H$ on a curve required by real finiteness must then satisfy $|H|=|b(1+1/[2(1+t)])|\le 3/[2(1+t)^{1/3}]$, contradicting \eqref{Hb}.
+\section{Additional information on the signed equations}
+The physical exclusions employ positivity at real configurations on a component. Separate local calculations in the \href{https://github.com/rongyulin/physics-open-problems-AI/tree/main/problems/planar-central-configurations/notes/physical-ends}{supplement} constrain signed curves directly. In diagram 93, with $t$ at the partially circled vertex, two catalogue cells (60 and 62 in Tomar class 132) force the valuation of its large-projection coordinate to be at most $-2/3$. The local stationarity equations exclude this sector, including the case in which the isolated inner triple has a collinear complex limit. In fact the strengthened outer response excludes every negative exponent in this placement. This removes two signed placements, each an orbit by itself. The signed ledger thus contains 185 placements in 53 classes: eight classes in diagram 88, four in diagram 93, and 41 in diagram 94. These two deletions are already included in the physical count.
+
+Two other local calculations test individual leading shapes within the surviving cells. For diagram 88 with four unit masses in its quartet, a centered regular square cannot lift for any positive mass ratio of the binary. At the two unequal ratios allowed by the leading torque, the second-order compatibility equation fails. At the equal ratio the cubic coefficient of the reduced stationarity equation is nonzero. For diagram 94, take the explicit three-unit equilateral triangle with its center occupied, on the positive internal-distance branch of the quartet. The leading torque permits this seed for arbitrary positive binary ratio. A cubic compatibility calculation excludes its lift for generic $t$ when the marked mass belongs to the binary or its shared vertex. The notes include the checked finite-field computations. Neither shape exclusion alone removes an entire catalogue cell. For diagram 94 the supplement also reduces its first torque and projected center equation to a quartic shape test.
+\section{Verification and scope}
+Counting uses the orbit list of revision \texttt{95e251c} and the marked mass slots from the pinned upstream diagrams. The supplementary program reproduces the full before-and-after ledger. Lean verifies the finite weighted energy lower bound from the two normalized sum identities, the triple energy identity \eqref{A}, and the scalar inequalities and selected local algebraic lemmas. The analytic force limits, Jensen and convexity arguments, and specialization in the mass parameter are given in the mathematical proof above. The reduction depends on the earlier catalogue and leaves finiteness open on this line, including at individual exceptional parameters not settled separately.
+
+\begin{thebibliography}{9}\small
+\bibitem{CC} K.-M. Chang and K.-C. Chen. Toward finiteness of central configurations for the planar six-body problem by symbolic computations. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853} (2023).
+\bibitem{Tomar} T. S. Tomar. Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean. \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377v1} (2026).
+\bibitem{Prior} Chatgpt. Three residual singular diagrams on the five-equal-mass line of the planar six-body problem. \href{https://github.com/rongyulin/physics-open-problems-AI/tree/95e251cbc3de12d1531435df331d61bd08f6ac2c/problems/planar-central-configurations/notes/reduction}{Preprint and case lists} (2026).
+\bibitem{PriorData} Chatgpt. A valuation bound and a sign constraint for six-body diagram 93. \href{https://github.com/rongyulin/physics-open-problems-AI/blob/95e251cbc3de12d1531435df331d61bd08f6ac2c/problems/planar-central-configurations/notes/Diagram93.md}{Preliminary note and verification references} (2026).
+\end{thebibliography}
+\noindent\small\copyright\ 2026 Chatgpt. \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+\end{document}

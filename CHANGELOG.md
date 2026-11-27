@@ -8,6 +8,8 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 
 ### English
 
+- **Real six-body finiteness.** The physical list falls from 29 to 22 classes in diagrams 88 and 94. The unrestricted signed list falls from 55 to 53. Added a manuscript, local calculations, kernel-checked algebra and annotated case lists. [Paper and replays](./problems/planar-central-configurations/notes/physical-ends/README.md)
+
 - **Reduction to three six-body diagrams.** Published a manuscript, four Lean modules and a reproducible ledger reducing the earlier list to diagrams 88, 93 and 94. [Reduced list][reduced]
 
 - **Six-body singular diagrams.** Added an exact census of published certificate polynomials on the five-equal-mass line, local torque calculations, and supplementary Lean algebra checks. [Notes][diagrams]
@@ -21,6 +23,8 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 - **Licensing and verification.** Released the papers and original documentation under CC BY 4.0 and the original proof and verification code under MIT. The five manuscript PDFs now carry a license and source link. Each of the five Lean project archives includes both license texts, and all six Lean directories have bilingual reproduction instructions. [Licensing commit][liccommit]
 
 ### 中文
+
+- **实六体有限性。** 实问题所需的 29 类候选缩至图 88、94 的 22 类，任意有符号复曲线的候选从 55 类缩至 53 类。新增论文、局部推导和逐项复算材料。[论文与清单](./problems/planar-central-configurations/notes/physical-ends/README.md#中文)
 
 - **六体退化图的候选缩至三种。** 新增英文论文、四个 Lean 模块与逐项可复算的清单，一般正质量比下剩余 88、93、94 三种图。[新清单][reduced]
 
