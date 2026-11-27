@@ -22,6 +22,12 @@ Extract [SixBodyParameterResearch.zip](SixBodyParameterResearch.zip). From the e
 
 The papers and original documentation are licensed under CC BY 4.0, the original verification code under MIT. The archive includes the license texts. [Repository licensing](../../../LICENSE) · [Original catalogue](https://doi.org/10.1007/s10569-019-9920-6)
 
+### Further singular diagrams
+
+[TriangleMass.lean](TriangleMass.lean) proves the mass-parameter deduction for both triangle tests used in [diagram 8](../notes/Diagram8.md). Check it with `lake env lean /path/to/TriangleMass.lean` in the same environment.
+
+Use the extracted mass-parameter project’s pinned Lean 4.28.0 and mathlib. From its `Lean` directory, run `lake env lean /path/to/Diagram88Square.lean` and `lake env lean /path/to/Diagram93Algebra.lean`, substituting the paths to these standalone sources. [Diagram 88](Diagram88Square.lean) classifies all positive mass-ratio parameters for the square torque equation in real coordinates. [Diagram 93](Diagram93Algebra.lean) proves the distance-ratio bound, force-residual identity, and root-of-unity facts used in the hand derivation. [Research notes](../notes/README.md)
+
 ## 中文
 
 ### 小质量、正三角形与 Morse 指标
@@ -41,3 +47,9 @@ The papers and original documentation are licensed under CC BY 4.0, the original
 - **共线。** [CollinearValuation.lean](CollinearValuation.lean) 证明有符号全共线方程解集有限，含函数域一般参数和每个正实质量比的两个特化定理。对五体共线、一体离轴的情形，复验包检验多项式互素与有限域算术，从这些计算回到引力方程的论证见论文。[质量参数研究日志](../SixBodyProgress_zh.md)
 
 原创论文、LaTeX 源稿与文档使用 CC BY 4.0，原创复验代码使用 MIT。压缩包附两项许可全文。[仓库许可](../../../LICENSE) · [前人构型目录](https://doi.org/10.1007/s10569-019-9920-6)
+
+### 其他退化图
+
+[TriangleMass.lean](TriangleMass.lean) 核查[图 8](../notes/Diagram8.md) 用到的两种三体质量条件都要求 $t=1/4$。在同一环境运行 `lake env lean /path/to/TriangleMass.lean`。
+
+使用上述质量参数工程固定的 Lean 4.28.0 和 mathlib。在解压后工程的 `Lean` 目录运行 `lake env lean /path/to/Diagram88Square.lean` 和 `lake env lean /path/to/Diagram93Algebra.lean`，将路径替换为下载的文件位置。[图 88](Diagram88Square.lean) 完整分类正方形首阶力矩方程的正参数。[图 93](Diagram93Algebra.lean) 核查距离比的模下界、剩余力恒等式及两个单位根性质。图 93 从六体方程到局部极限的论证见[研究笔记](../notes/README.md#中文)。

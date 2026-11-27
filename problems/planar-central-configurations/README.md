@@ -32,6 +32,8 @@ The endpoint counts of 4,104 and 3,624 imply a transition but do not locate it. 
 
 The Newtonian orderings of bodies on a real line describe the physical collinear solutions. Algebraic elimination also encounters complex solutions, with a choice of square-root sign for each distance. The manuscript proves finiteness for the normalized, signed all-collinear equations whenever every nonempty subset of masses has nonzero sum. This includes every positive $t$ and the geometric generic parameter on the five-equal-mass line. Five unit bodies on a line with the sixth off it are impossible at every positive $t$. At the geometric generic parameter any placement of five bodies on one line and the sixth off it is excluded. After permuting the equal labels, the remaining generic configurations can be studied in one chart where three specified unit bodies form a triangle. [Paper (PDF)](papers/SignedCollinear.pdf) · [LaTeX](papers/SignedCollinear.tex)
 
+The supplementary notes specialize 1,928 published certificate polynomials on this line and analyze leading configurations or necessary conditions for diagrams 8, 52, 63, 64, 66, 88, 93 and 94. [Singular diagrams](notes/README.md)
+
 ### Verification and reuse
 
 The verification package includes Lean sources, exact-arithmetic verifiers, their inputs, archived outputs and the research notes. The guide distinguishes the statements checked in the Lean kernel, executable certificate replays, analytic arguments and results taken from the literature. The original papers and documentation are licensed under CC BY 4.0, and original proof and verification code under MIT. Credit the papers to **Chatgpt**. Moczurad and Zgliczyński’s catalogue supplies the numerical starting coordinates and catalogue completeness. Third-party materials and dependencies retain their own terms. [Verification guide](Lean/README.md) · [Initial research log (Chinese)](ResearchLog_zh.md) · [Mass-parameter research log (Chinese)](SixBodyProgress_zh.md) · [License and attribution](../../LICENSE)
@@ -65,6 +67,8 @@ Tomar 的图 98 描述六体复方程在无穷远的一种可能退化方式，�
 ### 有符号复方程中的共线构型
 
 经典实共线理论按天体在直线上的顺序描述物理解。做代数消元时，还要考虑复坐标和各距离平方根的符号选择。论文证明，只要每个非空质量子集的质量和均非零，归一化的有符号全共线方程就只有有限个解。这覆盖五重等质量线上每个正 $t$ 以及几何一般参数。五个单位质量共线且第六体在直线外，对每个正 $t$ 均不可能。对几何一般参数，任选五体共线而余下一体在轴外均不可能。于是，对余下的一般参数构型，重新排列等质量标签后，只需研究三个指定单位质量不共线的一个坐标图。[英文论文 PDF](papers/SignedCollinear.pdf) · [LaTeX 源稿](papers/SignedCollinear.tex)
+
+补充研究笔记记录了同一质量线上 1,928 个原始证书多项式的筛查和图 8、52、63、64、66、88、93、94 的分析，给出可以直接排除的情形、通过首阶检验的显式构型和仍需检验的边界。[退化图研究笔记](notes/README.md#中文)
 
 ### 复验与许可
 
