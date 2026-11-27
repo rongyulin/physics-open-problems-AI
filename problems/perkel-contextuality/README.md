@@ -8,7 +8,7 @@
 
 ### Where the question came from
 
-In 2025, Liu and colleagues used time bins of coherent light to reproduce the probabilities of a contextuality test. Its 57 events can be covered by three measurement contexts, each containing 19 mutually exclusive events. Other exclusivity relations connect events in different contexts. With all these constraints, a noncontextual assignment can give value one to at most two events. In the ideal quantum model the probabilities in each context sum to one, giving a total score of three. The authors constructed a 37-dimensional realization and, immediately after Eq. (4), asked whether a smaller one exists. [Liu et al., *Science Advances*, Eq. (4) and the following paragraph][liu]
+In 2025, Liu and colleagues used time bins of coherent light to reproduce the probabilities of a contextuality test. Its 57 events can be covered by three measurement contexts, each containing 19 mutually exclusive events. Other exclusivity relations connect events in different contexts. With all these constraints, a noncontextual assignment can give value one to at most two events. In the ideal quantum model the probabilities in each context sum to one, giving a total score of three. The authors constructed a 37-dimensional realization and, immediately after Eq. (4), asked whether a smaller one exists. Their semidefinite solver repeatedly returned a rank-37 matrix. Imposing rank at most 36 makes the search nonconvex. Their separate alternating optimization found no rank-36 solution attaining the same score, leaving open whether one existed. [Liu et al., Eq. (4)][liu] · [Authors’ account of the optimization][liu-opt]
 
 The public `threecontext` project later examined whether different optimal Gram matrices could have smaller rank. Its computations at tolerance 10⁻⁷ indicated a unique real optimum of rank 37. The authors left the complex case open. The proof here fixes every entry of the complex Gram matrix exactly. [Archived numerical results, §1.6][archive]
 
@@ -34,7 +34,7 @@ The [single-file Lean proof](./Lean/PerkelLower37.lean) derives the pure-state a
 
 ### 这个问题是谁提出的？
 
-Liu 等人在 2025 年发表的实验中，利用相干光的时间模式复现了一项量子情境性检验的事件概率。57 个事件可以分成三组测量情境，每组有 19 个两两互斥的事件，跨组还存在额外的互斥关系。在全部约束下，非情境模型的每个确定性赋值最多只能让两个事件取值为 1。理想量子模型却能让每组的概率和都等于 1，总分达到 3。作者给出了 37 维构造，随后在式（4）后明确提出，是否能用更低维的系统实现同样的结果？[Liu 等，*Science Advances*，式（4）及其后讨论][liu]
+Liu 等人在 2025 年发表的实验中，利用相干光的时间模式复现了一项量子情境性检验的事件概率。57 个事件可以分成三组测量情境，每组有 19 个两两互斥的事件，跨组还存在额外的互斥关系。在全部约束下，非情境模型的每个确定性赋值最多只能让两个事件取值为 1。理想量子模型却能让每组的概率和都等于 1，总分达到 3。作者给出了 37 维构造，随后在式（4）后明确提出，是否能用更低维的系统实现同样的结果？他们多次运行半正定规划，都得到秩为 37 的矩阵。但把秩限制在 36 以内后，可行集变成非凸集。作者另用交替优化搜索，也未找到能达到满分的秩 36 矩阵，仍无法排除这样的矩阵存在。[Liu 等，式（4）][liu] · [原作者对优化困难的说明][liu-opt]
 
 后来的公开项目 `threecontext` 搜索了同一检验是否存在秩更低的最优 Gram 矩阵。在 10⁻⁷ 的计算容差下，数值结果提示实数域的最优解唯一、秩为 37。该项目明确将复数情形留作待解问题。本项目从互斥关系和总分出发，严格确定了复 Gram 矩阵的每个元素。[数值研究存档，第 1.6 节][archive]
 
@@ -55,4 +55,5 @@ G_{vw}=\langle x_v,x_w\rangle,\qquad G=\frac{3I+A}{57}.
 [单文件 Lean 证明](./Lean/PerkelLower37.lean)从投影测量出发，给出纯态和有限纯态混合的维数下界。[完整 Lean 工程](./Lean/Perkel37_Lean.zip)中，`PerkelModel.minimum_dimension` 给出纯态下界，`Perkel37.attained_by_complex_projectors` 构造了达到下界的 37 维模型。接近满分时的定量阈值，以及适用于更广一类图优化问题的唯一性定理，由论文给出谱方法证明。[英文论文](./Perkel37.pdf) · [LaTeX 源码](./Perkel37.tex)
 
 [liu]: https://pmc.ncbi.nlm.nih.gov/articles/PMC11789840/
+[liu-opt]: https://arxiv.org/html/2208.07794v3#A0.SS3.p3
 [archive]: https://archive.softwareheritage.org/browse/content/sha1_git:601b64d894427aee82f13277f681cd6753768448/

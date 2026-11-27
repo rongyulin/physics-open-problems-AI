@@ -22,6 +22,8 @@ This project keeps $d=12$ and changes the displacement group. Up to overall phas
 
 ### Why is the orbit impossible?
 
+Godsil and Roy had already ruled out a Pauli-generated SIC for a pure state of two qubits, where the target squared overlap is 1/5. In dimension 12 the target changes to 1/13. The two qubits can also be entangled with the qutrit, leaving a mixed two-qubit state of rank two or three. The earlier pure-state result therefore does not decide this case. [Godsil and Roy, Lemma 3.1][godsil]
+
 Just **15 of the overlap conditions** suffice. Take the displacements that act on the qubits alone and let $\rho$ be the two-qubit reduced state. Each nonidentity two-qubit Pauli operator $P$ would have to satisfy |tr(ρP)| = 1/√13. Orthogonality of the Pauli basis then fixes the purity at tr(ρ²) = (1 + 15/13)/4 = 7/13.
 
 Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank at most three, so $\rho$ has a zero eigenvalue. The 15 constraints give $\rho=(I+S/\sqrt{13})/4$ for a signed Pauli sum $S$ with integer characteristic polynomial. The zero eigenvalue puts $-\sqrt{13}$ in the spectrum of $S$, forcing its algebraic conjugate $+\sqrt{13}$ into the spectrum as well. Hence $\rho$ has an eigenvalue $1/2$. Its remaining eigenvalues are nonnegative and sum to $1/2$, giving purity at most $1/2$, in contradiction with $7/13$. [Full proof, §2](./LocalSIC12.pdf)
@@ -51,6 +53,8 @@ Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank 
 
 ### 为什么这 144 个方向不可能出现？
 
+Godsil 与 Roy 已排除了从两比特纯态出发、用泡利位移生成四维 SIC 的可能，那时所需的内积模平方是 1/5。到了十二维，目标值变为 1/13，而且两个比特可以和三能级系统纠缠，两比特约化态的秩可以是 2 或 3。原有的纯态结论因此无法判定这种情形。[Godsil 与 Roy，引理 3.1][godsil]
+
 只看那些作用在两个比特上、保持三能级系统不动的位移，就有 **15 个必要条件**。设 $\rho$ 是两比特约化态。每个非恒等两比特泡利算符 $P$ 都必须满足 |tr(ρP)| = 1/√13。由泡利基的正交性，ρ 的纯度因此被固定为
 
 <p align="center">tr(ρ²) = ¼(1 + 15/13) = 7/13.</p>
@@ -73,6 +77,7 @@ The single-file theorem `SicNoGo.no_local_hw_sic_dim12` rules out the full 144-l
 [zauner]: https://www.gerhardzauner.at/documents/gz-quantumdesigns.pdf
 [renes]: https://arxiv.org/abs/quant-ph/0310075
 [appleby]: https://arxiv.org/abs/1210.1055
+[godsil]: https://arxiv.org/pdf/quant-ph/0511004#page=6
 [chien]: https://www.math.auckland.ac.nz/~waldron/Preprints/NiceErrorFrames/laa.2016.11.026.pdf#page=23
 [hoggar]: https://arxiv.org/abs/1703.07901
 [khod]: https://arxiv.org/abs/2611.01524

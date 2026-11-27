@@ -8,11 +8,11 @@ At a CHSH score of **2.5**, a pure two-qubit source guarantees an extractable Be
 
 ### Where the question comes from
 
-In a CHSH Bell test, each of two observers independently chooses between two measurements with outcomes ±1. The classical upper bound on the score is 2. At the quantum maximum, 2√2, the correlations certify a perfect Bell pair up to local isometries. What can an intermediate violation certify? In 2009, Bardyn and colleagues formulated this as a quantitative state-certification problem. They calculated the optimal extraction fidelity for a given pure state and related it to the CHSH score through the Gisin–Peres conjecture about optimal measurements. Pollard later gave a public proof of the maximum CHSH score for a given pure two-qutrit state. This repository uses those two fixed-state results to solve the inverse problem under the rank-three promise. [Bardyn et al., Eqs. (14)–(16)][bardyn] · [Pollard’s proof on GitHub][pollard]
+In a CHSH Bell test, each of two observers independently chooses between two measurements with outcomes ±1. The classical upper bound on the score is 2. At the quantum maximum, 2√2, the correlations certify a perfect Bell pair up to local isometries. What can an intermediate violation certify? In 2009, Bardyn and colleagues formulated this as a quantitative state-certification problem. They calculated the optimal extraction fidelity for a given pure state. Assuming the Gisin–Peres conjecture about optimal measurements, they also derived a straight-line lower bound and pointed out that ordering the Schmidt probabilities imposes additional constraints at fixed dimension. Pollard later gave a public proof of the maximum CHSH score for a given pure two-qutrit state. [Bardyn et al., Eqs. (14)–(16)][bardyn] · [Pollard’s proof on GitHub][pollard]
 
 ### The sharp guarantee
 
-For each state, allow both observers to choose their best local extraction operations, without communication. The fidelity is the squared overlap with a Bell pair and an arbitrary auxiliary pure state after local isometries. Now take the *minimum* over all pure sources of Schmidt rank at most three and all binary measurements producing the specified CHSH expectation. This gives the guarantee available to someone who knows the score and the source assumptions.
+For each state, allow both observers to choose their best local extraction operations, without communication. The fidelity is the squared overlap with a Bell pair and an arbitrary auxiliary pure state after local isometries. An observed score gives only a lower bound on that state’s maximum CHSH score. A source capable of a larger violation can produce the observed score by changing its measurements. The remaining task is to minimize the extraction fidelity over *every* ordered Schmidt spectrum compatible with that observation. This project solves that constrained minimum. From low to high scores, the minimum can be attained by spectra with the two smallest probabilities equal, then all three equal, then the two largest equal.
 
 The curve first rises, stays **exactly at 5/6** throughout the interval below (approximately 2.468 to 2.552), and then rises linearly to 1. Each value on the curve is attained.
 
@@ -34,11 +34,11 @@ The Lean 4.28.0 entry points `RankThreeCHSH.sharp` and `RankThreeCHSH.plateau` c
 
 ### 问题从哪里来？
 
-在 CHSH 贝尔检验中，两名观察者各自从两种测量中选择一种，每次得到 ±1 两种结果之一。经典局域模型的分数最高为 2。达到量子上限 2√2 时，即使不了解测量装置的内部实现，也可以确认双方能通过局域等距变换提取一个完美贝尔对。如果只测得介于两者之间的分数，还能保证多高的质量？Bardyn 等人在 2009 年系统研究了这个定量认证问题。他们求出给定纯态的最优提取保真度，并借助关于最优测量的 Gisin–Peres 猜想，将保真度与 CHSH 分数联系起来。此后 Pollard 在 GitHub 上公开了给定两个三能级粒子纯态时最大 CHSH 分数的证明。本项目从这两项给定态的结果出发，在施密特秩至多为三的条件下反推观测分数所能保证的保真度。[Bardyn 等，式（14）–（16）][bardyn] · [Pollard 的公开证明][pollard]
+在 CHSH 贝尔检验中，两名观察者各自从两种测量中选择一种，每次得到 ±1 两种结果之一。经典局域模型的分数最高为 2。达到量子上限 2√2 时，即使不了解测量装置的内部实现，也可以确认双方能通过局域等距变换提取一个完美贝尔对。如果只测得介于两者之间的分数，还能保证多高的质量？Bardyn 等人在 2009 年系统研究了这个定量认证问题。他们求出给定纯态的最优提取保真度，又在假设关于最优测量的 Gisin–Peres 猜想成立时推出一条直线下界，并指出维数固定时，施密特概率的排序会带来额外约束。此后 Pollard 在 GitHub 上公开了给定双三能级纯态时最大 CHSH 分数的证明。[Bardyn 等，式（14）–（16）][bardyn] · [Pollard 的公开证明][pollard]
 
 ### 最差情况下仍能保证什么？
 
-对每个给定的态，先允许双方在没有通信的情况下各自选取最优局域等距变换，计算所得状态与“贝尔对和某个辅助纯态的张量积”之间最大的重叠模平方。然后，把能产生所给 CHSH 期望值的所有候选纯态和二元测量都考虑进来，取上述最优保真度的最小值。这才是仅凭该分数和对源的假设就能给出的保证。
+对每个给定的态，先允许双方在没有通信的情况下各自选取最优局域等距变换，计算所得状态与“贝尔对和某个辅助纯态的张量积”之间最大的重叠模平方。观测分数只给出了这个态所能达到的最高 CHSH 分数的下界。一个本可以得到更高分的态，也能通过改变测量给出同样的观测分数。剩下的困难是，在与该分数相容的所有有序施密特谱中，找到提取保真度最低的情形。本项目求出了这个受约束的最小值。随分数升高，三个区间依次可由最小的两个施密特概率相等、三个概率全部相等、最大的两个概率相等的态达到下界。
 
 这条曲线先上升，随后在下列整个区间（约 2.468 到 2.552）内**恒等于 5/6**，最后线性上升至 1。每一点都有相应的态和测量取到等号。
 
