@@ -1,6 +1,6 @@
 # WSK ergodicity for the four-state Potts antiferromagnet · 四态反铁磁 Potts 模型在宽六环面上的 WSK 遍历性
 
-[English](#english) · [中文](#中文) · [Chinese report / 中文报告](./PottsSix_report_zh.md) · [Lean](./Lean/PottsSix.lean)
+[English](#english) · [中文](#中文) · [Paper / 英文论文](./PottsSix.pdf) · [LaTeX](./PottsSix.tex) · [Chinese report / 中文报告](./PottsSix_report_zh.md) · [Lean](./Lean/PottsSix.lean)
 
 ## English
 
@@ -12,23 +12,25 @@ On a periodic triangular lattice six sites wide, the zero-temperature Wang–Swe
 
 At zero temperature each ground state is a proper four-colouring of the lattice: every pair of neighbours has different colours. A WSK update picks two colours and can swap them on a connected component formed by those colours. The sampling question is whether a sequence of such moves can connect any two proper colourings.
 
-In 2009, Bojan Mohar and Jesús Salas proved nonergodicity for the triangular tori of size 3*L* × 3*M* with 3 ≤ *L* ≤ *M*. Width six behaved differently. The authors proved nonergodicity for heights 6, 18, 30, …, and showed that the 6 × 9 torus is ergodic by enumerating nearly 300 million proper colourings. Their width-three result also covers 6 × 3 after exchanging the lattice directions. Their 2010 paper again identified the restriction at width six. The result here supplies the missing converse: **every remaining admissible height is ergodic**. Combined with the published results for width three and for widths of at least nine, this completes the classification of unshifted triangular tori with both side lengths divisible by three. [Mohar and Salas (2009), Proposition 5.5 and §6](https://arxiv.org/pdf/0901.1010#page=34) · [2010 follow-up, discussion after Theorem 2.12](https://arxiv.org/pdf/1002.4279#page=9)
+In 2009, Bojan Mohar and Jesús Salas proved nonergodicity for the triangular tori of size 3*L* × 3*M* with 3 ≤ *L* ≤ *M*. Width six behaved differently. The authors proved nonergodicity for heights 6, 18, 30, …, and showed that the 6 × 9 torus is ergodic by enumerating nearly 300 million proper colourings up to global colour permutations. Their width-three result also covers 6 × 3 after exchanging the lattice directions. Their 2010 paper again identified the restriction at width six. The result here supplies the missing converse: **every remaining admissible height is ergodic**. Combined with the published results for width three and for widths of at least nine, this completes the classification of unshifted triangular tori with both side lengths divisible by three. [Mohar and Salas (2009), Proposition 5.5 and §6](https://arxiv.org/pdf/0901.1010#page=34) · [2010 follow-up, discussion after Theorem 2.12](https://arxiv.org/pdf/1002.4279#page=9)
 
 ### Why the rule holds for arbitrarily tall lattices
 
 Represent the four colours by the vertices of a tetrahedron. Each triangular face of the lattice maps to a face of the tetrahedron. Counting how many times the torus covers one chosen face, with a sign for orientation, gives the integer degree *D* of the colouring. Mohar and Salas proved that on a three-colourable triangulated torus, the WSK chain is nonergodic exactly when some four-colouring has *D* ≡ 6 (mod 12). [Mohar and Salas (2009), Corollary 3.5](https://arxiv.org/pdf/0901.1010#page=12)
 
-One colouring of degree 6 modulo 12 suffices to prove nonergodicity at a given height. Proving the converse requires ruling out that degree for every colouring at infinitely many heights. At width six, all these tori can be built from the same 732 legal rows and 3,960 ordered pairs of compatible rows. The proof assigns a label *c*, either 0 or 1, to each row. The label stays constant between compatible rows. The degree contributed by a pair equals *c* modulo four up to a difference of row potentials. Around a periodic stack the differences cancel, giving *D* ≡ *Hc* (mod 4). A degree of 6 modulo 12 therefore requires *H* ≡ 2 (mod 4). At each exceptional height, alternating the rows `010101` and `232323` produces a periodic colouring of degree −3*H*, which is 6 modulo 12.
+The paper lifts a colouring to a height function on the plane. Its two period vectors determine the degree. At odd admissible heights the only degree is zero. At even admissible heights the degrees are zero and every integer from −3*H* to 3*H* in steps of twelve. Explicit periodic colourings realize every value in this list.
+
+An independent proof uses only adjacent rows. One colouring of degree 6 modulo 12 suffices to prove nonergodicity at a given height. Proving the converse requires ruling out that degree for every colouring at infinitely many heights. At width six, all these tori can be built from the same 732 legal rows and 3,960 ordered pairs of compatible rows. The proof assigns a label *c*, either 0 or 1, to each row. The label stays constant between compatible rows. The degree contributed by a pair equals *c* modulo four up to a difference of row potentials. Around a periodic stack the differences cancel, giving *D* ≡ *Hc* (mod 4). A degree of 6 modulo 12 therefore requires *H* ≡ 2 (mod 4). At each exceptional height, alternating the rows `010101` and `232323` produces a periodic colouring of degree −3*H*, which is 6 modulo 12.
 
 The classification tells a Monte Carlo practitioner when a simulation started in one ground state necessarily misses part of the ground-state ensemble, however long it runs. For ergodic sizes, the time needed to obtain representative samples remains a separate mixing-time question.
 
-### Report and verification
+### Paper, report and verification
 
-**An English paper will be added to this directory.** The Chinese report contains the full argument and a second geometric proof. In Lean 4.28.0, `degree_six_mod_twelve_iff` proves the exact degree criterion for every height 3*M*. The final theorem, `wsk_classification_from_corollary_3_5`, takes the published equivalence between the degree obstruction and nonergodicity as an explicit hypothesis. The Python script independently reconstructs and checks the row certificate. [Chinese report](./PottsSix_report_zh.md) · [Lean proof](./Lean/PottsSix.lean) · [Python verification](./Lean/check_potts_rows.py)
+The English paper develops the geometric proof of the full integer degree spectrum, then gives the independent row certificate for the modulo-twelve criterion. The Chinese report presents both arguments. In Lean 4.28.0, `degree_six_mod_twelve_iff` proves the exact degree criterion for every height 3*M*. The final theorem, `wsk_classification_from_corollary_3_5`, takes the published equivalence between the degree obstruction and nonergodicity as an explicit hypothesis. The Python script independently reconstructs and checks the row certificate. [English paper (PDF)](./PottsSix.pdf) · [LaTeX source](./PottsSix.tex) · [Chinese report](./PottsSix_report_zh.md) · [Lean proof](./Lean/PottsSix.lean) · [Python verification](./Lean/check_potts_rows.py)
 
 ### License and attribution
 
-The original Chinese report and README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
+The English paper (PDF and LaTeX source), the original Chinese report and the README text are licensed under [CC BY 4.0][doc-license]. Original Lean code and verification scripts use the [MIT License][code-license]. Third-party material retains its own terms. [Repository license scope][lic-scope]
 
 Suggested report citation — *宽六三角晶格上零温四态反铁磁 Potts 模型的 WSK 遍历性*, rongyulin/physics-open-problems-AI (2026), [original project][project-source], [CC BY 4.0][doc-license]. When sharing a translation or another adaptation, identify the changes.
 
@@ -48,17 +50,19 @@ Suggested report citation — *宽六三角晶格上零温四态反铁磁 Potts 
 
 把四种颜色看成四面体的四个顶点，晶格中的每个三角形就映到四面体的一个面。选定一个目标面，按取向正负计数整个环面对它的覆盖次数，得到着色的整数映射度 *D*。Mohar 与 Salas 已证明，对可三色着色的三角环面，WSK 不遍历当且仅当存在一个四色着色，使 *D* ≡ 6（模 12）。[Mohar 与 Salas（2009），推论 3.5](https://arxiv.org/pdf/0901.1010#page=12)
 
-证明某个高度不遍历，只需找出一个映射度模 12 余 6 的着色。要证明反向命题，却要同时排除无穷多个高度上的每一个这类着色。固定宽度为六后，所有这些环面都可由同样的 732 种合法行及 3,960 种有序相容行对组成。证明为每行着色赋予一个取 0 或 1 的标签 *c*，相容行的标签相同。在模四意义下，每一对相邻行对映射度的贡献等于 *c* 加上两个行势函数值之差。绕环面一周，势函数差逐项抵消，得到 *D* ≡ *Hc*（模 4）。因此，要得到模 12 余 6 的映射度，高度 *H* 必须模 4 余 2。在每个例外高度，把 `010101` 和 `232323` 两种着色逐行交替排列，便得到一个能首尾相接的构型，其映射度为 −3*H*，恰好模 12 余 6。
+论文先把着色提升为平面上的高度函数，用它在环面两个方向的周期向量计算映射度，得到全部整数取值。若格子高度是三的奇数倍，映射度只能为零；若高度是三的偶数倍，可取零，也可从 −3*H* 到 3*H* 每隔 12 取一个数。文中给出周期着色，逐一实现这些值。
+
+另一种证明只用相邻两行的信息。证明某个高度不遍历，只需找出一个映射度模 12 余 6 的着色。要证明反向命题，却要同时排除无穷多个高度上的每一个这类着色。固定宽度为六后，所有这些环面都可由同样的 732 种合法行及 3,960 种有序相容行对组成。证明为每行着色赋予一个取 0 或 1 的标签 *c*，相容行的标签相同。在模四意义下，每一对相邻行对映射度的贡献等于 *c* 加上两个行势函数值之差。绕环面一周，势函数差逐项抵消，得到 *D* ≡ *Hc*（模 4）。因此，要得到模 12 余 6 的映射度，高度 *H* 必须模 4 余 2。在每个例外高度，把 `010101` 和 `232323` 两种着色逐行交替排列，便得到一个能首尾相接的构型，其映射度为 −3*H*，恰好模 12 余 6。
 
 这给蒙特卡罗模拟划出了明确的尺寸限制：在哪些高度上，从单一基态出发，即使无限延长模拟时间，也必定遗漏一部分基态。对于遍历的高度，获得有代表性的样本需要运行多久，还取决于链的混合速度。
 
-### 报告与验证
+### 论文、报告与验证
 
-**本目录后续会添加英文论文。** 现有中文报告给出了完整论证和另一种几何证明。Lean 4.28.0 定理 `degree_six_mod_twelve_iff` 对任意高度 3*M* 证明了上述映射度存在的充要条件。最终定理 `wsk_classification_from_corollary_3_5` 将文献中关于该映射度与 WSK 不遍历等价的推论作为显式前提。Python 脚本独立重建并核验了逐行计算所用的证书。[中文研究报告](./PottsSix_report_zh.md) · [Lean 证明](./Lean/PottsSix.lean) · [Python 复核脚本](./Lean/check_potts_rows.py)
+英文论文先用几何方法求出完整的整数映射度谱，再给出独立的逐行证书，验证模十二的判据。中文报告也收录了这两种论证。Lean 4.28.0 定理 `degree_six_mod_twelve_iff` 对任意高度 3*M* 证明了上述映射度存在的充要条件。最终定理 `wsk_classification_from_corollary_3_5` 将文献中关于该映射度与 WSK 不遍历等价的推论作为显式前提。Python 脚本独立重建并核验了逐行计算所用的证书。[英文论文 PDF](./PottsSix.pdf) · [LaTeX 源稿](./PottsSix.tex) · [中文研究报告](./PottsSix_report_zh.md) · [Lean 证明](./Lean/PottsSix.lean) · [Python 复核脚本](./Lean/check_potts_rows.py)
 
 ### 许可与署名
 
-本项目原创的中文研究报告和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
+英文论文（PDF 和 LaTeX 源稿）、原创中文研究报告和 README 正文采用 [CC BY 4.0][doc-license]。原创 Lean 代码和验证脚本采用 [MIT 许可][code-license]。第三方材料沿用各自的许可。[仓库授权范围][lic-scope]
 
 中文报告的推荐署名为《宽六三角晶格上零温四态反铁磁 Potts 模型的 WSK 遍历性》，rongyulin/physics-open-problems-AI（2026），[原项目][project-source]，[CC BY 4.0][doc-license]。发布译本或其他改编版本时，请注明所作修改。
 

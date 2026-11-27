@@ -1,0 +1,213 @@
+% SPDX-License-Identifier: CC-BY-4.0
+% Standalone LaTeX source; compile twice with pdfLaTeX.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=26mm]{geometry}
+\usepackage{xcolor,pict2e}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Kempe equivalence and the degree spectrum of four-colourings on width-six triangular tori},pdfauthor={Chatgpt}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\specD}{\mathcal D}
+\newcommand{\modulo}[1]{\pmod{#1}}
+\newcommand{\stripdrawing}[1]{%
+\begin{picture}(126,52)
+\linethickness{0.4pt}
+\put(24,11){\line(1,0){72}}\put(24,35){\line(1,0){72}}
+\ifnum#1=0\linethickness{1.7pt}\fi
+\multiput(24,11)(36,0){3}{\line(0,1){24}}
+\linethickness{0.4pt}\ifnum#1=1\linethickness{1.7pt}\fi
+\multiput(24,11)(36,0){2}{\line(3,2){36}}
+\multiput(24,11)(36,0){3}{\circle*{3}}\multiput(24,35)(36,0){3}{\circle*{3}}
+\put(24,4){\makebox(0,0){$r_{i-1}$}}\put(60,4){\makebox(0,0){$r_i$}}\put(96,4){\makebox(0,0){$r_{i+1}$}}
+\put(24,43){\makebox(0,0){$s_{i-1}$}}\put(60,43){\makebox(0,0){$s_i$}}\put(96,43){\makebox(0,0){$s_{i+1}$}}
+\end{picture}}
+\title{Kempe equivalence and the degree spectrum of four-colourings on width-six triangular tori}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We determine when the zero-temperature Wang--Swendsen--Koteck\'y chain for the four-state Potts antiferromagnet is ergodic on the unshifted triangular torus of width six and height $H=3M$. It is nonergodic exactly for $M\equiv2\pmod4$. Mohar and Salas had proved nonergodicity at these heights and ergodicity at height nine. We prove the converse for all heights by computing the full set of integer degrees of proper four-colourings. For odd $H$ the only degree is zero. For even $H$ the degrees are zero and all terms of the progression from $-3H$ to $3H$ in steps of twelve. The proof expresses the degree through two winding vectors and classifies the horizontal edge labels in six steps. An independent proof of the residue criterion uses a finite row calculation verified in Lean and an induction on the height.
+\end{abstract}
+
+\section{The width-six question}
+
+Put a four-state spin at each vertex of a triangular lattice. The antiferromagnetic interaction penalizes edges with equal endpoint spins. On a three-colourable lattice the minimum energy is achieved by precisely the proper four-colourings. At zero temperature the Wang--Swendsen--Koteck\'y (WSK) update selects two colours and, on each connected component induced by those colours, can interchange them or leave them in place~\cite{wsk,ms}. Flipping a single component is a \emph{Kempe change}. Each such move has positive probability, and every allowed update can be decomposed into such moves. Thus the communicating classes are exactly the Kempe classes. The chain can stay at its current colouring with positive probability, so on this finite state space ergodicity is equivalent to having one class.
+
+Write $T(W,H)$ for the square grid on $\Z/W\Z\times\Z/H\Z$ with the diagonal $(i,j)(i+1,j+1)$ in each square. The two pairs of opposite sides are identified by translations $(W,0)$ and $(0,H)$. Throughout, $W=6$ and $H=3M$ with $M\ge1$ unless otherwise indicated. The colouring $i+j\bmod 3$ is proper, including on both seams. A proper four-colouring $f$ extends over each triangle to a simplicial map from the torus to the boundary of a tetrahedron. Let $D(f)$ be its integer degree. Changing the target orientation reverses all degrees.
+
+\begin{theorem}\label{thm:spectrum}
+With $\specD_H=\{D(f): f\text{ a proper four-colouring of }T(6,H)\}$,
+\[
+\specD_H=
+\begin{cases}
+\{0\}, &H\text{ odd},\\[2pt]
+\{0\}\,\cup\,\{-3H+12k: k=0,1,\ldots,H/2\}, & H\text{ even}.
+\end{cases}
+\]
+\end{theorem}
+
+\begin{theorem}\label{thm:dynamics}
+The zero-temperature four-state WSK chain on $T(6,3M)$ is nonergodic if and only if $M\equiv2\pmod4$.
+\end{theorem}
+
+\paragraph{The topological input.}
+On a three-colourable torus, the degree of every proper four-colouring is divisible by six~\cite[Prop.~3.2]{ms}. Fisk's theorem puts every colouring of degree divisible by twelve in the Kempe class of the three-colouring~\cite{fisk,ms}. Mohar and Salas proved that the degree modulo twelve is invariant under Kempe changes and gave a self-contained proof of the requisite case of Fisk's theorem~\cite[Thm.~3.4 and Sec.~3.3]{ms}. Their Corollary~3.5 consequently gives
+\begin{equation}\label{eq:bridge}
+ T(6,H)\text{ has multiple Kempe classes}
+ \quad\Longleftrightarrow\quad
+ \exists f\quad D(f)\equiv6\modulo{12}.
+\end{equation}
+Global colour permutations cause no ambiguity in applying their criterion to labelled spins. A transposition of two colours is the composition of flips on all components induced by them. In particular the possible sign change of $D$ under a colour permutation preserves each of the two residues $0,6\pmod{12}$.
+
+\paragraph{Prior results.}
+For $T(3L,3M)$ with $1\le L\le M$, Mohar and Salas established ergodicity when $L=1$ and nonergodicity when $L\ge3$~\cite[Thms.~4.5, 5.4 and Prop.~5.2]{ms}. At $L=2$ they proved nonergodicity for $M=2p$ with $p$ odd, using a degree-six-modulo-twelve witness. They also enumerated the $299{,}146{,}792$ four-colourings of $T(6,9)$ up to global colour permutations and found that every one has degree zero~\cite[Prop.~5.5]{ms}. Their follow-up expressly records the remaining restriction on width six~\cite[following Thm.~2.12]{ms2}. The introduction of Salas and Sokal~\cite{salsok} summarizes the earlier nonergodicity range as $L,M\ge2$, which includes the ergodic $T(6,9)$ of Proposition~5.5 of~\cite{ms}. The missing implication at width six is that \emph{every} other admissible height is ergodic. Together with the width-three and width-at-least-nine theorems, Theorem~\ref{thm:dynamics} settles all unshifted tori with both periods positive multiples of three, after ordering the two periods.
+
+\section{Degree from the winding vectors}
+
+Identify the colours with the elements of the Klein group $K=(\Z/2\Z)^2$. Denote the two standard basis vectors by $A$ and $B$, and write $C=A\oplus B$. Label each edge by the sum $a\oplus b$ of its endpoint colours in $K$. Each triangle contains three different colours. Its three edge labels are exactly $A,B,C$. A two-dimensional height representation for this model was developed by Moore and Newman~\cite[Sec.~III]{mn}. Related factorizations through a torus appear in the proof of the degree-divisibility result~\cite[Prop.~3.2]{ms}. In the dual honeycomb edge-colouring model, C\'epas and Akhmetiev express total chirality through winding numbers~\cite[Sec.~4.1]{ca}. Here the horizontal period of six restricts the two windings sufficiently to determine every degree. We use integer coordinates in which the three increments are
+\[
+ u_A=(1,0),\qquad u_B=(0,1),\qquad u_C=(-1,-1).
+\]
+Orient horizontal edges east, vertical edges north, and diagonal edges southwest. Along an oriented edge with label $e$ the height increment is $u_e$ and along the reverse it is $-u_e$. Each facial boundary traverses all three arrows in their chosen directions or all three in reverse. The sum of its increments vanishes. On the simply connected triangular grid covering $T(6,H)$, integration from the origin therefore defines a height $h$ on every vertex. Choose $h(0,0)$ to reduce modulo two to $f(0,0)$. Each $u_e$ reduces modulo two to $e$, so $h(i,j)\bmod 2=f(i,j)$ on the cover.
+
+Let $U=h(i+6,j)-h(i,j)$ and $V=h(i,j+H)-h(i,j)$. Translating a path by a period preserves all edge increments, so both vectors are independent of the starting point. Both belong to $(2\Z)^2$ because the colours are periodic.
+
+\begin{lemma}\label{lem:det}
+Give the source its east--north orientation and the target the orientation in which $(0,A,B)$ is a positive face. Then
+\begin{equation}\label{eq:det}
+ D(f)=-\tfrac12\det(U,V).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Triangulate the height plane by the same northeast diagonals. The three edge vectors of every image triangle have directions $u_A,u_B,u_C$ and give a single elementary triangle of this triangulation. Extending $h$ affinely induces a map $\bar h$ to the height torus $\R^2/(2\Z)^2$. Reducing its vertices modulo two and extending on faces gives a map $P$ from this second torus to the tetrahedral sphere, with $f=P\circ\bar h$.
+
+The height torus has eight faces. Two positively ordered triangles at the origin have images $(0,A,C)$ and $(0,C,B)$. With $(0,A,B)$ positive, both images are negatively oriented: the induced orientations on a common edge of two positive tetrahedral faces must be opposite. Translation in the height lattice acts on the four colours by the identity or a pair of disjoint transpositions, and hence preserves target orientation. The four translates of each triangle shape omit four distinct colours. Consequently each target face has two negative preimages and $\deg P=-2$. In the period basis $(2,0),(0,2)$ the columns induced by $\bar h$ on first homology are $U/2,V/2$. A torus map acts on the oriented fundamental class by the determinant of this matrix (take the exterior product of the two basis classes). Multiplicativity of degree gives~\eqref{eq:det}.
+\end{proof}
+
+\section{The three types of horizontal row}
+
+On one horizontal circuit let $n_A,n_B,n_C$ count the labels. Since the circuit returns to its starting colour, $(n_A+n_C,n_B+n_C)=(0,0)\pmod2$. The counts have the same parity, and their sum is six, so all are even. Furthermore,
+\[
+ U=(n_A-n_C,n_B-n_C),\qquad n_A+n_B+n_C=6.
+\]
+These equations recover all three counts from $U$. Every row therefore has the same labelled counts. Up to permuting $A,B,C$, their possibilities are $(2,2,2)$, $(4,2,0)$ and $(6,0,0)$. In the first case $U=0$ and Lemma~\ref{lem:det} gives $D(f)=0$.
+
+In either remaining case relabel colours so that $C$ is absent from every horizontal row and $A$ is most frequent. Relabelling can reverse the sign of the degree; we keep this freedom until we construct the extremal examples. Write $r_i,s_i$ for the colours of consecutive rows, indexed modulo six, and $e_i=r_{i-1}\oplus r_i$.
+
+\begin{lemma}\label{lem:strips}
+Each successive row is obtained by exactly one of the rules
+\[
+ \text{direct:}\quad s_i=r_i\oplus C,
+ \qquad\qquad
+ \text{shifted:}\quad s_i=r_{i-1}\oplus C .
+\]
+Conversely, either rule extends a proper row with no horizontal $C$ to a legal strip of the same horizontal type.
+\end{lemma}
+\begin{proof}
+Let $v_i=r_i s_i$ be the vertical edge and $d_i=r_{i-1}s_i$ the diagonal. The pair $d_i,v_i$ belongs to one triangle with a horizontal base, and $v_i,d_{i+1}$ belongs to another. Exactly one edge in each pair has label $C$. Thus the occurrences of $C$ alternate in the cyclic sequence $d_0,v_0,d_1,v_1,\ldots,d_5,v_5$. Either all verticals or all diagonals have label $C$ (Fig.~\ref{fig:strips}). This determines $s$ and the two possibilities would coincide only if successive entries of $r$ were equal. In either construction the other cross edges have labels $C\oplus e$ with $e\in\{A,B\}$, which are nonzero. The new horizontal labels are the old sequence or its cyclic shift.
+\end{proof}
+
+\begin{figure}[ht]
+\centering\small
+\begin{tabular}{cc}
+\stripdrawing{0}&\stripdrawing{1}\\
+direct strip & shifted strip
+\end{tabular}
+\caption{Two adjacent cells in a strip with no horizontal edge of label $C$. Bold edges have label $C$. Each triangle forces the location of the next bold edge along the strip.}\label{fig:strips}
+\end{figure}
+
+Suppose $S$ of the $H$ strips are shifted. Going once around the torus shifts the row $S$ steps and adds $C$ at each of the $H$ steps. The necessary and sufficient closure condition for a sequence constructed by the two rules is
+\begin{equation}\label{eq:seam}
+ r_i=r_{i-S}\oplus (H\bmod2)C\qquad(i\bmod6).
+\end{equation}
+
+\begin{lemma}\label{lem:period}
+Both nonbalanced types require even $H$. In type $(6,0,0)$ one has $2\mid S$, and in type $(4,2,0)$ one has $6\mid S$.
+\end{lemma}
+\begin{proof}
+In the first type the colour change through $S$ horizontal steps equals $(S\bmod2)A$. Equality with $(H\bmod2)C$ in~\eqref{eq:seam} forces both parities to vanish. In the second type, subtract adjacent instances of~\eqref{eq:seam} in $K$ to obtain $e_i=e_{i-S}$. The least period $p$ of the cyclic word of six labels divides both six and $S$. Its repetition number $6/p$ must divide the number of occurrences of $B$, which is two. If $p=6$, then $6\mid S$ and a whole-period shift of the row changes no colour. If $p=3$, each block of three labels contains two $A$'s and one $B$, with sum $B$ in $K$. A shift by $S$ changes a colour by $(S/3\bmod2)B$. Neither case can supply a change of $C$, so $H$ is even. The change must then be zero, giving $6\mid S$ also when $p=3$.
+\end{proof}
+
+\paragraph{Vertical winding.}
+In a direct strip every vertical increment is $u_C$. In a shifted strip the label of vertical edge $i$ is $C\oplus e_i$ and its increment is $-u_C-u_{e_i}$, because the three increments sum to zero. Averaging the latter expression over all six columns gives $-u_C-U/6$. For each column the total increment over height $H$ is the same vector $V$. Summing the strip averages therefore gives
+\begin{equation}\label{eq:wind}
+ V=(H-2S)u_C-\tfrac S6U,\qquad
+ D(f)=-\tfrac12(H-2S)\det(U,u_C).
+\end{equation}
+
+\begin{proof}[Proof of Theorems~\ref{thm:spectrum} and~\ref{thm:dynamics}]
+If $H$ is odd, Lemma~\ref{lem:period} leaves only the balanced type. The three-colouring realizes degree zero since its image misses the interior of every face involving the fourth colour. Suppose next that $H$ is even, hence divisible by six. In type $(4,2,0)$ the determinant in~\eqref{eq:wind} has absolute value two. As $6\mid S$, its degree is $\pm H\pmod{12}$. In type $(6,0,0)$ the absolute value is six, and $2\mid S$ gives degree $\pm 3H\pmod{12}$. When $6\mid H$, these four residues are identical. Also $0\le S\le H$, so all nonbalanced degrees have absolute value at most $3H$. They thus occur among the terms $-3H+12k$ in Theorem~\ref{thm:spectrum}.
+
+For attainment, take $r=(0,A,0,A,0,A)$, with $C$ absent horizontally. Choose exactly $S=2k$ shifted strips in any order and fill all remaining strips by the direct rule. The resulting colouring closes by~\eqref{eq:seam}. With the displayed choice of coordinates $U=6u_A$ and $\det(U,u_C)=-6$, so~\eqref{eq:wind} gives $3H-12k$. Reversing the order of the index $k$ produces the asserted progression. Degree zero is available at every admissible height from the three-colouring.
+
+Finally $6\pmod{12}$ occurs in the spectrum precisely when $H\equiv6\pmod{12}$, or $M\equiv2\pmod4$. Applying~\eqref{eq:bridge} proves Theorem~\ref{thm:dynamics}.
+\end{proof}
+
+For example, every colouring at heights three and nine has degree zero. At height six the spectrum is $\{0,\pm6,\pm18\}$; at height twelve it is $\{0,\pm12,\pm24,\pm36\}$. Thus even on a connected WSK state space the integer degree can vary. Two colourings with different degree residues modulo twelve cannot be Kempe equivalent. The classification concerns reachability; a mixing-time bound would require quantitative estimates on transition probabilities.
+
+\section{An independent proof by a finite row calculation}
+
+A second proof obtains exactly the residue information needed in~\eqref{eq:bridge}. It works with the twelve oriented triangles between two rows. The height $H$ appears only in the final summation, which allows one finite calculation to handle every admissible height.
+
+Number the colours $0,1,2,3$ in the order $0,A,B,C$. Let $\epsilon(a,b,c)$ be $+1$ on cyclic permutations of $(0,1,2)$, $-1$ on reverse permutations, and zero otherwise. Write $r\to s$ if both rows are cyclically proper and $s_i\ne r_i,r_{i-1}$ at every column. With $j=i+1\bmod6$, the signed count on this strip is
+\[
+ d(r,s)=\sum_{i=0}^{5}\bigl[\epsilon(r_i,r_j,s_j)+\epsilon(r_i,s_j,s_i)\bigr].
+\]
+The two triangles in each summand are positively ordered in the domain. For $H$ rows with $r_H=r_0$, the full sum of $d(r_i,r_{i+1})$ counts the signed preimages of the interior of face $(0,1,2)$ once each, so it is exactly $D(f)$. A directed closed walk in this row graph specifies every labelled spin on the torus. Its last edge imposes the periodic seam condition.
+
+\begin{lemma}\label{lem:row}
+There are functions $c$ from proper rows to $\{0,1\}$ and $b$ from proper rows to $\Z/4\Z$ such that on every edge $r\to s$,
+\begin{equation}\label{eq:cert}
+ c(s)=c(r),\qquad d(r,s)+b(r)\equiv c(r)+b(s)\modulo4.
+\end{equation}
+\end{lemma}
+\begin{proof}[Finite verification]
+There are $3^6+3=732$ proper rows, by the chromatic polynomial of a six-cycle at four colours. For each $r$, enumerate the two choices of $s_i$ outside $\{r_i,r_{i-1}\}$ independently at each of its six positions and retain the cyclically proper $s$. This gives 3,960 directed edges. On each weakly connected component try $c=0,1$. Fix $b=0$ at a root and propagate $b(s)=b(r)+d(r,s)-c$ on directed edges. Every vertex of the component is reachable: if $r\to s$ then $s\to Tr$ with $(Tr)_i=r_{i-1}$, and translation preserves compatibility. Alternately using these edges and their translates returns to $r$ after twelve steps. An assignment is accepted only after checking~\eqref{eq:cert} on every edge. The component sizes and the labels that pass are
+\[
+\begin{array}{c|rrr}
+ \text{component size} &4&12&360\\
+ \text{number of components}&3&30&1\\
+ \text{accepted label }c&1&1&0.
+\end{array}
+\]
+The accompanying Python program rebuilds the graph, independently checks its edge set against all $732^2$ ordered pairs of proper rows, and performs these propagation and verification steps. The Lean proof checks a supplied pair of functions on every compatible row pair directly from the edge constraints. Neither check samples heights.
+\end{proof}
+
+Sum~\eqref{eq:cert} along a closed row walk. The $b$ terms cancel and $c$ is constant along the walk, giving $D(f)\equiv Hc(r_0)\pmod4$. If $D(f)\equiv6\pmod{12}$, its residue modulo four is two, so $c(r_0)=1$ and $H\equiv2\pmod4$. For $H=3M$ this forces $M\equiv2\pmod4$. Conversely, at these heights the alternating rows $(0,1,0,1,0,1)$ and $(2,3,2,3,2,3)$ close to form a proper colouring. This is the parity construction of Mohar and Salas~\cite[Eq.~(4.1)]{ms}, up to colour relabelling. In either order a strip has degree $-3$, hence $D=-3H\equiv6\pmod{12}$, as required.
+
+\paragraph{Formal statements and reproduction.}
+In Lean~4.28.0 a row is a twelve-bit word, two bits per site. The proof of \texttt{local\_certificate} checks~\eqref{eq:cert} for arbitrary legal packed rows by reduction in the kernel. The theorem \texttt{closed\_degree} telescopes this identity by induction, and \texttt{signedDegree\_remainder} relates the modular calculation to the signed integer face count. The resulting \texttt{degree\_six\_mod\_twelve\_iff} proves the existential degree criterion in both directions for arbitrary $M$. The final declaration \texttt{wsk\_classification\_from\_corollary\_3\_5} takes the published equivalence~\eqref{eq:bridge} as an explicit hypothesis. The full integer spectrum is proved in Sections~2 and~3.
+
+The author's earlier \href{https://github.com/rongyulin/physics-open-problems-AI/blob/6f8201f6ad061264fc7b93f7d776d961664df06c/problems/potts-wsk-ergodicity/PottsSix_report_zh.md}{Chinese report} contains both arguments. The \href{https://github.com/rongyulin/physics-open-problems-AI/tree/6f8201f6ad061264fc7b93f7d776d961664df06c/problems/potts-wsk-ergodicity/Lean}{archived verification files} contain the standalone Lean source and the Python script. From their directory, run
+\begin{verbatim}
+lean PottsSix.lean
+python3 check_potts_rows.py
+\end{verbatim}
+Lean uses its standard library. The Python output includes the edge and component counts above, $360$ and $372$ rows of labels zero and one, and the two signed strip counts of the alternating witness.
+
+\begin{thebibliography}{9}
+\bibitem{wsk} J.-S. Wang, R. H. Swendsen and R. Koteck\'y, Antiferromagnetic Potts models, \emph{Phys. Rev. Lett.} \textbf{63}, 109--112 (1989).
+\href{https://doi.org/10.1103/PhysRevLett.63.109}{doi:10.1103/PhysRevLett.63.109}.
+\bibitem{fisk} S. Fisk, Variations on coloring, surfaces and higher-dimensional manifolds, \emph{Adv. Math.} \textbf{25}, 226--266 (1977).
+\href{https://doi.org/10.1016/0001-8708(77)90075-5}{doi:10.1016/0001-8708(77)90075-5}.
+\bibitem{ms} B. Mohar and J. Salas, A new Kempe invariant and the (non)-ergodicity of the Wang--Swendsen--Koteck\'y algorithm, \emph{J. Phys. A: Math. Theor.} \textbf{42}, 225204 (2009).
+\href{https://doi.org/10.1088/1751-8113/42/22/225204}{doi:10.1088/1751-8113/42/22/225204}.
+\bibitem{ms2} B. Mohar and J. Salas, On the non-ergodicity of the Swendsen--Wang--Koteck\'y algorithm on the kagom\'e lattice, \emph{J. Stat. Mech.} P05016 (2010).
+\href{https://doi.org/10.1088/1742-5468/2010/05/P05016}{doi:10.1088/1742-5468/2010/05/P05016}.
+\bibitem{mn} C. Moore and M. E. J. Newman, Height representation, critical exponents, and ergodicity in the four-state triangular Potts antiferromagnet, \emph{J. Stat. Phys.} \textbf{99}, 629--660 (2000).
+\href{https://doi.org/10.1023/A:1018638624854}{doi:10.1023/A:1018638624854}.
+\bibitem{ca} O. C\'epas and P. Akhmetiev, Invariants of winding-numbers and steric obstruction in dynamics of flux lines, \emph{SciPost Phys.} \textbf{7}, 032 (2019).
+\href{https://doi.org/10.21468/SciPostPhys.7.3.032}{doi:10.21468/SciPostPhys.7.3.032}.
+\bibitem{salsok} J. Salas and A. D. Sokal, Ergodicity of the Wang--Swendsen--Koteck\'y algorithm on several classes of lattices on the torus, \emph{J. Phys. A: Math. Theor.} \textbf{55}, 415004 (2022).
+\href{https://doi.org/10.1088/1751-8121/ac92ae}{doi:10.1088/1751-8121/ac92ae}.
+\end{thebibliography}
+\smallskip\noindent\footnotesize
+\copyright\ 2026 Chatgpt. The manuscript and its \LaTeX{} source are available under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+\end{document}

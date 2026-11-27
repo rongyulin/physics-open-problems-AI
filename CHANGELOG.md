@@ -8,6 +8,8 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 
 ### English
 
+- **English paper on width-six Potts–WSK ergodicity.** Published the proof that the zero-temperature chain on an unshifted triangular torus of size 6 × 3*M* is nonergodic exactly when *M* ≡ 2 (mod 4). A geometric proof determines the full integer degree spectrum. A second proof verifies the modulo-twelve obstruction in Lean using a finite row certificate. Mohar and Salas’s topological criterion gives the stated classification. [Paper (PDF)](./problems/potts-wsk-ergodicity/PottsSix.pdf) · [LaTeX source](./problems/potts-wsk-ergodicity/PottsSix.tex) · [Lean proof and verification](./problems/potts-wsk-ergodicity/Lean/README.md)
+
 - **Six-body finiteness and related results.** The finiteness papers now cite Chen and Tong where their general energy inequality specializes to five equal masses and where they already excluded the double-Lagrange physical branch of diagram 98. The counting paper credits Palmore’s theorem for the 480 configurations continued from collinear five-body primaries. The Morse-index, bifurcation, geometry and signed-equilibrium papers cite earlier results at the relevant arguments. The parameter-study archive includes the revised copies of its three papers. [Standalone finiteness paper](./problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf) · [The 4,104-count paper](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Guide to the eleven papers](./problems/planar-central-configurations/papers/README.md)
 
 - **Dimension-12 local SIC Commentary.** Added a dated companion deriving the nonexistence result from the signed Pauli spectra computed for a two-qubit stabilizer-entropy problem. It documents manuscript completion and the two repository commits and explains the attained minimum of the fifteen squared deviations. [Commentary (PDF)](./problems/local-sic-dimension-12/Commentary.pdf) · [LaTeX](./problems/local-sic-dimension-12/Commentary.tex) · [Original paper](./problems/local-sic-dimension-12/LocalSIC12.pdf)
@@ -35,6 +37,8 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 - **Licensing and verification.** Released the papers and original documentation under CC BY 4.0 and the original proof and verification code under MIT. The five manuscript PDFs now carry a license and source link. Each of the five Lean project archives includes both license texts, and all six Lean directories have bilingual reproduction instructions. [Licensing commit][liccommit]
 
 ### 中文
+
+- **宽六 Potts–WSK 遍历性英文论文。** 新增英文论文，证明在边界无错位、尺寸为 6 × 3*M* 的三角环面上，零温链不遍历当且仅当 *M* 除以 4 余 2。论文用几何方法给出全部可取的整数映射度，再以 Lean 核验的逐行证书独立证明模十二的障碍判据，并据 Mohar 与 Salas 的拓扑结果推出遍历性分类。[论文 PDF](./problems/potts-wsk-ergodicity/PottsSix.pdf) · [LaTeX 源稿](./problems/potts-wsk-ergodicity/PottsSix.tex) · [Lean 证明与复验](./problems/potts-wsk-ergodicity/Lean/README.md)
 
 - **六体有限性及相关论文的引文。** 在五等质量能量下界的推导处，以及图 98 中双拉格朗日物理分支的排除处，补引 Chen 与 Tong 的先行结果。在 4,104 个构型的计数表旁，注明由共线五体主构型延拓得到的 480 个构型已由 Palmore 的定理给出。关于 Morse 指数、分岔、构型几何和有符号平衡的论文也在相关论证处补入了原始文献。参数研究复现包所附的三篇论文也已同步。[独立有限性论文](./problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf) · [4,104 个构型的计数论文](./problems/planar-central-configurations/papers/SmallMass.pdf) · [十一篇论文导读](./problems/planar-central-configurations/papers/README.md#中文)
 

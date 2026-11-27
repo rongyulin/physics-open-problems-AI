@@ -4,7 +4,7 @@
 
 ## English
 
-On a periodic triangular lattice six sites wide and 3*M* sites tall, `PottsSix.degree_six_mod_twelve_iff` proves that a proper four-colouring of degree 6 modulo 12 exists exactly when *M* ≡ 2 (mod 4). The final theorem `PottsSix.wsk_classification_from_corollary_3_5` uses the published equivalence between this obstruction and zero-temperature WSK nonergodicity as an explicit hypothesis. The [Chinese report](../PottsSix_report_zh.md) gives the reference and physical interpretation.
+On a periodic triangular lattice six sites wide and 3*M* sites tall, `PottsSix.degree_six_mod_twelve_iff` proves that a proper four-colouring of degree 6 modulo 12 exists exactly when *M* ≡ 2 (mod 4). The final theorem `PottsSix.wsk_classification_from_corollary_3_5` uses the published equivalence between this obstruction and zero-temperature WSK nonergodicity as an explicit hypothesis. The English paper and Chinese report also give a geometric proof of the full integer degree spectrum. The Lean file independently proves the modulo-twelve criterion using adjacent rows. [Paper (PDF)](../PottsSix.pdf) · [LaTeX source](../PottsSix.tex) · [Chinese report](../PottsSix_report_zh.md)
 
 **Reproduce the proof.** Download [PottsSix.lean](PottsSix.lean) and [check_potts_rows.py](check_potts_rows.py) to the same directory. With Lean 4.28.0 and Python 3 on the path, run
 
@@ -19,7 +19,7 @@ Original proof and verification code in this project, including Lean sources and
 
 ## 中文
 
-对宽 6、高 3*M* 的周期三角晶格，`PottsSix.degree_six_mod_twelve_iff` 证明，存在映射度模 12 余 6 的合法四色着色，当且仅当 *M* 模 4 余 2。最终定理 `PottsSix.wsk_classification_from_corollary_3_5` 把该障碍与零温 WSK 不遍历的等价关系作为显式文献前提。[中文报告](../PottsSix_report_zh.md)给出了该判据的出处及其物理含义。
+对宽 6、高 3*M* 的周期三角晶格，`PottsSix.degree_six_mod_twelve_iff` 证明，存在映射度模 12 余 6 的合法四色着色，当且仅当 *M* 模 4 余 2。最终定理 `PottsSix.wsk_classification_from_corollary_3_5` 把该障碍与零温 WSK 不遍历的等价关系作为显式文献前提。英文论文与中文报告还给出完整整数映射度谱的几何证明。Lean 文件用独立的逐行论证验证模十二的判据。[英文论文 PDF](../PottsSix.pdf) · [LaTeX 源稿](../PottsSix.tex) · [中文报告](../PottsSix_report_zh.md)
 
 **复验方法。** 将 [Lean 源文件](PottsSix.lean) 和 [Python 核验脚本](check_potts_rows.py) 下载到同一目录。使用 Lean 4.28.0 运行 `lean PottsSix.lean` 即可核验形式化证明，只依赖 Lean 标准库。另运行 `python3 check_potts_rows.py` 可独立复算 732 种合法行与 3,960 种有序相容行对的证书。Lean 再用归纳法将结论推广至任意高度。
 

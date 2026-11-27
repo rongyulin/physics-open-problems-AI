@@ -48,11 +48,11 @@ The project proves that **37 is the exact minimum complex Hilbert-space dimensio
 
 ### 6. Ergodicity of the WSK algorithm for the zero-temperature four-state Potts antiferromagnet
 
-On a periodic triangular lattice, the ground states of the zero-temperature four-state Potts antiferromagnet are proper four-colourings. The Wang–Swendsen–Kotecký (WSK) algorithm moves between them by Kempe changes, which exchange two colours on a connected component. For width six, Mohar and Salas proved nonergodicity at heights 6, 18, 30, … and established ergodicity at height 9 by enumerating nearly 300 million colourings. Those results left infinitely many heights undecided.
+On a periodic triangular lattice, the ground states of the zero-temperature four-state Potts antiferromagnet are proper four-colourings. The Wang–Swendsen–Kotecký (WSK) algorithm moves between them by Kempe changes, which exchange two colours on a connected component. For width six, Mohar and Salas proved nonergodicity at heights 6, 18, 30, … and established ergodicity at height 9 by enumerating nearly 300 million colourings up to global colour permutations. Those results left infinitely many heights undecided.
 
-For an unshifted triangular torus of width 6 and height 3*M* for a positive integer *M*, the chain is **nonergodic exactly when *M* ≡ 2 (mod 4)**. The proof uses the same 732 legal rows and 3,960 compatible row pairs at every height. Lean checks the new degree criterion, which yields the ergodicity classification together with Mohar and Salas’s published topological result. A Chinese report is available. An English paper will be added.
+For an unshifted triangular torus of width 6 and height 3*M* for a positive integer *M*, the chain is **nonergodic exactly when *M* ≡ 2 (mod 4)**. The English paper gives a geometric proof determining every possible integer degree of a colouring. An independent argument on 732 legal rows and 3,960 compatible row pairs proves the degree criterion in Lean. Combined with Mohar and Salas’s topological result, this criterion gives the ergodicity classification.
 
-[Mohar and Salas on the width-six cases](https://arxiv.org/pdf/0901.1010#page=34) · [Project and results](./problems/potts-wsk-ergodicity/README.md) · [Chinese research report](./problems/potts-wsk-ergodicity/PottsSix_report_zh.md) · [Lean proof and reproduction](./problems/potts-wsk-ergodicity/Lean/README.md)
+[Mohar and Salas on the width-six cases](https://arxiv.org/pdf/0901.1010#page=34) · [Project and results](./problems/potts-wsk-ergodicity/README.md) · [English paper (PDF)](./problems/potts-wsk-ergodicity/PottsSix.pdf) · [LaTeX source](./problems/potts-wsk-ergodicity/PottsSix.tex) · [Chinese research report](./problems/potts-wsk-ergodicity/PottsSix_report_zh.md) · [Lean proof and reproduction](./problems/potts-wsk-ergodicity/Lean/README.md)
 
 ### 7. Planar Newtonian central configurations, Smale’s sixth problem and Hampton’s Morse polynomials
 
@@ -116,11 +116,11 @@ Liu 等在 2025 年利用 37 个光学模式实现了基于 Perkel 图的 57 事
 
 ### 6. 零温四态反铁磁 Potts 模型：宽六三角环面上 WSK 算法的遍历性
 
-在零温四态反铁磁 Potts 模型中，三角晶格的基态对应合法四色着色。Wang–Swendsen–Kotecký（WSK）算法在双色连通分量上交换颜色，这种操作称为 Kempe 变换。Mohar 与 Salas 已证明宽六周期晶格在高 6、18、30……时不遍历，又通过枚举近三亿个合法着色证明高 9 时遍历。其余无穷多个高度不能靠逐个枚举来判定。
+在零温四态反铁磁 Potts 模型中，三角晶格的基态对应合法四色着色。Wang–Swendsen–Kotecký（WSK）算法在双色连通分量上交换颜色，这种操作称为 Kempe 变换。Mohar 与 Salas 已证明宽六周期晶格在高 6、18、30……时不遍历，又在不区分全局颜色置换的计数约定下，枚举近三亿个合法着色，证明高 9 时遍历。其余无穷多个高度不能靠逐个枚举来判定。
 
-对宽 6、高 3*M*、边界无错位的三角环面，本项目证明：**WSK 链不遍历当且仅当 *M* 除以 4 余 2**，其余三的正倍数高度都遍历。证明将任意高度的环面分解成相邻行，只需统一分析 732 种合法行和 3,960 种相容行对。Lean 验证新的映射度判据，再结合 Mohar 与 Salas 已发表的拓扑结果得到遍历性分类。现有中文研究报告，英文论文将在后续添加。
+对宽 6、高 3*M*、边界无错位的三角环面，本项目证明：**WSK 链不遍历当且仅当 *M* 除以 4 余 2**，其余三的正倍数高度都遍历。英文论文的几何证明给出着色映射度的全部整数取值。另一套独立证明在 Lean 中核验 732 种合法行与 3,960 种相容行对，得到映射度判据，再结合 Mohar 与 Salas 的拓扑结果推出遍历性分类。
 
-[Mohar 与 Salas 的宽六问题](https://arxiv.org/pdf/0901.1010#page=34) · [项目详解](./problems/potts-wsk-ergodicity/README.md) · [中文研究报告](./problems/potts-wsk-ergodicity/PottsSix_report_zh.md) · [Lean 证明与复验](./problems/potts-wsk-ergodicity/Lean/README.md)
+[Mohar 与 Salas 的宽六问题](https://arxiv.org/pdf/0901.1010#page=34) · [项目详解](./problems/potts-wsk-ergodicity/README.md) · [英文论文 PDF](./problems/potts-wsk-ergodicity/PottsSix.pdf) · [LaTeX 源稿](./problems/potts-wsk-ergodicity/PottsSix.tex) · [中文研究报告](./problems/potts-wsk-ergodicity/PottsSix_report_zh.md) · [Lean 证明与复验](./problems/potts-wsk-ergodicity/Lean/README.md)
 
 ### 7. 平面牛顿中心构型、Smale 第六问题与 Hampton 的 Morse 多项式
 
