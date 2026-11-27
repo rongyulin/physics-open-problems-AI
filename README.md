@@ -1,6 +1,6 @@
 # physics-open-problems-AI
 
-[English](#english) · [中文](#中文)
+[English](#english) · [中文](#中文) · [Changelog / 更新日志](./CHANGELOG.md)
 
 ## English
 
