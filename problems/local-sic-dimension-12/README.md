@@ -1,6 +1,6 @@
 # Local symmetry of SIC measurements in dimension 12 · 十二维 SIC 测量的局域对称性
 
-[English](#english) · [中文](#中文) · [Paper (PDF) / 论文](./LocalSIC12.pdf) · [Lean](./Lean/LocalSIC12.lean)
+[English](#english) · [中文](#中文) · [Paper (PDF) / 论文](./LocalSIC12.pdf) · [Commentary / 补记](./Commentary.pdf) · [Lean](./Lean/LocalSIC12.lean)
 
 ## English
 
@@ -32,6 +32,10 @@ Tracing a qutrit out of a pure state leaves a four-dimensional marginal of rank 
 
 - **SIC symmetry.** There are two candidate abelian projective unitary group types that can act transitively on the outcomes of a dimension-12 SIC. Ruling out the local type $\mathbb Z_2^4\times\mathbb Z_3^2$ leaves $\mathbb Z_{12}^2$, whose action is equivalent to the ordinary twelve-level displacements up to a basis change and relabelling. This determines the transitive abelian symmetry type. An individual SIC can still have additional noncommuting symmetries. [Paper, §3](./LocalSIC12.pdf)
 - **Non-stabilizerness.** The general reference bound on $M_2$ in the Higgs-decay analysis is about $2.70044$ bits. The paper gives a smaller upper bound, approximately $2.69890107$ bits, for every pure state with this displacement basis. The exact maximum of $M_2$ remains open. The paper also determines the least sum of squared deviations of the 15 Pauli expectation magnitudes from $1/\sqrt{13}$. The minimum is $(1-3/\sqrt{13})^2/3$, and an explicit state attains it. [Paper, §5](./LocalSIC12.pdf)
+
+### Commentary on the signed Pauli spectra
+
+A separate *Commentary* derives the SIC exclusion from the twelve characteristic polynomials in Wangwy-sjtu’s two-qubit stabilizer-entropy calculation. It gives the recorded dates of the completed manuscript and the two Git commits, and identifies the additional optimization needed for the exact minimum of the fifteen squared deviations. [Commentary (PDF)](./Commentary.pdf) · [LaTeX](./Commentary.tex) · [Original spectral table](https://github.com/Wangwy-sjtu/lean-conjecture-proofs/blob/b39ce7d1828c0682bd2ff7ff9b87c26509bf0eb7/problems/StabilizerHalf/check.py#L104-L109)
 
 ### License and attribution
 
@@ -71,6 +75,10 @@ Godsil 与 Roy 已排除了从两比特纯态出发、用泡利位移生成四�
 
 - **对称性分类。** 十二维 SIC 若有一个阿贝尔射影酉群能把任一测量结果变到任一其他结果，原本有两种候选群类型。排除局域类型 $\mathbb Z_2^4\times\mathbb Z_3^2$ 后，只剩 $\mathbb Z_{12}^2$，其作用在换基和重新编号后等价于通常的十二维位移。这确定了这一类传递对称群。单个 SIC 仍可能有额外的非交换对称性。[论文第 3 节](./LocalSIC12.pdf)
 - **量子态的非稳定子性。** 对 Banacki 等采用的 $M_2$，原先的参照上界约为 $2.70044$ 比特。论文证明所有纯态都服从一个更低的上界，其数值约为 $2.69890107$ 比特。精确最大熵仍待确定。论文还给出一个已经求出精确最优值的量：上述 15 个泡利期望值的模偏离目标 $1/\sqrt{13}$ 的平方和，最小为 $(1-3/\sqrt{13})^2/3$，并给出了达到该值的态。[论文第 5 节](./LocalSIC12.pdf)
+
+### 关于带符号泡利算子谱表的补记
+
+单列的 *Commentary* 给出另一条推导：Wangwy-sjtu 的双比特稳定子熵计算列出了十二种特征多项式，逐一代入同一个候选特征值，即可排除十二维局域 SIC。补记列出了本项目全稿的留存时间和双方 Git 提交的时间，并说明要得到十五项偏差平方和的精确最小值及取等态，还需要哪一步优化。[补记 PDF](./Commentary.pdf) · [LaTeX 源稿](./Commentary.tex) · [原始谱表](https://github.com/Wangwy-sjtu/lean-conjecture-proofs/blob/b39ce7d1828c0682bd2ff7ff9b87c26509bf0eb7/problems/StabilizerHalf/check.py#L104-L109)
 
 ## Paper and formal verification · 论文与形式化证明
 

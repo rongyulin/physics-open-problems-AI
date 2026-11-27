@@ -12,7 +12,7 @@ A symmetric informationally complete positive operator-valued measure (SIC-POVM)
 
 **No pure state generates the required local orbit.** Fifteen Pauli overlaps would force the two-qubit reduced state to have purity 7/13, while its allowed spectrum implies purity at most 1/2. This rules out the local symmetry for every degree of entanglement and shows that the associated stabilizer Rényi entropy bound cannot be attained. The conclusion concerns a specific displacement group in dimension 12. Zauner’s conjecture concerns the standard group in every dimension.
 
-[Banacki et al., §5.1](https://arxiv.org/html/2607.26122v2#S5.SS1) · [Project and results](./problems/local-sic-dimension-12/README.md) · [Paper (PDF)](./problems/local-sic-dimension-12/LocalSIC12.pdf) · [Lean proof and reproduction](./problems/local-sic-dimension-12/Lean/README.md)
+[Banacki et al., §5.1](https://arxiv.org/html/2607.26122v2#S5.SS1) · [Project and results](./problems/local-sic-dimension-12/README.md) · [Paper (PDF)](./problems/local-sic-dimension-12/LocalSIC12.pdf) · [Commentary on the spectral table](./problems/local-sic-dimension-12/Commentary.pdf) · [Lean proof and reproduction](./problems/local-sic-dimension-12/Lean/README.md)
 
 ### 2. Quantum error correction and the residue-field distance conjecture for stabilizer codes
 
@@ -80,7 +80,7 @@ For example, a translation can say “Chatgpt, [*Logical distance can collapse u
 
 **所有纯初态都无法生成该局域轨道。** 只取作用在两比特上的 15 个泡利重叠条件，就能推出约化态的纯度必须等于 7/13，而它的谱又要求纯度至多为 1/2。矛盾排除了任意纠缠程度下的局域构造，也说明该研究中的稳定子 Rényi 熵上界无法达到。这里排除的是十二维的一种候选位移群，Zauner 猜想讨论的是各维数上的标准位移群。
 
-[Banacki 等的原始问题](https://arxiv.org/html/2607.26122v2#S5.SS1) · [项目详解](./problems/local-sic-dimension-12/README.md) · [英文论文 PDF](./problems/local-sic-dimension-12/LocalSIC12.pdf) · [Lean 证明与复验](./problems/local-sic-dimension-12/Lean/README.md)
+[Banacki 等的原始问题](https://arxiv.org/html/2607.26122v2#S5.SS1) · [项目详解](./problems/local-sic-dimension-12/README.md) · [英文论文 PDF](./problems/local-sic-dimension-12/LocalSIC12.pdf) · [谱表与 SIC 推论补记](./problems/local-sic-dimension-12/Commentary.pdf) · [Lean 证明与复验](./problems/local-sic-dimension-12/Lean/README.md)
 
 ### 2. 量子纠错：自由稳定子码约化到剩余域时，码距会改变吗？
 

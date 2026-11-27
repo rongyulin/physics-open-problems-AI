@@ -24,7 +24,7 @@ Write $q_i\in\C^2$ and $q^2=q\cdot q$ for the complex bilinear extension of the 
  p_{ij}^2(q_i-q_j)^2=1,\qquad
  \sum_{j\ne i}m_jp_{ij}^3(q_i-q_j)=0\quad(0\leq i\leq 3).
 \end{equation}
-The first equations exclude collisions and isotropic pair differences. The second equations set the force multiplier to zero. In the fully edged four-body diagram of Albouy and Kaloshin, this system arises by rescaling a simultaneous collapse \cite[\S5.5]{AK}. Tomar denotes it by $E_4$, recalls Aquino-Michaels's generic exclusion, and gives a mass-polynomial construction using a rank-one stress in the planar case and signed differences in the collinear case \cite[\S7.2]{Tomar}. Here we identify which positive points of one mass line actually admit solutions, including the converse for each point.
+The first equations exclude collisions and isotropic pair differences. The second equations set the force multiplier to zero. In the fully edged four-body diagram of Albouy and Kaloshin, this system arises by rescaling a simultaneous collapse \cite[\S5.5]{AK}. Aquino-Michaels confined these equilibria to a proper algebraic subset of mass space, using a rank-one stress for the noncollinear case and 32 sign classes for the collinear case \cite[\S5]{Aq}. Tomar denotes the system by $E_4$ and constructs a mass polynomial for it \cite[\S7.2]{Tomar}. Here we identify which positive points of one mass line actually admit solutions, including the converse for each point.
 
 Put
 \begin{align*}
@@ -52,6 +52,8 @@ Scale the inverse distances by $L^{1/3}$ and positions by its reciprocal. Write 
 \[
  \eta_{ij}=(V_i-V_j)^2=a_i^2a_j^2(Q_i-Q_j)^2,\qquad \eta_{ij}^3=1.
 \]
+For real positions let $r_{ij}=|q_i-q_j|$. Taking absolute values in the rank-one relation above gives $r_{01}r_{23}=r_{02}r_{13}=r_{03}r_{12}$, the classical condition for an isodynamic quadruple \cite[remark following Thm.~3]{Fiedler}. Inversion about $q_0$ therefore sends the other three points to an equilateral triangle. Over the complex numbers the three squared edge lengths can take different cube roots of unity.
+
 Set $\eta_{ii}=0$. Dotting the relation with $2V_j$ and eliminating the bilinear products gives
 \begin{equation}\label{cubic}
  (\sum_i a_i)a_j^2-t-\sum_i\eta_{ij}a_i=0\quad (1\leq j\leq 3),
@@ -105,13 +107,20 @@ Sturm counts isolate the two positive roots of $P$ in $(16/65,49/199)$ and $(106
 \section{Interpretation for electric point charges}
 The noncollinear classification also determines when four free point charges in Euclidean three-space, with magnitudes $(t,1,1,1)$ and some choice of their signs, can all be in static equilibrium under Coulomb's inverse-square law. Four affinely independent positions are impossible: their nonzero equilibrium stress would annihilate four independent columns, namely the constant column and all three coordinate columns. Hence every equilibrium is planar. For a planar equilibrium, indeed for charges $e_i=\epsilon_i m_i$, $\epsilon_i=\pm1$, take signed inverse distances $p_{ij}=\epsilon_i\epsilon_j/|q_i-q_j|$ in \eqref{eq}. Conversely both noncollinear constructions above have this form, with $\epsilon_0=1$ and $\epsilon_i=\mathrm{sgn}(a_i)$. Thus the two positive noncollinear mass ratios in Theorem~\ref{mass} are precisely the possible charge ratios. The same charge signs need not be used in the two configurations.
 
-No four nonzero real collinear point charges can balance. At positions $x_1<x_2<x_3<x_4$ write $K_{ij}=(x_j-x_i)^{-2}$ for $i<j$, with $K$ skew-symmetric. Force balance after division by each charge implies $Ke=0$. Its Pfaffian is $K_{12} K_{34}-K_{13}K_{24}+K_{14}K_{23}>0$, since $K_{12}>K_{13}$ and $K_{34}>K_{24}$. This is the four-point case of the positivity discussed by Ferrario \cite{Ferrario}. The four axial ratios in the table concern the independently signed system \eqref{eq}. None of these results establishes the occurrence of a six-body degeneration.
+Pi\~na and Lonngi studied four-body central configurations with positive inertial masses and signed interactions whose signs factor as products of individual charge signs \cite{Pina}. Hu and Zhou studied static equilibria under combined gravity and electrostatics, with coefficients $m_im_j-e_ie_j$. They give an auxiliary-triangle condition for four noncollinear bodies and a realization theorem for prescribed collinear positions \cite[Thms.~1.5, 1.6 and 4.5]{HuZhou}.
+
+No four nonzero real collinear point charges can balance. At positions $x_1<x_2<x_3<x_4$ write $K_{ij}=(x_j-x_i)^{-2}$ for $i<j$, with $K$ skew-symmetric. Force balance after division by each charge implies $Ke=0$. Its Pfaffian is $K_{12} K_{34}-K_{13}K_{24}+K_{14}K_{23}>0$, since $K_{12}>K_{13}$ and $K_{34}>K_{24}$. This four-point Pfaffian is a special case of the positivity results for the inverse collinear problem of Albouy and Moeckel \cite{am}, also treated by Ferrario \cite{Ferrario}. The four axial ratios in the table concern the independently signed system \eqref{eq}. None of these results establishes the occurrence of a six-body degeneration.
 
 \paragraph{Verification.} The \supp{} includes the scripts cited above, using Python and SymPy. In the associated Lean directory, \texttt{QuartetDistanceChart.lean} checks the inversion identities, the signed-force reconstruction identity and the cubic identity used for the third squared norm. The companion \texttt{CoulombFour.lean} proves the necessary polynomial mass condition from the real triangle cubics and the collinear Pfaffian obstruction. The polynomial eliminations and real-root counts are separate exact computations. The manuscript has not undergone peer review.
 \begin{thebibliography}{9}\small
 \bibitem{AK} A. Albouy and V. Kaloshin. Finiteness of central configurations of five bodies in the plane. \emph{Ann. of Math.} 176 (2012), 535--588. \href{https://annals.math.princeton.edu/2012/176-1/p10}{Publisher}.
+\bibitem{Aq} K. Aquino-Michaels. Reducing the Chang--Chen residual: certified eliminations in the planar six-body central-configuration problem (2026), \S5. \href{https://github.com/no-way-labs/smale6-residual/blob/07f6c99/paper/main.tex}{Manuscript} and \href{https://github.com/no-way-labs/smale6-residual/blob/07f6c99/docs/balanced-k4-confinement.md}{four-body confinement certificate}.
 \bibitem{Tomar} T. S. Tomar. Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean. \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377v1} (2026), \S7.2.
 \bibitem{Ferrario} D. L. Ferrario. Pfaffians and the inverse problem for collinear central configurations. \href{https://arxiv.org/abs/2006.13049}{arXiv:2006.13049} (2020).
+\bibitem{am} A. Albouy and R. Moeckel, The inverse problem for collinear central configurations, \emph{Celest. Mech. Dynam. Astron.} \textbf{77} (2000), 77--91. \href{https://doi.org/10.1023/A:1008345830461}{Publisher}.
+\bibitem{Fiedler} M. Fiedler. Isodynamic systems in Euclidean spaces and an $n$-dimensional analogue of a theorem by Pompeiu. \emph{\v{C}as. P\v{e}stov. Mat.} \textbf{102} (1977), 370--381. \href{https://doi.org/10.21136/CPM.1977.108520}{Publisher}.
+\bibitem{Pina} E. Pi\~na and P. Lonngi. Central configurations of four bodies with gravitational charges of both signs. \emph{Qual. Theory Dyn. Syst.} (2012). \href{https://doi.org/10.1007/s12346-011-0057-6}{Publisher}.
+\bibitem{HuZhou} X. Hu and Q. Zhou. Static equilibrium of the charged $N$-body problem (2026). \href{https://arxiv.org/abs/2609.12817}{arXiv:2609.12817}.
 \bibitem{UF} University of Florida, Physics 2049. Spring 2002, exam 1, solutions, problem 2. \href{https://www.phys.ufl.edu/courses/phy2049/old_exams/2002s/exam1_solutions.pdf}{Exam solutions}.
 \end{thebibliography}
 \noindent\small\copyright\ 2026 Chatgpt. Paper and source licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.

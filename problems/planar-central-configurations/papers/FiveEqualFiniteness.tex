@@ -46,7 +46,7 @@ There exists a finite set $S\subset\overline{\Q}\cap\R_{>0}$ such that, for ever
 \end{theorem}
 Multiplying all six masses by one positive number changes the force multiplier and preserves the shapes. Thus $t$ denotes a ratio. An infinite family of distinct real shapes at a single fixed ratio would force that ratio into $S$. The same inference cannot be drawn from one shape at each of infinitely many different mass ratios.
 
-Smale's finiteness question asks for this conclusion at every fixed positive mass vector \cite{Smale}. For six bodies Moczurad and Zgliczy\'nski enumerated the planar configurations at the equal mass point and obtained local counts for masses sufficiently close to equality \cite{MZplanar,MZnear}. Tomar's general-mass theorem gives finiteness outside a proper algebraic subset of the six-mass space; its stated exceptional subset contains every vector with at least three equal entries \cite[Theorem 1.1 and Remark 6.14]{Tomar}. A polynomial may be nonzero in six independent mass variables yet vanish identically on this entire line. Our task is to exhibit obstructions that survive the substitution of the five equal masses. The result does not compute $S$, nor does it require any positive parameter to be exceptional.
+Smale's finiteness question asks for this conclusion at every fixed positive mass vector \cite{Smale}. For six bodies Moczurad and Zgliczy\'nski enumerated the planar configurations at the equal mass point and obtained local counts for masses sufficiently close to equality \cite{MZplanar,MZnear}. Dias and Pan proved generic finiteness for cross configurations with four bodies on an axis of reflection \cite{DP}. Tomar's general-mass theorem gives finiteness outside a proper algebraic subset of the six-mass space; its stated exceptional subset contains every vector with at least three equal entries \cite[Theorem 1.1 and Remark 6.14]{Tomar}. Chen and Tong give necessary mass conditions for a curve through a positive physical point \cite[Thm.~1.1, Cor.~1.2]{CT}. Aquino-Michaels states an ambient generic finiteness theorem for every number of bodies \cite[Thms.~1.1--1.3]{GenericN}. Its explicit mass specialization requires strictly separated valuations, whereas the five equal masses have identical valuations. A polynomial may be nonzero in six independent mass variables yet vanish identically on this entire line. Our task is to exhibit obstructions that survive the substitution of the five equal masses. The result does not compute $S$, nor does it require any positive parameter to be exceptional.
 
 \paragraph{Proof strategy.}
 Starting with infinitely many real shapes at a fixed mass, we produce a curve of complexified configurations. At a suitable place of the curve some coordinate or force diverges after balancing its two complex projections. Only a finite catalogue of patterns for these orders is possible. The issues are (i) which algebraic exclusions survive on the mass line, (ii) which of the remaining ends could belong to a curve obtained from physical configurations, and (iii) whether a solution of leading equations actually satisfies the full six-body equations. Each question requires a different test.
@@ -94,7 +94,7 @@ The algebraic action $(z,w)\mapsto(bz,b^{-1}w)$ preserves all the equations and 
 Each $u_i$ satisfies a quadratic with nonzero leading coefficient. These choices determine the $v_i$, centering recovers $z_6,w_6$, and each $p_{ij}$ has only two choices. On the real locus the mutual distances determine the shape up to isometry, with at most two choices if only orientation-preserving isometries are identified. Consequently infinitely many normalized physical shapes give an infinite set of points of the slice with varying squared distances.
 
 \subsection{Why a curve supplies a finite search}
-The Zariski closure of an infinite set in this affine variety has positive dimension. Choose an irreducible component on which some $D_{ij}$ is nonconstant. Regular functions constant on this component retain their values on any curve cut out in it. More explicitly, at a smooth point where the differential of a nonconstant distance is nonzero, general hyperplanes through the point cut out a curve on which the distance still varies. When physical inequalities or a specified body at the origin are required, first partition the real set and then take the relevant closure. The argument below derives the constants in \eqref{intro:energy} and a second scalar on generic fixed-mass fibres, so that their values at the chosen real stratum carry over to the curve.
+For the constancy of the normalized energy at fixed masses see Albouy and Kaloshin \cite[Lemma~2]{AK}. Chen and Tong \cite[Lemmas~2.1--2.2]{CT} pass from a positive real arc to a complex curve of normalized configurations at that energy, with a varying squared distance. The Zariski closure of an infinite set in this affine variety has positive dimension. Choose an irreducible component on which some $D_{ij}$ is nonconstant. Regular functions constant on this component retain their values on any curve cut out in it. More explicitly, at a smooth point where the differential of a nonconstant distance is nonzero, general hyperplanes through the point cut out a curve on which the distance still varies. When physical inequalities or a specified body at the origin are required, first partition the real set and then take the relevant closure. The argument below derives the constants in \eqref{intro:energy} and a second scalar on generic fixed-mass fibres, so that their values at the chosen real stratum carry over to the curve.
 
 Let $C$ be such a curve and $\bar C$ its smooth projective model. At a place $P$ write $v$ for the order of vanishing of a rational function, so poles have negative order. The pair-force terms in the two projections are $F^z_{ij}=p_{ij}^3 z_{ij}$ and $F^w_{ij}=p_{ij}^3 w_{ij}$. To compare their orders one may replace $(z,w)$ by $(bz,b^{-1}w)$ over a finite extension of the local parameter field. This makes the minimum order among the positions and pair forces in each projection the same. If that common minimum is negative we have a singular place. At a nonsingular place all the $D_{ij}$ have order zero: after balancing, each difference has nonnegative order and the two forces, with doubled orders $-v(z_{ij})-3v(w_{ij})$ and $-3v(z_{ij})-v(w_{ij})$, have nonnegative order as well. Hence both difference orders are zero.
 
@@ -266,6 +266,7 @@ All unit masses also fail. Thus only $t=1/4$ can supply a nonpositive
 end in diagram 8. This sharper assertion is unnecessary for the later count.
 
 \paragraph{Whole-diagram exclusions.}
+Earlier reductions by Aquino-Michaels give mass obstructions for diagrams 52, 63, 65 and 67 and use positive inertia to exclude diagram 6 on branches arising from real configurations \cite{Residual}. Here each exclusion used from the catalogue is checked on the specialized mass line.
 Propositions~6.4 and 6.7 and Theorem~6.5 of~\cite{Tomar} rule out
 diagrams 90, 82 and 89 respectively. Proposition~6.8 requires three
 disjoint equal-mass pairs for 81, impossible for $t\ne1$.
@@ -278,7 +279,7 @@ additional whole-diagram exclusion needed for 98.
 
 \section{The two-triangle degeneration (diagram 98)}\label{early:98}
 
-Consider masses proportional to \( (1,1,1,1,1,k) \), with \(k>0\). In a diagram-98 singular place, two triples separate in opposite complex coordinates. After interchanging the triples and relabelling bodies, their masses are \(\mu=(1,1,1)\) and \(\nu=(1,1,k)\). We first restrict their leading coefficients, then use a cubic-order necessary condition to exclude the remaining shapes for generic mass. In this section we write $k=t$ to leave a separate variable available for a triangle shape.
+Consider masses proportional to \( (1,1,1,1,1,k) \), with \(k>0\). In a diagram-98 singular place, two triples separate in opposite complex coordinates. After interchanging the triples and relabelling bodies, their masses are \(\mu=(1,1,1)\) and \(\nu=(1,1,k)\). We first restrict their leading coefficients, then use a cubic-order necessary condition to exclude the remaining shapes for generic mass. In this section we write $k=t$ to leave a separate variable available for a triangle shape. For arbitrary positive masses Chen and Tong already exclude a first limit consisting of two Lagrange triples on a curve through a positive physical point \cite[Prop.~5.21]{CT}. For first limits containing an Euler triple they derive the nine-term signed cross-torque equation \cite[eq.~(113)]{CT}. We use the five-equal-mass hypothesis to analyze higher-order lifting for signed curves.
 
 \begin{proposition}\label{early:leading} There exists an explicitly defined nonzero polynomial \(P\in\mathbb Z[k]\) with \(P(3)\ne0\) such that, for every \(k>0\) with \(P(k)\ne0\), every solution to the diagram-98 leading shape and cross-torque conditions has both of the following properties.
 
@@ -944,6 +945,7 @@ There are 28 core-bearing placements of diagram 93 and six more in a
 core-free cell. In the following paragraphs we use the labels of
 \cite[Theorem 6.15]{Tomar}: $B=\{1,2,3\}$ is the fully circled triple
 and $A=\{4,5,6\}$ its complement, with 4 the special vertex.
+Chen and Tong derive a signed three-term sum on $B$ for a first limit of a curve through a positive physical point \cite[Prop.~5.16, eq.~(109)]{CT}. For unit masses and projected coordinates proportional to $(1,\omega,\omega^2)$, where $\omega$ is a primitive cube root of unity, the three signed roots may be chosen proportional to $1,\omega,\omega^2$. Their sum vanishes for every $t$ when the marked body lies in $A$.
 To see directly what the projected shape and torque conditions on $B$
 imply on our mass line, label the triple $(1,1,m)$ and use the shape
 variable $x$ of that theorem. This relabeling is permissible because
@@ -1160,6 +1162,7 @@ $E\ge S\sqrt{S/(ME)}$, hence
 \begin{equation}\label{br-jensen}
  E\ge 5(t+2)/(t+5)^{1/3}.
 \end{equation}
+This is also the direct specialization of the positive-configuration bound $M^{1/3}E\ge\sum_{i<k}m_i m_k$ used by Chen and Tong \cite[proof of Prop.~5.21, following (112)]{CT}: the total mass is $5+t$ and the ten unit pairs and five marked pairs contribute $10+5t$.
 Also $t\sum_{i\ne j}p_{ij}\le E$. Since
 $-tq_j=\sum_{i\ne j}q_i$, Cauchy's inequality gives
 $t^2|q_j|^2\le5(I-t|q_j|^2)$. We obtain
@@ -1337,6 +1340,7 @@ $t=\infty$.
 
 We use the necessary leading equations for this diagram from
 \cite[\S6.7, Lemmas 6.16(b) and 6.17(b)]{Tomar}.
+For a first limit on a curve through a positive physical point, Chen and Tong obtain a necessary ambient mass condition by separating the possibilities for the three inverse-distance cubes incident to the shared body \cite[Prop.~5.20]{CT}. Here we keep the signs and specialize the quartet equations and their lifts on the five-equal-mass line.
 In the large projection take $X_c=0$, and normalize one outer $X$ to $1$.
 Write $X_{ij}=X_i-X_j$, $Y_{ij}=Y_i-Y_j$.
 All six internal $X_{ij},Y_{ij}$ are nonzero. Each edge has its own signed inverse
@@ -1721,7 +1725,7 @@ These are first nonzero orders in the indicated residue fields. For instance, at
 Any solution over $\overline{\mathbb Q(t)}$ has a Puiseux expansion at a place over $t=\infty$ after extending constants. The preceding exhaustive argument rules out every such expansion, including those where original inverse distances or coordinates escape to infinity. Finally, the projection to the mass line of the algebraic necessary equations, with their nonvanishings imposed, is constructible. An infinite constructible subset of the line contains a nonempty open subset and has a nonempty generic fibre. The exceptional set is therefore finite. Together with the two lifting exclusions this proves Proposition~\ref{nf:prop}.
 \section{The unit binary opposite a marked quartet}\label{ff:section}
 
-Suppose the mass $t$ belongs to the quartet in diagram 88. The two
+For diagram 88 Chen and Tong obtain a necessary mass polynomial for a first limit on a curve through a positive physical point by taking a norm of the crossed torque over four-body shapes \cite[Prop.~5.14]{CT}. Suppose the mass $t$ belongs to the quartet in diagram 88. The two
 masses of the separated binary are then one. We prove that the
 necessary quartet equations have no point over
 $\overline{\mathbb Q(t)}$. This step controls a complex algebraic
@@ -1990,6 +1994,7 @@ Here $L$ and every $a_i$ are nonzero. The marked mass enters the
 second equation through $v_0+v_1+v_2+v_3=0$.
 
 \paragraph{The zero multiplier.}
+Aquino-Michaels confines masses supporting a zero-force quartet to a proper algebraic subset by treating signed collinear forces and noncollinear rank-one stresses \cite[Lemmas~5.3--5.5, Thm.~5.6]{Residual}. We check the relevant special fibre here.
 When $k=0$, multiply all inverse distances by $L^{1/3}$ and divide
 the positions by that scalar. Write $b_i$ for the new star inverse
 distances. Equation \eqref{ff:stress} becomes
@@ -2165,17 +2170,22 @@ The proof exhibits mechanisms by which the generic exclusions might fail at a sp
 The separate \suppfile{} contains the verifier sources, the input conventions for the external catalogue, and instructions for replaying the following calculations. The analytic arguments, normalized equations and specialization steps are given in the text.
 \begin{itemize}
 \item To reconstruct the catalogue, run \texttt{python3 run.py catalogue} with \texttt{--source}, \texttt{--cores}, and \texttt{--hand} pointing to the source tree and the two certificate archives identified in the supplement \cite{Data}. It specializes the core mass identities and compares the resulting lists with the recorded tables. The lists distinguish a marked placement (one cell and one choice of mass slot) from its symmetry class.
-\item Run \texttt{python3 run.py arithmetic} for the diagram tests. The triangle tests use exact rational enclosures. Other tests include polynomial greatest common divisors, finite-field calculations, exhaustive constraint checks, and a zero-dimensional polynomial solver for the three regular quartet charts. The detailed equations in Sections~\ref{nf:signed}--\ref{ff:section} specify which denominators may be inverted and which other charts cover their zeros.
+\item Run \texttt{python3 run.py arithmetic} for the diagram tests. The triangle tests use exact rational enclosures. Other tests include polynomial greatest common divisors, finite-field calculations, exhaustive constraint checks, and the polynomial-system solver \texttt{msolve}~\cite{msolve} for the three regular quartet charts. The detailed equations in Sections~\ref{nf:signed}--\ref{ff:section} specify which denominators may be inverted and which other charts cover their zeros.
 \item The supplement also identifies the Lean statements for the algebraic identities, inequalities or finite enumerations that have been formalized. The physical-to-algebraic reduction, catalogue application, lifting arguments and the entire implication in Theorem~\ref{intro:main} have a mathematical exposition here. The end-to-end theorem has no Lean formalization in this release.
 \end{itemize}
 
 \paragraph{Acknowledgment and provenance.}
 The catalogue and the diagrams are due to the external sources listed below. This article incorporates and expands arguments developed in the author's earlier manuscripts on the five-equal-mass family, the reduction of its diagram list, the physical energy bounds and the final two diagrams. All four stages used in the proof are presented here. The supplementary programs give machine-readable forms of its finite computations.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}\small\setlength{\itemsep}{1pt}
 \bibitem{Smale} S. Smale. Mathematical problems for the next century. \emph{The Mathematical Intelligencer} \textbf{20} (1998), 7--15. \href{https://doi.org/10.1007/BF03025291}{doi:10.1007/BF03025291}.
 \bibitem{AK} A. Albouy and V. Kaloshin. Finiteness of central configurations of five bodies in the plane. \emph{Annals of Mathematics} \textbf{176} (2012), 535--588. \href{https://doi.org/10.4007/annals.2012.176.1.10}{doi:10.4007/annals.2012.176.1.10}.
-\bibitem{CC} K.-M. Chang and K.-C. Chen. Toward finiteness of central configurations for the planar six-body problem by symbolic computations. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853} (2023).
+\bibitem{CC} K.-M. Chang and K.-C. Chen. Toward finiteness of central configurations for the planar six-body problem by symbolic computations. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853} (2023). The journal articles are \href{https://doi.org/10.1016/j.jsc.2023.102277}{(I) Determine diagrams and orders}, \emph{J. Symbolic Comput.} \textbf{123} (2024), 102277, and \href{https://doi.org/10.1137/24M1716070}{(II) Determine mass relations}, \emph{SIAM J. Appl. Dyn. Syst.} \textbf{24} (2025), 2369--2404.
+\bibitem{CT} Z. Chen and Z. Tong. Finiteness of planar central configurations of six bodies for all positive masses: Part I, exceptional-mass first limits. \href{https://arxiv.org/abs/2610.23329v1}{arXiv:2610.23329v1} (2026).
+\bibitem{Residual} K. Aquino-Michaels. Reducing the Chang--Chen residual: certified eliminations in the planar six-body central-configuration problem. \href{https://github.com/no-way-labs/smale6-residual/tree/07f6c99}{Preprint and certificates, revision 07f6c99} (2026).
+\bibitem{GenericN} K. Aquino-Michaels. Generic finiteness of planar central configurations for every number of bodies. \href{https://doi.org/10.5281/zenodo.24371245}{Preprint, Zenodo 24371245} (2026).
+\bibitem{DP} T. Dias and B.-Y. Pan. Generic finiteness for a class of symmetric planar central configurations of the six-body problem and the six-vortex problem. \emph{J. Dynam. Differential Equations} \textbf{32} (2020), 1579--1602. \href{https://doi.org/10.1007/s10884-019-09765-y}{doi:10.1007/s10884-019-09765-y}.
+\bibitem{msolve} J. Berthomieu, C. Eder and M. Safey El Din. msolve: a library for solving polynomial systems. \emph{Proceedings of ISSAC 2021}, 51--58. \href{https://doi.org/10.1145/3452143.3465545}{doi:10.1145/3452143.3465545}.
 \bibitem{MZplanar} M. Moczurad and P. Zgliczy\'nski. Central configurations in planar $n$-body problem with equal masses for $n=5,6,7$. \emph{Celestial Mechanics and Dynamical Astronomy} \textbf{131} (2019), article 46. \href{https://doi.org/10.1007/s10569-019-9920-6}{doi:10.1007/s10569-019-9920-6}.
 \bibitem{MZnear} M. Moczurad and P. Zgliczy\'nski. Central configurations in the spatial $n$-body problem for $n=5,6$ with equal masses. \emph{Celestial Mechanics and Dynamical Astronomy} \textbf{132} (2020), article 56. \href{https://doi.org/10.1007/s10569-020-09993-1}{doi:10.1007/s10569-020-09993-1}.
 \bibitem{Tomar} T. S. Tomar. Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean. Research preprint, \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377v1} (2026).

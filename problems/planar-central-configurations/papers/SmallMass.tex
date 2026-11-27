@@ -52,7 +52,7 @@ Write the primary positions as $Q$ and the light position as $u$. At $(a,0)$ the
 \[
  W_Q(u)=\tfrac12 |u|^2+\sum_{j=1}^n \frac{a_j}{|u-Q_j|}.
 \]
-For each such $Q$ the test-body equilibria form a finite set by Hampton and Jensen \cite[Theorem 3.1]{hj}, applied to a zero-mass additional body. Their primaries are fixed. For positive $t$ our primaries are free to move in response to the light body.
+For the corresponding four-body problem, Arenstorf studied three fixed primary masses and a fourth small mass~\cite{arenstorf}. Figueras, Tucker and Zgliczyński later combined analysis and interval computation to count equilibria in the planar circular restricted four-body problem~\cite{ftz}. For each such $Q$ the test-body equilibria form a finite set by Hampton and Jensen \cite[Theorem 3.1]{hj}, applied to a zero-mass additional body. Their primaries are fixed. For positive $t$ our primaries are free to move in response to the light body.
 
 \begin{lemma}[Compactness with one vanishing mass]\label{compactone}
 If $b\to a\in(0,\infty)^n$ and $t\downarrow0$, every sequence of normalized physical configurations of masses $(b,t)$ has a subsequence converging in the chosen slice to a collision-free solution of the divided boundary equations.
@@ -115,6 +115,8 @@ Total & 354 & & 4104 & \\
 \end{tabular}
 \end{center}
 The second column divides $5!$ by the order of the shape's rotation group, respectively $2,4,1,1,5$. Each shape has a reflective symmetry \cite{equal}, so allowing both orientations before assigning labels adds no missing unlabelled shapes. These multiplicities sum to the independent total in \cite[Table 3]{near}.
+
+Palmore's continuation theorem for collinear $n$-body primaries gives $n!(n+3)/2$ labelled oriented branches with one additional light body~\cite{palmore}. At $n=5$ it gives precisely the first product, $480$. Of these branches, $6!/2=360$ remain collinear for positive sixth mass~\cite{moulton}. For the second row, Idrisi and Ullah reported twelve restricted equilibria for a square of primaries with a central primary~\cite{square}. For the last row, Garc\'ia-Azpeitia and Ize proved the existence of the central equilibrium and at least three noncentral rotation orbits for the regular polygon without a central primary~\cite[Props.~14 and 17(b)]{restrictedpolygon}. For a pentagon this gives at least $1+3\cdot5=16$ roots. The box exhaustion above proves exactness for all five rows and isolates the roots needed for continuation in the six masses.
 
 \begin{figure}[htbp]
 \centering
@@ -270,7 +272,7 @@ For each primary shape we need an upper bound on the sum of the local orders of 
  p_j^2\big((x-X_j)^2+(s-Y_j)^2\big)=1.
 \]
 Adjoin the two components of $u+\sum_j a_jp_j^3(Q_j-u)=0$. This gives $n+2$ polynomial equations of total degree at most four in $n+2$ unknowns. At a physical zero, every $p_j$ is a regular implicit coordinate, since the derivative of its distance equation with respect to $p_j$ is nonzero. Complexifying the remaining implicit elimination in the proof leaves the single holomorphic germ $g(s,a,0)$. The local intersection multiplicity is its order $k$: the local quotient after the regular eliminations is the ring of one-variable holomorphic germs modulo $g$. Each physical root is thus an isolated complex root on its distance sheet. The isolated-root form of B\'ezout's inequality bounds the sum of these multiplicities by $4^{n+2}$, also in the presence of other components \cite[Theorem 3]{bezout}. 
-A sharper estimate uses three blocks of variables. Pass to complex coordinates
+Zolotov obtained the dimension-dependent bound $4\cdot7^{d+n}$ on the number of isolated critical points of this potential for $n$ centres in $d$ dimensions~\cite[Thm.~4]{zolotov}. Here we also need to control the sum of the local multiplicities. A sharper estimate uses three blocks of variables. Pass to complex coordinates
 $z=x+is$, $w=x-is$ and put all $p_j$ in one block. With fixed centres $(z_j,w_j)$ the equations become
 \[
  p_j^2(z-z_j)(w-w_j)=1,\qquad
@@ -344,5 +346,11 @@ The root certificates and the implicit function theorem give the exact count in 
 \bibitem{tomfive} T. S. Tomar, Smale's sixth problem for five bodies in the plane, with a proof formalized in Lean (2026), \href{https://arxiv.org/abs/2610.13100v2}{arXiv:2610.13100v2}.
 \bibitem{tomspecial} T. S. Tomar, Complex central configurations of the planar five-body problem at special masses (2026), \href{https://hexagonmath.org/2611.00485v1}{Hexagon 2611.00485v1}.
 \bibitem{stacks} The Stacks Project, Section 29.21 and Lemma 29.57.2, \href{https://stacks.math.columbia.edu/tag/01TH}{Tag 01TH} and \href{https://stacks.math.columbia.edu/tag/01TI}{Tag 01TI}.
+\bibitem{palmore} J. I. Palmore, Collinear relative equilibria of the planar $N$-body problem, \emph{Celestial Mech.} \textbf{28} (1982), 17--24. \href{https://doi.org/10.1007/BF01230656}{doi:10.1007/BF01230656}.
+\bibitem{square} M. J. Idrisi and M. S. Ullah, Central-body square configuration of restricted six-body problem, \emph{New Astronomy} \textbf{79} (2020), 101381. \href{https://doi.org/10.1016/j.newast.2020.101381}{doi:10.1016/j.newast.2020.101381}.
+\bibitem{restrictedpolygon} C. Garc\'ia-Azpeitia and J. Ize, Global bifurcation of planar and spatial periodic solutions in the restricted $n$-body problem, \emph{Celest. Mech. Dyn. Astron.} (2011). \href{https://doi.org/10.1007/s10569-011-9354-2}{doi:10.1007/s10569-011-9354-2}.
+\bibitem{zolotov} V. Zolotov, Upper bounds for the number of isolated critical points via Thom--Milnor theorem (2023). \href{https://arxiv.org/abs/2307.00312}{arXiv:2307.00312}.
+\bibitem{arenstorf} R. F. Arenstorf, Central configurations of four bodies with one inferior mass, \emph{Celestial Mech.} \textbf{28} (1982), 9--15.
+\bibitem{ftz} J.-L. Figueras, W. Tucker and P. Zgliczyński, The number of relative equilibria in the PCR4BP, \emph{J. Dyn. Differ. Equ.} \textbf{36} (2024), 2827--2877. \href{https://doi.org/10.1007/s10884-022-10230-6}{doi:10.1007/s10884-022-10230-6}.
 \end{thebibliography}
 \end{document}

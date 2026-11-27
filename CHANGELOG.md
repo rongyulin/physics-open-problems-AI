@@ -8,6 +8,12 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 
 ### English
 
+- **Six-body finiteness and related results.** The finiteness papers now cite Chen and Tong where their general energy inequality specializes to five equal masses and where they already excluded the double-Lagrange physical branch of diagram 98. The counting paper credits Palmore’s theorem for the 480 configurations continued from collinear five-body primaries. The Morse-index, bifurcation, geometry and signed-equilibrium papers cite earlier results at the relevant arguments. The parameter-study archive includes the revised copies of its three papers. [Standalone finiteness paper](./problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf) · [The 4,104-count paper](./problems/planar-central-configurations/papers/SmallMass.pdf) · [Guide to the eleven papers](./problems/planar-central-configurations/papers/README.md)
+
+- **Dimension-12 local SIC Commentary.** Added a dated companion deriving the nonexistence result from the signed Pauli spectra computed for a two-qubit stabilizer-entropy problem. It documents manuscript completion and the two repository commits and explains the attained minimum of the fifteen squared deviations. [Commentary (PDF)](./problems/local-sic-dimension-12/Commentary.pdf) · [LaTeX](./problems/local-sic-dimension-12/Commentary.tex) · [Original paper](./problems/local-sic-dimension-12/LocalSIC12.pdf)
+
+- **Sources for quantum information and Potts ergodicity.** Added the earlier chain-ring distance comparison and local-dimension lifting results to the stabilizer-code paper, the relevant precedents in Bell inequalities, singlet extraction and graph-based dimension witnesses to the three quantum-correlation papers, and Fisk’s original theorem to the Potts report. [Stabilizer codes][qec] · [Bell inequalities][i3322] · [CHSH extraction][chsh] · [Perkel contextuality][perkel] · [Potts report](./problems/potts-wsk-ergodicity/PottsSix_report_zh.md)
+
 - **Standalone six-body finiteness paper.** The eleventh manuscript presents in one place the computer-assisted proof of generic finiteness for real planar central configurations on the five-equal-mass line. The paper guide distinguishes independent results on counts, bifurcations, Morse indices and signed equilibria from the three papers documenting successive reductions. [Standalone PDF](./problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf) · [LaTeX](./problems/planar-central-configurations/papers/FiveEqualFiniteness.tex) · [Paper guide](./problems/planar-central-configurations/papers/README.md)
 
 - **Signed four-body absolute equilibria.** The tenth manuscript classifies all positive marked mass ratios admitting zero net force at four distinct points. It gives two ratios in the noncollinear case and four in the collinear case, with exact real-coordinate witnesses using signed inverse distances. [Paper (PDF)](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.pdf) · [LaTeX source](./problems/planar-central-configurations/papers/SignedQuartetEquilibria.tex)
@@ -29,6 +35,12 @@ Repository updates are listed newest first. Dates use Beijing time (UTC+8).
 - **Licensing and verification.** Released the papers and original documentation under CC BY 4.0 and the original proof and verification code under MIT. The five manuscript PDFs now carry a license and source link. Each of the five Lean project archives includes both license texts, and all six Lean directories have bilingual reproduction instructions. [Licensing commit][liccommit]
 
 ### 中文
+
+- **六体有限性及相关论文的引文。** 在五等质量能量下界的推导处，以及图 98 中双拉格朗日物理分支的排除处，补引 Chen 与 Tong 的先行结果。在 4,104 个构型的计数表旁，注明由共线五体主构型延拓得到的 480 个构型已由 Palmore 的定理给出。关于 Morse 指数、分岔、构型几何和有符号平衡的论文也在相关论证处补入了原始文献。参数研究复现包所附的三篇论文也已同步。[独立有限性论文](./problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf) · [4,104 个构型的计数论文](./problems/planar-central-configurations/papers/SmallMass.pdf) · [十一篇论文导读](./problems/planar-central-configurations/papers/README.md#中文)
+
+- **十二维局域 SIC 补记。** 新增独立的 *Commentary*，说明如何由双比特稳定子熵研究中的带符号泡利谱表推出局域 SIC 不存在，列明本稿留存与双方提交的时间，并解释原稿给出的十五项偏差平方和的可达最小值。[补记 PDF](./problems/local-sic-dimension-12/Commentary.pdf) · [LaTeX 源稿](./problems/local-sic-dimension-12/Commentary.tex) · [原论文](./problems/local-sic-dimension-12/LocalSIC12.pdf)
+
+- **量子信息与 Potts 遍历性的引文。** 稳定子码论文补引链环码距比较与局域维数提升的前作；三篇量子关联论文分别补引 Bell 不等式、单态提取和基于互斥图的维数见证文献；Potts 报告在遍历判据处补引 Fisk 原文。[稳定子码][qec] · [Bell 不等式][i3322] · [CHSH 提取][chsh] · [Perkel 情境性][perkel] · [Potts 报告](./problems/potts-wsk-ergodicity/PottsSix_report_zh.md)
 
 - **独立的六体有限性论文。** 专题第十一篇论文集中给出五重等质量线上实平面中心构型一般有限性的计算机辅助证明。新增论文导读，分别标明构型计数、分岔、Morse 指标和有符号平衡等独立成果，以及记录候选逐步排除过程的三篇论文。[独立论文 PDF](./problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf) · [LaTeX 源稿](./problems/planar-central-configurations/papers/FiveEqualFiniteness.tex) · [论文导读](./problems/planar-central-configurations/papers/README.md#中文)
 

@@ -43,7 +43,7 @@ Indeed, multiplication first by the conjugate under $c\mapsto-c$ and then by the
 
 The sixteen sign choices in the row at $a$ give degree-eight polynomials. The sixteen choices in the row at $b$ give degree-sixteen polynomials. The ancillary script \texttt{five\_axial.py} constructs them by \eqref{eq:axial}--\eqref{eq:norm} and computes the gcd of each of the $16^2=256$ pairs by exact arithmetic in $\mathbb Q(w)[a]$. All gcds have degree zero. The computation includes both possibilities for the sign of the shared edge in each row independently. An independent check of the univariate gcds by specialization sends $w$ to $13$ modulo $61$. Both degrees are preserved throughout, and all 256 gcds again have degree zero. No common root of the two necessary equations exists.
 \end{proof}
-The physical exclusion alone is immediate because all five positive distances would be equal, and a real circle intersects a line in at most two points. The three different squared distances and the independent signs in the proof arise in the complex algebraic problem.
+For real positive masses and positive distances, the perpendicular bisector theorem excludes exactly $n-1$ collinear bodies for every $n>3$, as Hampton observes in the corollary following his Theorem~3 \cite[Ch.~4]{hampton}. In the present case, all five positive distances would be equal, and a real circle intersects a line in at most two points. The three different squared distances and the independent signs in the proof arise in the complex algebraic problem.
 
 \begin{corollary}\label{cor:anyfive}
 Over $\overline{\mathbb Q(t)}$ with masses $(1,1,1,1,1,t)$, there is no signed complex planar central configuration with precisely five collinear bodies, for any choice of those five labels. For the placement with $t$ on the line, the two row equations give an explicitly defined nonzero obstruction polynomial on the parameter line.
@@ -63,7 +63,7 @@ On a nonisotropic line take an orthogonal coordinate $x$. The signed scalar equa
 \begin{equation}\label{eq:one}
  x_i=\sum_{j\ne i} s_{ij}m_j(x_i-x_j)^{-2},\qquad s_{ji}=-s_{ij}.
 \end{equation}
-The Newtonian sign sheets have $s_{ij}=\pm1$ for $i\ne j$. The following argument applies even to arbitrary fixed skew coefficients.
+The Newtonian sign sheets have $s_{ij}=\pm1$ for $i\ne j$. Albouy and Moeckel studied the inverse problem for real Newtonian configurations, in which the positions are prescribed and the masses are to be found \cite{am}. Here the masses are fixed, the positions are unknown, and the argument allows arbitrary fixed skew coefficients.
 \begin{theorem}\label{th:val}
 Let $k$ be an algebraically closed field of characteristic zero, and let $s_{ij},m_i\in k$. If each nonempty subset of the masses has nonzero sum, then the collision-free solution set of \eqref{eq:one} is finite for every fixed skew array $s$. The union over all Newtonian sign sheets is also finite.
 \end{theorem}
@@ -90,6 +90,8 @@ Join two vertices when the Hermitian separation is at most $R/[2(n-1)]$. The com
 \paragraph{Verification.} \texttt{CollinearValuation.lean} proves the actual finiteness of the signed noncollision scalar solution set over $\overline{\mathbb Q(t)}$ and the complex scalar fiber for each positive real $t$. The code proves integrality through the intersection of valuation rings, then uses an ultrafilter over a hypothetical infinite solution set to deduce finiteness. Its convention $0^{-1}=0$ has no effect on the final collision-free set. The geometric reduction in Theorem~\ref{th:five} is supplied above. Its exact arithmetic is reproduced by \texttt{five\_axial.py}. In addition, \texttt{FiveAxialArithmetic.lean} checks the norm tables modulo $61$ against an independent force formula at seventeen points, the preserved degrees, and all 256 Euclidean sweeps. The degree bounds follow directly from the displayed formulas. The translation from positions to the residue-field calculation remains in the manuscript. The unsolved chart contains general asymmetric noncollinear six-body configurations. No claim of bibliographic priority is made for the collinear valuation argument.
 
 \begin{thebibliography}{9}
+\bibitem{hampton} M. Hampton, \emph{Concave Central Configurations in the Four-Body Problem}, Ph.D. dissertation, University of Washington (2002), Ch.~4. \href{https://www.d.umn.edu/~mhampton/MarshallHamptonThesisPreprint.pdf}{Dissertation}.
+\bibitem{am} A. Albouy and R. Moeckel, The inverse problem for collinear central configurations, \emph{Celest. Mech. Dynam. Astron.} \textbf{77} (2000), 77--91. \href{https://doi.org/10.1023/A:1008345830461}{Publisher}.
 \bibitem{moulton} F. R. Moulton, The straight line solutions of the problem of $n$ bodies, \emph{Annals of Mathematics} (2) \textbf{12} (1910), 1--17.
 \bibitem{tomar} T. S. Tomar, Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean, \href{https://hexagonmath.org/2611.00377v1}{Hexagon 2611.00377v1} (2026), Theorem 1.1.
 \bibitem{stacks} The Stacks Project Authors, \href{https://stacks.math.columbia.edu/tag/090P}{Lemma 10.50.11, Tag 090P}, valuation rings.

@@ -28,8 +28,8 @@ simple points in the unrestricted geometric generic fibre, assuming the
 previous small-mass count. Endpoint catalogues and local certificates
 identify three folds and three symmetry-breaking pitchforks in $0<t<1$.
 They account for the observed net change of 480 labelled oriented
-real configurations. Global real counts between the events and generic
-finiteness of the entire six-body fibre on this line remain open.
+real configurations. These local results leave open the real counts between the events and do
+not settle generic finiteness of the entire complex six-body fibre on this line.
 \end{abstract}
 \section{The mass parameter and the global target}
 At a central configuration each gravitational acceleration is
@@ -39,8 +39,14 @@ labels unless otherwise specified. The preprint of Tomar~\cite{Tomar}
 proves finiteness off an algebraic set containing this whole mass line.
 Its approach studies a complex curve that would result from infinitely
 many physical shapes at fixed masses. Its possible singular places have
-combinatorial types called diagrams. Diagram 98 involves two triples
-of bodies and a necessary leading torque balance between them.
+combinatorial types called diagrams. We use the numbering of Chang and
+Chen, whose two papers determine diagrams and orders~\cite{CC1} and
+derive mass relations~\cite{CC2}. Diagram 98 involves two triples of
+bodies and a necessary leading torque balance between them. Aquino-Michaels
+identifies it with diagrams 88 and 94 as a residual case to which the
+Chang--Chen wedge test applies~\cite{residual}. A subsequent
+standalone paper~\cite{realgeneric} establishes finiteness of all
+physical shapes on this line outside finitely many positive algebraic ratios.
 Here $t$ denotes a mass parameter. It is distinct from the two projected
 shape variables of the triples. In the section on diagram 98 the same
 mass parameter is denoted by $k$.
@@ -117,7 +123,9 @@ r_j^2=\mu_j^2\Lambda_j(x;1),\quad
 s_l^2=\nu_l^2\Lambda_l(y;k)
 \]
 
-vanishes. The signs of a row or column change when a corresponding square-root branch changes. Rank and the equation with the transformed sign matrix are invariant. Overall sign is irrelevant, so require \(\epsilon_{11}=1\). Tomar's Remark 6.14 observes that rank-one matrices include the factorable sums that vanish for an equal-mass triple. The corresponding original obstruction polynomial therefore vanishes identically on this line. The proposition tests the other signs and the other equal-triple shapes separately.
+vanishes. Chen and Tong give the corresponding nine-term signed cross
+torque for a first limit with an Euler factor~\cite[Sec.~5.24, Eq.~(113)]{CT}.
+The signs of a row or column change when a corresponding square-root branch changes. Rank and the equation with the transformed sign matrix are invariant. Overall sign is irrelevant, so require \(\epsilon_{11}=1\). Tomar's Remark 6.14 observes that rank-one matrices include the factorable sums that vanish for an equal-mass triple. The corresponding original obstruction polynomial therefore vanishes identically on this line. The proposition tests the other signs and the other equal-triple shapes separately.
 
 \subsection*{Reduction of the shape equations}
 
@@ -255,6 +263,13 @@ Run \texttt{python3 Diagram98.py} (Python 3.10+ standard library) and \texttt{py
 \textbf{Proposition.} Outside a finite algebraic set of parameters
 \(k>0\), no diagram-98 singular place exists for the masses
 \((1,1,1,1,1,k)\). The exclusion holds at \(k=3\).
+
+Chen and Tong~\cite[Prop.~5.21]{CT} already exclude a first limit with
+two Lagrange triples at arbitrary positive masses when the curve contains
+a physical positive point. Their argument uses the value of the energy
+at that point. The proposition above concerns singular places on the
+signed complex sheets on this mass line. Its cubic condition also tests
+lifts for which no physical point on the curve is given.
 
 \paragraph{A chart near the two triangles.}
 Use Tomar's exponents in Lemma 6.10. By a complex rotation fix
@@ -929,6 +944,24 @@ support at most one sixth mass there. This real sum-of-squares
 deduction should not be used to remove a complex component merely because
 $D$ vanishes on it.
 
+The qualitative exception to recovery can also be deduced from rigidity
+and stacking results. For a noncollinear configuration, the one-mass
+rigidity theorem of Fernandes and Mello~\cite{FM} forces the remaining
+points onto a circle about the varied mass. Indeed the Andoyer equations
+at a fixed shape are affine in that mass, so two admissible values also
+give the equations at zero mass. The five remaining points therefore form
+a central configuration extendible by a body at the circle centre.
+Yu and Zhu~\cite[Prop.~3(i)]{YZ} show that for five such primaries the
+circle centre is their centre of mass. Their Remark~1 explains the
+limitation of the general centre-of-mass assertion in Lemma~2.3 of~\cite{FM}.
+The centred five-body classification of Llibre and Valls~\cite[Thm.~2]{LV}
+then gives the regular pentagon with equal masses. For the equal-mass
+case see also Cors, Hall and Roberts~\cite[Cor.~3.3]{CHR}, and for
+planar stacked configurations with four to seven bodies see~\cite{FSV}.
+For collinear primaries, five distinct points cannot be equidistant from
+the marked body. The formula $t=N/D$ above thus gives the mass explicitly
+off the known exception.
+
 For completeness suppose all radii have the same value $R$ and a
 positive mass works. Write $M=\sum a_i$, $c=M^{-1}\sum a_ix_i$,
 $s=R^{-3}$ and $\gamma=\lambda-ts$. Summing the primary equations
@@ -947,11 +980,15 @@ shapes.
 \section{The central pentagon branch}
 
 Put five labelled unit masses at the vertices of a regular pentagon of
-circumradius one and a mass $t>0$ at its centre. Meyer and Schmidt computed
-the positive degeneracy of this branch in 1988, with approximate value
-$6.478$ (\emph{SIAM J. Math. Anal.} 19, 1295--1313, Appendices A--B,
-doi:10.1137/0519094). We give a Cartesian verification, an exact algebraic
-specification of the parameter and the two indices on either side.
+circumradius one and a mass $t>0$ at its centre. Meyer and Schmidt gave a formula for
+the critical central mass, tabulated the positive value $6.478$ (approximately)
+for the pentagon, and studied the real branches bifurcating there
+\cite[Sec.~5 and Appendices~A--C]{MS}. Garc\'ia-Azpeitia and Ize later
+studied global bifurcation on the Newtonian polygonal branch
+\cite[Sec.~4.3, Prop.~28 and Thm.~30]{GI}. Their global result uses
+the numerical condition stated in their Remark~29. Here the Cartesian
+Hessian gives a primitive quartic and an isolating interval for the
+critical mass, together with the Morse indices on either side.
 
 Write $a=2\sin(\pi/5)$, $b=2\sin(2\pi/5)=(3-a^2)a$ and
 $h=a^{-1}+b^{-1}$. Then $a^4-5a^2+5=0$ and $1.17<a<1.18$.
@@ -1102,7 +1139,7 @@ published completeness theorem and the previous small-mass research
 manuscript. These statements have different verification scopes.
 All original manuscripts and accompanying documentation are licensed
 under CC BY 4.0, and original verification code under MIT.
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{Tomar} T. S. Tomar, \emph{Smale's sixth problem for six bodies in the plane:
 finiteness of central configurations for generic masses, with a proof formalized in Lean},
 research preprint (2026), \url{https://hexagonmath.org/2611.00377v1}.
@@ -1125,5 +1162,15 @@ $\mathbb R^3$}, \url{https://arxiv.org/abs/1812.00200}.
 \bibitem{Wang} Z. Wang, \emph{On the centered co-circular central configurations for
 the $n$-body problem}, J. Differential Equations 361 (2023), 376--390.
 \url{https://doi.org/10.1016/j.jde.2023.02.066}.
+\bibitem{CC1} K.-M. Chang and K.-C. Chen, \emph{Toward finiteness of central configurations for the planar six-body problem by symbolic computations. (I) Determine diagrams and orders}, J. Symbolic Comput. 123 (2024), 102277. \href{https://doi.org/10.1016/j.jsc.2023.102277}{doi:10.1016/j.jsc.2023.102277}.
+\bibitem{CC2} K.-M. Chang and K.-C. Chen, \emph{Toward finiteness of central configurations for the planar six-body problem by symbolic computations. (II) Determine mass relations}, SIAM J. Appl. Dyn. Syst. 24 (2025), 2369--2404. \href{https://doi.org/10.1137/24M1716070}{doi:10.1137/24M1716070}.
+\bibitem{CT} Z. Chen and Z. Tong, \emph{Finiteness of planar central configurations of six bodies for all positive masses: Part I, exceptional-mass first limits}, preprint (2026). \href{https://arxiv.org/abs/2610.23329v1}{arXiv:2610.23329v1}.
+\bibitem{realgeneric} Chatgpt, \emph{Planar Newtonian central configurations with five equal masses: finiteness for generic mass ratio}, research manuscript (2026). \href{https://github.com/rongyulin/physics-open-problems-AI/blob/main/problems/planar-central-configurations/papers/FiveEqualFiniteness.pdf}{Standalone paper}.
+\bibitem{FM} A. C. Fernandes and L. F. Mello, \emph{Rigidity of planar central configurations}, Z. Angew. Math. Phys. (2015). \href{https://doi.org/10.1007/s00033-015-0564-4}{doi:10.1007/s00033-015-0564-4}.
+\bibitem{LV} J. Llibre and C. Valls, \emph{The co-circular central configurations of the 5-body problem}, J. Dyn. Differ. Equ. 27 (2015), 55--67. \href{https://doi.org/10.1007/s10884-015-9429-y}{doi:10.1007/s10884-015-9429-y}.
+\bibitem{CHR} J. M. Cors, G. R. Hall and G. E. Roberts, \emph{Uniqueness results for co-circular central configurations for power-law potentials}, Physica D (2014). \href{https://doi.org/10.1016/j.physd.2014.05.003}{doi:10.1016/j.physd.2014.05.003}.
+\bibitem{FSV} A. C. Fernandes, A. M. Silva and C. Vidal, \emph{Some planar $(n,1)$-stacked central configurations}, Bull. Braz. Math. Soc. (2025). \href{https://doi.org/10.1007/s00574-025-00442-x}{doi:10.1007/s00574-025-00442-x}.
+\bibitem{GI} C. Garc\'ia-Azpeitia and J. Ize, \emph{Global bifurcation of polygonal relative equilibria for masses, vortices and dNLS oscillators}, J. Differential Equations (2011). \href{https://doi.org/10.1016/j.jde.2011.06.021}{doi:10.1016/j.jde.2011.06.021}.
+\bibitem{residual} K. Aquino-Michaels, \emph{Reducing the Chang--Chen residual: certified eliminations in the planar six-body central-configuration problem}, preprint and certificates (2026). \href{https://github.com/no-way-labs/smale6-residual/tree/07f6c99}{Revision 07f6c99}.
 \end{thebibliography}
 \end{document}

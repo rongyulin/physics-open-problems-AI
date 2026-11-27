@@ -18,7 +18,7 @@
 For planar Newtonian central configurations with masses $(1,1,1,1,1,t)$ we study which complex ends can be reached by curves used in a contradiction to real finiteness. For generic positive $t$ we exclude diagram 93 and the isolated marked binary in diagram 88. A lower bound for the energy of a real configuration and an upper bound for its logarithmic mass derivative constrain the algebraic critical values at an end. An additional estimate for a projected convex potential treats the isolated binary. The previously published physical list of 29 symmetry classes reduces to 22, three in diagram 88 and nineteen in diagram 94. Whether these classes support a curve relevant to real finiteness is open.
 \end{abstract}
 \section{Statement and real constraints}
-Normalize acceleration to $-q_i$ with center of mass zero. In a real configuration put $r_{ik}=|q_i-q_k|$, $p_{ik}=r_{ik}^{-1}$. The complex equations use $z_i=x_i+{\rm i}y_i$, $w_i=x_i-{\rm i}y_i$ and signed inverse distances satisfying $p_{ik}^2z_{ik}w_{ik}=1$. The normalized force equation in either coordinate $u$ is $u_i=\sum_{k\ne i}m_kp_{ik}^3u_{ik}$. We use the diagram numbers of Chang and Chen \cite{CC} and the normalized curve and catalogue of Tomar \cite{Tomar}. On a curve needed for a contradiction there is a varying squared distance, the potential is a nonzero constant, and there is an end at which the sum of the orders of the fifteen squared distances is nonpositive \cite[Corollaries 2.4 and 2.7]{Tomar}. Our baseline \cite{Prior} applies to these ends.
+Normalize acceleration to $-q_i$ with center of mass zero. In a real configuration put $r_{ik}=|q_i-q_k|$, $p_{ik}=r_{ik}^{-1}$. The complex equations use $z_i=x_i+{\rm i}y_i$, $w_i=x_i-{\rm i}y_i$ and signed inverse distances satisfying $p_{ik}^2z_{ik}w_{ik}=1$. The normalized force equation in either coordinate $u$ is $u_i=\sum_{k\ne i}m_kp_{ik}^3u_{ik}$. We use the diagram numbers of Chang and Chen \cite{CC} and the normalized curve and catalogue of Tomar \cite{Tomar}. On a curve needed for a contradiction there is a varying squared distance, the potential is a nonzero constant, and there is an end at which the sum of the orders of the fifteen squared distances is nonpositive \cite[Corollaries 2.4 and 2.7]{Tomar}. At fixed mass, constancy of the normalized energy on a component is due to Albouy and Kaloshin \cite[Lemma~2]{AK}. Chen and Tong give the corresponding curve construction from a positive real arc \cite[Lemmas~2.1--2.2]{CT}. Our baseline \cite{Prior} applies to these ends.
 \begin{theorem}
 On the five-equal-mass line, for all positive $t$ outside a finite set of algebraic numbers, an infinite set of real shapes would yield a nonpositive end in one of the 22 remaining physical classes. In particular diagram 93 and diagram 88 with the mass $t$ in its binary are excluded for that purpose.
 \end{theorem}
@@ -33,6 +33,7 @@ The force equations give $U=I$ \cite[Lemma 2.3]{Tomar}; write $E$ for this value
 \begin{equation}\label{jensen}
  E\ge 5(t+2)/(t+5)^{1/3}.
 \end{equation}
+Equivalently, substitute $M=5+t$ and $S=10+5t$ in Chen and Tong's physical bound $M^{1/3}E\ge S$ \cite[proof of Prop.~5.21, following (112)]{CT}.
 For derivations on a component of the mass-parametrized algebraic solution set, differentiation of the distance equations gives $dp_{ik}=-p_{ik}^3(w_{ik}\,dz_{ik}+z_{ik}\,dw_{ik})/2$. In the differential of $U+I/2$ the coordinate terms therefore cancel by the force equations:
 \begin{equation}\label{env}
  \tfrac32\,dE=H\,dt.
@@ -45,7 +46,7 @@ On a real configuration $t\sum_{i\ne j}p_{ij}\le E$. Cauchy's inequality applied
 \end{equation}
 When a candidate energy $e(t)$ at an end has been computed algebraically, the equality $E=e(t)$ also gives $2H/3=e'(t)$ away from finitely many parameter values. To see this, take the algebraic curve of the candidate values $(t,e)$ and form its incidence with the solution family by imposing $E=e$. On each dominant irreducible component, differentiate the identity and use \eqref{env}. The rational identity extends throughout that component above the open set where the derivative on the base curve is regular. Discard vertical components, branch values, and poles. This argument needs no continuation of a real family across the full mass line.
 \section{The two triples of diagram 93}
-We use the paper labels of \cite[\S6.6]{Tomar}. The fully circled triple $B$ has unit masses in every surviving placement. Its projected leading coordinates are centered and proportional, after a permutation, to $(1,\omega,\omega^2)$ with $\omega^3=1$, $\omega\ne1$ \cite{PriorData}. Its two coordinate vectors solve the isolated three-body equations. Their energy $B_0$ is a constant independent of $t$ with
+We use the paper labels of \cite[\S6.6]{Tomar}. The fully circled triple $B$ has unit masses in every surviving placement. Its projected leading coordinates are centered and proportional, after a permutation, to $(1,\omega,\omega^2)$ with $\omega^3=1$, $\omega\ne1$ \cite{PriorData}. For this projection the signed roots in Chen and Tong's necessary torque condition can themselves be proportional to $(1,\omega,\omega^2)$ and sum to zero \cite[Prop.~5.16, eq.~(109)]{CT}. The two coordinate vectors of $B$ solve the isolated three-body equations. Their energy $B_0$ is a constant independent of $t$ with
 \begin{equation}\label{boundB}
  |B_0|\le 3^{2/3}.
 \end{equation}
@@ -97,7 +98,7 @@ Since $|t+q|\ge t-1\ge31$, one has $|k|\le (32/31)^{3/2}/\sqrt{33}<1/5$. Therefo
 In particular $|B_0|<|A|/10$. Away from the finitely many parameters described after \eqref{elastic}, $2H/3=A'$. Thus $|tA'|/|E|>(7/8)/(11/10)=35/44>3/4$. But \eqref{elastic} gives $2tH/(3E)\le(2t+15)/(3t+15)<3/4$ for $t\ge32$. This excludes the last placement of diagram 93 for generic positive $t$.
 
 \section{The marked binary of diagram 88}
-We prove a uniform real estimate to compare with the isolated binary at an end:
+Chen and Tong obtain a necessary six-mass polynomial from the crossed torque for the first limit of a curve through a positive physical point \cite[Prop.~5.14]{CT}. We compare the marked binary's limiting value of $H$ with a uniform estimate at a real configuration:
 \begin{equation}\label{Hb}
  H>3/[2(1+t)^{1/3}] .
 \end{equation}
@@ -118,7 +119,9 @@ Two other local calculations test individual leading shapes within the surviving
 Counting uses the orbit list of revision \texttt{95e251c} and the marked mass slots from the pinned upstream diagrams. The supplementary program reproduces the full before-and-after ledger. Lean verifies the finite weighted energy lower bound from the two normalized sum identities, the triple energy identity \eqref{A}, and the scalar inequalities and selected local algebraic lemmas. The analytic force limits, Jensen and convexity arguments, and specialization in the mass parameter are given in the mathematical proof above. The reduction depends on the earlier catalogue and leaves finiteness open on this line, including at individual exceptional parameters not settled separately.
 
 \begin{thebibliography}{9}\small
-\bibitem{CC} K.-M. Chang and K.-C. Chen. Toward finiteness of central configurations for the planar six-body problem by symbolic computations. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853} (2023).
+\bibitem{CC} K.-M. Chang and K.-C. Chen. Toward finiteness of central configurations for the planar six-body problem by symbolic computations. \href{https://arxiv.org/abs/2303.02853}{arXiv:2303.02853} (2023). The journal articles are \href{https://doi.org/10.1016/j.jsc.2023.102277}{(I) Determine diagrams and orders}, \emph{J. Symbolic Comput.} \textbf{123} (2024), 102277, and \href{https://doi.org/10.1137/24M1716070}{(II) Determine mass relations}, \emph{SIAM J. Appl. Dyn. Syst.} \textbf{24} (2025), 2369--2404.
+\bibitem{AK} A. Albouy and V. Kaloshin. Finiteness of central configurations of five bodies in the plane. \emph{Ann. of Math.} \textbf{176} (2012), 535--588. \href{https://doi.org/10.4007/annals.2012.176.1.10}{doi:10.4007/annals.2012.176.1.10}.
+\bibitem{CT} Z. Chen and Z. Tong. Finiteness of planar central configurations of six bodies for all positive masses: Part I, exceptional-mass first limits. \href{https://arxiv.org/abs/2610.23329v1}{arXiv:2610.23329v1} (2026).
 \bibitem{Tomar} T. S. Tomar. Smale's sixth problem for six bodies in the plane: finiteness of central configurations for generic masses, with a proof formalized in Lean. \href{https://hexagonmath.org/pdf/2611.00377v1}{Hexagon 2611.00377v1} (2026).
 \bibitem{Prior} Chatgpt. Three residual singular diagrams on the five-equal-mass line of the planar six-body problem. \href{https://github.com/rongyulin/physics-open-problems-AI/tree/95e251cbc3de12d1531435df331d61bd08f6ac2c/problems/planar-central-configurations/notes/reduction}{Preprint and case lists} (2026).
 \bibitem{PriorData} Chatgpt. A valuation bound and a sign constraint for six-body diagram 93. \href{https://github.com/rongyulin/physics-open-problems-AI/blob/95e251cbc3de12d1531435df331d61bd08f6ac2c/problems/planar-central-configurations/notes/Diagram93.md}{Preliminary note and verification references} (2026).
