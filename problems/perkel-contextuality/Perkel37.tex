@@ -1,0 +1,253 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[a4paper,margin=27mm,top=23mm,bottom=24mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{xcolor}
+\hypersetup{pdftitle={Thirty-seven dimensions are necessary for the Perkel contextuality experiment},pdfauthor={Chatgpt}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Lov}{Lov\'asz}
+\title{\bfseries Thirty-seven dimensions are necessary for the Perkel contextuality experiment}
+\author{Chatgpt}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Liu et al.\ realized a 57-event contextuality test in 37 optical modes and asked whether the same ideal correlations could be realized in a smaller Hilbert space. We show that the minimum complex dimension is exactly 37. At maximal score, the Gram matrix of the projected state vectors is uniquely determined, even for measurements of arbitrary rank. The proof recovers each row from six three-colourings and applies an exact rank bound. It also gives a quantitative dimension witness: under exact exclusivity, a score of at least $3-27/22000$ still requires 37 dimensions. A separate spectral argument identifies a unique theta optimizer on every connected nonbipartite triangle-free $2$-walk-regular graph, including distance-regular examples. An accompanying Lean~4 project checks the exact Perkel lower bound from projective measurements.
+\end{abstract}
+
+\section{The question posed by the experiment}
+The experiment of Liu et al.~\cite{liu} used time bins of pulsed coherent light to reproduce the probabilities of 57 projective events. For the prescribed exclusivities, a noncontextual assignment can select at most two events. Quantum theory permits total probability three: the events can be partitioned into three sets such that exactly one event in each set occurs with certainty in aggregate. The authors constructed a 37-dimensional realization. Immediately after their Eq.~(4) they asked whether the measurements and state could be chosen in a lower dimension. This question concerns the fixed exclusivity graph and the ideal score. The three sets are a \emph{cover} by contexts. Extra compatibility relations between sets are part of the test.
+
+There is a numerical precedent. Section~1.6 of the archived GitHub project \emph{threecontext}~\cite{repo} reports a zero-dimensional optimal face and minimum rank 37 for real data, using numerical tolerance $10^{-7}$. It explicitly leaves complex realizations unanalysed. A symmetric optimal matrix, or the rank of the matrix returned by a solver, alone gives no lower bound on the ranks of all optima. The argument below gives exact uniqueness among complex matrices. Our literature and public-code search located no earlier proof of this specific complex dimension statement. Three later public push events for a 30-vertex experimental branch could be traced in GH Archive, but their source files could not be recovered. The priority assessment is limited to material available for inspection.
+
+\section{The test and its minimum dimension}
+Write $H$ for the Perkel graph and $A$ for its adjacency matrix. We use the labelling of Brouwer~\cite{brouwer}. Its vertices are $(a,i)\in\mathbb Z_3\times\mathbb Z_{19}$, numbered $19a+i$ from zero. Join $(a,i)$ to $(a+1,j)$ if
+\begin{equation}
+ (j-i)^3=2^{6a}\pmod {19}. \label{eq:edges}
+\end{equation}
+Edges are undirected. Two \emph{distinct nonadjacent} vertices of $H$ are exclusive events. Thus the exclusivity graph is the complement of $H$. The three layers give a proper three-colouring.
+
+A realization consists of a unit vector $\psi$ in a complex Hilbert space and orthogonal projections $P_v$ with $P_vP_w=0$ on exclusive pairs. An event projector may have any rank. Set
+\[
+ x_v=P_v\psi,\quad p_v=\|x_v\|^2,\quad W=\sum_v p_v,\quad
+ G_{vw}=\ip{x_v}{x_w}.
+\]
+The inner product is linear in its second argument. On a colour class $C$ of any proper three-colouring, $Q_C=\sum_{v\in C}P_v$ is an orthogonal projection. Hence $\sum_{v\in C}p_v\leq 1$ and $W\leq3$. Equality in the sum is equivalent to equality in all three classes of the cover of Eq.~(4) of Ref.~\cite{liu}.
+
+\begin{theorem}\label{th:main}
+If $W=3$, then
+\begin{equation}
+        G=\frac{3I+A}{57}. \label{eq:gram}
+\end{equation}
+Every perfect realization has dimension at least 37. A real rank-one realization in dimension 37 attains this bound, and therefore so does its complexification. The same minimum holds when a finite-dimensional density operator is allowed as the preparation.
+\end{theorem}
+
+\subsection{Recovering a Gram row from colour classes}
+If $W=3$, then $Q_C\psi=\psi$ for every class of every proper three-colouring. Indeed,
+\begin{equation}
+ \left\|\psi-\sum_{w\in C}x_w\right\|^2
+       =1-\sum_{w\in C}p_w. \label{eq:deficit}
+\end{equation}
+For a class excluding $v$, taking its inner product with $x_v$ gives
+\begin{equation}
+       \sum_{w\in C\cap N(v)}G_{vw}=p_v. \label{eq:local}
+\end{equation}
+Exclusivity removes all other terms. In particular, this identity determines complex entries, including their imaginary parts.
+
+For $v=0$, order the six neighbours as $(20,26,30,40,41,52)$ and index their positions $0,\ldots,5$. Table~\ref{tab:color} supplies six classes. Let $R$ be the matrix with rows the indicator vectors of the triples
+\[
+           012,\quad013,\quad014,\quad015,\quad023,\quad123.
+\]
+For example, $013$ uses neighbours $20,26,40$. If $z$ is the column of six edge entries, Eq.~\eqref{eq:local} becomes $Rz=p_v\one$. Each row sums to three and $\det R=-3$, so $z=(p_v/3)\one$. Translation $(a,i)\mapsto(a,i+1)$ and rotation $(a,i)\mapsto(a+1,4i)$ preserve Eq.~\eqref{eq:edges} and act transitively on the vertices. For rotation, $4^3=2^6$ and $2^{18}=1\bmod19$. Transporting the six colourings proves the same identity in every row. Since $G$ is Hermitian, $p_v=p_w$ on every edge. Connectivity and $W=3$ give $p_v=1/19$ for every vertex. This proves Eq.~\eqref{eq:gram}.
+
+\begin{table}[ht]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllcc@{}}
+\toprule
+Layer 0 & Layer 1 & Layer 2 & Class & Triple\\\midrule
+\texttt{0000000000000000000} & \texttt{1111111111111111111} & \texttt{2222222222222222222} & 1 & 012 \\
+\texttt{0110102210111222112} & \texttt{0100201102122010100} & \texttt{2012222211022020010} & 1 & 013 \\
+\texttt{0222002100101220100} & \texttt{2101011101121001202} & \texttt{2121101210222220012} & 1 & 014 \\
+\texttt{0010122010002220021} & \texttt{0112100120221010111} & \texttt{1022222001221211012} & 1 & 015 \\
+\texttt{0021001012201000222} & \texttt{0111011210012022101} & \texttt{1012102222200122121} & 1 & 023 \\
+\texttt{0200011100120020211} & \texttt{2101120202220221200} & \texttt{0021121220212011111} & 2 & 123 \\
+\bottomrule
+\end{tabular}
+\caption{Six proper colourings, read left to right in vertex order. The indicated class excludes vertex zero and intersects its neighbourhood in exactly the stated triple of positions. Both assertions can be checked from Eq.~\eqref{eq:edges}.}
+\label{tab:color}
+\end{table}
+
+\subsection{Rank, realization and mixtures}
+The Perkel spectrum~\cite{brouwer}, with superscripts indicating multiplicity, is
+\begin{equation}
+ 6^{(1)},\qquad \left(\frac{3+\sqrt5}{2}\right)^{(18)},\qquad
+ \left(\frac{3-\sqrt5}{2}\right)^{(18)},\qquad (-3)^{(20)}. \label{eq:spectrum}
+\end{equation}
+Thus $S=I+A/3$ is positive semidefinite of rank 37. Equation~\eqref{eq:gram} implies $\dim\operatorname{span}\{x_v\}=37$. For attainability, take real unit vectors $u_v$ with Gram matrix $S$ and put
+\[
+          \psi=\frac{\sum_v u_v}{\sqrt{171}},\qquad
+          P_v=u_vu_v^{\mathsf T}.
+\]
+Every row of $S$ sums to three. It follows that $\|\psi\|=1$, $|\ip{u_v}{\psi}|^2=1/19$, and all exclusive pairs of rays are orthogonal. This construction attains $W=3$.
+
+There is also a short rank lower bound independent of the full spectrum. In the first two layers the induced graph $K$ is cubic and bipartite. It is connected: the cycle alternating $(0,i_j),(1,i_j+1),(0,i_{j+1})$, with $i_j=-6j\bmod19$, visits all 38 vertices, since $1$ and $7$ are allowed forward shifts. The quadratic form of $3I+A_K$ is $\sum_{uw\in E(K)}|y_u+y_w|^2$. Its kernel therefore consists of vectors constant on one layer and equal to the opposite constant on the other. The resulting $38$-by-$38$ principal submatrix has rank 37.
+
+Finally a density operator has a convex decomposition into pure states. Each pure component scores at most three. If the average equals three, every component of positive weight attains three in the same ambient space. Equation~\eqref{eq:gram} fixes the projected vectors up to an isometry of their spans for a pure component. It imposes no such reconstruction of higher-rank projectors on unused directions.
+
+\section{A spectral explanation for uniqueness}
+The same rigidity has an independent interpretation through the trace-one theta program used in graph approaches to contextuality~\cite{csw,lovasz}. The eigenvalue bound and the associated optimal pair are classical~\cite{lovasz,godsil}. Uniqueness of a theta optimizer also appears in earlier work on contextuality self-testing, including odd cycles and their complements~\cite{bharti}. The local spectral identities for $2$-walk-regular graphs appear in Godsil et al.~\cite[Lemma~3.11 and Eq.~(13)]{local}. Neighbour independence for the distance-regular case was already given by Koolen et al.~\cite[Lemma~3.1(ii)]{koolen}. We give the short deduction that a triangle-free neighbourhood rules out additional complex optima on this side of the program. For a graph $H$ with $n$ vertices, the Hermitian program for $\vartheta(\overline H)$ maximizes $\langle J,B\rangle=\sum_{ij}B_{ij}$ over $B\succeq0$ of trace one, supported on the diagonal and edges of $H$. For a perfect Perkel preparation, $B=G/3$ is feasible and attains three, since the class vector sums equal $\psi$.
+
+A graph is $2$-walk-regular if, for every walk length, the number of walks between two vertices depends only on their distance whenever that distance is at most two. Distance-regular graphs have this property~\cite{bcn}.
+
+\begin{theorem}\label{th:family}
+Let $H$ be a finite, connected, nonbipartite, triangle-free $2$-walk-regular graph of valency $d$, with least adjacency eigenvalue $\tau$ of multiplicity $h$. The Hermitian theta program above has the unique optimizer
+\[
+      B_*=\frac1n(I-A/\tau),\qquad
+      \vartheta(\overline H)=1-d/\tau,\qquad \rank B_*=n-h.
+\]
+\end{theorem}
+\begin{proof}
+The orthogonal projector $E$ onto the $\tau$-eigenspace is a polynomial in $A$. Powers of $A$ count walks, so $E_{ij}$ depends only on distance for pairs at distance at most two. Write $a=h/n$ for its common diagonal entry. From $AE=\tau E$ the common edge entry is $a\tau/d$. Set $Z=-ndE/(h\tau)\succeq0$. Its diagonal is $-d/\tau$ and its edge entries are $-1$. For feasible $B$,
+\[
+   0\leq\tr(ZB)=1-d/\tau-\langle J,B\rangle.
+\]
+The displayed $B_*$ is feasible and reaches equality. Every optimal $B$ has $BE=0$, because the trace of the product of two positive semidefinite matrices vanishes only when their product is zero.
+
+Put $v_i=Ee_i$ with $e_i$ a coordinate vector. Then $\sum_{j\sim i}v_j=\tau v_i$. Distinct neighbours of $i$ are at distance two, so their mutual inner products have a common real value $b$. Taking the squared norm of this last identity gives $da+d(d-1)b=\tau^2a$. Connectedness and nonbipartiteness imply $|\tau|<d$, hence $b<a$. Row $i$ of $BE=0$ now gives
+\[
+       \sum_{j\sim i}(B_{ij}+B_{ii}/\tau)v_j=0.
+\]
+Here the $v_j$ are real; the identity follows from transposing the row. Pairing with $v_k-v_\ell$ for any neighbours $k,\ell$ shows $(a-b)(B_{ik}-B_{i\ell})=0$. Thus the edge entries are constant within row $i$. Substitution and $v_i\ne0$ fix them as $-B_{ii}/\tau$. Hermitian symmetry, connectedness and trace one give $B_{ii}=1/n$ everywhere. The rank assertion follows from the eigenspace of $\tau$.
+\end{proof}
+For the Perkel graph, $(n,d,\tau,h)=(57,6,-3,20)$. The optimizer is $(3I+A)/171$. The proof explains why imaginary edge entries cannot produce extra optima. The known eigenvalue bound gives the optimal value; the neighbourhood argument fixes \emph{all} matrix entries.
+
+\section{A quantitative dimension witness from the Perkel spectrum}
+\label{sec:spectral-stability}
+Throughout this section the exclusivity relations are exact. Write $E$ for
+the orthogonal projector onto the $-3$ eigenspace of $A$, and put
+$B_*=(I+A/3)/57$. The norm $\|\cdot\|_F$ is the Frobenius norm.
+
+\begin{lemma}\label{lem:perkel-coercivity}
+For every trace-zero Hermitian matrix $D$ supported on the diagonal and
+the edges of the Perkel graph,
+\[
+                   \|DE\|_F^2\ \geq\ \frac{1}{25}\|D\|_F^2 .
+\]
+\end{lemma}
+\begin{proof}
+The entries of $57E$ at distances $0,1,2$ are respectively $20,-10,2$.
+Indeed, distance regularity makes each of these entries constant at its
+distance. The diagonal follows from $\tr E=20$, and the edge entry
+follows from $AE=-3E$. Distinct neighbours of a vertex are at distance
+two. Squaring $\sum_{j\sim i}Ee_j=-3Ee_i$ gives the distance-two entry.
+
+Let $C$ be the unsigned vertex-edge incidence matrix, $d_i=D_{ii}$,
+and $w_e=\sqrt2\,\Re D_{ij}$, $u_e=\sqrt2\,\Im D_{ij}$, using one fixed
+orientation $ij$ of each edge $e$. Thus
+$\|D\|_F^2=\|d\|^2+\|w\|^2+\|u\|^2$ and $d\perp\one$.
+Since $E^2=E$, the squared norm of row $i$ of $DE$ is the quadratic form
+of $E$ on row $i$ of $D$. On the six neighbours the corresponding block
+of $57E$ is $18I+2J$. Summing the row forms, using
+$\sum_{j\sim i}\Re D_{ij}=(Cw)_i/\sqrt2$, and dropping the nonnegative
+term $2\sum_i(\sum_{j\sim i}\Im D_{ij})^2$ gives
+\[
+ 57\|DE\|_F^2\ \geq\
+ 20\|d\|^2-10\sqrt2\,d^{\mathsf T}Cw+
+ 18\bigl(\|w\|^2+\|u\|^2\bigr)+\|Cw\|^2 .
+\]
+Let $\Pi$ be the orthogonal projector onto $\one^\perp$. Since
+$CC^{\mathsf T}=6I+A$, Eq.~\eqref{eq:spectrum} gives
+$\|\Pi Cw\|^2\leq(6+\lambda_2)\|w\|^2$ with
+$\lambda_2=(3+\sqrt5)/2<21/8$. Put $q=57/25$. Subtracting
+$q\|D\|_F^2$ from the preceding lower bound and completing the square
+in $d$ bounds the difference below by
+\[
+\begin{split}
+ &(20-q)\left\|d-\frac{5\sqrt2}{20-q}\Pi Cw\right\|^2
+ +(18-q)\|u\|^2\\
+ &\qquad+
+ \left(18-q-\frac{30+q}{20-q}(6+\lambda_2)\right)\|w\|^2 .
+\end{split}
+\]
+Here $\|Cw\|^2\geq\|\Pi Cw\|^2$. The remaining coefficient is positive
+because $(20-q)(18-q)-(30+q)(6+21/8)=717/5000>0$. Division by $57$
+proves the claim.
+\end{proof}
+
+\begin{theorem}\label{th:perkel-spectral-witness}
+Every projective realization on a complex Hilbert space of dimension at
+most $36$ has score $W<3-27/22000$. Equivalently, a score of at least $3-27/22000$ certifies dimension at least $37$. The statement includes mixed preparations and
+projectors of arbitrary rank.
+\end{theorem}
+\begin{proof}
+First take a pure state $\psi$ and $W>0$, and set $B=G/W$. This matrix
+is positive semidefinite, has trace one, and is supported on the diagonal
+and the edges. For $J=\one\one^{\mathsf T}$ the observed score obeys
+\[
+  \langle J,B\rangle
+  =\frac{\|\sum_iP_i\psi\|^2}{W}
+  \ \geq\ \frac{|\langle\psi,\sum_iP_i\psi\rangle|^2}{W}=W.
+\]
+Since $Z=(57/10)E$ has diagonal $2$ and edge entries $-1$,
+\[
+ \epsilon:=3-\langle J,B\rangle
+      =\tr(ZB)=\frac{57}{10}\tr(EB)\geq0,\qquad 3-W\geq\epsilon.
+\]
+For $D=B-B_*$, write $t=\|D\|_F$. We have $B_*E=0$ and
+$B^2\preceq\|B\|_{\mathrm{op}}B$. Applying
+Lemma~\ref{lem:perkel-coercivity} and using $\|B_*\|_{\mathrm{op}}=1/19$
+therefore gives
+\[
+ \frac{t^2}{25}\leq\|BE\|_F^2=\tr(EB^2)
+    \leq\frac{10}{57}\|B\|_{\mathrm{op}}\epsilon
+    \leq\frac{10}{57}(1/19+t)\epsilon .
+\]
+The range of $B_*$ has dimension $37$ and its least eigenvalue on that
+range is $\mu=(9-\sqrt5)/342>3/152$, by $\sqrt5<9/4$.
+If the Hilbert space has dimension at most $36$, then $\rank B\leq36$.
+Choose a unit vector in $\ker B\cap\operatorname{range}B_*$. Applying
+$D$ to it gives $t\geq\|D\|_{\mathrm{op}}\geq\mu$.
+The function $s\mapsto s^2/(1/19+s)$ is strictly increasing for $s>0$,
+whence
+\[
+  3-W\ \geq\epsilon\ \geq\
+  \frac{57}{250}\frac{t^2}{1/19+t}
+  \ >\ \frac{57}{250}\frac{(3/152)^2}{1/19+3/152}
+  =\frac{27}{22000}.
+\]
+The case $W=0$ is immediate. For a mixed state the score is the
+probability-weighted average of pure-state scores for the same projectors
+in the same Hilbert space, so the strict bound holds as well.
+\end{proof}
+
+This sufficient threshold does not give the optimal score for dimension 36. It assumes exact orthogonality of the exclusive event pairs. Applying the result to measured data would also require bounds on the deviations from orthogonality. Liu et al.\ discuss the operational limitations of the coherent-light implementation in Ref.~\cite{liu}.
+
+\section{Formal verification}
+The accompanying source project uses Lean~4.28.0 and a pinned Mathlib revision. Its main lower-bound theorem, \texttt{PerkelModel.minimum\_dimension}, starts from a family of complex linear maps satisfying self-adjointness, idempotence and the prescribed pairwise exclusivities, a unit state, and $W=3$. It concludes $37\leq\dim_{\mathbb C}\mathcal H$. The graph definition uses Eq.~\eqref{eq:edges}. Finite graph certificates verify the requisite colour classes at every vertex. The proof then derives the class sums and the full complex Gram identity. For the rank step it checks an integer left inverse, up to a factor of $627$, of the first $37$-by-$37$ block of $3I+A$. This proves linear independence directly over $\mathbb C$.
+
+The matching upper-bound theorem, \texttt{Perkel37.attained\_by\_complex\_projectors}, constructs a unit state and 57 projections onto explicitly given unit vectors in $\mathbb C^{37}$ and proves $W=3$. Its input coordinates are checked by exact integer Gram identities; floating-point arithmetic is unnecessary. The finite-ensemble theorem \texttt{PerkelModel.mixed\_minimum\_dimension} proves the lower bound for a normalized mixture of pure states. Identifying density operators with such ensembles uses the finite-dimensional spectral theorem in the mathematical text. The formalization covers the exact Perkel results; Theorem~\ref{th:family} and the quantitative bound in Theorem~\ref{th:perkel-spectral-witness} are proved analytically above.
+
+\begin{thebibliography}{10}
+\bibitem{liu} Z.-H. Liu et al., Exploring the boundary of quantum correlations with a time-domain optical processor, \emph{Science Advances} \textbf{11}, eabd8080 (2025). \href{https://doi.org/10.1126/sciadv.abd8080}{doi:10.1126/sciadv.abd8080}.
+\bibitem{repo} ManekiMeow, \emph{Smaller three-context GHZ graphs, lower bounds, and the four-context Kochen--Specker problem}, GitHub project \texttt{threecontext}, \texttt{RESULTS.md}, Sec.~1.6. \href{https://archive.softwareheritage.org/browse/content/sha1_git:601b64d894427aee82f13277f681cd6753768448/}{Software Heritage archive}, October 2026.
+\bibitem{brouwer} A. E. Brouwer, \href{https://aeb.win.tue.nl/graphs/Perkel.html}{Perkel graph}, graph database, Eindhoven University of Technology.
+\bibitem{csw} A. Cabello, S. Severini and A. Winter, Graph-theoretic approach to quantum correlations, \emph{Phys. Rev. Lett.} \textbf{112}, 040401 (2014). \href{https://doi.org/10.1103/PhysRevLett.112.040401}{doi:10.1103/PhysRevLett.112.040401}.
+\bibitem{lovasz} L. Lov\'asz, On the Shannon capacity of a graph, \emph{IEEE Trans. Inform. Theory} \textbf{25}, 1--7 (1979). \href{https://doi.org/10.1109/TIT.1979.1055985}{doi:10.1109/TIT.1979.1055985}.
+\bibitem{koolen} J. Koolen, A. Juri\v{s}i\'c and \v{S}. Miklavi\v{c}, On triangle-free distance-regular graphs with an eigenvalue multiplicity equal to the valency, \href{https://mathsci.kaist.ac.kr/bk21/morgue/research_report_pdf/04-24.pdf}{KAIST research report 04-24} (2004).
+\bibitem{local} C. Godsil, D. E. Roberson, B. Rooney, R. \v S\'amal and A. Varvitsiotis, Graph homomorphisms via vector colorings, \emph{European J. Combin.} \textbf{79}, 244--261 (2019). \href{https://doi.org/10.1016/j.ejc.2019.04.001}{doi:10.1016/j.ejc.2019.04.001}.
+\bibitem{godsil} C. Godsil, D. E. Roberson, B. Rooney, R. \v S\'amal and A. Varvitsiotis, Vector coloring the categorical product of graphs, Sec.~4.3, \href{https://arxiv.org/abs/1801.08243}{arXiv:1801.08243} (2018).
+\bibitem{bharti} K. Bharti et al., Robust and local quantum self-testing of systems of arbitrary high dimension, \href{https://scipost.org/preprints/scipost_202301_00011v1/}{SciPost preprint scipost\_202301\_00011v1} (2023).
+\bibitem{bcn} A. E. Brouwer, A. M. Cohen and A. Neumaier, \emph{Distance-Regular Graphs}, Springer, Berlin (1989). \href{https://doi.org/10.1007/978-3-642-74341-2}{doi:10.1007/978-3-642-74341-2}.
+\end{thebibliography}
+\end{document}
